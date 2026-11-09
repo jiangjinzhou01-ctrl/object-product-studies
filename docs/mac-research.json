@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-11-09",
+  "scope": "Mac photo asset research/download and official technical-spec research only.",
+  "outcome": {
+    "macbook_pro_14_m5": {
+      "selected_asset_id": "mac-pro-14-m5",
+      "selected_study_model": "MacBook Pro (14-inch, M5)",
+      "chip_clarification": "Base M5 chip, not M5 Pro",
+      "official_specs_verified": true,
+      "launch_dates_verified": true
+    },
+    "macbook_air_15_m4": {
+      "selected_asset_id": "mac-air-15-m4",
+      "selected_study_model": "MacBook Air (15-inch, M4, 2025)",
+      "model_match": "exact_model",
+      "official_specs_verified": true,
+      "launch_dates_verified": true
+    },
+    "requested_m6": {
+      "status": "Superseded by user-approved complete product fallback to actual M5."
+    },
+    "requested_m5_air": {
+      "status": "Superseded by user-approved complete product fallback to actual M4 Air; M5 Air13 source excluded due to generative cleanup."
+    }
+  },
+  "assets": [
+    {
+      "id": "mac-pro-14-m5",
+      "requested_model": "MacBook Pro (14-inch, M5)",
+      "depicted_model": "MacBook Pro (14-inch, M5)",
+      "depicted_chip": "Apple M5 (base M5; not M5 Pro)",
+      "depicted_finish": "Space Black",
+      "model_match": "exact_model",
+      "author": "AzureSaturn",
+      "author_url": "https://commons.wikimedia.org/wiki/User:AzureSaturn",
+      "license": "CC0 1.0 Universal",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "share_alike_required_for_derivatives": false,
+      "attribution_text": "Photo: AzureSaturn / Wikimedia Commons / CC0 1.0.",
+      "caption": "14-inch MacBook Pro with M5 in Space Black.",
+      "alt": "Open Space Black 14-inch MacBook Pro with M5 on a wooden display table.",
+      "source_date": "2025-12-23",
+      "visual_inspection": {
+        "inspected": true,
+        "checked_date": "2026-11-09",
+        "observed": "Dark chassis, black keyboard, notched display, on-screen retail panel reading MacBook Pro 14-inch and M5 chip.",
+        "model_evidence": "The visible retail panel corroborates both the 14-inch size and base M5 chip.",
+        "color_evidence": "Dark chassis is consistent with source-stated Space Black.",
+        "composition": "Landscape, elevated three-quarter front view; complete keyboard and trackpad; retail screen and cables visible."
+      },
+      "source_ai_edit_disclosed": false,
+      "source_editing_note": "No generative edit is disclosed in the inspected Commons file page; original camera metadata is sparse.",
+      "usage_note": "Actual 14-inch MacBook Pro with base M5 chip. Use an M5 story and M5 specifications; never relabel as M6 or as M5 Pro.",
+      "filename": "mac-pro-14-m5-space-black-original.jpg",
+      "local_path": ".cache/originals/mac-pro-14-m5-space-black-original.jpg",
+      "cache_path": ".cache/originals/mac-pro-14-m5-space-black-original.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:MacBook_Pro_(14-inch,_M5,_Space_Black).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/MacBook_Pro_%2814-inch%2C_M5%2C_Space_Black%29.jpg",
+      "size_bytes": 2095361,
+      "width": 5712,
+      "height": 4284,
+      "mime": "image/jpeg",
+      "sha1": "c20e3f71573da2e8884e64423ea9f751cf45f96d",
+      "sha256": "80752f28e7bc3ce8ccd5937d1ee69ad2174444421e078c66c74b83b671cc92b9",
+      "checked_date": "2026-11-09",
+      "source_provider": "Wikimedia Commons",
+      "source_file_title": "File:MacBook Pro (14-inch, M5, Space Black).jpg",
+      "commons_page_id": 180566337,
+      "file_page_verified": true,
+      "file_page_verification": "Actual file description, author, license section and metadata inspected; Commons API imageinfo cross-checked.",
+      "downloaded_original": true,
+      "original_integrity_verified": true,
+      "integrity_verification": "Downloaded byte count and SHA-1 match Commons imageinfo.",
+      "modifications_allowed": true,
+      "commercial_reuse_allowed": true,
+      "modification_terms": "Copying, cropping, resizing and format conversion are allowed under the stated license. Attribution is appreciated but not required by CC0.",
+      "modifications_performed": [],
+      "modification_statement": "Original downloaded without changes; original bytes preserved.",
+      "source_license_name_as_reported": "CC0",
+      "source_description": "A top view of the 14-inch M5 MacBook Pro in Space Black running macOS Tahoe.",
+      "source_own_work": true,
+      "product_id": "macbook-pro-m5"
+    },
+    {
+      "filename": "mac-air-15-m4-silver-original.jpg",
+      "local_path": ".cache/originals/mac-air-15-m4-silver-original.jpg",
+      "cache_path": ".cache/originals/mac-air-15-m4-silver-original.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:MacBook_Air_(15-inch,_M4,_Silver).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/MacBook_Air_%2815-inch%2C_M4%2C_Silver%29.jpg",
+      "size_bytes": 1836083,
+      "width": 5712,
+      "height": 4284,
+      "mime": "image/jpeg",
+      "sha1": "20b9b97ca6ce05aa7aca5c969777b39dcb71eb47",
+      "sha256": "585091faa093a7bc6adef2b693b545129e443a7274fa645a73efc974e8e5d3a6",
+      "id": "mac-air-15-m4",
+      "requested_model": "MacBook Air (15-inch, M4, 2025)",
+      "depicted_model": "MacBook Air (15-inch, M4, 2025)",
+      "depicted_chip": "Apple M4",
+      "depicted_finish": "Silver",
+      "model_match": "exact_model",
+      "author": "AzureSaturn",
+      "author_url": "https://commons.wikimedia.org/wiki/User:AzureSaturn",
+      "license": "CC0 1.0 Universal",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "share_alike_required_for_derivatives": false,
+      "attribution_text": "Photo: AzureSaturn / Wikimedia Commons / CC0 1.0.",
+      "caption": "15-inch MacBook Air with M4 in Silver.",
+      "alt": "Open Silver 15-inch MacBook Air with M4 on a wooden display table.",
+      "source_date": "2025-12-23",
+      "checked_date": "2026-11-09",
+      "source_provider": "Wikimedia Commons",
+      "source_file_title": "File:MacBook Air (15-inch, M4, Silver).jpg",
+      "commons_page_id": 180566331,
+      "file_page_verified": true,
+      "file_page_verification": "Actual file description, author, license section and metadata inspected; Commons API imageinfo cross-checked.",
+      "downloaded_original": true,
+      "original_integrity_verified": true,
+      "integrity_verification": "Downloaded byte count and SHA-1 match Commons imageinfo.",
+      "modifications_allowed": true,
+      "commercial_reuse_allowed": true,
+      "modification_terms": "Copying, cropping, resizing and format conversion allowed under CC0; credit appreciated.",
+      "modifications_performed": [],
+      "modification_statement": "Original downloaded without changes; original bytes preserved.",
+      "source_license_name_as_reported": "CC0",
+      "source_description": "A top view of the 15-inch M4 MacBook Air in Silver running macOS Tahoe.",
+      "source_own_work": true,
+      "source_ai_edit_disclosed": false,
+      "source_editing_note": "No generative edit is disclosed in the inspected Commons file page; original camera metadata is sparse. This is a visually inspected documentary retail photograph.",
+      "visual_inspection": {
+        "inspected": true,
+        "checked_date": "2026-11-09",
+        "observed": "Silver chassis and black keyboard; retail screen panel reading MacBook Air 15-inch and M4 chip.",
+        "model_evidence": "Visible retail panel corroborates both the 15-inch size and M4 chip.",
+        "color_evidence": "Bright silver chassis is consistent with the source-stated Silver finish.",
+        "composition": "Landscape three-quarter front view; full trackpad and keyboard; wooden table and retail display setting."
+      },
+      "usage_note": "Use an M4 Air story and M4 specifications. Do not relabel the photograph as M5.",
+      "product_id": "macbook-air-15-m4"
+    }
+  ],
+  "technical_specs": [
+    {
+      "model": "MacBook Pro (14-inch, M5)",
+      "checked_date": "2026-11-09",
+      "source_url": "https://support.apple.com/en-us/125405",
+      "source_title": "MacBook Pro (14-inch, M5) - Tech Specs",
+      "source_type": "Official Apple Support technical specifications",
+      "year_introduced": 2025,
+      "chip": {
+        "name": "Apple M5",
+        "cpu_cores": 10,
+        "cpu_super_cores": 4,
+        "cpu_efficiency_cores": 6,
+        "gpu_cores": 10,
+        "neural_engine_cores": 16,
+        "memory_bandwidth_GB_s": 153
+      },
+      "unified_memory_GB": {
+        "base": 16,
+        "options": [
+          16,
+          24,
+          32
+        ]
+      },
+      "ssd_storage_GB": {
+        "base_options": [
+          512,
+          1024
+        ],
+        "options": [
+          512,
+          1024,
+          2048,
+          4096
+        ]
+      },
+      "finishes": [
+        "Space Black",
+        "Silver"
+      ],
+      "display": {
+        "name": "Liquid Retina XDR",
+        "diagonal_inches": 14.2,
+        "resolution_pixels": [
+          3024,
+          1964
+        ],
+        "pixel_density_ppi": 254,
+        "refresh_rate_Hz_up_to": 120,
+        "adaptive_refresh": "ProMotion",
+        "HDR_sustained_full_screen_nits_up_to": 1000,
+        "HDR_peak_nits": 1600,
+        "SDR_outdoor_nits_up_to": 1000,
+        "nano_texture_option": true,
+        "wide_color": "P3",
+        "true_tone": true
+      },
+      "battery": {
+        "capacity_Wh": 72.4,
+        "video_streaming_hours_up_to": 24,
+        "wireless_web_hours_up_to": 16,
+        "fast_charge_minimum_USB_PD_watts": 96,
+        "included_adapter_watts": 70
+      },
+      "ports": [
+        {
+          "type": "Thunderbolt 4 / USB4 (USB-C)",
+          "count": 3,
+          "speed_Gb_s_up_to": 40
+        },
+        {
+          "type": "HDMI",
+          "count": 1
+        },
+        {
+          "type": "SDXC card slot",
+          "count": 1
+        },
+        {
+          "type": "MagSafe 3",
+          "count": 1
+        },
+        {
+          "type": "3.5 mm headphone",
+          "count": 1
+        }
+      ],
+      "external_displays_supported_up_to": 2,
+      "wireless": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3"
+      ],
+      "camera": {
+        "resolution_MP": 12,
+        "features": [
+          "Center Stage",
+          "Desk View"
+        ],
+        "recording": "1080p"
+      },
+      "speakers": 6,
+      "dimensions_mm": {
+        "height": 15.5,
+        "width": 312.6,
+        "depth": 221.2
+      },
+      "weight_kg": 1.55,
+      "input": [
+        "Touch ID",
+        "Backlit Magic Keyboard",
+        "Force Touch trackpad"
+      ],
+      "launch": {
+        "announcement_date": "2025-10-15",
+        "preorder_date": "2025-10-15",
+        "availability_date": "2025-10-22",
+        "source_url": "https://www.apple.com/newsroom/2025/10/apple-unveils-new-14-inch-macbook-pro-powered-by-the-m5-chip/",
+        "source_title": "Apple unveils new 14-inch MacBook Pro powered by the M5 chip",
+        "checked_date": "2026-11-09"
+      },
+      "product_id": "macbook-pro-m5",
+      "asset_id": "mac-pro-14-m5"
+    },
+    {
+      "checked_date": "2026-11-09",
+      "source_type": "Official Apple Support technical specifications",
+      "year_introduced": 2025,
+      "chip": {
+        "name": "Apple M4",
+        "cpu_cores": 10,
+        "cpu_performance_cores": 4,
+        "cpu_efficiency_cores": 6,
+        "gpu_core_options": [
+          10
+        ],
+        "neural_engine_cores": 16,
+        "memory_bandwidth_GB_s": 120
+      },
+      "unified_memory_GB": {
+        "base": 16,
+        "options": [
+          16,
+          24,
+          32
+        ]
+      },
+      "ssd_storage_GB": {
+        "base": 256,
+        "options": [
+          256,
+          512,
+          1024,
+          2048
+        ]
+      },
+      "finishes": [
+        "Sky Blue",
+        "Silver",
+        "Starlight",
+        "Midnight"
+      ],
+      "display": {
+        "name": "Liquid Retina",
+        "panel": "LED-backlit IPS",
+        "pixel_density_ppi": 224,
+        "brightness_nits": 500,
+        "wide_color": "P3",
+        "true_tone": true,
+        "diagonal_inches": 15.3,
+        "resolution_pixels": [
+          2880,
+          1864
+        ]
+      },
+      "battery": {
+        "capacity_Wh": 66.5,
+        "video_streaming_hours_up_to": 18,
+        "wireless_web_hours_up_to": 15,
+        "included_adapter_watts": 35,
+        "included_adapter": "Dual USB-C Port Compact Power Adapter",
+        "fast_charge_adapter_watts": 70
+      },
+      "ports": [
+        {
+          "type": "Thunderbolt 4 / USB4 (USB-C)",
+          "count": 2,
+          "speed_Gb_s_up_to": 40
+        },
+        {
+          "type": "MagSafe 3",
+          "count": 1
+        },
+        {
+          "type": "3.5 mm headphone",
+          "count": 1
+        }
+      ],
+      "external_displays_supported_up_to": 2,
+      "wireless": [
+        "Wi-Fi 6E (802.11ax)",
+        "Bluetooth 5.3"
+      ],
+      "camera": {
+        "resolution_MP": 12,
+        "features": [
+          "Center Stage",
+          "Desk View"
+        ],
+        "recording": "1080p"
+      },
+      "input": [
+        "Touch ID",
+        "Backlit Magic Keyboard",
+        "Force Touch trackpad"
+      ],
+      "model": "MacBook Air (15-inch, M4, 2025)",
+      "source_url": "https://support.apple.com/en-us/122210",
+      "source_title": "MacBook Air (15-inch, M4, 2025) - Tech Specs",
+      "dimensions_mm": {
+        "height": 11.5,
+        "width": 340.4,
+        "depth": 237.6
+      },
+      "weight_kg": 1.51,
+      "speakers": 6,
+      "external_display_support": "Up to two external displays at up to 6K, 60Hz each, alongside the built-in display.",
+      "launch": {
+        "announcement_date": "2025-03-05",
+        "preorder_date": "2025-03-05",
+        "availability_date": "2025-03-12",
+        "source_url": "https://www.apple.com/newsroom/2025/03/apple-introduces-the-new-macbook-air-with-the-m4-chip-and-a-sky-blue-color/",
+        "source_title": "Apple introduces the new MacBook Air with the M4 chip and a sky blue color",
+        "checked_date": "2026-11-09"
+      },
+      "product_id": "macbook-air-15-m4",
+      "asset_id": "mac-air-15-m4"
+    }
+  ],
+  "spec_notes": [
+    "Final primary stories describe actual 14-inch MacBook Pro with base M5 and actual 15-inch MacBook Air with M4. Their photos and specifications match.",
+    "All technical specifications and launch dates checked on 2026-11-09 against official Apple sources. Announcement and customer-availability dates are separate.",
+    "Physical sizes converted from Apple centimeters to millimeters. Battery runtime is an Apple up-to test result; actual runtime varies.",
+    "Display diagonals are rectangular measurements; actual viewable area is reduced by rounded corners.",
+    "No current price claims are derived from prices visible in older retail photographs.",
+    "M6 and M5 Air specifications removed from the final technical_specs array to prevent mixing generations."
+  ],
+  "research": {
+    "prioritized_source": "Wikimedia Commons actual file pages and imageinfo API; Apple Support for specifications.",
+    "method": [
+      "Web searches for exact model and license terms.",
+      "Commons API file-namespace search with quoted MacBook and M6 or M5, and title searches.",
+      "Actual candidate file pages inspected for model, photographer, source and image license.",
+      "Original files downloaded and byte count plus SHA-1 verified against Commons.",
+      "Delivered M5 Pro14 and M4 Air15 originals visually inspected; visible retail-screen model labels independently corroborate each chip generation and display-size class."
+    ],
+    "bounded_search_results": [
+      {
+        "query": "intitle:MacBook intitle:M6",
+        "source": "Commons API file namespace",
+        "total_hits": 0,
+        "conclusion": "No M6 file title found."
+      },
+      {
+        "query": "\"MacBook\" \"M6\"",
+        "source": "Commons API file namespace",
+        "total_hits": 2,
+        "conclusion": "Returned unrelated older MacBook/book material, no verified M6 photo."
+      },
+      {
+        "query": "\"MacBook\" \"M5\"",
+        "source": "Commons API file namespace",
+        "total_hits": 8,
+        "verified_product_photos": [
+          "File:MacBook Pro (14-inch, M5, Space Black).jpg",
+          "File:M5 Macbook Air 13 Sky Blue model.jpg"
+        ]
+      },
+      {
+        "source_url": "https://commons.wikimedia.org/wiki/Category:MacBook_Air_M5",
+        "conclusion": "Category contained only the 13-inch Sky Blue photograph at inspection; no 15-inch M5 file."
+      },
+      {
+        "query": "MacBook Air M5 15 photo Creative Commons / CC BY / CC0; Flickr M5 MacBook Air",
+        "source": "Web search",
+        "conclusion": "No independently verifiable license-clear exact 15-inch M5 photograph found. Third-party captions/credits were not accepted as proof over the actual Commons file model."
+      }
+    ],
+    "limits": [
+      "Bounded search found no verified license-clear M6 photo; the entire Pro story now uses actual M5 per user decision.",
+      "The M5 Air13 camera photograph was excluded because its source discloses generative cleanup without describing the edit extent.",
+      "For delivered CC0 originals, no generative edits are disclosed on source pages; original bytes are retained."
+    ],
+    "download_notes": {
+      "rate_limits_encountered": true,
+      "originals_downloaded": 2,
+      "originals_modified": false,
+      "future_requests": "Use Mozilla/5.0 User-Agent where needed, and honor HTTP 429 Retry-After before any retry.",
+      "rate_limit_note": "An optional M4 Air13 original request returned HTTP 429. It was not retried and no optional photo or product is included. The two selected originals had already downloaded successfully."
+    },
+    "optional_models_included": false
+  },
+  "ui_contract": {
+    "primary_pro_model": "MacBook Pro (14-inch, M5)",
+    "primary_pro_spec_source": "https://support.apple.com/en-us/125405",
+    "primary_air_model": "MacBook Air (15-inch, M4, 2025)",
+    "primary_air_spec_source": "https://support.apple.com/en-us/122210",
+    "model_policy": "Use actual MacBook Pro with base M5 and MacBook Air with M4 names and matching specifications throughout. The Pro uses base M5, not an M5 Pro chip. No M6 story with an M5 photo. No AI-cleaned M5 Air13 photo. Exactly two selected Mac products.",
+    "photo_asset_ids": [
+      "mac-pro-14-m5",
+      "mac-air-15-m4"
+    ],
+    "data_only_models": [],
+    "has_placeholder": false,
+    "pro_dimensions_label": "14-inch M5: 312.6 × 221.2 × 15.5 mm (W × D × H), 1.55 kg",
+    "air_15_dimensions_label": "15-inch M4: 340.4 × 237.6 × 11.5 mm (W × D × H), 1.51 kg",
+    "products": [
+      {
+        "product_id": "macbook-pro-m5",
+        "asset_id": "mac-pro-14-m5",
+        "model": "MacBook Pro (14-inch, M5)",
+        "spec_source_url": "https://support.apple.com/en-us/125405"
+      },
+      {
+        "product_id": "macbook-air-15-m4",
+        "asset_id": "mac-air-15-m4",
+        "model": "MacBook Air (15-inch, M4, 2025)",
+        "spec_source_url": "https://support.apple.com/en-us/122210"
+      }
+    ]
+  },
+  "excluded_assets": [
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:M5_Macbook_Air_13_Sky_Blue_model.jpg",
+      "filename": "mac-air-13-m5-sky-blue-original.jpg",
+      "reason": "Excluded by user: source has generative cleanup metadata and the extent of hardware edits is unknown. Do not use in UI or publish."
+    }
+  ],
+  "status": "complete"
+}

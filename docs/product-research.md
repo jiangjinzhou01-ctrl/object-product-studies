@@ -1,0 +1,20 @@
+# Product research · checked 2026-11-09
+
+The priority is factual accuracy, then photography quality and permission. Search visibility never serves as evidence of a license. No Apple images, videos, proprietary fonts or press renders were downloaded or republished.
+
+| Requested model           | Official confirmation                                                                                                                          | Photography outcome                                                                                           | Final decision                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| iPhone 18 Pro             | [Apple launch, 2026-09-09](https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/), available 2026-09-18     | Real Commons photographs, CC BY-SA 4.0; inspected                                                             | Included                                                                        |
+| MacBook Pro 14-inch M6    | [Apple launch, 2026-10-27](https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/), available 2026-11-06 | No exact, license-clear M6 photograph found in bounded research                                               | Replace whole study with photographed MacBook Pro 14-inch M5 and matching specs |
+| MacBook Air M5 13/15-inch | [Apple launch, 2026-03-03](https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/)                               | Air 13 candidate source disclosed generative Clean Up with unknown extent; no verified exact Air 15 candidate | Exclude those photographs; replace Air study with photographed Air 15-inch M4   |
+| iPhone 17                 | [Apple launch, 2025-09-09](https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/), available 2025-09-19                               | Lavender and Sage real photographs, CC0                                                                       | Included                                                                        |
+
+The user's original instructions explicitly allow substituting real models when permission-clear photography is unavailable. No permission was inferred to generate hardware or relabel older devices.
+
+Final modeled specifications and finish names are in `src/data/phones.ts` and `src/data/macs.ts`. Each specification contains a source ID and optional conditions; each reference contains a title, URL and verification date. Announcement and availability dates are separate fields. Unknown values are omitted. No price or comparative performance percentages are published.
+
+The Mac fallback uses the base Apple M5 chip in a MacBook Pro, not the separate M5 Pro chip. It was announced 2025-10-15 and available 2025-10-22. The 15-inch MacBook Air M4 was announced 2025-03-05 and available 2025-03-12. See the matching official links in the live source index and `docs/mac-research.json`.
+
+Portrait and landscape original EXIF orientations were inspected. Generic `iPhone 18 Pro rear` imagery is not assigned a color by filename. Only explicitly source-identified Black and Glacier photographs are selectable. Black depicts the back, Glacier the front; the interface states that distinction. Original camera settings and retail details do not become product specifications.
+
+Source limitations: Commons model attribution is photographer-supplied. Photograph content and metadata were checked, but device identity is not independently established with physical access. A bounded search finding no photograph does not prove none exists anywhere. Specifications and availability are date- and market-dependent; linked official materials preserve relevant footnotes.

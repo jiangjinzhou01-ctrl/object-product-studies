@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-09",
+  "scope": "LOCAL production simulation, not a GitHub deployment",
+  "base": "http://127.0.0.1:4174/object-product-studies/",
+  "passed": true,
+  "checks": [
+    "repository subpath assets",
+    "font loading",
+    "category selection",
+    "shareable differences URL",
+    "route navigation",
+    "deep-link refresh",
+    "no local HTTP errors"
+  ],
+  "images": [
+    {
+      "url": "http://127.0.0.1:4174/object-product-studies/assets/images/mac-pro-14-m5-480.webp",
+      "loaded": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/object-product-studies/assets/images/mac-air-15-m4-480.webp",
+      "loaded": true
+    }
+  ],
+  "failures": []
+}
