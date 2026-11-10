@@ -43,6 +43,8 @@ jobs:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
           VITE_SOURCE_REPOSITORY: ${{ github.server_url }}/${{ github.repository }}
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
