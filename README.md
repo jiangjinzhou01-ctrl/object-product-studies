@@ -101,7 +101,7 @@ npm run assets
 
 ## GitHub Pages
 
-源码已推送到 [jiangjinzhou01-ctrl/object-product-studies](https://github.com/jiangjinzhou01-ctrl/object-product-studies)。GitHub Actions 的检查和 32 项浏览器测试通过；Pages 尚未开启，当前连接创建 Pages 站点时收到 **HTTP 403: Resource not accessible by integration**。请在仓库 Settings → Pages 中把 Build and deployment 的 Source 设为 **GitHub Actions**，之后即可运行部署工作流。详见 [部署步骤与权限记录](docs/deployment.md)。
+源码已推送到 [jiangjinzhou01-ctrl/object-product-studies](https://github.com/jiangjinzhou01-ctrl/object-product-studies)，网站已部署到 [GitHub Pages](https://jiangjinzhou01-ctrl.github.io/object-product-studies/)。部署工作流通过类型检查、Lint、格式检查、生产构建和 32 项浏览器测试；生产网址也已用 Chromium 检查桌面、390px 移动首屏、产品故事、比较路由及导航。完整记录见 [部署记录](docs/deployment.md) 与 [QA 记录](docs/qa-results.md)。
 
 仓库启用 Pages 的 GitHub Actions 模式后，推送 `main` 将执行类型检查、Lint、格式检查、生产构建、Playwright，再按仓库名称设置 `VITE_BASE_PATH` 并部署。
 
