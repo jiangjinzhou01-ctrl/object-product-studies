@@ -2,18 +2,18 @@
 
 ## Final local checks
 
-| Check                                 | Actual result                                                                                          |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Strict TypeScript project build       | Passed                                                                                                 |
-| ESLint                                | Passed, no errors or warnings                                                                          |
-| Prettier                              | Passed                                                                                                 |
-| Production Vite build                 | Passed                                                                                                 |
-| Playwright / Chromium                 | **32 passed, 0 failed**, final full run 53.8 seconds                                                   |
-| axe WCAG 2 A/AA, 2.1 AA, 2.2 AA rules | Zero detected violations on six tested desktop pages                                                   |
-| Responsive layout                     | Eight main pages checked at 360, 390, 430, 768, 1024, 1440 and 1920px; no document horizontal overflow |
-| Photography                           | All 21 WebP derivatives decoded; dimensions match the EXIF-corrected media records                     |
-| GitHub Pages subpath simulation       | Passed: prefixed images/fonts, navigation, refresh, model/differences URL, no local HTTP errors        |
-| GitHub Actions / live Pages           | **Not run / not deployed**: repository creation rejected by GitHub integration permissions             |
+| Check                                 | Actual result                                                                                                                  |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Strict TypeScript project build       | Passed                                                                                                                         |
+| ESLint                                | Passed, no errors or warnings                                                                                                  |
+| Prettier                              | Passed                                                                                                                         |
+| Production Vite build                 | Passed                                                                                                                         |
+| Playwright / Chromium                 | **32 passed, 0 failed**, final full run 53.8 seconds                                                                           |
+| axe WCAG 2 A/AA, 2.1 AA, 2.2 AA rules | Zero detected violations on six tested desktop pages                                                                           |
+| Responsive layout                     | Eight main pages checked at 360, 390, 430, 768, 1024, 1440 and 1920px; no document horizontal overflow                         |
+| Photography                           | All 21 WebP derivatives decoded; dimensions match the EXIF-corrected media records                                             |
+| GitHub Pages subpath simulation       | Passed: prefixed images/fonts, navigation, refresh, model/differences URL, no local HTTP errors                                |
+| GitHub Actions / live Pages           | Build, all 32 browser tests and artifact preparation passed; Pages initialization returned HTTP 403, so no live deployment yet |
 
 The 32 tests cover ten content routes, same-category comparison selection/replacement/clearing/reset/sharing/reload/invalid URLs, mobile dialog focus cycling and Escape, keyboard color selection with fixed layout, scroll chapter changes, Mac workflow/port interactions, hash-compatible anchors, seven viewport widths, accessibility checks, reduced motion, horizontal table keyboard scrolling, tab arrow/Home/End behavior, visual state capture and cold-navigation layout stability.
 
@@ -63,5 +63,5 @@ The intended MacBook Pro M6 visual review became a matching MacBook Pro M5 revie
 - No physical iPhone/Android device, low-end hardware, Safari, Firefox or screen-reader session was tested. Safe-area CSS is implemented; physical notched-device behavior remains to be verified.
 - MacBook Pro M6 and MacBook Air M5 photo stories were intentionally replaced with exact photographed M5 Pro-laptop and M4 Air models. See [product research](product-research.md).
 - Retail photography includes background objects, cables and old price labels. These are not website offers. Original commissioned photography is the highest-value next improvement.
-- GitHub's GraphQL createRepository and REST POST /user/repos both rejected creation with Resource not accessible by integration (HTTP 403). There is no remote repository or public Pages URL to report. Deployment is ready once an empty repository and accessible connection are provided.
+- The public repository was created and source pushed. GitHub Actions run [42793343554](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/42793343554) passed typecheck, lint, format, production build and all 32 Playwright tests, then failed at Pages initialization. `actions/configure-pages` with `enablement: true` received `Resource not accessible by integration` (HTTP 403) while creating the Pages site. Select GitHub Actions once in repository Settings → Pages, then run the workflow. There is no live Pages URL until that deployment succeeds.
 - The environment's Sites preview relay was unavailable. The user's required real-browser checks were executed using local Vite production servers and installed Chromium instead.

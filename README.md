@@ -101,7 +101,7 @@ npm run assets
 
 ## GitHub Pages
 
-当前 GitHub 连接可以识别账户，但新建仓库请求返回 **HTTP 403: Resource not accessible by integration**。本地文件与 Actions 配置已准备；尚未宣称部署成功。详见 [部署步骤与权限记录](docs/deployment.md)。
+源码已推送到 [jiangjinzhou01-ctrl/object-product-studies](https://github.com/jiangjinzhou01-ctrl/object-product-studies)。GitHub Actions 的检查和 32 项浏览器测试通过；Pages 尚未开启，当前连接创建 Pages 站点时收到 **HTTP 403: Resource not accessible by integration**。请在仓库 Settings → Pages 中把 Build and deployment 的 Source 设为 **GitHub Actions**，之后即可运行部署工作流。详见 [部署步骤与权限记录](docs/deployment.md)。
 
 仓库启用 Pages 的 GitHub Actions 模式后，推送 `main` 将执行类型检查、Lint、格式检查、生产构建、Playwright，再按仓库名称设置 `VITE_BASE_PATH` 并部署。
 

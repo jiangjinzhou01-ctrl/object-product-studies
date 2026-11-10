@@ -1,28 +1,29 @@
 # GitHub Pages deployment
 
-## Observed account access
+## Current publication state
 
-On 2026-11-09 the authenticated GitHub account was verified as `jiangjinzhou01-ctrl`. The requested new name `object-product-studies` was checked and did not resolve to an existing accessible repository.
+The public repository [jiangjinzhou01-ctrl/object-product-studies](https://github.com/jiangjinzhou01-ctrl/object-product-studies) exists and contains the project source on `main`. The connected GitHub integration has admin and push access to this repository. GitHub Actions has passed type checking, lint, formatting, production build and all 32 Playwright tests.
 
-Creation was attempted through the authenticated GitHub CLI (GraphQL) and the documented REST `POST /user/repos`. Both were rejected by GitHub with `Resource not accessible by integration` (REST HTTP 403). The installed GitHub connector was also discovered and checked for a creation capability; it exposes no repository creation operation. This is an account/integration permission limit, not a user confirmation gate. No unrelated repository was used or overwritten.
-
-No remote repository, Pages site or public deployment URL is claimed as created.
+The workflow cannot create the Pages site: the Pages API returns `Resource not accessible by integration` (HTTP 403), including when `actions/configure-pages` uses its `enablement: true` option. Pages therefore has no live deployment yet. This is a GitHub integration API permission boundary; publishing has already been authorized by the project owner.
 
 ## Complete the deployment
 
-1. Create an empty **public** GitHub repository in your account. Recommended project name: `object-product-studies`. Do not initialize it with a README if pushing this complete source.
-2. Grant the connected GitHub integration access to the new repository. Never paste access tokens into chat or source files.
-3. Configure **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-4. From this folder, after committing the local source:
+1. Open [the repository's Pages settings](https://github.com/jiangjinzhou01-ctrl/object-product-studies/settings/pages).
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** and save. The connected API cannot perform this one-time Pages initialization.
+3. In the repository's **Actions** tab, run **Validate and deploy OBJECT** with **Run workflow** on `main`. The same workflow will also run on subsequent pushes.
+
+Never paste access tokens into chat or source files. The GitHub Actions workflow already has the required `pages: write` and `id-token: write` permissions for subsequent deployments.
+
+For a different empty repository, from this folder:
 
 ```bash
 git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
-If `origin` already exists, inspect it with `git remote -v` first; do not overwrite an unrelated destination. Existing repositories should receive this source in an isolated branch or directory after review.
+The current `origin` is the project repository above. If it changes, inspect it with `git remote -v` first; do not overwrite an unrelated destination.
 
-`.github/workflows/deploy.yml` validates, builds and runs browser tests before publication. It then builds with `VITE_BASE_PATH=/<actual-repository-name>/` and uploads `dist/`. Pages returns the final URL in the `deploy` job. Do not infer success from the URL's expected format.
+`.github/workflows/deploy.yml` validates, builds and runs browser tests before publication. It then builds with `VITE_BASE_PATH=/<actual-repository-name>/` and uploads `dist/`. Pages returns the final URL in the `deploy` job. Do not infer success from the URL's expected format. The expected project URL is `https://jiangjinzhou01-ctrl.github.io/object-product-studies/`; it is not live until a successful deployment is recorded.
 
 HashRouter supports refresh and shareable selections without host rewrites. All media uses the Vite base. For a user-site repository (`YOUR_ACCOUNT.github.io`) use `VITE_BASE_PATH=/` in the workflow instead; repository project sites use the default name-based path.
 
