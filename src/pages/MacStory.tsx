@@ -1,304 +1,259 @@
-import { handleTabKey } from '../lib/tabs';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, Code2, Film, PenTool, ArrowUpRight } from 'lucide-react';
-import { macs } from '../data/macs';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { Media } from '../components/Media';
-import { Eyebrow, ArrowLink, CompareEntry } from '../components/UI';
+import { Eyebrow, ArrowLink, Metric } from '../components/UI';
 import Specifications from '../components/Specifications';
-const product = macs[0];
+import { macs } from '../data/macs';
+import { mediaUrl } from '../data/media';
+import { handleTabKey } from '../lib/tabs';
 const workflows = [
   {
-    name: '构建',
-    icon: Code2,
-    title: '从一行代码，到完整想法。',
-    body: 'M5 的 10 核 CPU 与统一内存，构成编写、调试与多任务工作的硬件基础。选择内存与存储时，让项目规模、工具链和本地数据决定配置。',
-    label: 'CODE / COMPILE / ITERATE',
-    stat: '10',
-    unit: '核 CPU',
+    id: 'motion',
+    label: '动态影像',
+    app: 'ADOBE AFTER EFFECTS',
+    title: '让时间线上的想法，流动起来。',
+    body: '从分层合成到动画编排，把你的工作放进更完整的画面。M6 的 12 核 CPU 与 12 核 GPU，是这张创作桌面的计算基础。',
+    media: 'mac-pro-motion',
   },
   {
-    name: '剪辑',
-    icon: Film,
-    title: '把创作，放在时间线上。',
-    body: '媒体引擎支持 H.264、HEVC、ProRes 与 ProRes RAW 硬件加速。剪辑体验取决于素材编码、分辨率和项目复杂度；芯片只是工作流的一部分。',
-    label: 'CAPTURE / EDIT / EXPORT',
-    stat: 'ProRes',
-    unit: '硬件加速',
+    id: 'design',
+    label: '视觉设计',
+    app: 'PIXELMATOR PRO',
+    title: '从一层像素，到完整表达。',
+    body: '组织图层，调整色彩，反复打磨细节。Liquid Retina XDR 显示屏支持 P3 广色域，为视觉工作提供清晰的观察空间。',
+    media: 'mac-pro-design',
   },
   {
-    name: '设计',
-    icon: PenTool,
-    title: '在细节与全局之间，自由切换。',
-    body: 'Liquid Retina XDR 支持 P3 广色域与 ProMotion。可连接外部显示器，为设计画布与参考资料安排独立空间。色彩工作仍需正确的应用与显示设置。',
-    label: 'OBSERVE / DESIGN / REFINE',
-    stat: 'P3',
-    unit: '广色域',
+    id: 'code',
+    label: '开发构建',
+    app: 'XCODE',
+    title: '把下一步想法，写成现实。',
+    body: '在编辑器、模拟器与文档之间切换。16GB 起的统一内存与 1TB 起的固态硬盘，为项目提供工作空间。',
+    media: 'mac-pro-code',
   },
 ];
 const ports = [
   {
     name: 'Thunderbolt 4',
-    detail: '3 个 USB-C 接口，支持 Thunderbolt 4 与 USB4，数据传输速率最高 40Gb/s。',
-    number: '03',
+    detail: '三个端口，最高 40Gb/s。连接外置存储、显示器与兼容扩展设备。',
+    short: '03 × TB4',
   },
-  { name: 'HDMI', detail: '独立 HDMI 接口，用于连接兼容的显示器与视频设备。', number: '01' },
-  { name: 'SDXC', detail: 'SDXC 卡槽，帮助照片与视频素材从存储卡进入工作流。', number: '01' },
-  { name: 'MagSafe 3', detail: '磁吸充电接口，让 Thunderbolt 端口保留给其他设备。', number: '01' },
-  { name: '3.5mm', detail: '3.5mm 耳机插孔，支持高阻抗耳机。', number: '01' },
+  {
+    name: 'HDMI',
+    detail: '一个 HDMI 端口，为外接屏幕与演示提供直接连接。具体分辨率和刷新率组合请参阅官方规格。',
+    short: '01 × HDMI',
+  },
+  { name: 'SDXC', detail: 'SDXC 卡插槽。让相机中的素材，进入下一段创作流程。', short: '01 × SDXC' },
+  {
+    name: 'MagSafe 3',
+    detail: '独立磁吸充电接口。另配 3.5 毫米耳机插孔，支持高阻抗耳机。',
+    short: 'POWER + AUDIO',
+  },
 ];
 export default function MacStory() {
-  const [flow, setFlow] = useState(0);
-  const [port, setPort] = useState(0);
-  const active = workflows[flow];
+  const product = macs[0],
+    [workflow, setWorkflow] = useState(0),
+    [port, setPort] = useState(0);
+  useEffect(() => {
+    const preload = new Image();
+    preload.src = mediaUrl(workflows[(workflow + 1) % workflows.length].media);
+  }, [workflow]);
   return (
     <>
-      <div className="product-subnav wrap">
+      <nav className="product-nav" aria-label="MacBook Pro 章节">
         <Link to="/mac">
-          Mac / <strong>MacBook Pro</strong>
+          MacBook Pro <span>/ M6</span>
         </Link>
         <div>
           <Link to="#workflow">工作流</Link>
           <Link to="#display">显示屏</Link>
-          <Link to="#connections">连接</Link>
-          <Link to="#specifications">规格</Link>
+          <Link to="#connect">连接</Link>
+          <Link to="#specifications">技术规格</Link>
+          <Link className="mini-button" to="/compare?type=mac">
+            比较
+            <ArrowUpRight size={13} />
+          </Link>
         </div>
-      </div>
-      <section className="mac-hero wrap">
-        <div className="mac-hero-top">
-          <Eyebrow>OBJECT STUDY 02 / MACBOOK PRO M5</Eyebrow>
-          <span className="mono">14 INCHES. A WORLD OF POSSIBILITIES.</span>
+      </nav>
+      <section className="mac-intro wrap">
+        <div className="mac-intro-top">
+          <Eyebrow>STUDY 02 / MACBOOK PRO 14-INCH</Eyebrow>
+          <span className="overline">DESIGNED FOR YOUR NEXT IDEA</span>
         </div>
-        <div className="mac-hero-heading">
+        <div className="mac-intro-heading">
           <h1>
-            Space for
+            专注，
             <br />
-            <span>what’s next.</span>
+            <em>自有分量。</em>
           </h1>
           <div>
+            <span className="mac-chip-label">M6</span>
             <p>
-              为想法，
+              一张可以随身带走的创作桌面。
               <br />
-              留出更大空间。
+              从第一个想法，到最后一个细节。
             </p>
-            <Link to="#workflow" className="scroll-cue">
-              进入工作流 <ArrowDown size={16} />
+            <Link className="text-link" to="#workflow">
+              进入工作状态
+              <ArrowDown size={16} />
             </Link>
           </div>
         </div>
-        <div className="mac-hero-photo">
-          <Media id={product.heroMedia} priority credit sizes="100vw" />
-          <span className="mac-photo-label mono">MACBOOK PRO / 14″ / M5 / SPACE BLACK</span>
-          <div className="mac-photo-title">
-            A studio.
-            <br />
-            Wherever you are.
-          </div>
-        </div>
-        <div className="mac-hero-foot mono">
-          <span>14.2″ LIQUID RETINA XDR</span>
-          <span>APPLE M5</span>
-          <span>DESIGNED FOR THE WORK IN BETWEEN.</span>
+        <div className="mac-intro-image">
+          <Media id="mac-pro-front" priority sizes="(max-width:760px) 100vw, 70vw" />
+          <span className="dimension-label">14.2″ LIQUID RETINA XDR</span>
+          <span className="dimension-side">312.6 × 221.2 × 15.5 MM</span>
         </div>
       </section>
-      <section id="workflow" className="workflow-section wrap">
-        <div className="workflow-heading">
-          <Eyebrow>01 / A WORKFLOW IN THREE ACTS</Eyebrow>
-          <h2>
-            你的创作方式。
-            <br />
-            你的工作空间。
-          </h2>
-        </div>
-        <div className="workflow-layout">
-          <div
-            className="workflow-controls"
-            role="tablist"
-            onKeyDown={handleTabKey}
-            aria-label="选择工作流"
-          >
-            {workflows.map((w, i) => (
-              <button
-                key={w.name}
-                role="tab"
-                id={`workflow-tab-${i}`}
-                aria-selected={flow === i}
-                tabIndex={flow === i ? 0 : -1}
-                aria-controls="workflow-content"
-                onClick={() => setFlow(i)}
-              >
-                <span className="mono">0{i + 1}</span>
-                <w.icon size={21} />
-                <span>{w.name}</span>
-                <ArrowUpRight size={18} />
-              </button>
-            ))}
+      <section className="metrics-row wrap" aria-label="MacBook Pro M6 核心规格">
+        <Metric value="12 核" label="CPU / Apple M6" />
+        <Metric value="12 核" label="GPU / Apple M6" />
+        <Metric value="1.55 kg" label="整机重量" />
+        <Metric
+          value="24 小时"
+          label="最长流媒体视频播放"
+          note="Apple 实验室测试；实际续航因使用方式而异"
+        />
+      </section>
+      <section className="workflow-section wrap" id="workflow">
+        <div className="section-head">
+          <div>
+            <Eyebrow>01 / IN THE MAKING</Eyebrow>
+            <h2>
+              你的工作方式，
+              <br />
+              就是它的打开方式。
+            </h2>
           </div>
-          <div
-            className="workflow-content"
-            id="workflow-content"
-            role="tabpanel"
-            aria-labelledby={`workflow-tab-${flow}`}
-          >
-            <span className="mono">{active.label}</span>
-            <h3>{active.title}</h3>
-            <p>{active.body}</p>
-            <div className="workflow-stat">
-              <strong>{active.stat}</strong>
-              <span>{active.unit}</span>
-            </div>
-            <a
-              className="source-inline"
-              href={product.referenceSources[0].url}
-              target="_blank"
-              rel="noreferrer"
+          <p>
+            三种工作场景，同一张桌面。
+            <br />
+            选择一个方向，看看创作如何展开。
+          </p>
+        </div>
+        <div
+          className="workflow-tabs"
+          role="tablist"
+          aria-label="选择专业工作流"
+          onKeyDown={handleTabKey}
+        >
+          {workflows.map((w, i) => (
+            <button
+              key={w.id}
+              id={'workflow-tab-' + w.id}
+              role="tab"
+              aria-controls="workflow-panel"
+              aria-selected={workflow === i}
+              tabIndex={workflow === i ? 0 : -1}
+              onClick={() => setWorkflow(i)}
             >
-              核对官方技术资料 ↗
-            </a>
+              <span>0{i + 1}</span>
+              {w.label}
+              <ArrowUpRight size={16} />
+            </button>
+          ))}
+        </div>
+        <div
+          id="workflow-panel"
+          role="tabpanel"
+          aria-labelledby={'workflow-tab-' + workflows[workflow].id}
+        >
+          <div className="workflow-image">
+            <Media key={workflow} id={workflows[workflow].media} sizes="90vw" />
+          </div>
+          <div className="workflow-description">
+            <span className="overline">{workflows[workflow].app}</span>
+            <h3>{workflows[workflow].title}</h3>
+            <p>{workflows[workflow].body}</p>
           </div>
         </div>
+        <p className="media-caption">
+          Apple 官方应用场景图。用于说明工作方式，不代表本站进行了应用性能测试。
+        </p>
       </section>
-      <section className="mac-display dark" id="display">
+      <section className="display-section" id="display">
         <div className="wrap">
           <div className="display-heading">
-            <Eyebrow light>02 / WINDOW TO YOUR WORK</Eyebrow>
+            <Eyebrow light>02 / THE BIGGER PICTURE</Eyebrow>
             <h2>
-              每一寸，
+              每一处细节，
               <br />
-              都为专注。
+              都值得被看见。
             </h2>
             <p>
-              Liquid Retina XDR。
+              14.2 英寸 Liquid Retina XDR。
               <br />
-              让视野，成为想法的一部分。
+              从暗部层次，到明亮高光，让画面获得完整的表达。
             </p>
           </div>
-          <div className="display-photo">
-            <Media id={product.heroMedia} />
-            <span className="display-size">
-              14.2<span>″</span>
-            </span>
-          </div>
+          <Media id="mac-pro-display" sizes="90vw" />
           <div className="display-facts">
-            <div>
-              <span className="mono">RESOLUTION</span>
-              <strong>3024 × 1964</strong>
-              <p>原生分辨率</p>
-            </div>
-            <div>
-              <span className="mono">ADAPTIVE REFRESH</span>
-              <strong>
-                120<span>Hz</span>
-              </strong>
-              <p>ProMotion 刷新率上限</p>
-            </div>
-            <div>
-              <span className="mono">PEAK HDR</span>
-              <strong>
-                1600<span>nits</span>
-              </strong>
-              <p>HDR 内容峰值亮度</p>
-            </div>
+            <Metric value="1,600 尼特" label="HDR 峰值亮度" />
+            <Metric value="120Hz" label="ProMotion 最高刷新率" />
+            <Metric value="P3" label="广色域" />
           </div>
-          <p className="caption">
-            尺寸按标准矩形测量，实际可视区域较小。峰值 HDR 亮度适用于 HDR 内容。照片展示真实 M5
-            机型，画面中的零售标签不构成当前价格信息。
+          <p className="media-caption">
+            HDR 峰值亮度不代表全屏持续亮度；屏幕尺寸按标准矩形测量。详细条件见官方技术规格。
           </p>
         </div>
       </section>
-      <section className="mac-performance wrap">
-        <div className="performance-heading">
-          <Eyebrow>03 / APPLE SILICON</Eyebrow>
-          <h2>
-            有实力。
+      <section className="ports-section wrap" id="connect">
+        <div className="section-head">
+          <div>
+            <Eyebrow>03 / STAY CONNECTED</Eyebrow>
+            <h2>连接，直接一点。</h2>
+          </div>
+          <p>
+            从素材导入，到屏幕延展。
             <br />
-            也有持续创作的余地。
-          </h2>
+            让接口成为工作的一部分。
+          </p>
         </div>
-        <div className="performance-grid">
-          <div className="performance-graphic">
-            <span className="mono">APPLE SILICON / TYPOGRAPHIC STUDY</span>
-            <strong>
-              M5
-              <span>
-                10-CORE CPU
-                <br />
-                10-CORE GPU
-              </span>
-            </strong>
-            <div className="memory-lines" aria-hidden="true">
-              {Array.from({ length: 10 }, (_, i) => (
-                <span key={i} />
-              ))}
-            </div>
-            <span className="caption">芯片文字与结构示意，非硬件照片。</span>
-          </div>
-          <div>
-            <h3>配置，围绕你的任务选择。</h3>
-            <p>
-              16GB、24GB 或 32GB 统一内存；512GB 至 4TB SSD
-              选项。这里的容量是可配置范围，实际可选组合以 Apple 技术资料为准。
-            </p>
-            <div className="battery-stat">
-              <span className="mono">UP TO / VIDEO STREAMING</span>
-              <strong>
-                24<span>小时</span>
-              </strong>
-              <p>Apple 视频流播放测试上限。实际续航因配置、软件与使用方式而异。</p>
-            </div>
-            <a
-              className="source-inline"
-              href={product.referenceSources[0].url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              查看测试条件与配置 ↗
-            </a>
-          </div>
+        <div className="ports-image">
+          <Media id="mac-pro-ports" sizes="90vw" />
         </div>
-      </section>
-      <section className="ports-section" id="connections">
-        <div className="wrap ports-grid">
-          <div>
-            <Eyebrow>04 / CONNECTION INDEX</Eyebrow>
-            <h2>
-              连接，
-              <br />
-              保持直接。
-            </h2>
-            <p>
-              从相机存储卡到外接屏幕，
-              <br />
-              接口让工作流少一步中转。
-            </p>
-            <div className="port-detail" role="status" aria-live="polite">
-              <strong>
-                {ports[port].number}
-                <span>× {ports[port].name}</span>
-              </strong>
-              <p>{ports[port].detail}</p>
-            </div>
-          </div>
-          <div className="port-index" role="group" aria-label="选择接口说明">
+        <div className="ports-controls">
+          <div role="tablist" aria-label="了解连接接口" onKeyDown={handleTabKey}>
             {ports.map((p, i) => (
-              <button key={p.name} aria-pressed={port === i} onClick={() => setPort(i)}>
-                <span className="mono">0{i + 1}</span>
-                <span>{p.name}</span>
-                <span>{port === i ? '−' : '＋'}</span>
+              <button
+                role="tab"
+                id={'port-tab-' + i}
+                aria-controls="port-panel"
+                aria-selected={port === i}
+                tabIndex={port === i ? 0 : -1}
+                key={p.name}
+                onClick={() => setPort(i)}
+              >
+                {p.name}
+                <span>0{i + 1}</span>
               </button>
             ))}
-            <span className="caption">接口索引，仅用于说明；并非机身位置或比例示意。</span>
+          </div>
+          <div role="tabpanel" id="port-panel" aria-labelledby={'port-tab-' + port}>
+            <span className="overline">{ports[port].short}</span>
+            <h3>{ports[port].name}</h3>
+            <p>{ports[port].detail}</p>
           </div>
         </div>
       </section>
       <Specifications product={product} />
-      <CompareEntry family="mac" />
-      <section className="next-study wrap">
-        <span className="mono">ANOTHER PERSPECTIVE</span>
-        <h2>把工作空间，带向更广的日常。</h2>
-        <ArrowLink to="/mac#macbook-air-15-m4" solid>
-          认识 MacBook Air M4
-        </ArrowLink>
+      <section className="next-product wrap">
+        <div>
+          <Eyebrow>ANOTHER WAY TO WORK</Eyebrow>
+          <h2>
+            轻一点，
+            <br />
+            去远一点。
+          </h2>
+          <p>
+            认识配备 M5 的 MacBook Air。
+            <br />
+            13 与 15 英寸，两种随行的方式。
+          </p>
+          <ArrowLink to="/mac#macbook-air-13-m5">探索 MacBook Air</ArrowLink>
+        </div>
+        <Media id="mac-air-pair" />
       </section>
     </>
   );

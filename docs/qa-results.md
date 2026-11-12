@@ -1,79 +1,62 @@
-# QA results · 2026-11-10
+# QA 记录 — Edition 02
 
-## Final local checks
+核验日期：2026-11-12。测试针对本次完整重写；旧版测试与截图不作为新版结果。
 
-| Check                                 | Actual result                                                                                           |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Strict TypeScript project build       | Passed                                                                                                  |
-| ESLint                                | Passed, no errors or warnings                                                                           |
-| Prettier                              | Passed                                                                                                  |
-| Production Vite build                 | Passed                                                                                                  |
-| Playwright / Chromium                 | **32 passed, 0 failed**, final full run 53.8 seconds                                                    |
-| axe WCAG 2 A/AA, 2.1 AA, 2.2 AA rules | Zero detected violations on six tested desktop pages                                                    |
-| Responsive layout                     | Eight main pages checked at 360, 390, 430, 768, 1024, 1440 and 1920px; no document horizontal overflow  |
-| Photography                           | All 21 WebP derivatives decoded; dimensions match the EXIF-corrected media records                      |
-| GitHub Pages subpath simulation       | Passed: prefixed images/fonts, navigation, refresh, model/differences URL, no local HTTP errors         |
-| GitHub Actions / live Pages           | Run 42803732341 succeeded, including all 32 browser tests and Pages deployment; live smoke check passed |
+## 已执行检查
 
-The 32 tests cover ten content routes, same-category comparison selection/replacement/clearing/reset/sharing/reload/invalid URLs, mobile dialog focus cycling and Escape, keyboard color selection with fixed layout, scroll chapter changes, Mac workflow/port interactions, hash-compatible anchors, seven viewport widths, accessibility checks, reduced motion, horizontal table keyboard scrolling, tab arrow/Home/End behavior, visual state capture and cold-navigation layout stability.
+| 检查                               | 实际结果                                                                                         |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 严格 TypeScript / Production Build | 通过                                                                                             |
+| ESLint / Prettier                  | 已通过，结果由 Actions 再次验证                                                                  |
+| Playwright / Chromium              | **37 通过，0 失败，0 跳过，0 重试**；最终本地完整运行 56.4 秒                                    |
+| 内容与资源                         | 10 个内容路由、页面 H1、全部挂载图片解码、同源请求与 JavaScript 错误检查通过                     |
+| 响应式                             | 360 / 390 / 430 / 768 / 1024 / 1440 / 1920px；10 个内容路由无页面横向溢出                        |
+| axe                                | 六个桌面页面、移动导航展开状态与移动比较页，WCAG 2 A/AA、2.1 AA、2.2 AA 规则未发现违规           |
+| 交互                               | 比较、URL 恢复、差异、复制与失败回退、导航焦点、图集、滚动章节、工作流、接口、键盘、规格展开通过 |
+| 资源处理                           | 20 项原始媒体 → 75 项 WebP；总计 5,850,684 字节；旧版 21 项图片已移除                            |
+| 冷启动布局                         | 自动化断言首屏 CLS < 0.05 通过；Lighthouse 测得 0.001                                            |
+| GitHub Pages 子路径                | 本地生产子路径验证通过；分享恢复、资源、导航、来源标签和规格脚注正常                             |
+| 部署                               | 本次版本的线上发布与复核记录将在部署完成后附于下方                                               |
 
-## Deployed production smoke check · 2026-11-10
+完整结果摘要见 [playwright-results.json](playwright-results.json)。浏览器截图与 trace 在工作流 browser-evidence artifact 中保存七天；压缩截图已提交至 docs/screenshots。
 
-The deployed URL [jiangjinzhou01-ctrl.github.io/object-product-studies](https://jiangjinzhou01-ctrl.github.io/object-product-studies/) returned HTTP 200. Chromium opened the homepage at 1440×900 and 390×844, the iPhone 18 Pro story, and a shareable iPhone comparison URL. The comparison restored both selected models and rendered nine rows. The 390px layout had no horizontal overflow; its navigation dialog opened and closed with Escape. The hero photograph decoded, same-origin resources returned successfully, and there were no browser JavaScript errors.
+测试中实际修复了浅色背景小字对比度、非语义元素的 ARIA 标注、移动端 Sticky 阅读区，以及路由状态更新需要等待的测试同步问题。最终完整运行没有遗留失败。
 
-| Live deployment evidence | Screenshot                                                       |
-| ------------------------ | ---------------------------------------------------------------- |
-| Desktop homepage, 1440px | [live-home-1440.webp](screenshots/live-home-1440.webp)           |
-| Mobile homepage, 390px   | [live-home-390.webp](screenshots/live-home-390.webp)             |
-| Mobile navigation dialog | [live-navigation-390.webp](screenshots/live-navigation-390.webp) |
+## Lighthouse 实测
 
-The successful deployment is [GitHub Actions run 42803732341](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/42803732341). This live check supplements the local production Lighthouse measurements; no Lighthouse score is claimed for the hosted URL.
+目标：本地生产预览首页 http://127.0.0.1:4173/。Lighthouse 13.6.0、无头 Chromium；桌面 preset 与默认模拟移动端各运行一次，顺序测量。不是线上测速，也不是实体手机测试。
 
-Raw final Playwright results are archived in [playwright-results.json](playwright-results.json). The subpath verification record is [github-pages-smoke.json](github-pages-smoke.json). Automated axe checks do not establish complete WCAG conformance or replace assistive-technology user testing.
+| 指标                |  桌面 | 移动模拟 |
+| ------------------- | ----: | -------: |
+| Performance         |   100 |       97 |
+| Accessibility       |   100 |      100 |
+| Best Practices      |   100 |      100 |
+| SEO                 |    92 |       92 |
+| LCP                 |  0.5s |     2.4s |
+| CLS                 | 0.001 |    0.001 |
+| Total Blocking Time |   0ms |     70ms |
 
-## Lighthouse measurements
+完整 JSON：[desktop](lighthouse/desktop.json)、[mobile](lighthouse/mobile.json)。摘要见 [performance-results.json](performance-results.json)。以上性能仅对应首页测量，不外推为所有页面成绩。机器负载、网络与实际设备会改变结果。
 
-Measured against the **local production build** with Lighthouse 13.6.0 and Headless Chromium 156. Desktop preset and default simulated mobile throttling were run separately. These are synthetic single-run measurements, not physical-phone or live-hosting results.
+## 人工视觉复核
 
-| Category                | Desktop | Simulated mobile |
-| ----------------------- | ------: | ---------------: |
-| Performance             |  **99** |           **83** |
-| Accessibility           | **100** |          **100** |
-| Best Practices          | **100** |          **100** |
-| SEO                     |      92 |               92 |
-| Cumulative Layout Shift |   **0** |            **0** |
+下列截图来自真实页面，已逐项查看。它们是视觉验收证据，未建立逐像素历史基线。
 
-Configuration, browser version, timing metrics and run timestamps are in [performance-results.json](performance-results.json). Full JSON reports: [desktop](lighthouse/desktop.json), [mobile](lighthouse/mobile.json). The original measurement outputs also remain in local `reports/`.
+| 界面        | 证据与观察                                                                                                                        |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 首页桌面    | [1440px](screenshots/home-1440.webp)：标题与产品形成明确主次，后续章节按信息密度改变构图                                          |
+| 首页移动    | [390px](screenshots/home-390.webp)：首屏先读标题与入口，再完整呈现设备                                                            |
+| iPhone 故事 | [桌面](screenshots/iphone-1440.webp)、[移动](screenshots/iphone-390.webp)：深色引言、相机章节、图集、安静的规格区域               |
+| Mac 故事    | [桌面](screenshots/mac-1440.webp)、[移动](screenshots/mac-390.webp)：浅色工程引言、工作流、显示与接口                             |
+| 滚动章节    | [桌面](screenshots/narrative-desktop.webp)、[移动](screenshots/narrative-mobile.webp)：图片随章节切换；移动图框缩短，保留可读正文 |
+| 工作流切换  | [视觉设计状态](screenshots/workflow-desktop.webp)：图片、软件名称和说明同步变化                                                   |
+| 比较工具    | [桌面](screenshots/compare-1440.webp)、[移动](screenshots/compare-390.webp)：型号操作完整，移动表格独立横向滚动                   |
+| 移动导航    | [展开状态](screenshots/navigation-mobile.webp)：完整入口、关闭按钮、焦点与滚动锁定                                                |
 
-The initial measurement was desktop 89 / mobile 71, with CLS approximately 0.21. Lighthouse identified the footer moving from a short loading fallback to its final position. Reserving a full viewport for the route loading state removed the shift. A new cold-navigation regression check was added. The mobile LCP remains approximately 4.6 seconds under the selected simulation, so further improvement should prioritize earlier hero discovery and original photography optimized for its actual display composition.
+## 已知验证边界
 
-## Failures found and fixed
-
-The first 30-test pass had 23 passes and 7 failures. Fixes included readable secondary and accent contrast, valid ARIA labeling, explicit modal Tab cycling, and waiting for the URL-driven checkbox state rather than asserting during React's navigation transition. A subsequent resource-smoke timeout was traced to the test attempting to decode offscreen lazy images that had intentionally not loaded; it was corrected to inspect the actual visible region. Full-page screenshot capture explicitly loads photograph resources so captured pages contain real imagery.
-
-All 32 tests passed after the fixes. There are no unresolved local build, lint or automated test failures.
-
-## Visual inspection
-
-The following real Chromium screenshots were opened and inspected for composition, crop, typography, information hierarchy and mobile behavior. Source changes corrected contrast, focus behavior, capture readiness and picture orientation. No static screenshot is used as the actual website UI.
-
-- [Homepage desktop first screen](screenshots/home-1440.webp)
-- [Homepage mobile first screen](screenshots/home-390.webp)
-- [iPhone introduction](screenshots/iphone-hero-desktop.webp)
-- [iPhone sticky narrative desktop](screenshots/iphone-narrative-desktop.webp)
-- [iPhone sticky narrative mobile](screenshots/iphone-narrative-mobile.webp)
-- [Mac introduction](screenshots/mac-hero-desktop.webp)
-- [Mac display chapter](screenshots/mac-display-desktop.webp)
-- [Compare desktop](screenshots/compare-desktop.webp)
-- [Compare mobile](screenshots/compare-mobile.webp)
-- [Open mobile navigation](screenshots/navigation-mobile.webp)
-
-The intended MacBook Pro M6 visual review became a matching MacBook Pro M5 review following the documented photography fallback. No older image was relabeled M6. Full-size captures remain under `reports/screenshots/`; the committed WebP evidence is compressed and, for long pages, cropped to the relevant screen.
-
-## Known limits and next checks
-
-- No physical iPhone/Android device, low-end hardware, Safari, Firefox or screen-reader session was tested. Safe-area CSS is implemented; physical notched-device behavior remains to be verified.
-- MacBook Pro M6 and MacBook Air M5 photo stories were intentionally replaced with exact photographed M5 Pro-laptop and M4 Air models. See [product research](product-research.md).
-- Retail photography includes background objects, cables and old price labels. These are not website offers. Original commissioned photography is the highest-value next improvement.
-- The Pages initialization permission issue was resolved by selecting GitHub Actions once in repository Settings. The site is deployed; workflow and live browser evidence are recorded above.
-- The environment's Sites preview relay was unavailable. The user's required real-browser checks were executed using local Vite production servers and installed Chromium instead.
+- 未做真实 iOS / Android、Safari / Firefox 或屏幕阅读器实机测试；移动结果来自 Chromium 视口模拟。
+- axe 零违规不等于全面无障碍认证。
+- 自动截图没有像素回归基线；字体回退和中文排版可能因操作系统而变化。
+- 官方媒体版权与许可边界记录在素材清单中，不属于软件测试可以证明的授权结论。
+- 不对产品性能进行独立测量，不提供没有官方依据的排名、价格或百分比。

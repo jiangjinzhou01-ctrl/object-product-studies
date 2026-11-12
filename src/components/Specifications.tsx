@@ -1,63 +1,54 @@
+import { useState } from 'react';
+import { Plus, Minus, ArrowUpRight } from 'lucide-react';
 import type { Product } from '../types/product';
-import { ExternalLink } from 'lucide-react';
 export default function Specifications({ product }: { product: Product }) {
+  const [expanded, setExpanded] = useState(false);
+  const specs = expanded ? product.specifications : product.specifications.slice(0, 6);
   return (
-    <section id="specifications" className="specifications wrap">
-      <div className="spec-intro">
-        <span className="mono">TECHNICAL INDEX / {product.index}</span>
-        <h2>细节，经得起细看。</h2>
-        <p>可核查的硬件资料。每一项参数，都保留来源。</p>
-        <span className="caption">核实于 2026.11.09 · 规格可能因市场与配置而异</span>
+    <section className="specifications wrap" id="specifications">
+      <div className="spec-heading">
+        <span className="overline">THE DETAILS / TECHNICAL INDEX</span>
+        <h2>细节，都有依据。</h2>
+        <p>
+          {product.name}
+          <br />
+          发布于 {product.releaseDate}
+        </p>
+        <a
+          className="text-link"
+          href={product.referenceSources[0].url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          官方技术规格
+          <ArrowUpRight size={15} />
+        </a>
       </div>
-      <dl className="spec-list">
-        {product.specifications.map((spec) => {
-          const s = product.referenceSources.find((s) => s.id === spec.sourceId);
-          return (
-            <div key={spec.key}>
-              <dt>{spec.label}</dt>
+      <div>
+        <dl className="spec-list">
+          {specs.map((s) => (
+            <div key={s.key}>
+              <dt>{s.label}</dt>
               <dd>
-                {spec.value}
-                {spec.note && <small>{spec.note}</small>}
-                {s && (
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${spec.label}的 Apple 来源`}
-                  >
-                    <ExternalLink size={13} />
-                  </a>
-                )}
+                {s.value}
+                {s.note && <small>{s.note}</small>}
               </dd>
             </div>
-          );
-        })}
-        <div>
-          <dt>首发上市</dt>
-          <dd>
-            {product.releaseDate}
-            <a
-              href={product.referenceSources.find((s) => s.id === 'launch')?.url}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="上市日期来源"
-            >
-              <ExternalLink size={13} />
-            </a>
-          </dd>
-        </div>
-      </dl>
-      <details className="sources-detail">
-        <summary>查看官方资料与核实记录</summary>
-        {product.referenceSources.map((s) => (
-          <p key={s.id}>
-            <a href={s.url} target="_blank" rel="noreferrer">
-              {s.title} ↗
-            </a>
-            <span className="caption">核实日期：{s.verifiedAt}</span>
-          </p>
-        ))}
-      </details>
+          ))}
+        </dl>
+        <button
+          className="spec-expand"
+          aria-expanded={expanded}
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? '收起参数' : '查看全部参数'}
+          {expanded ? <Minus size={18} /> : <Plus size={18} />}
+        </button>
+        <p className="spec-note">
+          数据核查：{product.referenceSources[0].verifiedAt} ·
+          配置、测试条件与地区差异请以官方资料为准。
+        </p>
+      </div>
     </section>
   );
 }

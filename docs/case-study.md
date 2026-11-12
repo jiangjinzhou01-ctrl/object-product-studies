@@ -1,41 +1,53 @@
-# OBJECT — independent design and engineering case study
+# OBJECT — Edition 02 Case Study
 
-## Goal and positioning
+## 目标与独立性
 
-Build a complete, inspectable portfolio experience around real consumer technology. The project demonstrates an original editorial system, structured fact handling, purposeful interaction and reliable responsive implementation. It does not imply Apple employment, client work, affiliation or endorsement.
+做一本可交互的消费科技产品观察手册，同时展示视觉系统、事实组织、复杂交互和完整工程交付能力。它是一项独立作品集研究，并非 Apple 商业委托或授权官网。页面使用 OBJECT 名称与原创方形标记，并提供中英文独立声明。
 
-## Visual research and system
+## 重写范围与设计定位
 
-Product-first editorial design combines Swiss grid principles and magazine pacing. Warm paper, near-black technical chapters and a restrained orange index unify the site. An independent wordmark and large Inter typography establish identity. Chinese uses a modern system sans fallback. The desktop hero uses a twelve-column grid, with responsive spacing and distinct page compositions.
+Edition 02 重写全部页面构图、全局样式、导航、产品故事和比较体验，复用经过验证的 React / TypeScript / Vite 工具链及 GitHub Pages 发布基础。旧版保留在 Git 历史，不作为本版质量证据。
 
-Real photographs govern layout decisions. Documentary retail photos are not disguised as studio renders. Hardware is neither generated nor recolored. Photography scarcity led to documented whole-model changes: MacBook Pro M5 and Air M4 replace requested M6 and M5 Air studies.
+视觉以纸白、墨色与克制的森林绿构成。产品本身的酒红色、薰衣草色和屏幕画面承担局部色彩；没有额外的科技光效或背景渐变。Inter 使用开源许可，中文依赖现代系统字体。页面以不同列比例、水平边界与统一间距组织信息，而非重复卡片。
 
-## Information architecture
+首页的黑色封面建立第一印象，之后通过产品索引、设计论述、Mac 横幅、探索器和文章改变阅读节奏。iPhone 采用深色形体与影像叙事；Mac 采用浅色工程引言、尺寸标注、专业应用场景与深色屏幕章节。分类页围绕型号关系展开，比较页围绕实际选择展开。
 
-Discovery begins at the homepage. Collection pages explain product relationships, product stories examine one object, and the compare desk supports a concrete selection task. Two editorial notes explain material and display context. Case Study and Credits expose the design decisions, facts and rights underlying the experience.
+## 研究与信息架构
 
-## Interaction and architecture
+五个型号：iPhone 18 Pro、iPhone 17、14 英寸 MacBook Pro M6、13 / 15 英寸 MacBook Air M5。来源优先为官方技术规格与 Newsroom。每项规格关联 sourceId，来源保留 URL、核查日期；不展示未经确认的价格、性能倍率或 Air 刷新率。
 
-React 19, strict TypeScript, Vite, React Router, Lucide and CSS tokens. Page modules load by route. Shared products use a discriminated phone/Mac union, while source-aware specification rows and independent media records support comparison and visible provenance.
+信息层次为首页发现 → 系列理解 → 产品故事 → 比较决策；两篇原创设计观察与来源页提供进一步阅读。技术事实与原创描述分开，官方样张明确标注提供方与测试边界。
 
-Phone storytelling uses IntersectionObserver to coordinate sticky photography with three real content chapters. The Mac story uses task tabs, a display composition, configuration context and an interface index. No fake rotation, charts or unverified benchmark claims are used.
+素材以对应型号的 Apple 公开媒体为主，按用户指示使用并保留版权记录。不是开放许可图库，也不将非商用视为自动许可。合照中存在 Pro Max 时明确注明；Air 尺寸未指明的新闻稿场景图只用于系列叙事，精确型号使用对应技术支持图。研究明细见 product-research.md 与 asset-register.md。
 
-The compare desk maintains category, two model slots and the differences filter in the URL. It supports empty states, replacing and clearing selections, reset, sharing with a clipboard fallback, and invalid/cross-category URL sanitation. Navigation uses a native modal dialog with explicit focus cycling, Escape and body scroll locking. Tabs support arrows and Home/End.
+## 核心交互
 
-## Responsive and performance strategy
+- **滚动叙事**：IntersectionObserver 追踪三个真实内容章节，CSS Sticky 保留关联图像；移动端压缩视觉高度，为下方文字留出阅读区。未使用连续帧或假旋转。
+- **图集**：手动前后切换与直接选择真实图像，显示当前索引与字幕，预加载相邻图像，固定画框以避免高度跳动。配色只有真实合照，未创建虚构颜色切换。
+- **Mac 工作流**：动态影像、视觉设计、开发构建切换对应应用场景、说明与真实设备图。接口标签展示 Thunderbolt 4、HDMI、SDXC 和充电音频用途。
+- **比较桌**：同类别两个槽位，支持选择、替换、交换、清空、恢复、重置与只看差异。URL 是可分享状态来源；无效和跨类别型号被清理，重复型号不会占据两个槽位。未知值不视为可确认差异。复制权限不可用时提供可选中的链接。
+- **导航与键盘**：原生 dialog 配合焦点循环、Escape、返回触发器及滚动锁定。所有标签组可用方向键、Home / End，页面具有跳转主内容入口。
 
-Mobile reorders the homepage and product features, replaces the Mac workflow sidebar with three touch tabs, and uses a smaller sticky photography stage. Compare scrolls inside a labeled region while the page avoids horizontal overflow. Core controls remain available without hover. Reduced motion disables nonessential animation.
+## 工程结构
 
-The photograph pipeline corrects EXIF direction and creates three WebP sizes; image dimensions reserve space. Above-fold images load eagerly with high priority, later images lazily. Only needed Latin variable font data is locally hosted; Chinese uses installed system fonts. Original full-resolution photography is kept outside `public/` and not deployed.
+使用判别联合区分手机与 Mac，产品、规格、来源、媒体记录与页面职责分开。共享组件只承载有复用价值的导航、图片、规格和编辑元素。首页直接加载，其他页面按路由拆分。图片原始宽高来自实际文件，响应式候选不能伪造尺寸。
 
-## Engineering difficulties and validation
+HashRouter 为 Pages 静态部署保留刷新能力；所有资产通过 Vite BASE_URL 解析。main 提交触发 Actions，检查与浏览器测试成功后才上传和部署构建产物。
 
-The main constraints were exact-model photography permissions, photographs with source-disclosed generative edits, EXIF direction, hash-compatible in-page links, keyboard focus cycling, and readable secondary typography. Browser tests exposed and drove fixes for contrast and ARIA naming. See [actual QA results](qa-results.md); do not treat design targets as measured scores.
+## 响应式与动效
 
-## Next iterations
+桌面通过并置、留白和局部 Sticky 建立产品与说明关系；移动端重排首屏、将探索型号改为横向选择、缩短 Sticky 视觉，保留所有操作。比较表在独立区域横向滚动，页面本身不横向溢出。七个检查宽度为 360、390、430、768、1024、1440、1920。
 
-Commission original multi-angle photography, obtain exact newer-model photographs with explicit permission, test Safari and real mobile hardware, and conduct task-based user studies. Expand configurations only when reliable source data and usable imagery are available.
+动效只用于图像状态、少量章节进入和交互反馈，核心阅读不依赖动画。没有频繁全局 scroll 事件。系统减少动态效果偏好关闭 CSS 与进入动画。
 
-Independent product experience concept. Unofficial design and engineering portfolio project. Not affiliated with or endorsed by Apple Inc.
+## 性能与质量过程
 
-独立产品体验概念作品，仅用于个人设计与工程作品集展示，与 Apple Inc. 无隶属、赞助或认可关系。
+20 项原始图像生成 75 项本地 WebP，按实际尺寸设置 srcset / sizes。首屏优先加载，其他资源懒加载；相邻图集图像预加载，图片与画框预留比例。本版移除旧型号图片，字体仅打包所用的 Latin Inter 可变字重文件。
+
+测试覆盖真实 Chromium 页面、图片解码和请求、比较与恢复、图集、工作流、接口、移动导航、键盘、减少动效、七种视口及 axe 规则。实际验收修正了浅底小字对比度、无障碍语义和移动 Sticky 留白。截图作为人工视觉复核证据，不宣称像素基线回归测试。测试与 Lighthouse 的实际结果见 qa-results.md。
+
+## 边界与迭代
+
+当前 QA 是桌面 Chromium 与移动视口模拟，未执行真实手机、Safari / Firefox 或屏幕阅读器实机测试。Lighthouse 为本地生产构建的合成测量，不能代表所有访客的网络与硬件。媒体的版权与授权边界仍按来源条款处理。
+
+后续顺序：真实设备与辅助技术验证；小样本使用测试；取得更完整的独立摄影或明确授权素材；根据真实反馈优化章节长度和比较说明。保持可核查事实与可用交互优先。

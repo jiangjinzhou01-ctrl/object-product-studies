@@ -1,9 +1,9 @@
 import { lazy, Suspense, useEffect, useRef } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { useReveal } from '../hooks/useReveal';
-const Home = lazy(() => import('../pages/Home'));
+import Home from '../pages/Home';
 const PhoneStory = lazy(() => import('../pages/PhoneStory'));
 const MacStory = lazy(() => import('../pages/MacStory'));
 const Collection = lazy(() => import('../pages/Collection'));
@@ -17,7 +17,7 @@ const titles: Record<string, string> = {
   '/iphone': 'iPhone Collection',
   '/mac': 'Mac Collection',
   '/iphone/iphone-18-pro': 'iPhone 18 Pro',
-  '/mac/macbook-pro-m5': 'MacBook Pro M5',
+  '/mac/macbook-pro-m6': 'MacBook Pro M6',
   '/compare': '产品比较',
   '/about': '项目 Case Study',
   '/credits': '素材与事实来源',
@@ -63,7 +63,8 @@ function AppContent() {
             <Route path="/iphone" element={<Collection family="iphone" />} />
             <Route path="/mac" element={<Collection family="mac" />} />
             <Route path="/iphone/iphone-18-pro" element={<PhoneStory />} />
-            <Route path="/mac/macbook-pro-m5" element={<MacStory />} />
+            <Route path="/mac/macbook-pro-m6" element={<MacStory />} />
+            <Route path="/mac/macbook-pro-m5" element={<Navigate to="/mac" replace />} />
             <Route path="/compare" element={<Compare />} />
             <Route path="/about" element={<About />} />
             <Route path="/credits" element={<Credits />} />

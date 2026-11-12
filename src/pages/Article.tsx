@@ -1,44 +1,56 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowUpRight, ArrowLeft } from 'lucide-react';
 import { stories } from '../data/stories';
 import { Media } from '../components/Media';
-import { Eyebrow, ArrowLink } from '../components/UI';
+import { Eyebrow } from '../components/UI';
 import NotFound from './NotFound';
 export default function Article() {
-  const { slug } = useParams();
-  const story = stories.find((s) => s.slug === slug);
+  const { slug } = useParams(),
+    story = stories.find((s) => s.slug === slug);
   if (!story) return <NotFound />;
+  const next = stories.find((s) => s.slug !== slug)!;
   return (
     <article className="article-page">
-      <div className="wrap article-heading">
+      <header className="article-heading wrap">
         <Link className="text-link" to="/">
-          ← 返回研究首页
+          <ArrowLeft size={16} />
+          回到 OBJECT
         </Link>
         <Eyebrow>
           {story.category} / {story.readTime}
         </Eyebrow>
         <h1>{story.title}</h1>
         <p>{story.teaser}</p>
-        <span className="mono">OBJECT EDITORIAL · 2026.11.09</span>
+        <div className="article-byline">
+          <span>OBJECT EDITORIAL</span>
+          <span>独立设计观察 · 2026</span>
+        </div>
+      </header>
+      <div className="article-image wrap">
+        <Media id={story.media} priority sizes="90vw" />
       </div>
-      <Media id={story.media} className="article-cover" priority credit />
       <div className="article-body">
         <p className="article-lead">{story.intro}</p>
         {story.sections.map((s, i) => (
           <section key={s.title}>
-            <span className="mono">0{i + 1}</span>
+            <span className="overline">0{i + 1}</span>
             <h2>{s.title}</h2>
             <p>{s.body}</p>
           </section>
         ))}
-        <div className="editorial-note">
-          <p>本文为 OBJECT 原创设计观察，并非 Apple 官方宣传文案。技术事实核实于 2026-11-09。</p>
-          <a href={story.source} target="_blank" rel="noreferrer">
-            阅读 Apple 技术来源 ↗
+        <aside>
+          <span className="overline">REFERENCE</span>
+          <p>本文为独立编辑观察。涉及的技术事实可在官方资料中核查。</p>
+          <a href={story.source} target="_blank" rel="noreferrer" className="text-link">
+            查看官方技术资料
+            <ArrowUpRight size={16} />
           </a>
-        </div>
-        <ArrowLink to="/iphone/iphone-18-pro" solid>
-          继续探索 iPhone 18 Pro
-        </ArrowLink>
+        </aside>
+        <Link className="next-article" to={'/journal/' + next.slug}>
+          <span className="overline">NEXT READING</span>
+          <strong>{next.title}</strong>
+          <ArrowUpRight />
+        </Link>
       </div>
     </article>
   );

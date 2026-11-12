@@ -1,19 +1,16 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 const links = [
   ['/iphone', 'iPhone'],
   ['/mac', 'Mac'],
-  ['/compare', '比较'],
-  ['/about', '关于研究'],
+  ['/journal/the-language-of-material', '设计观察'],
+  ['/about', '关于 OBJECT'],
 ] as const;
 export default function Navigation() {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<HTMLButtonElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null),
+    trigger = useRef<HTMLButtonElement>(null);
   const location = useLocation();
-  const close = () => {
-    dialog.current?.close();
-  };
   useEffect(() => {
     dialog.current?.close();
   }, [location.pathname, location.search]);
@@ -44,28 +41,24 @@ export default function Navigation() {
       </a>
       <header className="site-header">
         <div className="header-inner">
-          <Link className="wordmark" to="/" aria-label="OBJECT 首页">
+          <Link to="/" className="wordmark" aria-label="OBJECT 首页">
             OBJECT
-            <span className="brand-square" />
+            <span className="brand-mark" aria-hidden="true" />
           </Link>
-          <span className="header-caption">
-            PRODUCT STUDIES
-            <br />
-            <span>独立产品体验研究</span>
-          </span>
           <nav className="desktop-nav" aria-label="主导航">
-            {links.map(([path, label]) => (
-              <NavLink key={path} to={path}>
+            {links.map(([to, label]) => (
+              <NavLink key={to} to={to}>
                 {label}
               </NavLink>
             ))}
           </nav>
-          <Link className="edition" to="/about">
-            VOL. 01 <ArrowUpRight size={13} />
+          <Link className="nav-compare" to="/compare">
+            产品比较
+            <ArrowUpRight size={15} />
           </Link>
           <button
-            className="icon-button menu-trigger"
             ref={trigger}
+            className="icon-button menu-trigger"
             aria-label="打开导航"
             aria-haspopup="dialog"
             onClick={() => {
@@ -73,7 +66,7 @@ export default function Navigation() {
               document.body.style.overflow = 'hidden';
             }}
           >
-            <Menu size={23} />
+            <Menu />
           </button>
         </div>
       </header>
@@ -83,11 +76,9 @@ export default function Navigation() {
         aria-labelledby="menu-title"
         onKeyDown={(e) => {
           if (e.key !== 'Tab') return;
-          const items = Array.from(
-            e.currentTarget.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]'),
-          );
+          const items = Array.from(e.currentTarget.querySelectorAll<HTMLElement>('button,a[href]'));
           const first = items[0],
-            last = items[items.length - 1];
+            last = items.at(-1);
           if (e.shiftKey && document.activeElement === first) {
             e.preventDefault();
             last?.focus();
@@ -97,36 +88,37 @@ export default function Navigation() {
           }
         }}
         onClick={(e) => {
-          if (e.target === dialog.current) close();
+          if (e.target === dialog.current) dialog.current?.close();
         }}
       >
         <div className="menu-head">
           <span id="menu-title" className="wordmark">
             OBJECT
-            <span className="brand-square" />
+            <span className="brand-mark" />
           </span>
-          <button className="icon-button" onClick={close} aria-label="关闭导航" autoFocus>
+          <button
+            className="icon-button"
+            aria-label="关闭导航"
+            autoFocus
+            onClick={() => dialog.current?.close()}
+          >
             <X />
           </button>
         </div>
-        <span className="mono menu-label">EXPLORE THE COLLECTION</span>
+        <p className="overline">EXPLORE / EDITION 02</p>
         <nav aria-label="移动导航">
-          <NavLink to="/" onClick={close}>
-            <span>00</span>首页
-            <ArrowUpRight />
-          </NavLink>
-          {links.map(([path, label], i) => (
-            <NavLink key={path} to={path} onClick={close}>
-              <span>0{i + 1}</span>
+          {[['/', '首页'], ...links, ['/compare', '产品比较']].map(([to, label], i) => (
+            <NavLink key={to} to={to} onClick={() => dialog.current?.close()}>
+              <span>0{i}</span>
               {label}
               <ArrowUpRight />
             </NavLink>
           ))}
         </nav>
-        <p className="menu-disclaimer">
-          独立产品体验概念作品
+        <p className="menu-note">
+          对产品的观察，对日常的好奇。
           <br />
-          Not affiliated with Apple Inc.
+          Independent design & engineering study.
         </p>
       </dialog>
     </>

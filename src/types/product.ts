@@ -40,7 +40,7 @@ export interface PhoneProduct extends ProductBase {
 }
 export interface MacProduct extends ProductBase {
   family: 'mac';
-  cooling: 'active' | 'passive';
+  cooling?: 'active' | 'passive';
   chip: string;
   screenSize: 13 | 14 | 15;
 }
@@ -58,6 +58,8 @@ export interface MediaAsset {
   licenseUrl: string;
   modifications: string;
   verifiedAt: string;
-  webDisplayAllowed: boolean;
+  webDisplayAllowed: boolean | null;
   attributionRequired: boolean;
+  usageNote: string;
+  variants: { width: number; height: number; file: string }[];
 }

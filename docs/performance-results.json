@@ -1,14 +1,15 @@
 {
-  "checkedAt": "2026-11-09",
-  "target": "http://127.0.0.1:4173/#/",
-  "scope": "Local production build, Chromium synthetic navigation; not a physical-device or live-hosting measurement",
+  "edition": "02",
+  "checkedAt": "2026-11-12",
+  "target": "http://127.0.0.1:4173/",
+  "scope": "Local production homepage; synthetic Chromium, not live hosting or physical-device measurement",
   "runs": {
     "desktop": {
-      "fetchTime": "2026-11-09T11:34:38.827Z",
+      "fetchTime": "2026-11-12T10:52:19.457Z",
       "lighthouseVersion": "13.6.0",
       "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
       "scores": {
-        "performance": 99,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 92
@@ -16,52 +17,32 @@
       "metrics": {
         "first-contentful-paint": {
           "displayValue": "0.2 s",
-          "numericValue": 206.58999999999997
+          "numericValue": 210.87670000000003
         },
         "largest-contentful-paint": {
-          "displayValue": "0.9 s",
-          "numericValue": 929.885
+          "displayValue": "0.5 s",
+          "numericValue": 545.095875
         },
         "speed-index": {
           "displayValue": "0.4 s",
-          "numericValue": 362.60667000007845
+          "numericValue": 436.992503600306
+        },
+        "cumulative-layout-shift": {
+          "displayValue": "0.001",
+          "numericValue": 0.0007053644097161599
         },
         "total-blocking-time": {
           "displayValue": "0 ms",
-          "numericValue": 0
-        },
-        "cumulative-layout-shift": {
-          "displayValue": "0",
-          "numericValue": 9.102128644477692e-6
-        }
-      },
-      "warnings": [],
-      "config": {
-        "formFactor": "desktop",
-        "throttlingMethod": "simulate",
-        "throttling": {
-          "rttMs": 40,
-          "throughputKbps": 10240,
-          "requestLatencyMs": 0,
-          "downloadThroughputKbps": 0,
-          "uploadThroughputKbps": 0,
-          "cpuSlowdownMultiplier": 1
-        },
-        "screenEmulation": {
-          "mobile": false,
-          "width": 1350,
-          "height": 940,
-          "deviceScaleFactor": 1,
-          "disabled": false
+          "numericValue": 1
         }
       }
     },
     "mobile": {
-      "fetchTime": "2026-11-09T11:35:31.817Z",
+      "fetchTime": "2026-11-12T10:52:52.941Z",
       "lighthouseVersion": "13.6.0",
       "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
       "scores": {
-        "performance": 83,
+        "performance": 97,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 92
@@ -69,43 +50,23 @@
       "metrics": {
         "first-contentful-paint": {
           "displayValue": "0.8 s",
-          "numericValue": 754.2501
+          "numericValue": 754.6342999999999
         },
         "largest-contentful-paint": {
-          "displayValue": "4.6 s",
-          "numericValue": 4581.37515
+          "displayValue": "2.4 s",
+          "numericValue": 2433.110025
         },
         "speed-index": {
-          "displayValue": "0.8 s",
-          "numericValue": 764.4392119996212
-        },
-        "total-blocking-time": {
-          "displayValue": "80 ms",
-          "numericValue": 80
+          "displayValue": "1.2 s",
+          "numericValue": 1231.8081105024762
         },
         "cumulative-layout-shift": {
-          "displayValue": "0",
-          "numericValue": 3.824564533445026e-5
-        }
-      },
-      "warnings": [],
-      "config": {
-        "formFactor": "mobile",
-        "throttlingMethod": "simulate",
-        "throttling": {
-          "rttMs": 150,
-          "throughputKbps": 1638.4,
-          "requestLatencyMs": 562.5,
-          "downloadThroughputKbps": 1474.5600000000002,
-          "uploadThroughputKbps": 675,
-          "cpuSlowdownMultiplier": 4
+          "displayValue": "0.001",
+          "numericValue": 0.0007465073368498397
         },
-        "screenEmulation": {
-          "mobile": true,
-          "width": 412,
-          "height": 823,
-          "deviceScaleFactor": 1.75,
-          "disabled": false
+        "total-blocking-time": {
+          "displayValue": "70 ms",
+          "numericValue": 74.5
         }
       }
     }

@@ -1,1222 +1,421 @@
 {
-  "config": {
-    "argv": [
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
-      "/workspace/object-product-studies/node_modules/.bin/playwright",
-      "test"
-    ],
-    "configFile": "/workspace/object-product-studies/playwright.config.ts",
-    "rootDir": "/workspace/object-product-studies/tests",
-    "failOnFlakyTests": false,
-    "forbidOnly": false,
-    "fullyParallel": true,
-    "globalSetup": null,
-    "globalTeardown": null,
-    "globalTimeout": 0,
-    "grep": {},
-    "grepInvert": null,
-    "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 3
-    },
-    "preserveOutput": "always",
-    "projects": [
-      {
-        "outputDir": "/workspace/object-product-studies/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "",
-        "name": "",
-        "testDir": "/workspace/object-product-studies/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      }
-    ],
-    "filteredProjects": [
-      {
-        "grep": {},
-        "grepInvert": null,
-        "outputDir": "/workspace/object-product-studies/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "name": "",
-        "testDir": "/workspace/object-product-studies/tests",
-        "snapshotDir": "/workspace/object-product-studies/tests",
-        "testIgnore": [],
-        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
-        "timeout": 30000,
-        "use": {
-          "baseURL": "http://127.0.0.1:4173",
-          "viewport": {
-            "width": 1440,
-            "height": 1000
-          },
-          "headless": true,
-          "launchOptions": {
-            "executablePath": "/usr/bin/chromium",
-            "args": [
-              "--no-sandbox",
-              "--disable-dev-shm-usage"
-            ]
-          },
-          "screenshot": "only-on-failure",
-          "trace": "retain-on-failure"
-        },
-        "dependencies": [],
-        "ignoreSnapshots": false,
-        "__projectId": ""
-      }
-    ],
-    "quiet": false,
-    "reporter": [
-      [
-        "list",
-        null
-      ],
-      [
-        "html",
-        {
-          "open": "never"
-        }
-      ],
-      [
-        "json",
-        {
-          "outputFile": "reports/playwright-results.json"
-        }
-      ]
-    ],
-    "reportSlowTests": {
-      "max": 5,
-      "threshold": 300000
-    },
-    "shard": null,
-    "tags": [],
-    "updateSnapshots": "default",
-    "updateSourceMethod": "patch",
-    "version": "1.65.0",
-    "workers": 3,
-    "webServer": {
-      "command": "npm run preview -- --port 4173",
-      "url": "http://127.0.0.1:4173",
-      "reuseExistingServer": true,
-      "timeout": 30000
-    }
-  },
-  "suites": [
-    {
-      "title": "experience.spec.ts",
-      "file": "experience.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "route / renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3928,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:06.590Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-4eb630e91ca3c9eb3d0b",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /iphone renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 3607,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:07.656Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-564c62fcbdd3c47d90b5",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /iphone/iphone-18-pro renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 3440,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:07.289Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-2526151ddf977fa124e4",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /mac renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 2966,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:11.446Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-4c5b5fd2d312b6d1fa1f",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /mac/macbook-pro-m5 renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3587,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:11.489Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-85c4faaeeadcfed4d5fa",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /compare renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 3571,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:13.045Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-1ddf98e29dd80cdf6146",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /about renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 2917,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:14.541Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-f38ea94e93ffb51b32b6",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /credits renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3858,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:15.157Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-5eaa12c6763c51d33fd8",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /journal/the-language-of-material renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 3194,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:16.760Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-f75884ef065c5be3f70b",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "route /journal/a-display-in-context renders and loads its visible photographs",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 3430,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:17.588Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-7b2061e86ed48a7eec46",
-          "file": "experience.spec.ts",
-          "line": 34,
-          "column": 3
-        },
-        {
-          "title": "comparison is editable, shareable, reloadable, clearable and category-safe",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 7908,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:19.088Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-9ffdd779551bd8201298",
-          "file": "experience.spec.ts",
-          "line": 68,
-          "column": 1
-        },
-        {
-          "title": "mobile navigation traps focus, closes with Escape, and navigates",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 4951,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:20.140Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-3e3018115fe40ab36336",
-          "file": "experience.spec.ts",
-          "line": 106,
-          "column": 1
-        },
-        {
-          "title": "product finish updates real photo, supports keyboard and preserves layout",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 3303,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:21.143Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-10bab32a6e60d26c2fe0",
-          "file": "experience.spec.ts",
-          "line": 130,
-          "column": 1
-        },
-        {
-          "title": "scroll narratives change with viewport position; workflow and ports respond",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 4969,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:24.500Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-48ec7411699a01cab69c",
-          "file": "experience.spec.ts",
-          "line": 148,
-          "column": 1
-        },
-        {
-          "title": "in-page links retain the route and reach their section",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 3958,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:25.169Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-d674205a82e1cda3fca1",
-          "file": "experience.spec.ts",
-          "line": 166,
-          "column": 1
-        },
-        {
-          "title": "responsive 360px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5773,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:27.061Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-7386ada86daf59384020",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "responsive 390px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 5681,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:29.196Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-eef5075a195092ac29d0",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "responsive 430px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 4937,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:29.495Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-60a6a053a63646fdc35e",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "responsive 768px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5758,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:32.879Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-2e03271205a9ed988893",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "responsive 1024px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 6351,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:34.544Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-52e127a807253aa28872",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "responsive 1440px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 9275,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:34.969Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-5d82df54065b0f3de77e",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "responsive 1920px: all main layouts avoid horizontal page overflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 6268,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:38.669Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-b70128bf4b1d50a69bf5",
-          "file": "experience.spec.ts",
-          "line": 178,
-          "column": 3
-        },
-        {
-          "title": "WCAG accessibility /",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 4586,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:40.963Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-1e2987a4cbcffe4c642d",
-          "file": "experience.spec.ts",
-          "line": 221,
-          "column": 3
-        },
-        {
-          "title": "WCAG accessibility /iphone/iphone-18-pro",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 5089,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:44.271Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-0d3613638a63040e0a2b",
-          "file": "experience.spec.ts",
-          "line": 221,
-          "column": 3
-        },
-        {
-          "title": "WCAG accessibility /mac/macbook-pro-m5",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5761,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:44.973Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-dc0db9c0831863b9241c",
-          "file": "experience.spec.ts",
-          "line": 221,
-          "column": 3
-        },
-        {
-          "title": "WCAG accessibility /compare",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 4490,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:45.600Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-aaecce9b6d50eef08789",
-          "file": "experience.spec.ts",
-          "line": 221,
-          "column": 3
-        },
-        {
-          "title": "WCAG accessibility /about",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 3815,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:49.381Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-5d19713d0e81d509dd82",
-          "file": "experience.spec.ts",
-          "line": 221,
-          "column": 3
-        },
-        {
-          "title": "WCAG accessibility /credits",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 4668,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:50.192Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-bc316fe2f640a98890a2",
-          "file": "experience.spec.ts",
-          "line": 221,
-          "column": 3
-        },
-        {
-          "title": "reduced motion and mobile comparison remain usable",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2760,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:50.772Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-35ce1898f51e1fd5002b",
-          "file": "experience.spec.ts",
-          "line": 237,
-          "column": 1
-        },
-        {
-          "title": "visual review captures all critical states",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 6059,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:53.251Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-b30323986b3b443aeeb5",
-          "file": "experience.spec.ts",
-          "line": 257,
-          "column": 1
-        },
-        {
-          "title": "explorer and workflow tabs support arrow keys and update content",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3675,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:53.674Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-bb33da82aae8e26cf26f",
-          "file": "experience.spec.ts",
-          "line": 314,
-          "column": 1
-        },
-        {
-          "title": "cold navigation reserves enough space to avoid layout shifts",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 2781,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-11-09T11:39:54.891Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "116f6b4a9defd92cdbb9-22b7f613af1dbb1c05f5",
-          "file": "experience.spec.ts",
-          "line": 331,
-          "column": 1
-        }
-      ]
-    }
-  ],
-  "errors": [],
+  "edition": "02",
+  "checkedAt": "2026-11-12",
   "stats": {
-    "startTime": "2026-11-09T11:39:05.598Z",
-    "duration": 53832.051999999996,
-    "expected": 32,
+    "startTime": "2026-11-12T10:49:52.367Z",
+    "duration": 56391.406,
+    "expected": 37,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
-  }
+  },
+  "tests": [
+    {
+      "title": "route / loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3806,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /iphone loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2994,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /iphone/iphone-18-pro loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3696,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /mac loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2598,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /mac/macbook-pro-m6 loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2634,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /compare loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2468,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /about loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2293,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /credits loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2540,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /journal/the-language-of-material loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2491,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "route /journal/a-display-in-context loads its complete content and images",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2458,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "comparison selects, swaps, shares, restores, clears and resets",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5572,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "Mac comparison is category safe and does not turn missing data into a difference",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3998,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "copy failure gives a usable manual sharing link",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2075,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "mobile navigation manages focus, scroll locking, Escape and routing",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4603,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "gallery switches genuine views with keyboard and stable image bounds",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3240,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "scroll narratives follow the reading position on desktop and mobile",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2885,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "workflow and connection tabs change useful content and support keyboard",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3573,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "explorer is keyboard operable and leads to the selected model",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4848,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "anchor links retain the route; technical details expand and collapse",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4463,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "unknown routes recover and edition-one Mac links remain valid",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2469,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 360px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5114,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 390px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5215,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 430px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5676,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 768px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5862,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 1024px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5728,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 1440px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5916,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive 1920px: complete layouts stay within the viewport",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6327,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "WCAG accessibility /",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4768,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "WCAG accessibility /iphone/iphone-18-pro",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4673,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "WCAG accessibility /mac/macbook-pro-m6",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3900,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "WCAG accessibility /compare",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4841,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "WCAG accessibility /about",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4096,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "WCAG accessibility /credits",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4443,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "mobile menu and comparison have no automated accessibility violations",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5768,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "reduced motion and mobile table keyboard scrolling remain usable",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2687,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "visual evidence captures both screen sizes and active interaction states",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7578,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "cold homepage load reserves media space",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1827,
+          "errors": []
+        }
+      ]
+    }
+  ]
 }

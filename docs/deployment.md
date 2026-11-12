@@ -1,31 +1,20 @@
-# GitHub Pages deployment
+# GitHub Pages 部署
 
-## Current publication state
+项目仓库：https://github.com/jiangjinzhou01-ctrl/object-product-studies
 
-The public repository [jiangjinzhou01-ctrl/object-product-studies](https://github.com/jiangjinzhou01-ctrl/object-product-studies) contains the project source on `main`. The live website is [jiangjinzhou01-ctrl.github.io/object-product-studies](https://jiangjinzhou01-ctrl.github.io/object-product-studies/).
+网站：https://jiangjinzhou01-ctrl.github.io/object-product-studies/
 
-On 2026-11-10 the owner enabled Pages once in repository Settings after the connected integration received HTTP 403 creating the Pages site. The `workflow_dispatch` run [42803732341](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/42803732341) then completed successfully: typecheck, lint, formatting, both builds, all 32 Playwright tests, Pages artifact upload and deployment. A production smoke check confirmed HTTP 200, loaded hero photography, working iPhone and compare routes, and mobile navigation at 390px. No same-origin requests failed and no browser JavaScript errors occurred.
+仓库与 Pages 在上一版已建立，本次重写继续发布到同一项目，不覆盖其他仓库。实际部署工作流编号与线上复核记录见 [QA 记录](qa-results.md)。
 
-## Ongoing deployments
+## 发布流程
 
-Push a commit to `main`, or use **Actions → Validate and deploy OBJECT → Run workflow**. The workflow runs the full validation suite, builds with the repository subpath, and publishes through GitHub Pages.
+推送 main，或在 Actions 中手动运行 Validate and deploy OBJECT。工作流依次执行 npm ci、严格类型检查、ESLint、Prettier、生产构建、Chromium 安装与 Playwright，随后重新以仓库子路径构建并部署。测试失败会阻止发布。
 
-The one-time Pages source setting is **Settings → Pages → Build and deployment → Source: GitHub Actions**. It is now configured. The workflow has `pages: write` and `id-token: write` permissions.
+Settings → Pages → Source 使用 GitHub Actions。工作流仅给予 contents: read、pages: write、id-token: write，使用 GitHub 官方 Pages artifact / deploy Actions。
 
-For a different empty repository, from this folder:
+VITE_BASE_PATH 根据 github.event.repository.name 生成，当前为 /object-product-studies/。VITE_SOURCE_REPOSITORY 使用实际仓库地址。HashRouter 让所有分享链接和刷新请求仍落在 index.html，不需要 404 重写服务。
 
-```bash
-git remote add origin https://github.com/YOUR_ACCOUNT/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-The current `origin` is the project repository above. If it changes, inspect it with `git remote -v` first; do not overwrite an unrelated destination.
-
-`.github/workflows/deploy.yml` validates, builds and runs browser tests before publication. It then builds with `VITE_BASE_PATH=/<actual-repository-name>/` and uploads `dist/`. Pages returns the final URL in the `deploy` job; the live URL above was confirmed by a successful run and an HTTP 200 check.
-
-HashRouter supports refresh and shareable selections without host rewrites. All media uses the Vite base. For a user-site repository (`YOUR_ACCOUNT.github.io`) use `VITE_BASE_PATH=/` in the workflow instead; repository project sites use the default name-based path.
-
-## Local production verification
+## 本地验证
 
 ```bash
 npm ci
@@ -36,4 +25,12 @@ npm run build
 npm run test:e2e
 ```
 
-On a fresh CI runner install Chromium with `npx playwright install --with-deps chromium`. The supplied workflow does so. Source WebP files are tracked, so the CI build requires no Commons access or credentials.
+没有本机 Chromium 时先执行 npx playwright install --with-deps chromium，并设置 CI=1。所有部署 WebP 与字体资源均在本地，不依赖浏览器向图片来源发起请求。
+
+## 仓库迁移
+
+若迁移至另一个仓库，先核实该仓库用途与权限，再修改 origin。工作流会自动读取新仓库名称。用户站点 YOUR_ACCOUNT.github.io 则应把 VITE_BASE_PATH 设为 /。更新页脚源代码地址与 README，验证实际子路径后再发布。
+
+## 回滚
+
+使用 Git revert 回退具体提交，再正常推送 main 触发完整验证与部署；不要 force push 覆盖历史。已有 Edition 01 内容仍保存在 Git 历史中。

@@ -1,234 +1,244 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, Check } from 'lucide-react';
-import { phones } from '../data/phones';
+import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
-import { mediaUrl } from '../data/media';
-import { Eyebrow, ArrowLink, CompareEntry } from '../components/UI';
+import { Eyebrow, ArrowLink, Metric, CompareEntry } from '../components/UI';
 import Specifications from '../components/Specifications';
+import { phones } from '../data/phones';
+import { mediaUrl } from '../data/media';
 import { useNarrative } from '../hooks/useNarrative';
-const product = phones[0];
 const chapters = [
   {
-    label: '01 / INDUSTRIAL DESIGN',
-    title: '每一次握持，\n都是设计的起点。',
-    body: '一体式铝金属机身，连接镜头平台与机身轮廓。把目光从屏幕移开，看材料如何共同构成一件随身物品。',
-    media: 'iphone-18-pro-black',
-    stat: 'Aluminum',
-    note: '铝金属一体式设计',
+    number: '01',
+    label: 'FORM',
+    title: '从轮廓，到触感。',
+    body: '铝金属一体式机身，将镜头区域与机身连接成一个完整的形体。轮廓的转折、光的落点，让一件熟悉的物品呈现新的表情。',
+    media: 'phone-pro-hero',
+    caption: '酒红色 iPhone 18 Pro 与 Pro Max 官方合照',
   },
   {
-    label: '02 / CAMERA SYSTEM',
-    title: '光，有了\n更多表达。',
-    body: '48MP Fusion 主摄引入可变光圈，从 ƒ/1.48 到 ƒ/4.0。摄影的选择，始于进光量与景深之间。超广角与长焦镜头，延伸取景的可能。',
-    media: 'iphone-18-pro-rear',
-    stat: '48MP',
-    note: '三枚 Fusion 后置相机',
+    number: '02',
+    label: 'PERSPECTIVE',
+    title: '让目光，多一层自由。',
+    body: '三枚 4800 万像素 Fusion 相机，从广阔风景到近处纹理，提供不同的观察方式。主摄的可变光圈，为进光与景深增加一份主动控制。',
+    media: 'phone-pro-landscape',
+    caption: 'Apple 发布的 iPhone 18 Pro 拍摄样张；画面效果受拍摄条件影响',
   },
   {
-    label: '03 / DISPLAY',
-    title: '让内容，\n自然发生。',
-    body: '6.3 英寸 Super Retina XDR OLED 显示屏，支持最高 120Hz 的 ProMotion 自适应刷新率。从阅读到滚动，每一次操作都与内容连贯相接。',
-    media: 'iphone-18-pro-glacier',
-    stat: '120Hz',
-    note: 'ProMotion 自适应刷新率上限',
+    number: '03',
+    label: 'FINISH',
+    title: '色彩，是另一种表达。',
+    body: '黑色、银色、冰川色与酒红色。相同的轮廓，因表面与光线，形成各自的气质。选一种与你的日常相处的颜色。',
+    media: 'phone-pro-finishes',
+    caption: '四款官方配色合照：Black / Silver / Glacier / Burgundy',
   },
 ];
+const gallery = [
+  { media: 'phone-pro-hero', label: '正面与背面', caption: '酒红色 iPhone 18 Pro 与 Pro Max 合照' },
+  { media: 'phone-pro-finishes', label: '四款配色', caption: 'iPhone 18 Pro 系列官方配色合照' },
+  { media: 'phone-pro-lowlight', label: '影像样张', caption: 'Apple 公布的低光样张，非本站拍摄' },
+];
 export default function PhoneStory() {
-  const { container, active } = useNarrative();
-  const [finish, setFinish] = useState(product.availableFinishes[0]);
-  const available = product.availableFinishes.filter((f) => f.mediaId);
-  const select = (f: typeof finish) => {
-    if (f.mediaId) {
-      const img = new Image();
-      img.src = mediaUrl(f.mediaId);
-      void img.decode().catch(() => {});
-    }
-    setFinish(f);
-  };
+  const product = phones[0],
+    { container, active } = useNarrative();
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const next = new Image();
+    next.src = mediaUrl(gallery[(slide + 1) % gallery.length].media);
+  }, [slide]);
   return (
     <>
-      <div className="product-subnav wrap">
+      <nav className="product-nav" aria-label="iPhone 18 Pro 章节">
         <Link to="/iphone">
-          iPhone / <strong>18 Pro</strong>
+          iPhone <span>/ 18 Pro</span>
         </Link>
         <div>
           <Link to="#design">设计</Link>
-          <Link to="#finishes">外观</Link>
+          <Link to="#camera">影像</Link>
+          <Link to="#gallery">图集</Link>
           <Link to="#specifications">技术规格</Link>
-          <Link to="/compare?type=iphone">比较 ↗</Link>
+          <Link className="mini-button" to="/compare">
+            比较
+            <ArrowUpRight size={13} />
+          </Link>
         </div>
-      </div>
-      <section className="phone-hero dark">
-        <div className="wrap phone-hero-grid">
-          <div>
-            <Eyebrow light>OBJECT STUDY 01 / 2026</Eyebrow>
-            <p className="product-name">iPhone 18 Pro</p>
+      </nav>
+      <section className="phone-intro">
+        <div className="wrap phone-intro-grid">
+          <div className="phone-intro-copy">
+            <Eyebrow light>STUDY 01 / IPHONE 18 PRO</Eyebrow>
             <h1>
-              Close to
+              让每一次注视，
               <br />
-              extraordinary<span>.</span>
+              <em>更有深度。</em>
             </h1>
-            <p className="hero-chinese">把目光，留给细节。</p>
-            <Link to="#design" className="scroll-cue">
-              向下探索 <ArrowDown size={16} />
+            <p>
+              光影之间，藏着新的视角。
+              <br />
+              一项关于 iPhone 18 Pro 的设计与影像观察。
+            </p>
+            <Link className="text-link light-link" to="#design">
+              从设计开始
+              <ArrowDown size={16} />
             </Link>
+            <span className="intro-note">APPLE PRODUCT STUDY / 2026</span>
           </div>
-          <Media id={product.heroMedia} priority className="phone-hero-media" credit />
-        </div>
-        <div className="wrap hero-baseline">
-          <span>一体式铝金属 / A20 Pro / 48MP Fusion</span>
-          <span className="mono">A STUDY IN EVERYDAY PRECISION</span>
+          <Media id="phone-pro-hero" priority className="phone-intro-photo" />
+          <span className="media-caption">iPhone 18 Pro 与 Pro Max / 官方产品图</span>
         </div>
       </section>
-      <section className="phone-intro wrap" data-reveal>
-        <span className="mono">FORM. FEELING. FUNCTION.</span>
-        <h2>
-          技术的进步，
-          <br />
-          最终回到手中的感受。
-        </h2>
-        <p>
-          我们从实物出发，观察 iPhone 18 Pro 的材质、影像与显示。这里的文字是 OBJECT
-          的独立编辑表达；硬件信息以 Apple 技术资料为依据。
-        </p>
+      <section className="metrics-row wrap" aria-label="iPhone 18 Pro 核心规格">
+        <Metric value="A20 Pro" label="核心，向前一步" />
+        <Metric value="48MP" label="三枚 Fusion 相机" />
+        <Metric value="6.3″" label="Super Retina XDR" note="按标准矩形测量，实际可视区域较小" />
+        <Metric value="120Hz" label="ProMotion 最高刷新率" />
       </section>
-      <div ref={container} id="design" className="narrative wrap">
+      <div ref={container} className="phone-narrative wrap" id="design">
         <div className="narrative-visual">
-          <div className="narrative-frames">
-            {chapters.map((c, i) => (
-              <Media key={c.media} id={c.media} className={active === i ? 'is-active' : ''} />
-            ))}
+          <div className={'narrative-stage ' + (active === 1 ? 'landscape-stage' : '')}>
+            <Media id={chapters[active].media} key={active} />
+            <span className="narrative-count">
+              0{active + 1}
+              <span> / 03</span>
+            </span>
           </div>
-          <div className="narrative-progress" aria-label={`当前章节 ${active + 1}，共 3 章`}>
+          <p className="media-caption">{chapters[active].caption}</p>
+          <div
+            className="narrative-progress"
+            role="progressbar"
+            aria-label="当前设计章节"
+            aria-valuemin={1}
+            aria-valuemax={3}
+            aria-valuenow={active + 1}
+          >
             {chapters.map((c, i) => (
-              <span key={c.label} className={active === i ? 'active' : ''}>
-                {String(i + 1).padStart(2, '0')}
-              </span>
+              <span key={c.number} className={active === i ? 'active' : ''} />
             ))}
-            <span>SCROLL TO OBSERVE ↓</span>
           </div>
         </div>
-        <div className="narrative-copy">
+        <div className="narrative-chapters">
           {chapters.map((c, i) => (
-            <section key={c.label} data-chapter={i} className={active === i ? 'active' : ''}>
-              <span className="mono">{c.label}</span>
+            <article key={c.number} data-chapter={i}>
+              <span className="overline">
+                {c.number} / {c.label}
+              </span>
               <h2>{c.title}</h2>
               <p>{c.body}</p>
-              <div className="chapter-stat">
-                {c.stat}
-                <span>{c.note}</span>
-              </div>
-              <a
-                className="source-inline"
-                href={product.referenceSources[0].url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Apple 技术来源 ↗
-              </a>
-            </section>
+              {i === 2 && (
+                <div className="finish-labels">
+                  {product.availableFinishes.map((f) => (
+                    <span key={f.name}>
+                      <i style={{ background: f.hex }} />
+                      {f.name}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </article>
           ))}
         </div>
       </div>
-      <section id="finishes" className="finish-section">
-        <div className="wrap finish-grid">
-          <div className="finish-image">
-            <Media key={finish.name} id={finish.mediaId!} credit />
-            <span className="finish-caption mono">
-              {finish.name.toUpperCase()} / REAL PHOTOGRAPH
-            </span>
-          </div>
-          <div>
-            <Eyebrow>MATERIAL & FINISH</Eyebrow>
-            <h2>
-              触感之外。
-              <br />
-              个性之内。
-            </h2>
+      <section className="camera-section" id="camera">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <Eyebrow light>LIGHT / IN YOUR HANDS</Eyebrow>
+              <h2>
+                看见光。
+                <br />
+                也掌握光。
+              </h2>
+            </div>
             <p>
-              四种官方外观：Black、Silver、Glacier、Burgundy。这里提供两种有对应实拍的外观观察。
-            </p>
-            <fieldset className="finish-options">
-              <legend>选择实拍外观</legend>
-              {available.map((f) => (
-                <label key={f.name} className={finish.name === f.name ? 'selected' : ''}>
-                  <input
-                    type="radio"
-                    name="finish"
-                    value={f.name}
-                    checked={finish.name === f.name}
-                    onChange={() => select(f)}
-                  />
-                  <span className="swatch" style={{ background: f.hex }}>
-                    {finish.name === f.name && <Check size={14} />}
-                  </span>
-                  {f.name}
-                </label>
-              ))}
-            </fieldset>
-            <p className="caption" role="status">
-              当前：{finish.name} · {finish.name === 'Glacier' ? '正面视角' : '背面视角'}
-              <br />
-              不同拍摄光线下，实物颜色可能存在差异。
+              从明亮的午后到城市的深夜。可变光圈提供对光的另一种控制，让创作从按下快门之前开始。
             </p>
           </div>
+          <div className="camera-layout">
+            <Media id="phone-pro-night" />
+            <div className="camera-notes">
+              <span className="overline">VARIABLE APERTURE</span>
+              <strong>
+                ƒ/1.48
+                <br />
+                <span>— ƒ/4.0</span>
+              </strong>
+              <p>四档主摄光圈可选。不同的进光量与景深，为同一个场景带来不同的表达。</p>
+              <a
+                href={product.referenceSources[1].url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-link light-link"
+              >
+                阅读相机技术来源
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </div>
+          <p className="media-caption">夜景样张由 Apple 发布。本站未对摄影性能进行独立测试。</p>
         </div>
       </section>
-      <section className="silicon-section dark">
-        <div className="wrap silicon-grid">
-          <div className="chip-object" aria-label="A20 Pro 芯片文字示意，非芯片照片">
-            <span className="mono">APPLE SILICON</span>
-            <strong>
-              A20<span>Pro</span>
-            </strong>
-            <span className="mono">CHIP ARCHITECTURE / TYPE STUDY</span>
+      <section className="gallery-section wrap" id="gallery">
+        <div className="section-head">
+          <div>
+            <span className="overline">TAKE ANOTHER LOOK</span>
+            <h2>换个视角，再看一次。</h2>
           </div>
-          <div data-reveal>
-            <Eyebrow light>PERFORMANCE IN CONTEXT</Eyebrow>
-            <h2>
-              看不见的性能。
-              <br />
-              感受得到的从容。
-            </h2>
-            <p>
-              A20 Pro 配备 6 核 CPU、7 核 GPU 与 Dual 16 核 Neural
-              Engine。性能应放在真实任务中理解，而非脱离使用条件的百分比。
-            </p>
-            <div className="inline-stats">
-              <div>
-                <strong>
-                  6<span>核</span>
-                </strong>
-                <span>CPU</span>
-              </div>
-              <div>
-                <strong>
-                  7<span>核</span>
-                </strong>
-                <span>GPU</span>
-              </div>
-            </div>
-            <a
-              className="source-inline"
-              href={product.referenceSources[0].url}
-              target="_blank"
-              rel="noreferrer"
+          <div className="gallery-controls">
+            <button
+              className="icon-button"
+              aria-label="上一张产品图"
+              onClick={() => setSlide((slide + gallery.length - 1) % gallery.length)}
             >
-              查看官方芯片资料 ↗
-            </a>
+              <ChevronLeft />
+            </button>
+            <span>
+              {slide + 1} / {gallery.length}
+            </span>
+            <button
+              className="icon-button"
+              aria-label="下一张产品图"
+              onClick={() => setSlide((slide + 1) % gallery.length)}
+            >
+              <ChevronRight />
+            </button>
           </div>
+        </div>
+        <div className="gallery-stage">
+          <Media key={slide} id={gallery[slide].media} sizes="(max-width:760px) 100vw, 85vw" />
+        </div>
+        <div className="gallery-foot">
+          <div className="gallery-tabs" role="group" aria-label="产品图集">
+            {gallery.map((g, i) => (
+              <button key={g.media} aria-pressed={slide === i} onClick={() => setSlide(i)}>
+                {g.label}
+              </button>
+            ))}
+          </div>
+          <p aria-live="polite">{gallery[slide].caption}</p>
+        </div>
+      </section>
+      <section className="chip-note wrap">
+        <div className="chip-type" aria-label="A20 Pro">
+          A20
+          <br />
+          <em>Pro.</em>
+        </div>
+        <div>
+          <Eyebrow>COMPUTE / CREATE / REPEAT</Eyebrow>
+          <h2>
+            好的性能，
+            <br />
+            让创作少一分等待。
+          </h2>
+          <p>
+            6 核 CPU 与 7 核
+            GPU，为图像处理、游戏与日常任务提供计算基础。性能的意义，在于你想做的事能够顺利发生。
+          </p>
+          <ArrowLink to="#specifications">查看硬件信息</ArrowLink>
         </div>
       </section>
       <Specifications product={product} />
       <CompareEntry />
-      <section className="next-study wrap">
-        <span className="mono">CONTINUE THE COLLECTION</span>
-        <h2>视线，从手掌延伸到桌面。</h2>
-        <ArrowLink to="/mac" solid>
-          探索 Mac 研究
-        </ArrowLink>
-      </section>
     </>
   );
 }

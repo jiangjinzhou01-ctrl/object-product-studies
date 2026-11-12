@@ -1,0 +1,1813 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-11-11",
+  "scope": "Bounded research for the OBJECT rebuild: exact official MacBook Pro 14-inch M6 and MacBook Air 13/15-inch M5 product facts and imagery. No application or product-data edits.",
+  "summary": {
+    "all_three_requested_models_confirmed": true,
+    "newsroom_original_images": 19,
+    "newsroom_web_image_versions": 19,
+    "exact_model_support_pngs": 3,
+    "recommended_newsroom_images": 8,
+    "replaces_prior_fallback_models": true,
+    "primary_finding": "Official model-specific press image downloads are available. The previous MacBook Pro with base M5 / MacBook Air with M4 fallback is unnecessary for factual model coverage when using these official assets.",
+    "rights_finding": "Not Creative Commons. Both official media ZIPs contain the same conditional personal/editorial non-commercial notice. No individualized Apple permission, unrestricted license or derivative permission has been obtained; separate Support PNG reuse rights remain unverified."
+  },
+  "products": [
+    {
+      "requested_product": "MacBook Pro 14-inch with M6",
+      "official_name": "MacBook Pro (14-inch, M6)",
+      "status": "confirmed_released",
+      "year_introduced": 2026,
+      "official_urls": {
+        "newsroom": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+        "technical_specs": "https://support.apple.com/en-us/148300",
+        "product": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/",
+        "product_specs": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/"
+      },
+      "identity_source_id": "pro-m6-support",
+      "checked_date": "2026-11-11",
+      "release": {
+        "source_id": "pro-m6-news",
+        "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+        "source_section": "Pricing and Availability",
+        "checked_date": "2026-11-11",
+        "announcement_date": "2026-10-27",
+        "preorder_date": "2026-10-28",
+        "availability_date": "2026-11-06",
+        "market": "US launch announcement; availability is market-dependent"
+      },
+      "specifications": {
+        "finishes": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Finish",
+          "checked_date": "2026-11-11",
+          "names": ["Space Black", "Silver"]
+        },
+        "chip": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Chip",
+          "checked_date": "2026-11-11",
+          "name": "Apple M6",
+          "cpu_cores": 12,
+          "cpu_core_breakdown": {
+            "super": 2,
+            "performance": 4,
+            "efficiency": 6
+          },
+          "gpu_cores": 12,
+          "neural_engine": "Dual 16-core Neural Engine",
+          "neural_accelerators": true,
+          "hardware_ray_tracing": true
+        },
+        "memory": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Memory",
+          "checked_date": "2026-11-11",
+          "unified_memory_gb": [16, 24, 32],
+          "memory_bandwidth_gb_per_second_by_memory_gb": {
+            "16": 153,
+            "24": 170,
+            "32": 170
+          },
+          "notes": "170 GB/s applies to 24 GB and 32 GB configurations; do not state it for every configuration."
+        },
+        "storage": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Storage",
+          "checked_date": "2026-11-11",
+          "ssd_tb": [1, 2, 4],
+          "starting_ssd_tb": 1,
+          "notes": "Formatted usable capacity is lower."
+        },
+        "display": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Display and footnotes 2–3",
+          "checked_date": "2026-11-11",
+          "name": "Liquid Retina XDR",
+          "diagonal_inches": 14.2,
+          "resolution_px": [3024, 1964],
+          "pixels_per_inch": 254,
+          "adaptive_refresh_max_hz": 120,
+          "refresh_brand": "ProMotion",
+          "hdr_sustained_full_screen_max_nits": 1000,
+          "hdr_peak_max_nits": 1600,
+          "outdoor_sdr_max_nits": 1000,
+          "minimum_nits": 1,
+          "contrast_ratio": "1000000:1",
+          "wide_color": "P3",
+          "true_tone": true,
+          "nano_texture_option": true,
+          "notes": [
+            "14.2 inches is the rectangular diagonal; rounded corners reduce viewable area.",
+            "Sustained 1000-nit XDR brightness is specified below 25 degrees C.",
+            "1600 nits is peak HDR, not ordinary full-screen SDR brightness."
+          ]
+        },
+        "battery": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Battery and Power; footnote 4",
+          "checked_date": "2026-11-11",
+          "video_streaming_up_to_hours": 24,
+          "wireless_web_up_to_hours": 16,
+          "capacity_wh": 72.4,
+          "usb_pd_minimum_recommended_w": 60,
+          "fast_charge_power_source_minimum_w": 96,
+          "conditions": "Apple September 2026 testing: preproduction M6, 12 CPU / 12 GPU, 32 GB memory, 1 TB SSD; 1080p Safari streaming over Wi-Fi, brightness eight clicks above minimum, keyboard backlight off. Runtime varies with workload, configuration and environment."
+        },
+        "ports": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Charging and Expansion",
+          "checked_date": "2026-11-11",
+          "thunderbolt_4_usb_c_count": 3,
+          "thunderbolt_4_max_gbps": 40,
+          "usb_4_max_gbps": 40,
+          "hdmi_count": 1,
+          "sdxc_count": 1,
+          "magsafe_3_count": 1,
+          "headphone_3_5_mm_count": 1,
+          "notes": "Base M6 uses Thunderbolt 4. Do not copy Thunderbolt 5 specifications from M5 Pro/Max models."
+        },
+        "external_displays": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "External Display Support",
+          "checked_date": "2026-11-11",
+          "maximum_external_displays": 2,
+          "built_in_display_simultaneous": true,
+          "two_display_modes": ["6K at 60 Hz", "4K at 165 Hz"],
+          "one_display_modes": ["8K at 60 Hz", "5K at 120 Hz", "4K at 240 Hz"],
+          "two_displays_over_single_thunderbolt_port": true
+        },
+        "wireless": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Wireless; footnote 5",
+          "checked_date": "2026-11-11",
+          "chip": "Apple N1",
+          "wifi": "Wi-Fi 7 (802.11be)",
+          "bluetooth": "6",
+          "thread": true,
+          "notes": "Wi-Fi 7 availability varies by country."
+        },
+        "camera": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Camera",
+          "checked_date": "2026-11-11",
+          "resolution_mp": 12,
+          "name": "Center Stage",
+          "desk_view": true,
+          "hd_video_recording": "1080p"
+        },
+        "audio": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Audio",
+          "checked_date": "2026-11-11",
+          "speakers": 6,
+          "force_cancelling_woofers": true,
+          "microphones": 3,
+          "spatial_audio": true
+        },
+        "dimensions": {
+          "source_id": "pro-m6-support",
+          "source_url": "https://support.apple.com/en-us/148300",
+          "source_section": "Size and Weight; footnote 7",
+          "checked_date": "2026-11-11",
+          "height_cm": 1.55,
+          "width_cm": 31.26,
+          "depth_cm": 22.12,
+          "weight_kg": 1.55,
+          "notes": "Weight varies by configuration and manufacturing process."
+        },
+        "industrial_design": {
+          "source_id": "pro-m6-news",
+          "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+          "source_section": "A Huge Upgrade with Even More Value",
+          "checked_date": "2026-11-11",
+          "enclosure_material": "aluminum",
+          "enclosure_recycled_aluminum_percent": 100,
+          "notes": "100% refers to aluminum in the enclosure, not the entire computer."
+        }
+      },
+      "do_not_conflate_with": [
+        "MacBook Pro with the M5 Pro or M5 Max chip",
+        "MacBook Pro with PROLED XDR Display: different product, with touch/OLED features not applicable to this base M6 study"
+      ],
+      "omitted_claims": [
+        "Performance uplift percentages and unverified benchmark scores",
+        "Touchscreen, OLED or Dynamic Island claims",
+        "Any guessed regional price or inventory"
+      ]
+    },
+    {
+      "requested_product": "MacBook Air 13-inch with M5",
+      "official_name": "MacBook Air (13-inch, M5)",
+      "status": "confirmed_released",
+      "year_introduced": 2026,
+      "official_urls": {
+        "newsroom": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+        "technical_specs": "https://support.apple.com/en-us/126320",
+        "product": "https://www.apple.com/macbook-air/",
+        "product_specs": "https://www.apple.com/macbook-air/specs/"
+      },
+      "identity_source_id": "air-13-m5-support",
+      "checked_date": "2026-11-11",
+      "release": {
+        "source_id": "air-m5-news",
+        "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+        "source_section": "Pricing and Availability",
+        "checked_date": "2026-11-11",
+        "announcement_date": "2026-03-03",
+        "preorder_date": "2026-03-04",
+        "availability_date": "2026-03-11",
+        "market": "US launch announcement; availability is market-dependent"
+      },
+      "specifications": {
+        "finishes": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Finish",
+          "checked_date": "2026-11-11",
+          "names": ["Sky Blue", "Silver", "Starlight", "Midnight"]
+        },
+        "chip": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Chip",
+          "checked_date": "2026-11-11",
+          "name": "Apple M5",
+          "cpu_cores": 10,
+          "cpu_core_breakdown": {
+            "super": 4,
+            "efficiency": 6
+          },
+          "gpu_core_options": [8, 10],
+          "neural_engine_cores": 16,
+          "memory_bandwidth_gb_per_second": 153,
+          "neural_accelerators": true,
+          "hardware_ray_tracing": true
+        },
+        "memory": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Memory",
+          "checked_date": "2026-11-11",
+          "starting_unified_memory_gb": 16,
+          "unified_memory_gb": [16, 24, 32]
+        },
+        "storage": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Storage",
+          "checked_date": "2026-11-11",
+          "ssd_gb": [512, 1000, 2000, 4000],
+          "starting_ssd_gb": 512,
+          "notes": "The larger options are marketed as 1 TB, 2 TB and 4 TB; formatted usable capacity is lower."
+        },
+        "display": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Display; footnote 2",
+          "checked_date": "2026-11-11",
+          "name": "Liquid Retina",
+          "technology": "LED-backlit IPS",
+          "diagonal_inches": 13.6,
+          "resolution_px": [2560, 1664],
+          "pixels_per_inch": 224,
+          "brightness_nits": 500,
+          "wide_color": "P3",
+          "true_tone": true,
+          "notes": "Diagonal is measured as a rectangle; rounded corners reduce viewable area. No numeric refresh rate is asserted because the inspected model-specific sheet does not state one."
+        },
+        "battery": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Battery and Power; footnote 3",
+          "checked_date": "2026-11-11",
+          "video_streaming_up_to_hours": 18,
+          "wireless_web_up_to_hours": 15,
+          "capacity_wh": 53.8,
+          "fast_charge_power_source_minimum_w": 70,
+          "us_in_box_adapter": "40W Dynamic Power Adapter with 60W Max",
+          "conditions": "Apple January 2026 testing: preproduction 13-inch 10 CPU / 8 GPU and 15-inch 10 CPU / 10 GPU, each 16 GB memory and 512 GB SSD; 1080p Safari streaming over Wi-Fi, brightness eight clicks above minimum, keyboard backlight off. Runtime and included power adapters vary by configuration/market."
+        },
+        "ports": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Charging and Expansion",
+          "checked_date": "2026-11-11",
+          "thunderbolt_4_usb_c_count": 2,
+          "thunderbolt_4_max_gbps": 40,
+          "usb_4_max_gbps": 40,
+          "magsafe_3_count": 1,
+          "headphone_3_5_mm_count": 1
+        },
+        "external_displays": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "External Display Support",
+          "checked_date": "2026-11-11",
+          "maximum_external_displays": 2,
+          "built_in_display_simultaneous": true,
+          "two_display_modes": ["6K at 60 Hz", "4K at 144 Hz"],
+          "one_display_modes": ["8K at 60 Hz", "5K at 120 Hz", "4K at 240 Hz"],
+          "two_displays_over_single_thunderbolt_port": true
+        },
+        "wireless": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Wireless; footnote 4",
+          "checked_date": "2026-11-11",
+          "chip": "Apple N1",
+          "wifi": "Wi-Fi 7 (802.11be)",
+          "bluetooth": "6",
+          "thread": true,
+          "notes": "Wi-Fi 7 availability varies by country and region."
+        },
+        "camera": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Camera",
+          "checked_date": "2026-11-11",
+          "resolution_mp": 12,
+          "name": "Center Stage",
+          "desk_view": true,
+          "hd_video_recording": "1080p"
+        },
+        "audio": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Audio",
+          "checked_date": "2026-11-11",
+          "speakers": 4,
+          "microphones": 3,
+          "spatial_audio": true
+        },
+        "dimensions": {
+          "source_id": "air-13-m5-support",
+          "source_url": "https://support.apple.com/en-us/126320",
+          "source_section": "Size and Weight; footnote 6",
+          "checked_date": "2026-11-11",
+          "height_cm": 1.13,
+          "width_cm": 30.41,
+          "depth_cm": 21.5,
+          "weight_kg": 1.23,
+          "notes": "Weight varies by configuration and manufacturing process."
+        },
+        "industrial_design": {
+          "source_id": "air-m5-news",
+          "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+          "source_section": "Tremendous Value for Upgraders; Environment",
+          "checked_date": "2026-11-11",
+          "fanless": true,
+          "enclosure_material": "aluminum",
+          "enclosure_recycled_aluminum_percent": 100,
+          "notes": "100% refers to aluminum in the enclosure, not the entire computer."
+        }
+      },
+      "omitted_claims": [
+        "Unspecified numeric display refresh rate",
+        "Performance percentages or invented benchmarks",
+        "Any guessed regional price or inventory"
+      ]
+    },
+    {
+      "requested_product": "MacBook Air 15-inch with M5",
+      "official_name": "MacBook Air (15-inch, M5)",
+      "status": "confirmed_released",
+      "year_introduced": 2026,
+      "official_urls": {
+        "newsroom": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+        "technical_specs": "https://support.apple.com/en-us/126321",
+        "product": "https://www.apple.com/macbook-air/",
+        "product_specs": "https://www.apple.com/macbook-air/specs/"
+      },
+      "identity_source_id": "air-15-m5-support",
+      "checked_date": "2026-11-11",
+      "release": {
+        "source_id": "air-m5-news",
+        "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+        "source_section": "Pricing and Availability",
+        "checked_date": "2026-11-11",
+        "announcement_date": "2026-03-03",
+        "preorder_date": "2026-03-04",
+        "availability_date": "2026-03-11",
+        "market": "US launch announcement; availability is market-dependent"
+      },
+      "specifications": {
+        "finishes": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Finish",
+          "checked_date": "2026-11-11",
+          "names": ["Sky Blue", "Silver", "Starlight", "Midnight"]
+        },
+        "chip": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Chip",
+          "checked_date": "2026-11-11",
+          "name": "Apple M5",
+          "cpu_cores": 10,
+          "cpu_core_breakdown": {
+            "super": 4,
+            "efficiency": 6
+          },
+          "gpu_core_options": [10],
+          "neural_engine_cores": 16,
+          "memory_bandwidth_gb_per_second": 153,
+          "neural_accelerators": true,
+          "hardware_ray_tracing": true
+        },
+        "memory": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Memory",
+          "checked_date": "2026-11-11",
+          "starting_unified_memory_gb": 16,
+          "unified_memory_gb": [16, 24, 32]
+        },
+        "storage": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Storage",
+          "checked_date": "2026-11-11",
+          "ssd_gb": [512, 1000, 2000, 4000],
+          "starting_ssd_gb": 512,
+          "notes": "The larger options are marketed as 1 TB, 2 TB and 4 TB; formatted usable capacity is lower."
+        },
+        "display": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Display; footnote 2",
+          "checked_date": "2026-11-11",
+          "name": "Liquid Retina",
+          "technology": "LED-backlit IPS",
+          "diagonal_inches": 15.3,
+          "resolution_px": [2880, 1864],
+          "pixels_per_inch": 224,
+          "brightness_nits": 500,
+          "wide_color": "P3",
+          "true_tone": true,
+          "notes": "Diagonal is measured as a rectangle; rounded corners reduce viewable area. No numeric refresh rate is asserted because the inspected model-specific sheet does not state one."
+        },
+        "battery": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Battery and Power; footnote 3",
+          "checked_date": "2026-11-11",
+          "video_streaming_up_to_hours": 18,
+          "wireless_web_up_to_hours": 15,
+          "capacity_wh": 66.5,
+          "fast_charge_power_source_minimum_w": 70,
+          "us_in_box_adapter": "40W Dynamic Power Adapter with 60W Max",
+          "conditions": "Apple January 2026 testing: preproduction 13-inch 10 CPU / 8 GPU and 15-inch 10 CPU / 10 GPU, each 16 GB memory and 512 GB SSD; 1080p Safari streaming over Wi-Fi, brightness eight clicks above minimum, keyboard backlight off. Runtime and included power adapters vary by configuration/market."
+        },
+        "ports": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Charging and Expansion",
+          "checked_date": "2026-11-11",
+          "thunderbolt_4_usb_c_count": 2,
+          "thunderbolt_4_max_gbps": 40,
+          "usb_4_max_gbps": 40,
+          "magsafe_3_count": 1,
+          "headphone_3_5_mm_count": 1
+        },
+        "external_displays": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "External Display Support",
+          "checked_date": "2026-11-11",
+          "maximum_external_displays": 2,
+          "built_in_display_simultaneous": true,
+          "two_display_modes": ["6K at 60 Hz", "4K at 144 Hz"],
+          "one_display_modes": ["8K at 60 Hz", "5K at 120 Hz", "4K at 240 Hz"],
+          "two_displays_over_single_thunderbolt_port": true
+        },
+        "wireless": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Wireless; footnote 4",
+          "checked_date": "2026-11-11",
+          "chip": "Apple N1",
+          "wifi": "Wi-Fi 7 (802.11be)",
+          "bluetooth": "6",
+          "thread": true,
+          "notes": "Wi-Fi 7 availability varies by country and region."
+        },
+        "camera": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Camera",
+          "checked_date": "2026-11-11",
+          "resolution_mp": 12,
+          "name": "Center Stage",
+          "desk_view": true,
+          "hd_video_recording": "1080p"
+        },
+        "audio": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Audio",
+          "checked_date": "2026-11-11",
+          "speakers": 6,
+          "microphones": 3,
+          "spatial_audio": true,
+          "force_cancelling_woofers": true
+        },
+        "dimensions": {
+          "source_id": "air-15-m5-support",
+          "source_url": "https://support.apple.com/en-us/126321",
+          "source_section": "Size and Weight; footnote 6",
+          "checked_date": "2026-11-11",
+          "height_cm": 1.15,
+          "width_cm": 34.04,
+          "depth_cm": 23.76,
+          "weight_kg": 1.51,
+          "notes": "Weight varies by configuration and manufacturing process."
+        },
+        "industrial_design": {
+          "source_id": "air-m5-news",
+          "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+          "source_section": "Tremendous Value for Upgraders; Environment",
+          "checked_date": "2026-11-11",
+          "fanless": true,
+          "enclosure_material": "aluminum",
+          "enclosure_recycled_aluminum_percent": 100,
+          "notes": "100% refers to aluminum in the enclosure, not the entire computer."
+        }
+      },
+      "omitted_claims": [
+        "Unspecified numeric display refresh rate",
+        "Performance percentages or invented benchmarks",
+        "Any guessed regional price or inventory"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "pro-m6-news",
+      "url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "final_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "status": 200,
+      "bytes": 239764,
+      "path": ".cache/rewrite-mac/pro-m6-news.html",
+      "content_type": "text/html;charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "9575201fbbaf10fb0f8be435a1dce31dd053cb1fc4c176f131b6d9e2cafffed7"
+    },
+    {
+      "id": "air-m5-news",
+      "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "final_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "status": 200,
+      "bytes": 233429,
+      "path": ".cache/rewrite-mac/air-m5-news.html",
+      "content_type": "text/html;charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "c567987474b44419789d2ee1b8f5659828bf6e8f93e56bf27dbb3a902b4d9948"
+    },
+    {
+      "id": "pro-tech",
+      "url": "https://www.apple.com/macbook-pro/specs/",
+      "final_url": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/",
+      "status": 200,
+      "bytes": 362265,
+      "path": ".cache/rewrite-mac/pro-tech.html",
+      "content_type": "text/html; charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "8ee6488913b0b909db682123c02bfcd3c8b20ed7dcff74f3d490655bbf9c9d3a"
+    },
+    {
+      "id": "air-tech",
+      "url": "https://www.apple.com/macbook-air/specs/",
+      "final_url": "https://www.apple.com/macbook-air/specs/",
+      "status": 200,
+      "bytes": 323458,
+      "path": ".cache/rewrite-mac/air-tech.html",
+      "content_type": "text/html; charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "f772273a5685ecfcee471361ee5ea0ae6b104d30d345c40593db1e2584a98e91"
+    },
+    {
+      "id": "pro-m6-support",
+      "url": "https://support.apple.com/en-us/148300",
+      "final_url": "https://support.apple.com/en-us/148300",
+      "status": 200,
+      "bytes": 191484,
+      "path": ".cache/rewrite-mac/pro-m6-support.html",
+      "content_type": "text/html;charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "74dd11577af3720ed984b348b65c02f9063b0498555c28badba74f0cc9b71508"
+    },
+    {
+      "id": "air-13-m5-support",
+      "url": "https://support.apple.com/en-us/126320",
+      "final_url": "https://support.apple.com/en-us/126320",
+      "status": 200,
+      "bytes": 193485,
+      "path": ".cache/rewrite-mac/air-13-m5-support.html",
+      "content_type": "text/html;charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "2ec93fb1fcdbe90caf891de0eef08f3dcb0759de13a608e10ab8137afd6a377d"
+    },
+    {
+      "id": "website-terms",
+      "url": "https://www.apple.com/legal/internet-services/terms/site.html",
+      "final_url": "https://www.apple.com/legal/internet-services/terms/site.html",
+      "status": 200,
+      "bytes": 124809,
+      "path": ".cache/rewrite-mac/website-terms.html",
+      "content_type": "text/html; charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "8a57d41f341e9765191ea5d617d14716620438791dbc87f753bbea3a5a0c7485"
+    },
+    {
+      "id": "copyright-guidelines",
+      "url": "https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html",
+      "final_url": "https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html",
+      "status": 200,
+      "bytes": 117848,
+      "path": ".cache/rewrite-mac/copyright-guidelines.html",
+      "content_type": "text/html; charset=utf-8",
+      "retry_after": null,
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "df9c31db8a01e269543c3913acf417679734f1032fae7b88b7f3ad5172f3edc8"
+    },
+    {
+      "id": "air-15-m5-support",
+      "url": "https://support.apple.com/en-us/126321",
+      "final_url": "https://support.apple.com/en-us/126321",
+      "status": 200,
+      "bytes": 192103,
+      "path": ".cache/rewrite-mac/air-15-m5-support.html",
+      "content_type": "text/html;charset=utf-8",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Direct HTTPS GET and reading the returned official page",
+      "snapshot_sha256": "d4bc7465c51d645e51e3d072a17c3870988595b3172f8c1c9acb48d0468f444e"
+    },
+    {
+      "id": "proled-distinction",
+      "url": "https://www.apple.com/macbook-pro/proled-xdr-display/",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "verified_by": "Web open; official page read",
+      "use": "Confirms the separate PROLED XDR product uses M5 Pro/M5 Max; its touch, OLED, Dynamic Island and Thunderbolt 5 claims must not be assigned to base M6."
+    }
+  ],
+  "media": [
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-hero-261027.jpg",
+      "selection": "pro-hero",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "Side profile of a partly open 14-inch M6 MacBook Pro, with cyan M6 lettering behind it.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-hero-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "original_size_bytes": 364444,
+      "original_sha256": "b71b1172a76f3f3e382b033708fc598ea8308bc8cb80fea2ab0f8159fbeba642",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-hero-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-hero-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-hero-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1103
+      },
+      "image_url_size_bytes": 108001,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-hero-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "A wide 16:9 official launch composition; preserves the entire laptop side profile."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-lifestyle-261027.jpg",
+      "selection": "optional-lifestyle",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "Two people use an M6 MacBook Pro during outdoor fieldwork.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-lifestyle-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 1564417,
+      "original_sha256": "bb55b421649a4b7e57c948973a326b1dc2acfe7db0bfd95a3131353b389ac852",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-lifestyle-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-lifestyle-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-lifestyle-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1307
+      },
+      "image_url_size_bytes": 524413,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-lifestyle-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-chip-261027.jpg",
+      "selection": "optional-chip-art",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "Apple M6 chip branding on a dark background.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-chip-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "original_size_bytes": 282226,
+      "original_sha256": "b2d4770277fce6857ecd81e7082afcd7540b42ffb82265cf360045cf57aaeb4f",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-chip-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-chip-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-chip-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1103
+      },
+      "image_url_size_bytes": 78544,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-chip-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": "Chip branding only; not a photograph of the physical chip or a standalone product hero."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027.jpg",
+      "selection": "pro-workflow-primary",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "A dark 14-inch M6 MacBook Pro displays an Adobe After Effects editing project.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 978702,
+      "original_sha256": "8ea31e3a8d0513ac85e34174a8fa55b51e7fef1ae87062b73efcfe63d70cad8b",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1307
+      },
+      "image_url_size_bytes": 324653,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "Complete front view on black; useful for a professional workflow section."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027.jpg",
+      "selection": "optional-workflow",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "The Pixelmator Pro editing interface appears on a 14-inch M6 MacBook Pro.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 732642,
+      "original_sha256": "b9fcca9aaff9f0d6458b8dbb8c6e229a35c8c1cc8ceceba79f83e0140101bed5",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1307
+      },
+      "image_url_size_bytes": 223037,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-Xcode-261027.jpg",
+      "selection": "pro-workflow-code",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "Xcode and an app preview on a dark 14-inch M6 MacBook Pro.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 854590,
+      "original_sha256": "db25ae80b8cc3eb512e539954e73ca318453c80656acc3fbeffb7cbab1d5dd41",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1307
+      },
+      "image_url_size_bytes": 278030,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "Complete front view on black; code workflow."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027.jpg",
+      "selection": "pro-display",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "Close-up of the M6 MacBook Pro screen showing a colorful portrait.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 1036793,
+      "original_sha256": "acdad061470aab1099b07fad8276d4f26249ee1486e76645ee946746d3e05d7c",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1307
+      },
+      "image_url_size_bytes": 321721,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "Native asset is already a display close-up, not a full-device photograph."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-connectivity-261027.jpg",
+      "selection": "pro-ports",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "source_id": "pro-m6-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact 14-inch M6 launch asset",
+      "alt": "Both sides of the M6 MacBook Pro show MagSafe, USB-C, audio, SDXC and HDMI ports.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 669658,
+      "original_sha256": "4cae7cdb1f89749778ad5b4ef1dc82102fd095d771f84bcc81955854e5911098",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "archive_member": "Media-of-Apple-MacBook-Pro-14-in-with-M6-261027/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1307
+      },
+      "image_url_size_bytes": 97155,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "Native composition shows both port arrays on white."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-hero-260303.jpg",
+      "selection": "air-workflow-primary",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A MacBook Air with M5 displays a magazine layout in Adobe Photoshop.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-hero-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 3081879,
+      "original_sha256": "303246941ded8e374247a5546098c66e116290e74a1f4e74a56249d41592e83d",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-hero-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-hero-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-hero-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 320840,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-hero-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "Complete front view. The article does not identify this image as specifically 13-inch or 15-inch."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-lifestyle-01-260303.jpg",
+      "selection": "optional-lifestyle",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A person places a MacBook Air into a backpack.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-lifestyle-01-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 4783607,
+      "original_sha256": "f80f43fad8b4dd44c6205d57846a8936166935dc8d478fabafb4717ee01d48d9",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-lifestyle-01-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-lifestyle-01-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-lifestyle-01-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 464520,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-lifestyle-01-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-lifestyle-02-260303.jpg",
+      "selection": "optional-lifestyle",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "Two people watch a television programme on a MacBook Air.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-lifestyle-02-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 5759628,
+      "original_sha256": "e1d4ad16ddbc979ad514fde1aa58c89d20ae29ced101b5646b7fe9cd9d09b760",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-lifestyle-02-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-lifestyle-02-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-lifestyle-02-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 673452,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-lifestyle-02-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-lifestyle-03-260303.jpg",
+      "selection": "optional-lifestyle",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A person works on a MacBook Air during a flight.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-lifestyle-03-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 3572008,
+      "original_sha256": "63f428d9b02791de3a6362d8c6e530cdea317b1c624c0e0bf434d4c356798a3b",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-lifestyle-03-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-lifestyle-03-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-lifestyle-03-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 319685,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-lifestyle-03-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-ChatGPT-260303.jpg",
+      "selection": "optional-ai-workflow",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A MacBook Air displays study flashcards in Msty Studio.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-ChatGPT-260303.jpg",
+      "original_dimensions": {
+        "width": 3626,
+        "height": 2900
+      },
+      "original_size_bytes": 1874343,
+      "original_sha256": "f2c5e82c51dac41c4ff84bf0140f2f344350eb96aa68cbff2e20ae7abe1332c9",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-ChatGPT-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-ChatGPT-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-ChatGPT-260303_inline.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1306,
+        "height": 1046
+      },
+      "image_url_size_bytes": 197020,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-ChatGPT-260303_inline.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": "The filename says ChatGPT; the article alt identifies Msty Studio. Do not label the visible application ChatGPT solely from the filename."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-Shapr3D-260303.jpg",
+      "selection": "optional-design-workflow",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A MacBook Air displays a pendant lamp design in Shapr3D.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-Shapr3D-260303.jpg",
+      "original_dimensions": {
+        "width": 3626,
+        "height": 2900
+      },
+      "original_size_bytes": 2143897,
+      "original_sha256": "74d3fcefd22c2f9b6afb60d7e3b293237020582140d0762b9f9664d80467c34c",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Shapr3D-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-Shapr3D-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Shapr3D-260303_inline.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1306,
+        "height": 1046
+      },
+      "image_url_size_bytes": 150242,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-Shapr3D-260303_inline.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-Pixelmator-Pro-and-Finder-with-Photos-260303.jpg",
+      "selection": "optional-workflow",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A MacBook Air displays Pixelmator Pro beside a Finder photo selection.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-Pixelmator-Pro-and-Finder-with-Photos-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 2847275,
+      "original_sha256": "8e1790d5f17fd186c79ad3bc955ac39c1c5886537ff53fbafada06e840d97c46",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Pixelmator-Pro-and-Finder-with-Photos-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-Pixelmator-Pro-and-Finder-with-Photos-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Pixelmator-Pro-and-Finder-with-Photos-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 402150,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-Pixelmator-Pro-and-Finder-with-Photos-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-Liquid-Retina-display-260303.jpg",
+      "selection": "optional-display",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A MacBook Air screen shows a cyclist against a brightly colored trailer.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-Liquid-Retina-display-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 3496060,
+      "original_sha256": "afb886da45cd9cac1456cd2a2300ff2a53f8f66e1f7b9300c2be4cec86565996",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Liquid-Retina-display-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-Liquid-Retina-display-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Liquid-Retina-display-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 479780,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-Liquid-Retina-display-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-Desk-View-260303.jpg",
+      "selection": "optional-camera",
+      "recommended": false,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "A MacBook Air displays a video call and a Desk View of handwritten mathematics.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-Desk-View-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 1991083,
+      "original_sha256": "889f1bb93c4fb215d614dc4d2b697c38611bfe1efec843f79e85b669c241dd1c",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Desk-View-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-Desk-View-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-Desk-View-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 236075,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-Desk-View-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": null
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-ports-260303.jpg",
+      "selection": "air-ports",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "M5 family confirmed by model-specific Newsroom page; size not specified for this image",
+      "alt": "Opposite sides of MacBook Air show MagSafe, two USB-C ports and the headphone jack.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-ports-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 1739382,
+      "original_sha256": "1ad8fa82d143712abc08aa0831b849d882efc62d6dea5536040e3487de9f94d6",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-ports-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-ports-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-ports-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 123773,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-ports-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": false,
+        "notes": "Useful for the M5 Air family; individual size is not explicitly identified."
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "Apple-MacBook-Air-13-inch-and-15-inch-260303.jpg",
+      "selection": "air-pair-primary",
+      "recommended": true,
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "source_id": "air-m5-news",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official press image; upstream production technique not asserted",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air with M5 (2026 family)",
+      "model_match": "exact 13-inch and 15-inch M5 models, both in one composition",
+      "alt": "Side profiles of the 13-inch M5 MacBook Air in Starlight and the 15-inch model in Sky Blue.",
+      "alt_authorship": "Researcher-written description based on official page and, where marked, visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-13-inch-and-15-inch-260303.jpg",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2560
+      },
+      "original_size_bytes": 310967,
+      "original_sha256": "ff540c5d1c1c767e952f7d421e4479ae9dd1be8b44eeaf43575dbbf4930bca37",
+      "original_format": "jpeg",
+      "original_has_alpha": false,
+      "original_download_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-13-inch-and-15-inch-260303.zip",
+      "original_download_type": "official individual ZIP link; URL observed on source page, individual ZIP not separately downloaded",
+      "downloaded_bundle_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "downloaded_bundle_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "archive_member": "Apple-MacBook-Air-13-inch-and-15-inch-260303.jpg",
+      "image_url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-13-inch-and-15-inch-260303_big.jpg.large_2x.jpg",
+      "image_url_status": 200,
+      "image_url_dimensions": {
+        "width": 1960,
+        "height": 1308
+      },
+      "image_url_size_bytes": 39421,
+      "local_web_image_path": ".cache/rewrite-mac/previews/Apple-MacBook-Air-13-inch-and-15-inch-260303_big.jpg.large_2x.jpg",
+      "rights_profile": "apple-newsroom-bundle-conditions",
+      "web_derivative_rights_note": "The verified bundle notice accompanies the original in the ZIP. A separate broader license for the article derivative was not found.",
+      "visual_inspection": {
+        "inspected": true,
+        "notes": "The Newsroom alt explicitly identifies both sizes and finishes: 13-inch Starlight at left; 15-inch Sky Blue at right."
+      },
+      "modifications_performed": [],
+      "explicit_size_and_finish_labels": [
+        {
+          "position": "left",
+          "model": "MacBook Air (13-inch, M5)",
+          "finish": "Starlight"
+        },
+        {
+          "position": "right",
+          "model": "MacBook Air (15-inch, M5)",
+          "finish": "Sky Blue"
+        }
+      ]
+    },
+    {
+      "filename": "macbook-pro-14-inch-m6.png",
+      "selection": "pro-lineup-support",
+      "recommended": false,
+      "candidate_note": "Exact-model transparent support image; useful reference/lineup option, but the Newsroom bundle notice does not cover this separate PNG. Rights for portfolio reuse unverified.",
+      "source_url": "https://support.apple.com/en-us/148300",
+      "source_id": "pro-m6-support",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official support product image",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Pro (14-inch, M6)",
+      "model_match": "exact model named in official support page title and image alt",
+      "alt": "Front view of the 14-inch M6 MacBook Pro, with silver and dark rear panels behind it.",
+      "alt_authorship": "Researcher-written after visual inspection",
+      "local_original_path": ".cache/rewrite-mac/pro-m6-support.png",
+      "original_dimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "original_size_bytes": 335495,
+      "original_sha256": "bcb877b326c24e8ee3a0e316bc91eb366bab7739a20fd9c4307f07d45724f68a",
+      "original_format": "png",
+      "original_has_alpha": true,
+      "image_url": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-pro-14-inch-m6.png",
+      "image_url_status": 200,
+      "rights_profile": "apple-support-rights-unverified",
+      "visual_inspection": {
+        "inspected": true
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "macbook-air-13-inch-m5.png",
+      "selection": "air-13-front-support",
+      "recommended": false,
+      "candidate_note": "Exact-model transparent support image; useful reference/lineup option, but the Newsroom bundle notice does not cover this separate PNG. Rights for portfolio reuse unverified.",
+      "source_url": "https://support.apple.com/en-us/126320",
+      "source_id": "air-13-m5-support",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official support product image",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air (13-inch, M5)",
+      "model_match": "exact model named in official support page title and image alt",
+      "alt": "Front view of the 13-inch M5 MacBook Air with a yellow patterned display.",
+      "alt_authorship": "Researcher-written after visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-13-m5-support.png",
+      "original_dimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "original_size_bytes": 522060,
+      "original_sha256": "46aa09c1875b86967f0e8c67783b309a156ab7345533b0485230b89195e6ef3c",
+      "original_format": "png",
+      "original_has_alpha": true,
+      "image_url": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-air-13-inch-m5.png",
+      "image_url_status": 200,
+      "rights_profile": "apple-support-rights-unverified",
+      "visual_inspection": {
+        "inspected": true
+      },
+      "modifications_performed": []
+    },
+    {
+      "filename": "macbook-air-15-inch-m5.png",
+      "selection": "air-15-front-support",
+      "recommended": false,
+      "candidate_note": "Exact-model transparent support image; useful reference/lineup option, but the Newsroom bundle notice does not cover this separate PNG. Rights for portfolio reuse unverified.",
+      "source_url": "https://support.apple.com/en-us/126321",
+      "source_id": "air-15-m5-support",
+      "checked_date": "2026-11-11",
+      "publisher": "Apple",
+      "individual_creator": null,
+      "copyright": "Apple Inc. and/or its licensors; not CC",
+      "media_type": "official support product image",
+      "assistant_generated": false,
+      "depicted_product": "MacBook Air (15-inch, M5)",
+      "model_match": "exact model named in official support page title and image alt",
+      "alt": "Front view of the 15-inch M5 MacBook Air with a yellow patterned display.",
+      "alt_authorship": "Researcher-written after visual inspection",
+      "local_original_path": ".cache/rewrite-mac/air-15-m5-support.png",
+      "original_dimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "original_size_bytes": 555209,
+      "original_sha256": "2e58756286b276e8aa5e7a7832cc2c8ba0cfe09e0bf4b56567663aebc64c8a67",
+      "original_format": "png",
+      "original_has_alpha": true,
+      "image_url": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-air-15-inch-m5.png",
+      "image_url_status": 200,
+      "rights_profile": "apple-support-rights-unverified",
+      "visual_inspection": {
+        "inspected": true
+      },
+      "modifications_performed": []
+    }
+  ],
+  "preferred_original_paths": {
+    "pro-hero": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-hero-261027.jpg",
+    "pro-workflow-primary": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027.jpg",
+    "pro-workflow-code": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027.jpg",
+    "pro-display": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027.jpg",
+    "pro-ports": ".cache/rewrite-mac/pro-m6-news/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027.jpg",
+    "air-workflow-primary": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-hero-260303.jpg",
+    "air-ports": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-ports-260303.jpg",
+    "air-pair-primary": ".cache/rewrite-mac/air-m5-news/Apple-MacBook-Air-13-inch-and-15-inch-260303.jpg",
+    "pro-lineup-support": ".cache/rewrite-mac/pro-m6-support.png",
+    "air-13-front-support": ".cache/rewrite-mac/air-13-m5-support.png",
+    "air-15-front-support": ".cache/rewrite-mac/air-15-m5-support.png"
+  },
+  "press_bundles": [
+    {
+      "source_id": "pro-m6-news",
+      "url": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip",
+      "http_status": 200,
+      "local_path": ".cache/rewrite-mac/pro-m6-news.zip",
+      "size_bytes": 5986188,
+      "sha256": "db1af3257840458fdc8d1ceb6b5415085c14d3ccb9739846c69f548aec296a07",
+      "zip_crc_valid": true,
+      "legal_notice_local_path": ".cache/rewrite-mac/pro-m6-news/LEGAL_NOTICE.rtf",
+      "legal_notice_sha256": "33e9b697e94518463c89e60dadbe450deca0df77fc5df323dbfa15f00485093d"
+    },
+    {
+      "source_id": "air-m5-news",
+      "url": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip",
+      "http_status": 200,
+      "local_path": ".cache/rewrite-mac/air-m5-news.zip",
+      "size_bytes": 30335329,
+      "sha256": "948fda2987b18d4d2090ce77a6ab35b4b73bf28746420783d7f510393c075c1e",
+      "zip_crc_valid": true,
+      "legal_notice_local_path": ".cache/rewrite-mac/air-m5-news/LEGAL_NOTICE.rtf",
+      "legal_notice_sha256": "33e9b697e94518463c89e60dadbe450deca0df77fc5df323dbfa15f00485093d"
+    }
+  ],
+  "rights_profiles": {
+    "apple-newsroom-bundle-conditions": {
+      "copyright": "Apple Inc. and/or its licensors",
+      "not_creative_commons": true,
+      "status": "Specific bundle conditions observed; not a broad or individualized license",
+      "terms_source": "LEGAL_NOTICE.rtf inside each official Newsroom media ZIP listed above",
+      "checked_date": "2026-11-11",
+      "conditions_summary": [
+        "Personal or editorial use, non-commercial.",
+        "The notice requires express Apple permission for alteration or modification in whole or part."
+      ],
+      "short_quote": "the use is personal or editorial and non-commercial",
+      "modification_permission_obtained": false,
+      "resizing_cropping_format_conversion_exception_found": false,
+      "attribution_requirement": "No particular credit wording was specified in the inspected notice.",
+      "suggested_credit": "Image: Apple / Apple Newsroom.",
+      "portfolio_use_note": "User authorized use in their independent personal portfolio. This records source terms, not legal approval or an Apple endorsement.",
+      "all_cached_originals_preserved_unmodified": true
+    },
+    "apple-support-rights-unverified": {
+      "copyright": "Apple Inc. and/or its licensors",
+      "not_creative_commons": true,
+      "status": "Portfolio republication rights unknown; no asset-specific license found",
+      "terms_urls": [
+        "https://www.apple.com/legal/internet-services/terms/site.html",
+        "https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html"
+      ],
+      "note": "Public availability and Apple attribution do not establish permission. The separate Newsroom ZIP notice is not transferred to these Support PNGs."
+    }
+  },
+  "rejected_sources_and_uses": [
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:MacBook_Pro_(14-inch,_M5,_Space_Black).jpg",
+      "status": "reject as M6 imagery",
+      "reason": "Existing project asset is a 14-inch MacBook Pro with base M5, a different generation.",
+      "evidence": "Existing docs/mac-research.json; not re-downloaded this session."
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:MacBook_Air_(15-inch,_M4,_Silver).jpg",
+      "status": "reject as M5 Air imagery",
+      "reason": "Existing project asset depicts M4, a different generation.",
+      "evidence": "Existing docs/mac-research.json; not re-downloaded this session."
+    },
+    {
+      "source_url": "https://www.apple.com/macbook-pro/proled-xdr-display/",
+      "status": "reject as base M6 product story asset/spec source",
+      "reason": "Separate M5 Pro/M5 Max model family; touch/OLED/Dynamic Island and Thunderbolt 5 are not base M6 facts."
+    },
+    {
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "status": "reject size-specific labels for unlabelled Air workflow/lifestyle images",
+      "reason": "Most image captions identify M5 Air but not the individual size. Only the pair explicitly identifies both sizes and finishes; separate Support PNG titles establish individual sizes."
+    },
+    {
+      "source_url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+      "filename": "Apple-MacBook-Pro-14-in-with-M6-chip-261027.jpg",
+      "status": "reject as hardware hero",
+      "reason": "This is chip branding artwork, not a complete laptop or verified physical chip photograph."
+    },
+    {
+      "source_url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+      "filename": "Apple-MacBook-Air-ChatGPT-260303.jpg",
+      "status": "reject filename-only app identification",
+      "reason": "The page identifies the depicted app as Msty Studio; the filename alone would mislabel it."
+    }
+  ],
+  "implementation_notes": [
+    "Use the cached ZIP originals when preserving original bytes and the accompanying notice; the downloaded article versions are already smaller Apple-provided images.",
+    "Every media record has separate original and web-image dimensions; do not assign the 3840px original dimensions to a 1960px article image.",
+    "Support PNGs are 1000x1000 with transparency and substantial whitespace; they are not suitable for an enlarged full-screen photograph.",
+    "No source proves a complete exact-size, exact-finish image set for every selectable color. Do not generate or recolor missing variants.",
+    "Manufacturing/production technique of Apple media is not established; describe it as official product imagery rather than independently captured photography.",
+    "No performance benchmark percentages are needed for the specification comparison. Battery hours remain qualified Apple test maxima."
+  ],
+  "verification": {
+    "official_html_pages_http_200": 9,
+    "press_bundle_downloads_http_200": 2,
+    "press_bundle_crc_passed": 2,
+    "web_image_downloads_http_200": 19,
+    "support_png_downloads_http_200": 3,
+    "image_decode": {
+      "checked_date": "2026-11-11",
+      "method": "Sharp full pixel decode with stats() on downloaded originals, web versions and support PNGs",
+      "images_checked": 41,
+      "passed": 41,
+      "errors": []
+    },
+    "visually_inspected_media_count": 10,
+    "ai_generation_used": false,
+    "access_bypass_used": false,
+    "application_files_changed_by_this_task": false,
+    "cache_root": ".cache/rewrite-mac",
+    "research_file": "docs/rewrite-mac-research.json",
+    "json_integrity": "Passed: JSON parsed; all 3 products reference verified source IDs; all 22 originals exist and SHA-256 values match; media names unique; 41 image variants fully decode."
+  }
+}

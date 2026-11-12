@@ -1,35 +1,22 @@
-import { sourceRepository } from '../data/site';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ArrowUp } from 'lucide-react';
+import { disclaimerEn, disclaimerZh } from '../data/site';
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="wrap footer-top">
-        <Link to="/" className="footer-logo">
-          OBJECT<span>/01</span>
-        </Link>
-        <p>
-          Objects of everyday.
-          <br />
-          Ideas beyond the ordinary.
-        </p>
-        <div className="footer-links">
-          <Link to="/about">
-            项目 Case Study <ArrowUpRight size={14} />
+    <footer className="footer">
+      <div className="wrap">
+        <div className="footer-top">
+          <Link className="wordmark" to="/">
+            OBJECT
+            <span className="brand-mark" />
           </Link>
-          <Link to="/credits">
-            素材与事实来源 <ArrowUpRight size={14} />
-          </Link>
-          {sourceRepository ? (
-            <a href={sourceRepository} target="_blank" rel="noreferrer">
-              GitHub 源代码 <ArrowUpRight size={14} />
-            </a>
-          ) : (
-            <Link to="/about#engineering">
-              工程与交互说明 <ArrowUpRight size={14} />
-            </Link>
-          )}
+          <p>
+            把目光留给设计，
+            <br />
+            把选择留给日常。
+          </p>
           <button
+            className="back-top"
             onClick={() =>
               window.scrollTo({
                 top: 0,
@@ -39,26 +26,44 @@ export default function Footer() {
               })
             }
           >
-            回到顶部 ↑
+            回到顶部
+            <ArrowUp size={17} />
           </button>
         </div>
-      </div>
-      <div className="wrap footer-bottom">
-        <div>
-          <p>
-            Independent product experience concept. Unofficial design and engineering portfolio
-            project. Not affiliated with or endorsed by Apple Inc.
-          </p>
-          <p>
-            独立产品体验概念作品，仅用于个人设计与工程作品集展示，与 Apple Inc.
-            无隶属、赞助或认可关系。
-          </p>
+        <div className="footer-nav">
+          <div>
+            <span className="overline">COLLECTION</span>
+            <Link to="/iphone">iPhone</Link>
+            <Link to="/mac">Mac</Link>
+            <Link to="/compare">产品比较</Link>
+          </div>
+          <div>
+            <span className="overline">PROJECT</span>
+            <Link to="/about">项目与设计</Link>
+            <Link to="/credits">影像与信息来源</Link>
+            <a
+              href={
+                import.meta.env.VITE_SOURCE_REPOSITORY ||
+                'https://github.com/jiangjinzhou01-ctrl/object-product-studies'
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
+              源代码
+              <ArrowUpRight size={13} />
+            </a>
+          </div>
+          <div className="footer-statement">
+            <span className="overline">AN INDEPENDENT PERSPECTIVE</span>
+            <p>{disclaimerZh}</p>
+            <p lang="en">{disclaimerEn}</p>
+          </div>
         </div>
-        <span className="mono">
-          © 2026 OBJECT
-          <br />
-          DESIGNED TO BE EXPLORED.
-        </span>
+        <div className="footer-bottom">
+          <span>© 2026 OBJECT — PRODUCT STUDIES</span>
+          <span>DESIGNED TO BE EXPLORED.</span>
+          <span>EDITION 02</span>
+        </div>
       </div>
     </footer>
   );

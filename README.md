@@ -1,112 +1,99 @@
-# OBJECT / Product Studies
+# OBJECT / Product Studies — Edition 02
 
-独立消费科技产品体验研究。以真实产品、开放许可摄影、编辑设计和可验证的前端工程构建的作品集项目。
+一个完整的独立消费科技产品体验作品集。以真实型号、可追溯的官方产品图、编辑式设计与可验证的前端交互，组织产品与日常使用之间的关系。
+
+[在线网站](https://jiangjinzhou01-ctrl.github.io/object-product-studies/) · [GitHub](https://github.com/jiangjinzhou01-ctrl/object-product-studies) · [Case Study](docs/case-study.md) · [测试记录](docs/qa-results.md)
 
 > Independent product experience concept. Unofficial design and engineering portfolio project. Not affiliated with or endorsed by Apple Inc.
 >
 > 独立产品体验概念作品，仅用于个人设计与工程作品集展示，与 Apple Inc. 无隶属、赞助或认可关系。
 
-## 运行
+## 本地运行
 
-Node.js 22.12+ 或 24 LTS，npm。
+使用 Node.js 24 LTS、npm：
 
 ```bash
 npm ci
 npm run dev
 ```
 
-打开终端打印的本地地址（默认 `http://localhost:5173`）。
+开发地址默认 http://localhost:5173。生产预览：
 
 ```bash
-npm run typecheck
-npm run lint
-npm run format:check
 npm run build
 npm run preview -- --port 4173
-npm run test:e2e
 ```
 
-本环境使用 `/usr/bin/chromium`。其他机器执行 `npx playwright install chromium` 后用 `CI=1 npm run test:e2e`，或者用 `CHROMIUM_PATH` 指向自己的 Chromium/Chrome。
+## 页面与交互
 
-## 页面与真实交互
+| 页面              | Hash 路由                           | 已实现                                                       |
+| ----------------- | ----------------------------------- | ------------------------------------------------------------ |
+| 首页              | /#/                                 | 深色产品封面、编辑式产品索引、交互探索器、设计观察、比较入口 |
+| iPhone 系列       | /#/iphone                           | iPhone 18 Pro 与 iPhone 17、型号锚点、选择建议               |
+| iPhone 18 Pro     | /#/iphone/iphone-18-pro             | 三章滚动叙事、相机样张、真实图集切换、展开规格               |
+| Mac 系列          | /#/mac                              | M6 MacBook Pro、13/15 英寸 M5 Air、用途与尺寸区别            |
+| MacBook Pro M6    | /#/mac/macbook-pro-m6               | 工作流键盘标签、XDR 章节、接口探索、规格                     |
+| 比较              | /#/compare                          | 同类双型号选择、交换、清空、重置、差异筛选、分享与 URL 恢复  |
+| 项目 / Case Study | /#/about                            | 原创视觉、信息结构、交互与工程策略                           |
+| 来源索引          | /#/credits                          | 产品事实、20 项图像、作者、版权与来源链接                    |
+| 设计观察          | /#/journal/the-language-of-material | 材料观察                                                     |
+| 设计观察          | /#/journal/a-display-in-context     | 显示指标与使用情境                                           |
 
-| 页面           | Hash 路由                             | 主要内容                                                  |
-| -------------- | ------------------------------------- | --------------------------------------------------------- |
-| 首页           | `/#/`                                 | 编辑式首屏、产品章节、产品探索器、技术观察、比较入口      |
-| iPhone 分类    | `/#/iphone`                           | iPhone 18 Pro 与 iPhone 17 的真实图片、系列差异与型号导航 |
-| iPhone 18 Pro  | `/#/iphone/iphone-18-pro`             | Sticky 摄影叙事、真实外观切换、芯片资料、规格与来源       |
-| Mac 分类       | `/#/mac`                              | MacBook Pro M5、MacBook Air 15 英寸 M4 的产品关系         |
-| MacBook Pro M5 | `/#/mac/macbook-pro-m5`               | 工作流切换、XDR 显示章节、M5 配置、接口索引               |
-| 比较           | `/#/compare`                          | 同类别选择、替换、清除、差异过滤、重置、分享与 URL 恢复   |
-| Case Study     | `/#/about`                            | 设计定位、信息架构、交互、工程与响应式策略                |
-| 素材索引       | `/#/credits`                          | 摄影作者、文件来源、许可、修改说明、技术资料              |
-| 技术观察 01    | `/#/journal/the-language-of-material` | 材料与产品观察                                            |
-| 技术观察 02    | `/#/journal/a-display-in-context`     | 显示指标与使用情境                                        |
-
-未知路由提供可返回首页的 404 页面。没有购物、支付、库存、账户或虚假购买渠道。
-
-比较链接示例：`/#/compare?type=iphone&models=iphone-18-pro,iphone-17&diff=1`。
-
-## 产品研究与素材取舍
-
-核实日期为 **2026-11-09**。所有关键规格均关联官方来源 ID、URL 与核实日期。
-
-- 保留 iPhone 18 Pro、iPhone 17。
-- MacBook Pro M6 已有官方资料；研究范围内未取得可核验授权实拍，因此完整替换为有真实 CC0 摄影的 **14 英寸 MacBook Pro M5**，规格也相应替换。M5 是芯片名，不是 M5 Pro。
-- MacBook Air M5 的候选实拍包含生成式清理元数据，编辑范围不明，予以排除；使用实际拍摄的 **15 英寸 MacBook Air M4**。
-- 只提供 Black、Glacier 两种有对应真实照片的 iPhone 18 Pro 外观。切换时明确前/后视角，完整列出四种官方颜色。没有假 360°、重着色或模型渲染。
-- 摄影为实物记录，部分含零售展示环境与连接线；照片内旧价格不是本网站的价格信息。
-
-详见 [产品研究](docs/product-research.md)、[素材清单](docs/asset-register.md)、[Mac 研究原始记录](docs/mac-research.json)。
-
-## 工程结构
+未知路径提供 404。旧版 Mac M5 故事地址转向新版 Mac 系列。移动导航具有焦点循环、Escape 关闭与滚动锁定；标签组支持方向键、Home、End。比较 URL 示例：
 
 ```text
-src/
-  app/          路由、页面元信息、滚动和焦点恢复
-  components/   导航、页脚、摄影、规格、基础 UI
-  data/         严格类型产品数据、摄影元数据、编辑内容
-  hooks/        可见性与滚动章节观察器
-  lib/          标签键盘交互
-  pages/        独立页面实现
-  styles/       设计 tokens、响应式版式、动效与减少动态效果
-  types/        产品类别判别联合类型
-public/
-  assets/images/  21 个已授权 WebP 响应式文件
-  licenses/      字体和图标许可
-scripts/        可重现的素材下载和格式处理
-tests/         Playwright 流程、响应式、axe 与截图检查
- docs/          研究、许可、Case Study、QA 和部署记录
-.github/workflows/deploy.yml
+/#/compare?type=mac&models=macbook-pro-m6,macbook-air-15-m5&diff=1
 ```
 
-产品与参数没有散落在页面 JSX 中；`family` 区分手机与电脑。摄影与规格来源单独维护。外观照片来自本地 WebP，不依赖盗链。Inter Variable 字体本地托管，中文采用系统字体回退。
+缺少官方数据的规格显示为空，不会计入已知差异。没有购买、库存、支付或账号登录流程。
 
-## 图像处理
+## 数据与图像
 
-原图不参与部署。仓库已包含可直接构建的响应式 WebP，无需重新下载即可运行。
+产品事实与来源位于 `src/data/phones.ts`、`src/data/macs.ts`，规格通过 sourceId 关联来源 URL 和核查日期。手机资料核查于 2026-11-09，Mac 与本版图像核查于 2026-11-11。展示范围为 base M6 的 14 英寸 MacBook Pro，而非 M6 Pro 芯片机型。
+
+本版按用户要求使用 Apple 公开新闻稿与技术支持产品图，**版权归 Apple，不是 CC 或公共领域素材**。相关媒体条款、来源及使用范围见[素材清单](docs/asset-register.md)。本站没有取得单独图像授权；代码的 MIT 许可不覆盖第三方图像。官方产品图、产品合照与摄影样张明确区分，不使用 AI 硬件、假 360° 或重着色变体。
+
+20 个原始媒体条目生成 75 个 WebP 版本，合计约 5.85 MB。图片通过 srcset / sizes 按需加载，并保留尺寸；首屏高优先级，其他图片懒加载。原始文件不进入部署目录。重新处理：
 
 ```bash
 node scripts/download-assets.mjs
 npm run assets
 ```
 
-下载仅按已核验文件的原始 URL 进行；遇到 429 会停止并提示 Retry-After，不自动重试。原图在被 Git 忽略的 `.cache/originals/`。处理脚本校正 EXIF 方向，生成 480 / 960 / 1600 像素版本，保留硬件细节。衍生照片遵循原许可，不适用代码 MIT 许可。
+下载依赖 Apple 来源继续可用；构建、测试和部署使用已跟踪的 WebP，不需要外部图片服务。
 
-## 验证与局限
+## 架构
 
-实际执行结果见 [QA 记录](docs/qa-results.md)。浏览器截图在 `reports/screenshots/`，主要验收图归档到 `docs/screenshots/`。本地 HTML 测试报告在 `playwright-report/index.html`；CI 会保存 7 天的浏览器证据。
+React 19、严格 TypeScript、Vite、React Router、Lucide、原生 CSS Tokens。首页直接加载，其余页面按路由拆分。动画使用 CSS、IntersectionObserver 与 Web Animations API，尊重 prefers-reduced-motion。
 
-没有声称对真实 iPhone、Android、Safari 或低性能移动硬件完成实机验证；当前自动化使用 Chromium 与视口/减少动态效果模拟。后续应补充自有摄影、多浏览器与真实用户任务测试。
+```text
+src/
+  app/          路由、标题、焦点与锚点恢复
+  components/   导航、媒体、规格、共享编辑组件
+  pages/        各页面的独立构图与交互
+  data/         产品、图像、文章、来源
+  hooks/        滚动叙事与进入动效
+  styles/       Tokens、响应式设计
+  types/        产品类别与媒体类型
+tests/          Playwright + axe
+scripts/        可复现图片处理
+docs/           研究、素材、Case Study、测试证据、部署
+```
 
-## GitHub Pages
+## 验证
 
-源码已推送到 [jiangjinzhou01-ctrl/object-product-studies](https://github.com/jiangjinzhou01-ctrl/object-product-studies)，网站已部署到 [GitHub Pages](https://jiangjinzhou01-ctrl.github.io/object-product-studies/)。部署工作流通过类型检查、Lint、格式检查、生产构建和 32 项浏览器测试；生产网址也已用 Chromium 检查桌面、390px 移动首屏、产品故事、比较路由及导航。完整记录见 [部署记录](docs/deployment.md) 与 [QA 记录](docs/qa-results.md)。
+```bash
+npm run typecheck
+npm run lint
+npm run format:check
+npm run build
+npm run test:e2e
+```
 
-仓库启用 Pages 的 GitHub Actions 模式后，推送 `main` 将执行类型检查、Lint、格式检查、生产构建、Playwright，再按仓库名称设置 `VITE_BASE_PATH` 并部署。
+本环境 Chromium 路径为 /usr/bin/chromium。其他机器先执行 `npx playwright install chromium`，再使用 `CI=1 npm run test:e2e`，或通过 CHROMIUM_PATH 指定浏览器。37 项浏览器用例覆盖 10 个内容路由、核心交互、七种视口、自动无障碍规则与截图。实际通过数量、性能报告及限制均以[QA 记录](docs/qa-results.md)为准。
 
-Hash 路由支持静态托管刷新，不需要 404 重写。CI 仅在真实仓库中构建时设置 `VITE_SOURCE_REPOSITORY` 并显示源码入口；未配置时页面提供有效的工程说明入口。仓库子目录下的图片、字体和脚本均通过 Vite base 或 `import.meta.env.BASE_URL` 定位。
+## 发布与后续
 
-## 许可
+GitHub Actions 在 main 更新后执行检查与浏览器测试，再以仓库实际名称设置 Vite base 并部署 Pages。HashRouter 支持静态站点刷新与分享。详见[部署说明](docs/deployment.md)。
 
-原创应用代码为 MIT，详见 [LICENSE](LICENSE)。照片分别采用 CC BY-SA 4.0 或 CC0，详见 [素材清单](docs/asset-register.md)。Inter 采用 SIL OFL 1.1，Lucide 采用 ISC。Apple 产品名称用于事实性说明，相关商标归各自所有者。
+下一步优先补充真实 iOS / Safari / Android 设备与屏幕阅读器验证，再收集用户研究和完善对应颜色的独立产品摄影。自动化结果不等于全部真实设备通过。

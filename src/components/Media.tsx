@@ -4,34 +4,36 @@ export function Media({
   id,
   priority = false,
   className = '',
-  sizes = '(max-width: 700px) 100vw, 60vw',
+  sizes = '(max-width: 760px) 100vw, 60vw',
   credit = false,
+  alt,
 }: {
   id: string;
   priority?: boolean;
   className?: string;
   sizes?: string;
   credit?: boolean;
+  alt?: string;
 }) {
-  const a = getMedia(id);
+  const asset = getMedia(id);
   return (
-    <figure className={`media ${className}`}>
+    <figure className={'media ' + className}>
       <img
         src={mediaUrl(id)}
-        srcSet={[480, 960, 1600].map((w) => `${mediaUrl(id, w)} ${w}w`).join(', ')}
+        srcSet={asset.variants
+          .map((v) => import.meta.env.BASE_URL + 'assets/images/' + v.file + ' ' + v.width + 'w')
+          .join(', ')}
         sizes={sizes}
-        width={a.width}
-        height={a.height}
-        alt={a.alt}
+        width={asset.width}
+        height={asset.height}
+        alt={alt ?? asset.alt}
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : undefined}
         decoding="async"
       />
       {credit && (
         <figcaption>
-          <Link to={`/credits#${id}`}>
-            摄影：{a.author} · {a.license} ↗
-          </Link>
+          <Link to={'/credits#' + id}>图像：{asset.author} ↗</Link>
         </figcaption>
       )}
     </figure>

@@ -3,10 +3,10 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 export function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return (
-    <div className={`eyebrow ${light ? 'is-light' : ''}`}>
-      <span className="index-dot" />
+    <p className={'eyebrow' + (light ? ' light' : '')}>
+      <span aria-hidden="true" />
       {children}
-    </div>
+    </p>
   );
 }
 export function ArrowLink({
@@ -21,9 +21,9 @@ export function ArrowLink({
   className?: string;
 }) {
   return (
-    <Link to={to} className={`${solid ? 'button-solid' : 'arrow-link'} ${className}`}>
+    <Link className={(solid ? 'button' : 'text-link') + ' ' + className} to={to}>
       {children}
-      {solid ? <ArrowUpRight size={17} /> : <ArrowRight size={18} />}
+      <ArrowUpRight size={17} />
     </Link>
   );
 }
@@ -31,37 +31,54 @@ export function SectionHead({
   number,
   title,
   caption,
+  link,
 }: {
   number: string;
   title: string;
-  caption?: string;
+  caption: string;
+  link?: { to: string; label: string };
 }) {
   return (
-    <div className="section-head">
-      <span className="mono">{number} /</span>
-      <h2>{title}</h2>
-      {caption && <p>{caption}</p>}
+    <div className="section-head" data-reveal>
+      <div>
+        <span className="overline">
+          {number} / {caption}
+        </span>
+        <h2>{title}</h2>
+      </div>
+      {link && <ArrowLink to={link.to}>{link.label}</ArrowLink>}
     </div>
   );
 }
-export function CompareEntry({ family = 'iphone' }: { family?: 'iphone' | 'mac' }) {
+export function CompareEntry() {
   return (
     <section className="compare-entry wrap">
+      <span className="overline">A LITTLE PERSPECTIVE</span>
       <div>
-        <Eyebrow>THE RIGHT OBJECT</Eyebrow>
         <h2>
-          不同的日常。
+          适合你的，
           <br />
-          找到你的那一款。
+          <span>才是刚刚好。</span>
         </h2>
-        <p>把细节并排，让选择清晰。</p>
+        <p>
+          从屏幕到重量，从影像到连接。
+          <br />
+          放在一起，找到日常真正需要的不同。
+        </p>
+        <Link className="button" to="/compare">
+          开始比较
+          <ArrowRight size={18} />
+        </Link>
       </div>
-      <ArrowLink to={`/compare?type=${family}`} solid>
-        开始比较
-      </ArrowLink>
-      <span aria-hidden="true" className="compare-mark">
-        ↗
-      </span>
     </section>
+  );
+}
+export function Metric({ value, label, note }: { value: string; label: string; note?: string }) {
+  return (
+    <div className="metric">
+      <strong>{value}</strong>
+      <span>{label}</span>
+      {note && <small>{note}</small>}
+    </div>
   );
 }

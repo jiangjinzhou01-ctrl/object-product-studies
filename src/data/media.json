@@ -1,114 +1,777 @@
 [
   {
-    "id": "iphone-18-pro-glacier",
-    "filename": "iphone-18-pro-glacier.jpg",
-    "alt": "Glacier 配色 iPhone 18 Pro 正面实拍，展示屏幕与机身边缘",
-    "author": "Kyu3a",
-    "source": "https://commons.wikimedia.org/wiki/File:IPhone_18_Pro_(Glacier_model)_-_1.jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/IPhone_18_Pro_%28Glacier_model%29_-_1.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": true,
-    "width": 2816,
-    "height": 3755
+    "id": "phone-pro-hero",
+    "alt": "The front of a burgundy iPhone 18 Pro is displayed next to a rear-facing burgundy iPhone 18 Pro Max.",
+    "source": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-2up-260909_inline.jpg.large_2x.jpg",
+    "originalFile": "phone-pro-hero.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-pro-hero.jpg",
+    "width": 1306,
+    "height": 1829,
+    "variants": [
+      {
+        "width": 480,
+        "height": 672,
+        "file": "phone-pro-hero-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1344,
+        "file": "phone-pro-hero-960.webp"
+      },
+      {
+        "width": 1306,
+        "height": 1829,
+        "file": "phone-pro-hero-1306.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   },
   {
-    "id": "iphone-18-pro-black",
-    "filename": "iphone-18-pro-black.jpg",
-    "alt": "黑色 iPhone 18 Pro 背面，三枚相机镜头与铝金属机身，置于编织桌垫上",
-    "author": "Farragutful",
-    "source": "https://commons.wikimedia.org/wiki/File:IPhone_18_Pro_-_black_01.jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/IPhone_18_Pro_-_black_01.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": true,
-    "width": 2180,
-    "height": 2785
+    "id": "phone-pro-finishes",
+    "alt": "iPhone 18 Pro is displayed in black, silver, glacier, and burgundy.",
+    "source": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-color-lineup-260909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-pro-finishes.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-pro-finishes.jpg",
+    "width": 1960,
+    "height": 1400,
+    "variants": [
+      {
+        "width": 480,
+        "height": 343,
+        "file": "phone-pro-finishes-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 686,
+        "file": "phone-pro-finishes-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1143,
+        "file": "phone-pro-finishes-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1400,
+        "file": "phone-pro-finishes-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   },
   {
-    "id": "iphone-18-pro-rear",
-    "filename": "iphone-18-pro-rear.jpg",
-    "alt": "iPhone 18 Pro 背面的镜头平台与玻璃区域实拍",
-    "author": "茅野ふたば",
-    "source": "https://commons.wikimedia.org/wiki/File:IPhone_18_Pro_rear.jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/IPhone_18_Pro_rear.jpg",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": true,
-    "width": 4284,
-    "height": 5712
+    "id": "phone-pro-lowlight",
+    "alt": "A photograph captured on iPhone 18 Pro using the new 48MP Fusion Main camera amid low-light conditions.",
+    "source": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-photography-aperture-low-light-260909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-pro-lowlight.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-pro-lowlight.jpg",
+    "width": 1960,
+    "height": 1470,
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "file": "phone-pro-lowlight-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "file": "phone-pro-lowlight-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1200,
+        "file": "phone-pro-lowlight-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1470,
+        "file": "phone-pro-lowlight-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   },
   {
-    "id": "iphone-17-lavender",
-    "filename": "iphone-17-lavender.jpg",
-    "alt": "薰衣草紫 iPhone 17 背面，双相机模组实拍",
-    "author": "AzureSaturn",
-    "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_(Lavender)_-_Backside.jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/IPhone_17_%28Lavender%29_-_Backside.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": false,
-    "width": 3072,
-    "height": 4284
+    "id": "phone-pro-night",
+    "alt": "A photograph captured on iPhone 18 Pro using Night mode shows a person silhouetted against a starry sky.",
+    "source": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-photography-Night-mode-260909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-pro-night.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-pro-night.jpg",
+    "width": 1960,
+    "height": 1470,
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "file": "phone-pro-night-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "file": "phone-pro-night-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1200,
+        "file": "phone-pro-night-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1470,
+        "file": "phone-pro-night-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   },
   {
-    "id": "iphone-17-sage",
-    "filename": "iphone-17-sage.jpg",
-    "alt": "鼠尾草绿 iPhone 17 背面实拍",
-    "author": "Ahmad Ali Karim",
-    "source": "https://commons.wikimedia.org/wiki/File:Sage_iPhone_17_(cropped).jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Sage_iPhone_17_%28cropped%29.jpg",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": false,
-    "width": 2516,
-    "height": 5015
+    "id": "phone-pro-landscape",
+    "alt": "A photograph of a mountain landscape is captured on iPhone 18 Pro.",
+    "source": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-photography-Fusion-Main-48MP-260909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-pro-landscape.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-pro-landscape.jpg",
+    "width": 1960,
+    "height": 1470,
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "file": "phone-pro-landscape-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "file": "phone-pro-landscape-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1200,
+        "file": "phone-pro-landscape-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1470,
+        "file": "phone-pro-landscape-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   },
   {
-    "id": "mac-pro-14-m5",
-    "filename": "mac-pro-14-m5-space-black-original.jpg",
-    "alt": "深空黑色 14 英寸 MacBook Pro M5 在木桌上的实拍",
-    "author": "AzureSaturn",
-    "source": "https://commons.wikimedia.org/wiki/File:MacBook_Pro_(14-inch,_M5,_Space_Black).jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/MacBook_Pro_%2814-inch%2C_M5%2C_Space_Black%29.jpg",
-    "license": "CC0 1.0 Universal",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": false,
-    "width": 5712,
-    "height": 4284
+    "id": "phone-17-hero",
+    "alt": "Two iPhone 17 devices, highlighting the front and back of each.",
+    "source": "https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2025/09/apple-debuts-iphone-17/article/Apple-iPhone-17-hero-250909_inline.jpg.large_2x.jpg",
+    "originalFile": "phone-17-hero.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-17-hero.jpg",
+    "width": 1306,
+    "height": 1828,
+    "variants": [
+      {
+        "width": 480,
+        "height": 672,
+        "file": "phone-17-hero-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 1344,
+        "file": "phone-17-hero-960.webp"
+      },
+      {
+        "width": 1306,
+        "height": 1828,
+        "file": "phone-17-hero-1306.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   },
   {
-    "id": "mac-air-15-m4",
-    "filename": "mac-air-15-m4-silver-original.jpg",
-    "alt": "银色 15 英寸 MacBook Air M4 在木桌上的实拍",
-    "author": "AzureSaturn",
-    "source": "https://commons.wikimedia.org/wiki/File:MacBook_Air_(15-inch,_M4,_Silver).jpg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/MacBook_Air_%2815-inch%2C_M4%2C_Silver%29.jpg",
-    "license": "CC0 1.0 Universal",
-    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "modifications": "Resized and converted to WebP; presentation may crop the photograph. No hardware or color alteration.",
-    "verifiedAt": "2026-11-09",
-    "webDisplayAllowed": true,
-    "attributionRequired": false,
-    "width": 5712,
-    "height": 4284
+    "id": "phone-17-detail",
+    "alt": "Multiple iPhone 17 devices shown from the side and featuring the full color lineup: lavender, mist blue, sage, white, and black.",
+    "source": "https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2025/09/apple-debuts-iphone-17/article/Apple-iPhone-17-lineup-250909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-17-detail.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-17-detail.jpg",
+    "width": 1960,
+    "height": 1102,
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "file": "phone-17-detail-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "file": "phone-17-detail-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "file": "phone-17-detail-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1102,
+        "file": "phone-17-detail-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-17-finishes",
+    "alt": "Multiple iPhone 17 devices shown upright and featuring the full color lineup: lavender, mist blue, sage, white, and black.",
+    "source": "https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2025/09/apple-debuts-iphone-17/article/Apple-iPhone-17-color-lineup-250909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-17-finishes.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-17-finishes.jpg",
+    "width": 1960,
+    "height": 1102,
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "file": "phone-17-finishes-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "file": "phone-17-finishes-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "file": "phone-17-finishes-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1102,
+        "file": "phone-17-finishes-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-17-landscape",
+    "alt": "A photo taken with iPhone 17 features a coastal landscape.",
+    "source": "https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2025/09/apple-debuts-iphone-17/article/Apple-iPhone-17-48MP-Fusion-1x-photography-250909_big.jpg.large_2x.jpg",
+    "originalFile": "phone-17-landscape.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Newsroom media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 新闻稿公开媒体素材。版权归 Apple Inc.，本项目未获得独立授权；依用户明确要求用于非官方作品集，不将其标注为开放许可。",
+    "verifiedAt": "2026-11-11",
+    "filename": "phone-17-landscape.jpg",
+    "width": 1960,
+    "height": 1470,
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "file": "phone-17-landscape-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "file": "phone-17-landscape-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1200,
+        "file": "phone-17-landscape-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1470,
+        "file": "phone-17-landscape-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-hero",
+    "alt": "Side profile of a partly open 14-inch M6 MacBook Pro, with cyan M6 lettering behind it.",
+    "source": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-hero-261027_big.jpg.large_2x.jpg",
+    "originalFile": "mac-pro-hero.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-hero.jpg",
+    "width": 1960,
+    "height": 1103,
+    "variants": [
+      {
+        "width": 480,
+        "height": 270,
+        "file": "mac-pro-hero-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "file": "mac-pro-hero-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "file": "mac-pro-hero-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1103,
+        "file": "mac-pro-hero-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-motion",
+    "alt": "A dark 14-inch M6 MacBook Pro displays an Adobe After Effects editing project.",
+    "source": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Adobe-After-Effects-261027_big.jpg.large_2x.jpg",
+    "originalFile": "mac-pro-motion.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-motion.jpg",
+    "width": 1960,
+    "height": 1307,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-pro-motion-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "file": "mac-pro-motion-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "file": "mac-pro-motion-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1307,
+        "file": "mac-pro-motion-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-code",
+    "alt": "Xcode and an app preview on a dark 14-inch M6 MacBook Pro.",
+    "source": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Xcode-261027_big.jpg.large_2x.jpg",
+    "originalFile": "mac-pro-code.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-code.jpg",
+    "width": 1960,
+    "height": 1307,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-pro-code-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "file": "mac-pro-code-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "file": "mac-pro-code-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1307,
+        "file": "mac-pro-code-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-design",
+    "alt": "The Pixelmator Pro editing interface appears on a 14-inch M6 MacBook Pro.",
+    "source": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Pixelmator-Pro-261027_big.jpg.large_2x.jpg",
+    "originalFile": "mac-pro-design.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-design.jpg",
+    "width": 1960,
+    "height": 1307,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-pro-design-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "file": "mac-pro-design-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "file": "mac-pro-design-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1307,
+        "file": "mac-pro-design-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-display",
+    "alt": "Close-up of the M6 MacBook Pro screen showing a colorful portrait.",
+    "source": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-Liquid-Retina-XDR-display-261027_big.jpg.large_2x.jpg",
+    "originalFile": "mac-pro-display.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-display.jpg",
+    "width": 1960,
+    "height": 1307,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-pro-display-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "file": "mac-pro-display-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "file": "mac-pro-display-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1307,
+        "file": "mac-pro-display-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-ports",
+    "alt": "Both sides of the M6 MacBook Pro show MagSafe, USB-C, audio, SDXC and HDMI ports.",
+    "source": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Apple-MacBook-Pro-14-in-with-M6-connectivity-261027_big.jpg.large_2x.jpg",
+    "originalFile": "mac-pro-ports.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-ports.jpg",
+    "width": 1960,
+    "height": 1307,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-pro-ports-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "file": "mac-pro-ports-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "file": "mac-pro-ports-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1307,
+        "file": "mac-pro-ports-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-air-hero",
+    "alt": "A MacBook Air with M5 displays a magazine layout in Adobe Photoshop.",
+    "source": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-hero-260303_big.jpg.large_2x.jpg",
+    "originalFile": "mac-air-hero.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-air-hero.jpg",
+    "width": 1960,
+    "height": 1308,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-air-hero-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 641,
+        "file": "mac-air-hero-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1068,
+        "file": "mac-air-hero-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1308,
+        "file": "mac-air-hero-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-air-pair",
+    "alt": "Side profiles of the 13-inch M5 MacBook Air in Starlight and the 15-inch model in Sky Blue.",
+    "source": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+    "originalUrl": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Apple-MacBook-Air-13-inch-and-15-inch-260303_big.jpg.large_2x.jpg",
+    "originalFile": "mac-air-pair.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-air-pair.jpg",
+    "width": 1960,
+    "height": 1308,
+    "variants": [
+      {
+        "width": 480,
+        "height": 320,
+        "file": "mac-air-pair-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 641,
+        "file": "mac-air-pair-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1068,
+        "file": "mac-air-pair-1600.webp"
+      },
+      {
+        "width": 1960,
+        "height": 1308,
+        "file": "mac-air-pair-1960.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-pro-front",
+    "alt": "Front view of the 14-inch M6 MacBook Pro, with silver and dark rear panels behind it.",
+    "source": "https://support.apple.com/en-us/148300",
+    "originalUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-pro-14-inch-m6.png",
+    "originalFile": "mac-pro-front.png",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-pro-front.png",
+    "width": 1000,
+    "height": 1000,
+    "variants": [
+      {
+        "width": 480,
+        "height": 480,
+        "file": "mac-pro-front-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 960,
+        "file": "mac-pro-front-960.webp"
+      },
+      {
+        "width": 1000,
+        "height": 1000,
+        "file": "mac-pro-front-1000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-air-13-front",
+    "alt": "Front view of the 13-inch M5 MacBook Air with a yellow patterned display.",
+    "source": "https://support.apple.com/en-us/126320",
+    "originalUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-air-13-inch-m5.png",
+    "originalFile": "mac-air-13-front.png",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-air-13-front.png",
+    "width": 1000,
+    "height": 1000,
+    "variants": [
+      {
+        "width": 480,
+        "height": 480,
+        "file": "mac-air-13-front-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 960,
+        "file": "mac-air-13-front-960.webp"
+      },
+      {
+        "width": 1000,
+        "height": 1000,
+        "file": "mac-air-13-front-1000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "mac-air-15-front",
+    "alt": "Front view of the 15-inch M5 MacBook Air with a yellow patterned display.",
+    "source": "https://support.apple.com/en-us/126321",
+    "originalUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-air-15-inch-m5.png",
+    "originalFile": "mac-air-15-front.png",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / official product media",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
+    "verifiedAt": "2026-11-11",
+    "filename": "mac-air-15-front.png",
+    "width": 1000,
+    "height": 1000,
+    "variants": [
+      {
+        "width": 480,
+        "height": 480,
+        "file": "mac-air-15-front-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 960,
+        "file": "mac-air-15-front-960.webp"
+      },
+      {
+        "width": 1000,
+        "height": 1000,
+        "file": "mac-air-15-front-1000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   }
 ]

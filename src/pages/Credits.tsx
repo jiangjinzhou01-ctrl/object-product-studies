@@ -1,85 +1,90 @@
+import { ArrowUpRight } from 'lucide-react';
+import { Eyebrow } from '../components/UI';
 import { Media } from '../components/Media';
 import { mediaAssets } from '../data/media';
 import { products } from '../data/products';
-import { Eyebrow } from '../components/UI';
 export default function Credits() {
   return (
     <div className="credits-page wrap">
-      <div className="page-heading">
-        <Eyebrow>THE SOURCE INDEX</Eyebrow>
-        <h1>真实，皆有出处。</h1>
-        <p>摄影有作者，参数有依据。感谢所有开放分享作品的摄影师。</p>
-      </div>
-      <section>
-        <h2>摄影素材</h2>
-        <p className="caption">
-          以下照片均获相应许可允许网页展示。仅进行了响应式缩放、WebP
-          转换及页面裁切，未生成设备、改变硬件或重新着色。CC BY-SA 衍生图片继续按相同许可提供。
+      <div className="document-heading">
+        <Eyebrow>SOURCES & CREDITS</Eyebrow>
+        <h1>
+          每个细节，
+          <br />
+          都有出处。
+        </h1>
+        <p>
+          产品信息来自 Apple
+          官方技术资料与新闻稿。图像来自对应产品的官方新闻稿与技术支持资料，已本地处理为响应式
+          WebP。
         </p>
-        <div className="credit-list">
-          {mediaAssets.map((a) => (
-            <article id={a.id} key={a.id}>
-              <Media id={a.id} />
+      </div>
+      <section className="source-disclosure">
+        <h2>关于图像的使用</h2>
+        <p>
+          本版依用户要求采用 Apple 新闻稿与技术支持公开媒体素材。版权归 Apple Inc.，并非 Creative
+          Commons
+          或公共领域；本站未获得单独授权，不将个人、非商用用途视为自动授权。每张图像保留公开来源与版权说明。页面中的裁切不改变设备设计或颜色。
+        </p>
+        <p>官方产品图与拍摄样张均明确区分。主观设计观察是本站原创文字，技术参数以来源为准。</p>
+      </section>
+      <section className="reference-section">
+        <div className="section-head">
+          <h2>产品资料</h2>
+          <span className="overline">FACT CHECK</span>
+        </div>
+        {products.map((p) => (
+          <article key={p.id} className="reference-row">
+            <h3>{p.name}</h3>
+            <div>
+              {p.referenceSources.map((s) => (
+                <a key={s.id} href={s.url} target="_blank" rel="noreferrer">
+                  <span>
+                    {s.title}
+                    <small>核查日期 {s.verifiedAt}</small>
+                  </span>
+                  <ArrowUpRight size={17} />
+                </a>
+              ))}
+            </div>
+          </article>
+        ))}
+      </section>
+      <section className="asset-section">
+        <div className="section-head">
+          <h2>影像索引</h2>
+          <span className="overline">{mediaAssets.length} ORIGINAL ASSETS</span>
+        </div>
+        <div className="credit-grid">
+          {mediaAssets.map((a, i) => (
+            <article key={a.id} id={a.id}>
+              <Media id={a.id} sizes="(max-width:760px) 100vw, 30vw" />
+              <span className="overline">
+                FIG. {String(i + 1).padStart(2, '0')} / {a.author}
+              </span>
+              <h3>{a.alt}</h3>
+              <p>{a.license}</p>
               <div>
-                <span className="mono">{a.id}</span>
-                <h3>{a.alt}</h3>
-                <p>摄影：{a.author}</p>
-                <p>
-                  <a href={a.source} target="_blank" rel="noreferrer">
-                    Wikimedia Commons 文件页 ↗
-                  </a>{' '}
-                  ·{' '}
-                  <a href={a.licenseUrl} target="_blank" rel="noreferrer">
-                    {a.license} ↗
-                  </a>
-                </p>
-                <p className="caption">
-                  文件：{a.filename}
-                  <br />
-                  网页使用：允许 · 署名要求：{a.attributionRequired ? '需要' : '不强制，仍予以署名'}
-                  <br />
-                  {a.modifications}
-                  <br />
-                  许可核实：{a.verifiedAt}
-                </p>
+                <a href={a.source} target="_blank" rel="noreferrer">
+                  原始页面
+                  <ArrowUpRight size={14} />
+                </a>
+                <a href={a.originalUrl} target="_blank" rel="noreferrer">
+                  原始图像
+                  <ArrowUpRight size={14} />
+                </a>
               </div>
             </article>
           ))}
         </div>
       </section>
-      <section className="credit-sources">
-        <h2>产品技术资料</h2>
-        {products.map((p) => (
-          <article key={p.id}>
-            <h3>{p.name}</h3>
-            {p.referenceSources.map((s) => (
-              <p key={s.id}>
-                <a href={s.url} target="_blank" rel="noreferrer">
-                  {s.title} ↗
-                </a>
-                <span className="caption">核实于 {s.verifiedAt}</span>
-              </p>
-            ))}
-          </article>
-        ))}
-      </section>
-      <section className="credit-policy">
-        <h2>关于素材选择</h2>
+      <section className="type-credits">
+        <h2>字体与图标</h2>
         <p>
-          MacBook Pro M6
-          已有官方资料，但本项目研究范围内未取得可核验许可的实拍，因此主故事选用实际拍摄的 MacBook
-          Pro 14 英寸 M5。MacBook Air M5
-          的候选照片含生成式清理元数据且编辑范围未明，因此采用实拍素材明确的 M4
-          型号。没有用旧型号照片冒充新型号。
+          Inter Variable · SIL Open Font License 1.1。中文采用系统字体回退。Lucide 图标 · ISC
+          License。原创代码 · MIT。第三方图像不适用代码许可。
         </p>
-        <p>
-          照片中的展示桌、连接线或零售标签属于拍摄场景。其价格不用于本项目的产品说明。项目不提供购买渠道。
-        </p>
-        <h3>字体与图标</h3>
-        <p>
-          Inter Variable · SIL Open Font License 1.1（本地托管）；中文使用系统字体回退。Lucide Icons
-          · ISC License。
-        </p>
+        <a href={import.meta.env.BASE_URL + 'licenses/Inter-OFL.txt'}>Inter 字体许可</a>
       </section>
     </div>
   );
