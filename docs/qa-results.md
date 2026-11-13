@@ -61,3 +61,11 @@
 尚未完成真实 iOS / Android、Safari / Firefox 和屏幕阅读器实机测试，优先纳入下一次验证。中文子集缺少未来新增字符时会回退系统字体，更新界面后应重新运行字体子集脚本。
 
 官方媒体的版权边界见素材清单；浏览器测试不能证明图像授权。本站没有独立测量硬件性能，也不提供无来源的性能排名。
+
+## 线上发布与复核 · 2026-11-13
+
+部署代码提交为 `7684444679488c4adb3dc545ea6ebecb60b3c183`。[GitHub Actions 43402663095](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/43402663095) 的 build 与 deploy 均成功，CI 中 40 项浏览器测试通过，耗时 28.5 秒。
+
+[实际网站](https://jiangjinzhou01-ctrl.github.io/object-product-studies/?v=3) 已由真实 Chromium 访问，返回 HTTP 200。1440 与 390 视口检查了新首屏及图片加载、首屏视角、移动导航与 Escape、相机场景、真实接口点选、工作流、比较链接恢复和两列可见性，以及来源与字体许可链接；没有同源 HTTP 错误或 JavaScript 错误。
+
+线上证据：[deployment-smoke.json](deployment-smoke.json) · [桌面首屏](screenshots/live-hero-desktop.webp) · [手机首屏](screenshots/live-hero-mobile.webp) · [手机导航](screenshots/live-menu-mobile.webp)。线上复核没有进行 Lighthouse 测量，前文性能数据仍仅属于本地生产首页。

@@ -4,7 +4,7 @@
 
 网站：https://jiangjinzhou01-ctrl.github.io/object-product-studies/
 
-仓库与 Pages 在上一版已建立，本次重写继续发布到同一项目，不覆盖其他仓库。实际部署工作流编号与线上复核记录见 [QA 记录](qa-results.md)。
+仓库与 Pages 在上一版已建立，本次重写继续发布到同一项目，不覆盖其他仓库。当前 v3.0 应用提交为 7684444，发布工作流 43402663095 已成功。实际线上复核记录见 [QA 记录](qa-results.md) 与 [浏览器证据](deployment-smoke.json)。
 
 ## 发布流程
 

@@ -1,0 +1,28 @@
+{
+  "version": "3.0",
+  "checkedAt": "2026-11-13T09:40:34.431Z",
+  "base": "https://jiangjinzhou01-ctrl.github.io/object-product-studies/",
+  "scope": "Live GitHub Pages verified with Chromium, 1440 and 390 viewport emulation",
+  "codeCommit": "7684444679488c4adb3dc545ea6ebecb60b3c183",
+  "workflow": "https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/43402663095",
+  "passed": true,
+  "checks": [
+    "HTTP 200 and new product stage",
+    "desktop and mobile screenshots",
+    "loaded hero image",
+    "hero view selection",
+    "mobile navigation and Escape",
+    "camera scene selection",
+    "physical port annotation",
+    "Mac workflow selection",
+    "comparison URL reload and both columns visible",
+    "source and font license links",
+    "no same-origin HTTP or JavaScript errors"
+  ],
+  "hero": {
+    "url": "https://jiangjinzhou01-ctrl.github.io/object-product-studies/assets/images/phone-pro-finishes-1600.webp",
+    "loaded": true
+  },
+  "errors": [],
+  "failed": []
+}
