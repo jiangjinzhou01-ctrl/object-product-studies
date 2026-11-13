@@ -1,0 +1,20 @@
+{
+  "family": "Noto Sans SC",
+  "source": "https://fonts.google.com/noto/specimen/Noto+Sans+SC",
+  "license": "SIL Open Font License 1.1",
+  "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt",
+  "modification": "Character subset from public application content; converted to WOFF2. No glyph design changes.",
+  "characterCount": 614,
+  "files": [
+    {
+      "file": "public/assets/fonts/noto-sc-400.woff2",
+      "weight": 400,
+      "bytes": 86208
+    },
+    {
+      "file": "public/assets/fonts/noto-sc-600.woff2",
+      "weight": 600,
+      "bytes": 87612
+    }
+  ]
+}

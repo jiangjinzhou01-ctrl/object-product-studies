@@ -39,11 +39,18 @@ export default function Navigation() {
       >
         跳至主要内容
       </a>
-      <header className="site-header">
+      <header
+        className={
+          'site-header' +
+          (['/', '/iphone/iphone-18-pro', '/mac/macbook-pro-m6'].includes(location.pathname)
+            ? ' immersive-header'
+            : '')
+        }
+      >
         <div className="header-inner">
           <Link to="/" className="wordmark" aria-label="OBJECT 首页">
             OBJECT
-            <span className="brand-mark" aria-hidden="true" />
+            <span>PRODUCT STUDIES</span>
           </Link>
           <nav className="desktop-nav" aria-label="主导航">
             {links.map(([to, label]) => (
@@ -94,7 +101,7 @@ export default function Navigation() {
         <div className="menu-head">
           <span id="menu-title" className="wordmark">
             OBJECT
-            <span className="brand-mark" />
+            <span>PRODUCT STUDIES</span>
           </span>
           <button
             className="icon-button"
@@ -105,11 +112,10 @@ export default function Navigation() {
             <X />
           </button>
         </div>
-        <p className="overline">EXPLORE / EDITION 02</p>
+        <p className="overline">探索 OBJECT</p>
         <nav aria-label="移动导航">
-          {[['/', '首页'], ...links, ['/compare', '产品比较']].map(([to, label], i) => (
+          {[['/', '首页'], ...links, ['/compare', '产品比较']].map(([to, label]) => (
             <NavLink key={to} to={to} onClick={() => dialog.current?.close()}>
-              <span>0{i}</span>
               {label}
               <ArrowUpRight />
             </NavLink>

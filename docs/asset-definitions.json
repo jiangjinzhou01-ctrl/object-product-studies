@@ -213,7 +213,8 @@
     "license": "© Apple Inc. / official product media",
     "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
     "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
-    "verifiedAt": "2026-11-11"
+    "verifiedAt": "2026-11-11",
+    "trimTransparent": true
   },
   {
     "id": "mac-air-13-front",
@@ -225,7 +226,8 @@
     "license": "© Apple Inc. / official product media",
     "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
     "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
-    "verifiedAt": "2026-11-11"
+    "verifiedAt": "2026-11-11",
+    "trimTransparent": true
   },
   {
     "id": "mac-air-15-front",
@@ -237,6 +239,7 @@
     "license": "© Apple Inc. / official product media",
     "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
     "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
-    "verifiedAt": "2026-11-11"
+    "verifiedAt": "2026-11-11",
+    "trimTransparent": true
   }
 ]

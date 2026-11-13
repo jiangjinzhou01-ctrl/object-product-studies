@@ -7,15 +7,18 @@ const assets = [];
 for (const def of definitions) {
   const original = path.join('.cache/press', def.originalFile);
   const meta = await sharp(original).metadata();
-  const width = meta.autoOrient?.width ?? meta.width;
-  const height = meta.autoOrient?.height ?? meta.height;
+  const trimmed = def.trimTransparent
+    ? await sharp(original).trim().toBuffer({ resolveWithObject: true })
+    : null;
+  const width = trimmed?.info.width ?? meta.autoOrient?.width ?? meta.width;
+  const height = trimmed?.info.height ?? meta.autoOrient?.height ?? meta.height;
   const sizes = [
     ...new Set([480, 960, 1600, Math.min(width, 2000)].filter((w) => w <= width)),
   ].sort((a, b) => a - b);
   const variants = [];
   for (const size of sizes) {
-    const file = def.id + '-' + size + '.webp';
-    const result = await sharp(original)
+    const file = def.id + (def.trimTransparent ? '-trim-' : '-') + size + '.webp';
+    const result = await sharp(trimmed?.data ?? original)
       .rotate()
       .resize({ width: size, withoutEnlargement: true })
       .webp({ quality: 86, effort: 5 })
@@ -27,8 +30,10 @@ for (const def of definitions) {
     filename: def.originalFile,
     width,
     height,
+    ...(trimmed ? { originalWidth: meta.width, originalHeight: meta.height } : {}),
     variants,
     modifications:
+      (def.trimTransparent ? 'Transparent padding trimmed; device pixels are not redrawn. ' : '') +
       'EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.',
     webDisplayAllowed: null,
     attributionRequired: true,

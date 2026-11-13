@@ -81,10 +81,14 @@ export default function Credits() {
       <section className="type-credits">
         <h2>字体与图标</h2>
         <p>
-          Inter Variable · SIL Open Font License 1.1。中文采用系统字体回退。Lucide 图标 · ISC
-          License。原创代码 · MIT。第三方图像不适用代码许可。
+          Inter Variable 与 Noto Sans SC · SIL Open Font License
+          1.1。中文使用本地子集与系统字体回退。Lucide 图标 · ISC License。原创代码 ·
+          MIT。第三方图像不适用代码许可。
         </p>
         <a href={import.meta.env.BASE_URL + 'licenses/Inter-OFL.txt'}>Inter 字体许可</a>
+        <a href={import.meta.env.BASE_URL + 'licenses/Noto-Sans-SC-OFL.txt'}>
+          Noto Sans SC 字体许可
+        </a>
       </section>
     </div>
   );

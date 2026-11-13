@@ -46,6 +46,9 @@ export interface MacProduct extends ProductBase {
 }
 export type Product = PhoneProduct | MacProduct;
 export interface MediaAsset {
+  trimTransparent?: boolean;
+  originalWidth?: number;
+  originalHeight?: number;
   id: string;
   filename: string;
   width: number;

@@ -1,10 +1,10 @@
 {
-  "edition": "02",
-  "checkedAt": "2026-11-12",
+  "version": "3.0",
+  "checkedAt": "2026-11-13",
   "stats": {
-    "startTime": "2026-11-12T10:49:52.367Z",
-    "duration": 56391.406,
-    "expected": 37,
+    "startTime": "2026-11-13T09:23:34.150Z",
+    "duration": 65852.32999999999,
+    "expected": 40,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -16,7 +16,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3806,
+          "duration": 6173,
           "errors": []
         }
       ]
@@ -27,7 +27,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2994,
+          "duration": 4274,
           "errors": []
         }
       ]
@@ -38,7 +38,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3696,
+          "duration": 4130,
           "errors": []
         }
       ]
@@ -49,7 +49,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2598,
+          "duration": 2921,
           "errors": []
         }
       ]
@@ -60,7 +60,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2634,
+          "duration": 3854,
           "errors": []
         }
       ]
@@ -71,7 +71,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2468,
+          "duration": 2889,
           "errors": []
         }
       ]
@@ -82,7 +82,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2293,
+          "duration": 2744,
           "errors": []
         }
       ]
@@ -93,7 +93,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2540,
+          "duration": 3294,
           "errors": []
         }
       ]
@@ -104,7 +104,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2491,
+          "duration": 2790,
           "errors": []
         }
       ]
@@ -115,7 +115,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2458,
+          "duration": 3144,
           "errors": []
         }
       ]
@@ -126,7 +126,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5572,
+          "duration": 6133,
           "errors": []
         }
       ]
@@ -137,7 +137,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3998,
+          "duration": 4829,
           "errors": []
         }
       ]
@@ -148,7 +148,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2075,
+          "duration": 3051,
           "errors": []
         }
       ]
@@ -159,7 +159,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4603,
+          "duration": 4909,
           "errors": []
         }
       ]
@@ -170,7 +170,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3240,
+          "duration": 4084,
           "errors": []
         }
       ]
@@ -181,7 +181,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2885,
+          "duration": 3039,
           "errors": []
         }
       ]
@@ -192,7 +192,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3573,
+          "duration": 3644,
           "errors": []
         }
       ]
@@ -203,7 +203,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4848,
+          "duration": 5030,
           "errors": []
         }
       ]
@@ -214,7 +214,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4463,
+          "duration": 4986,
           "errors": []
         }
       ]
@@ -225,7 +225,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 2469,
+          "duration": 2280,
           "errors": []
         }
       ]
@@ -236,7 +236,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5114,
+          "duration": 4754,
           "errors": []
         }
       ]
@@ -247,7 +247,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5215,
+          "duration": 5096,
           "errors": []
         }
       ]
@@ -258,7 +258,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5676,
+          "duration": 5170,
           "errors": []
         }
       ]
@@ -269,7 +269,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5862,
+          "duration": 5728,
           "errors": []
         }
       ]
@@ -280,7 +280,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5728,
+          "duration": 6277,
           "errors": []
         }
       ]
@@ -291,7 +291,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5916,
+          "duration": 6861,
           "errors": []
         }
       ]
@@ -302,7 +302,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 6327,
+          "duration": 5964,
           "errors": []
         }
       ]
@@ -313,7 +313,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4768,
+          "duration": 4727,
           "errors": []
         }
       ]
@@ -324,7 +324,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4673,
+          "duration": 3827,
           "errors": []
         }
       ]
@@ -335,7 +335,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 3900,
+          "duration": 4485,
           "errors": []
         }
       ]
@@ -346,7 +346,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4841,
+          "duration": 3849,
           "errors": []
         }
       ]
@@ -357,7 +357,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4096,
+          "duration": 3525,
           "errors": []
         }
       ]
@@ -368,7 +368,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 4443,
+          "duration": 5011,
           "errors": []
         }
       ]
@@ -379,18 +379,18 @@
       "results": [
         {
           "status": "passed",
-          "duration": 5768,
+          "duration": 6619,
           "errors": []
         }
       ]
     },
     {
-      "title": "reduced motion and mobile table keyboard scrolling remain usable",
+      "title": "reduced motion and mobile comparison show both values without sideways scrolling",
       "ok": true,
       "results": [
         {
           "status": "passed",
-          "duration": 2687,
+          "duration": 2704,
           "errors": []
         }
       ]
@@ -401,7 +401,7 @@
       "results": [
         {
           "status": "passed",
-          "duration": 7578,
+          "duration": 11449,
           "errors": []
         }
       ]
@@ -412,7 +412,40 @@
       "results": [
         {
           "status": "passed",
-          "duration": 1827,
+          "duration": 1518,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "homepage views switch real hardware imagery inside a stable stage",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2644,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "camera scenes show matching official samples and support arrow keys",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2232,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "physical port annotations select the corresponding explanation",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1474,
           "errors": []
         }
       ]

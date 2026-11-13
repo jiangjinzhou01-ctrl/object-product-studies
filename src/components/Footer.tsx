@@ -7,14 +7,9 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <Link className="wordmark" to="/">
-            OBJECT
-            <span className="brand-mark" />
+            OBJECT<span>PRODUCT STUDIES</span>
           </Link>
-          <p>
-            把目光留给设计，
-            <br />
-            把选择留给日常。
-          </p>
+          <p>设计，触动每一天。</p>
           <button
             className="back-top"
             onClick={() =>
@@ -27,20 +22,20 @@ export default function Footer() {
             }
           >
             回到顶部
-            <ArrowUp size={17} />
+            <ArrowUp size={16} />
           </button>
         </div>
         <div className="footer-nav">
           <div>
-            <span className="overline">COLLECTION</span>
+            <span className="overline">探索产品</span>
             <Link to="/iphone">iPhone</Link>
             <Link to="/mac">Mac</Link>
             <Link to="/compare">产品比较</Link>
           </div>
           <div>
-            <span className="overline">PROJECT</span>
-            <Link to="/about">项目与设计</Link>
-            <Link to="/credits">影像与信息来源</Link>
+            <span className="overline">关于项目</span>
+            <Link to="/about">设计与工程</Link>
+            <Link to="/credits">影像与资料来源</Link>
             <a
               href={
                 import.meta.env.VITE_SOURCE_REPOSITORY ||
@@ -49,20 +44,18 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              源代码
-              <ArrowUpRight size={13} />
+              GitHub
+              <ArrowUpRight size={12} />
             </a>
           </div>
           <div className="footer-statement">
-            <span className="overline">AN INDEPENDENT PERSPECTIVE</span>
             <p>{disclaimerZh}</p>
             <p lang="en">{disclaimerEn}</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 OBJECT — PRODUCT STUDIES</span>
-          <span>DESIGNED TO BE EXPLORED.</span>
-          <span>EDITION 02</span>
+          <span>© 2026 OBJECT. Independent product studies.</span>
+          <Link to="/credits">第三方商标与图像归各自权利人所有。</Link>
         </div>
       </div>
     </footer>

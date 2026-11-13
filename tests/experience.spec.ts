@@ -148,10 +148,10 @@ test('mobile navigation manages focus, scroll locking, Escape and routing', asyn
   await expect(open).toBeFocused();
   expect(await page.locator('body').evaluate((e) => e.style.overflow)).toBe('');
   await open.click();
-  await dialog.getByRole('link', { name: '01 iPhone' }).click();
+  await dialog.getByRole('link', { name: 'iPhone' }).click();
   await expect(page).toHaveURL(/#\/iphone$/);
   await expect(dialog).not.toBeVisible();
-  await expect(page.locator('h1')).toContainText('口袋里的');
+  await expect(page.locator('h1')).toContainText('iPhone.');
 });
 
 test('gallery switches genuine views with keyboard and stable image bounds', async ({ page }) => {
@@ -200,17 +200,17 @@ test('workflow and connection tabs change useful content and support keyboard', 
   page,
 }) => {
   await page.goto('/#/mac/macbook-pro-m6');
-  await page.getByRole('tab', { name: '02 视觉设计' }).click();
+  await page.getByRole('tab', { name: '视觉设计' }).click();
   await expect(page.locator('#workflow-panel')).toContainText('P3');
   await expect(page.locator('.workflow-image img')).toHaveAttribute('src', /mac-pro-design/);
-  await page.getByRole('tab', { name: '02 视觉设计' }).focus();
+  await page.getByRole('tab', { name: '视觉设计' }).focus();
   await page.keyboard.press('End');
-  await expect(page.getByRole('tab', { name: '03 开发构建' })).toBeFocused();
+  await expect(page.getByRole('tab', { name: '开发构建' })).toBeFocused();
   await expect(page.locator('.workflow-image img')).toHaveAttribute('src', /mac-pro-code/);
-  await page.getByRole('tab', { name: 'SDXC 03' }).click();
+  await page.getByRole('tab', { name: 'SDXC' }).click();
   await expect(page.locator('#port-panel')).toContainText('相机');
   await page.keyboard.press('Home');
-  await expect(page.getByRole('tab', { name: 'Thunderbolt 4 01' })).toBeFocused();
+  await expect(page.getByRole('tab', { name: 'Thunderbolt 4' })).toBeFocused();
   await expect(page.locator('#port-panel')).toContainText('40Gb/s');
 });
 
@@ -326,7 +326,9 @@ test('mobile menu and comparison have no automated accessibility violations', as
   ).toEqual([]);
 });
 
-test('reduced motion and mobile table keyboard scrolling remain usable', async ({ page }) => {
+test('reduced motion and mobile comparison show both values without sideways scrolling', async ({
+  page,
+}) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('/#/iphone/iphone-18-pro');
@@ -337,10 +339,15 @@ test('reduced motion and mobile table keyboard scrolling remain usable', async (
       .evaluate((e) => getComputedStyle(e).animationName),
   ).toBe('none');
   await page.goto('/#/compare');
-  const region = page.getByRole('region', { name: '规格比较表，可横向滚动' });
+  const region = page.getByRole('region', { name: '规格比较表' });
   await region.focus();
-  await page.keyboard.press('ArrowRight');
-  await expect.poll(() => region.evaluate((e) => e.scrollLeft)).toBeGreaterThan(0);
+  const values = page.locator('tbody tr').first().locator('td');
+  for (const cell of await values.all()) {
+    const box = await cell.boundingBox();
+    expect(box!.x).toBeGreaterThanOrEqual(0);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(361);
+  }
+  expect(await region.evaluate((e) => e.scrollWidth <= e.clientWidth + 1)).toBe(true);
   await page.getByRole('button', { name: '清除产品 2' }).click();
   await expect(page.getByRole('combobox', { name: '产品 2 型号' })).toHaveValue('');
 });
@@ -397,7 +404,7 @@ test('visual evidence captures both screen sizes and active interaction states',
   });
   await page.goto('/#/mac/macbook-pro-m6');
   await ready(page, true);
-  await page.getByRole('tab', { name: '02 视觉设计' }).click();
+  await page.getByRole('tab', { name: '视觉设计' }).click();
   await page
     .locator('.workflow-tabs')
     .evaluate((e) => e.scrollIntoView({ block: 'start', behavior: 'instant' }));
@@ -433,4 +440,48 @@ test('cold homepage load reserves media space', async ({ page }) => {
       () => (window as unknown as { __layoutShiftScore: number }).__layoutShiftScore,
     ),
   ).toBeLessThan(0.05);
+});
+
+test('homepage views switch real hardware imagery inside a stable stage', async ({ page }) => {
+  await page.goto('/#/');
+  const stage = page.locator('.launch-visual'),
+    before = await stage.boundingBox();
+  await page
+    .getByRole('group', { name: '选择首屏产品视角' })
+    .getByRole('button', { name: '正面与背面', exact: true })
+    .click();
+  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-hero/);
+  await expect(page.locator('.launch-credit')).toContainText('Pro Max');
+  await page
+    .getByRole('group', { name: '选择首屏产品视角' })
+    .getByRole('button', { name: '四款配色', exact: true })
+    .focus();
+  await page.keyboard.press('Enter');
+  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-finishes/);
+  const after = await stage.boundingBox();
+  expect(after!.height).toBe(before!.height);
+});
+
+test('camera scenes show matching official samples and support arrow keys', async ({ page }) => {
+  await page.goto('/#/iphone/iphone-18-pro');
+  const tabs = page.getByRole('tablist', { name: '选择影像场景' });
+  await tabs.getByRole('tab', { name: '夜色', exact: true }).click();
+  await expect(page.locator('#camera-panel img')).toHaveAttribute('src', /phone-pro-night/);
+  await expect(page.locator('#camera-panel')).toContainText('夜间模式');
+  await page.keyboard.press('ArrowRight');
+  await expect(tabs.getByRole('tab', { name: '低光', exact: true })).toBeFocused();
+  await expect(page.locator('#camera-panel img')).toHaveAttribute('src', /phone-pro-lowlight/);
+});
+test('physical port annotations select the corresponding explanation', async ({ page }) => {
+  await page.goto('/#/mac/macbook-pro-m6');
+  const points = page.getByRole('group', { name: '点选图中接口' });
+  await points.getByRole('button', { name: '选择 SDXC 接口' }).click();
+  await expect(page.locator('#port-panel')).toContainText('相机');
+  await expect(page.getByRole('tab', { name: 'SDXC', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+  await page.setViewportSize({ width: 390, height: 844 });
+  await points.getByRole('button', { name: '选择 HDMI 接口' }).click();
+  await expect(page.locator('#port-panel')).toContainText('演示');
 });

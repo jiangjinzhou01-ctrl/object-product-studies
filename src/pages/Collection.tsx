@@ -12,40 +12,29 @@ export default function Collection({ family }: { family: Family }) {
       <section
         className={'collection-intro wrap ' + (phone ? 'phone-collection' : 'mac-collection')}
       >
-        <div className="collection-title">
-          <Eyebrow>{phone ? 'IPHONE' : 'MAC'} / THE COLLECTION</Eyebrow>
-          <h1>
+        <div className="collection-intro-heading">
+          <h1>{phone ? 'iPhone.' : 'Mac.'}</h1>
+          <p>
             {phone ? (
               <>
-                口袋里的，
+                把生活，
                 <br />
-                <em>无限可能。</em>
+                装进口袋。
               </>
             ) : (
               <>
-                你的下一张，
+                灵感在哪，
                 <br />
-                <em>创作桌面。</em>
+                就在哪展开。
               </>
             )}
-          </h1>
-          <p>
-            {phone
-              ? '以熟悉的手感，记录全新的世界。两种选择，各有自己的日常。'
-              : '从随身出发，到专注创造。找到与你工作方式同频的那一台。'}
           </p>
-          <Link className="text-link" to="#models">
-            发现各个型号
-            <ArrowDown size={17} />
-          </Link>
         </div>
         <div className="collection-hero-photo">
-          <Media
-            id={phone ? 'phone-17-hero' : 'mac-air-hero'}
-            priority
-            sizes="(max-width:760px) 100vw, 55vw"
-          />
-          <span className="overline">{phone ? 'IPHONE 17 / LAVENDER' : 'MACBOOK AIR / M5'}</span>
+          <Media id={phone ? 'phone-17-detail' : 'mac-air-pair'} priority sizes="90vw" />
+          <span className="overline">
+            {phone ? 'iPhone 17 官方配色' : 'MacBook Air · 13 与 15 英寸'}
+          </span>
         </div>
       </section>
       <div className="collection-model-nav wrap" id="models">
@@ -59,7 +48,11 @@ export default function Collection({ family }: { family: Family }) {
           ))}
         </nav>
       </div>
-      <div className="collection-studies">
+      <div
+        className={
+          'collection-studies ' + (phone ? 'phone-collection-studies' : 'mac-collection-studies')
+        }
+      >
         {items.map((p, i) => (
           <section
             id={p.id}
@@ -68,7 +61,10 @@ export default function Collection({ family }: { family: Family }) {
           >
             <div className="wrap collection-study-grid">
               <div className="collection-study-photo">
-                <Media id={p.heroMedia} sizes="(max-width:760px) 100vw, 55vw" />
+                <Media
+                  id={p.id === 'macbook-pro-m6' ? 'mac-pro-hero' : p.heroMedia}
+                  sizes="(max-width:760px) 100vw, 55vw"
+                />
               </div>
               <div className="collection-study-copy">
                 <span className="overline">

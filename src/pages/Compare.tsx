@@ -66,11 +66,11 @@ export default function Compare() {
     <div className="compare-page wrap">
       <div className="compare-heading">
         <div>
-          <Eyebrow>THE COMPARISON DESK</Eyebrow>
+          <Eyebrow>产品比较</Eyebrow>
           <h1>
-            放在一起，
+            看见不同，
             <br />
-            <span>想得更清楚。</span>
+            <span>选得更准。</span>
           </h1>
         </div>
         <p>
@@ -129,7 +129,7 @@ export default function Compare() {
       <section id="comparison-panel" role="tabpanel" aria-labelledby={'compare-' + family}>
         <div className="comparison-selectors">
           <div className="selector-note">
-            <span className="overline">YOUR SELECTION</span>
+            <span className="overline">选择比较型号</span>
             <p>
               选择两个型号
               <br />
@@ -218,7 +218,6 @@ export default function Compare() {
           <span aria-live="polite">
             {complete ? count + ' 项参数差异' : '选择两个型号以比较差异'}
           </span>
-          <span className="scroll-hint">向左滑动查看 →</span>
         </div>
         {!ids.some(Boolean) ? (
           <div className="empty-comparison">
@@ -230,12 +229,7 @@ export default function Compare() {
             </button>
           </div>
         ) : (
-          <div
-            className="comparison-scroll"
-            tabIndex={0}
-            role="region"
-            aria-label="规格比较表，可横向滚动"
-          >
+          <div className="comparison-scroll" tabIndex={0} role="region" aria-label="规格比较表">
             <table>
               <caption className="sr-only">
                 {family === 'iphone' ? 'iPhone' : 'Mac'} 技术规格比较

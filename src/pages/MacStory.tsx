@@ -76,34 +76,36 @@ export default function MacStory() {
           </Link>
         </div>
       </nav>
-      <section className="mac-intro wrap">
-        <div className="mac-intro-top">
-          <Eyebrow>STUDY 02 / MACBOOK PRO 14-INCH</Eyebrow>
-          <span className="overline">DESIGNED FOR YOUR NEXT IDEA</span>
-        </div>
-        <div className="mac-intro-heading">
-          <h1>
-            专注，
-            <br />
-            <em>自有分量。</em>
-          </h1>
-          <div>
-            <span className="mac-chip-label">M6</span>
-            <p>
-              一张可以随身带走的创作桌面。
-              <br />
-              从第一个想法，到最后一个细节。
-            </p>
-            <Link className="text-link" to="#workflow">
-              进入工作状态
-              <ArrowDown size={16} />
-            </Link>
+      <section className="mac-intro">
+        <div className="wrap">
+          <div className="mac-intro-top">
+            <Eyebrow>MacBook Pro · M6</Eyebrow>
+            <span className="overline">14-INCH / BUILT FOR YOUR IDEAS</span>
+          </div>
+          <div className="mac-intro-heading">
+            <h1>
+              MacBook Pro.<span>把想法，推向更远。</span>
+            </h1>
+            <div>
+              <p>
+                从第一层画面，到最后一行代码。
+                <br />
+                专注，让创作自然展开。
+              </p>
+              <Link className="text-link" to="#workflow">
+                进入工作状态
+                <ArrowDown size={16} />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="mac-intro-image">
-          <Media id="mac-pro-front" priority sizes="(max-width:760px) 100vw, 70vw" />
-          <span className="dimension-label">14.2″ LIQUID RETINA XDR</span>
-          <span className="dimension-side">312.6 × 221.2 × 15.5 MM</span>
+          <Media id="mac-pro-hero" priority sizes="100vw" />
+        </div>
+        <div className="mac-intro-foot wrap">
+          <span>14.2 英寸 Liquid Retina XDR</span>
+          <span>Apple M6 · 12 核 CPU / 12 核 GPU</span>
+          <span>1.55 kg</span>
         </div>
       </section>
       <section className="metrics-row wrap" aria-label="MacBook Pro M6 核心规格">
@@ -212,6 +214,20 @@ export default function MacStory() {
         </div>
         <div className="ports-image">
           <Media id="mac-pro-ports" sizes="90vw" />
+          <div className="port-hotspots" role="group" aria-label="点选图中接口">
+            {ports.map((p, i) => (
+              <button
+                key={p.name}
+                className={'port-hotspot port-hotspot-' + i}
+                aria-label={'选择 ' + p.name + ' 接口'}
+                aria-pressed={port === i}
+                onClick={() => setPort(i)}
+              >
+                <span className="hotspot-ring" />
+                {port === i && <span className="hotspot-label">{p.name}</span>}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="ports-controls">
           <div role="tablist" aria-label="了解连接接口" onKeyDown={handleTabKey}>

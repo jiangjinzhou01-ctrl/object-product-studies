@@ -680,27 +680,30 @@
     "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
     "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
     "verifiedAt": "2026-11-11",
+    "trimTransparent": true,
     "filename": "mac-pro-front.png",
-    "width": 1000,
-    "height": 1000,
+    "width": 979,
+    "height": 379,
+    "originalWidth": 1000,
+    "originalHeight": 1000,
     "variants": [
       {
         "width": 480,
-        "height": 480,
-        "file": "mac-pro-front-480.webp"
+        "height": 186,
+        "file": "mac-pro-front-trim-480.webp"
       },
       {
         "width": 960,
-        "height": 960,
-        "file": "mac-pro-front-960.webp"
+        "height": 372,
+        "file": "mac-pro-front-trim-960.webp"
       },
       {
-        "width": 1000,
-        "height": 1000,
-        "file": "mac-pro-front-1000.webp"
+        "width": 979,
+        "height": 379,
+        "file": "mac-pro-front-trim-979.webp"
       }
     ],
-    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "modifications": "Transparent padding trimmed; device pixels are not redrawn. EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
     "webDisplayAllowed": null,
     "attributionRequired": true
   },
@@ -715,27 +718,25 @@
     "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
     "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
     "verifiedAt": "2026-11-11",
+    "trimTransparent": true,
     "filename": "mac-air-13-front.png",
-    "width": 1000,
-    "height": 1000,
+    "width": 820,
+    "height": 496,
+    "originalWidth": 1000,
+    "originalHeight": 1000,
     "variants": [
       {
         "width": 480,
-        "height": 480,
-        "file": "mac-air-13-front-480.webp"
+        "height": 290,
+        "file": "mac-air-13-front-trim-480.webp"
       },
       {
-        "width": 960,
-        "height": 960,
-        "file": "mac-air-13-front-960.webp"
-      },
-      {
-        "width": 1000,
-        "height": 1000,
-        "file": "mac-air-13-front-1000.webp"
+        "width": 820,
+        "height": 496,
+        "file": "mac-air-13-front-trim-820.webp"
       }
     ],
-    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "modifications": "Transparent padding trimmed; device pixels are not redrawn. EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
     "webDisplayAllowed": null,
     "attributionRequired": true
   },
@@ -750,27 +751,25 @@
     "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
     "usageNote": "Apple 官方产品素材，版权归 Apple Inc.。本作品采用公开图像来源，不主张开放许可或独立授权。",
     "verifiedAt": "2026-11-11",
+    "trimTransparent": true,
     "filename": "mac-air-15-front.png",
-    "width": 1000,
-    "height": 1000,
+    "width": 847,
+    "height": 514,
+    "originalWidth": 1000,
+    "originalHeight": 1000,
     "variants": [
       {
         "width": 480,
-        "height": 480,
-        "file": "mac-air-15-front-480.webp"
+        "height": 291,
+        "file": "mac-air-15-front-trim-480.webp"
       },
       {
-        "width": 960,
-        "height": 960,
-        "file": "mac-air-15-front-960.webp"
-      },
-      {
-        "width": 1000,
-        "height": 1000,
-        "file": "mac-air-15-front-1000.webp"
+        "width": 847,
+        "height": 514,
+        "file": "mac-air-15-front-trim-847.webp"
       }
     ],
-    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "modifications": "Transparent padding trimmed; device pixels are not redrawn. EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
     "webDisplayAllowed": null,
     "attributionRequired": true
   }

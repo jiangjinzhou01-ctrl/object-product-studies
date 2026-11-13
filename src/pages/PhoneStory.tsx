@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react
 import { Media } from '../components/Media';
 import { Eyebrow, ArrowLink, Metric, CompareEntry } from '../components/UI';
 import Specifications from '../components/Specifications';
+import CameraStudy from '../components/CameraStudy';
 import { phones } from '../data/phones';
 import { mediaUrl } from '../data/media';
 import { useNarrative } from '../hooks/useNarrative';
@@ -66,24 +67,20 @@ export default function PhoneStory() {
       <section className="phone-intro">
         <div className="wrap phone-intro-grid">
           <div className="phone-intro-copy">
-            <Eyebrow light>STUDY 01 / IPHONE 18 PRO</Eyebrow>
-            <h1>
-              让每一次注视，
-              <br />
-              <em>更有深度。</em>
-            </h1>
-            <p>
-              光影之间，藏着新的视角。
-              <br />
-              一项关于 iPhone 18 Pro 的设计与影像观察。
-            </p>
+            <Eyebrow light>设计与影像，进一步。</Eyebrow>
+            <h1>iPhone 18 Pro.</h1>
+            <p>把光，握在手里。</p>
             <Link className="text-link light-link" to="#design">
               从设计开始
               <ArrowDown size={16} />
             </Link>
-            <span className="intro-note">APPLE PRODUCT STUDY / 2026</span>
           </div>
-          <Media id="phone-pro-hero" priority className="phone-intro-photo" />
+          <Media
+            id="phone-pro-hero"
+            priority
+            className="phone-intro-photo"
+            sizes="(max-width:760px) 100vw, 70vw"
+          />
           <span className="media-caption">iPhone 18 Pro 与 Pro Max / 官方产品图</span>
         </div>
       </section>
@@ -138,45 +135,7 @@ export default function PhoneStory() {
           ))}
         </div>
       </div>
-      <section className="camera-section" id="camera">
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <Eyebrow light>LIGHT / IN YOUR HANDS</Eyebrow>
-              <h2>
-                看见光。
-                <br />
-                也掌握光。
-              </h2>
-            </div>
-            <p>
-              从明亮的午后到城市的深夜。可变光圈提供对光的另一种控制，让创作从按下快门之前开始。
-            </p>
-          </div>
-          <div className="camera-layout">
-            <Media id="phone-pro-night" />
-            <div className="camera-notes">
-              <span className="overline">VARIABLE APERTURE</span>
-              <strong>
-                ƒ/1.48
-                <br />
-                <span>— ƒ/4.0</span>
-              </strong>
-              <p>四档主摄光圈可选。不同的进光量与景深，为同一个场景带来不同的表达。</p>
-              <a
-                href={product.referenceSources[1].url}
-                target="_blank"
-                rel="noreferrer"
-                className="text-link light-link"
-              >
-                阅读相机技术来源
-                <ArrowUpRight size={16} />
-              </a>
-            </div>
-          </div>
-          <p className="media-caption">夜景样张由 Apple 发布。本站未对摄影性能进行独立测试。</p>
-        </div>
-      </section>
+      <CameraStudy source={product.referenceSources[1].url} />
       <section className="gallery-section wrap" id="gallery">
         <div className="section-head">
           <div>

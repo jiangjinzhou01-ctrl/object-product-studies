@@ -1,9 +1,9 @@
-# Repository audit — Edition 02
+# Repository audit — Product Experience 3.0
 
-本次重写在已有 /workspace/object-product-studies 中进行，基于 Edition 01 的 d50b561。开始时 main 与远程一致、工作区干净，先建立 rewrite/edition-02 分支。未发现适用的 AGENTS.md。
+本次视觉与交互重构基于 cfd7d19。开始时工作区干净，建立 redesign/product-first 分支后修改；没有覆盖其他项目或用户未提交内容。未发现适用的 AGENTS.md。
 
-已审计并复用 React 19、TypeScript 5.9、Vite 7、React Router、Lucide、Inter、Sharp、Playwright、axe、ESLint 和 Prettier。没有新增重型动效或三维依赖。已有 GitHub 远程、Actions、Pages 与权限可用，继续使用用户明确选择的 GitHub Pages。
+复用 React 19、TypeScript、Vite、React Router、Lucide、Sharp、Playwright、axe、ESLint 与 Prettier。新增本地 Noto Sans SC 子集及其 OFL 许可，没有引入三维、重型动效或远程字体运行依赖。原有产品事实、GitHub 远程与 Pages 发布基础继续使用。
 
-重写覆盖全部页面、导航、组件表现、全局样式、Mac 数据、媒体清单和浏览器测试；保留合理的工具链、HashRouter 静态路由策略、源数据类型和图片处理基础。移除旧型号的 21 个生成图片文件，保留历史提交以便追溯。
+重构覆盖首页、两条产品故事、分类、比较、共享导航页脚和全站样式。新增相机场景组件、真实接口点选、字体生成脚本与透明图留边处理；浏览器用例更新为 40 项。现有测试和来源文档按当前版本更新，旧提交仍可追溯。
 
-本次浏览器验收使用 /usr/bin/chromium 和 Playwright，对真实生产预览页面操作。开发与预览地址是测试环境，不是已部署的证明；发布成功以 Actions 结果和线上复核为准。
+实际浏览器验收使用 Chromium 与生产预览。开发地址不是部署证明；Pages 子路径在本地单独验证，发布以 Actions 结果及线上复核为准。
