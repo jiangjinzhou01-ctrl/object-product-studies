@@ -2,18 +2,33 @@
 
 ## 产品展览改版 · 2026-11-18
 
-TypeScript、ESLint、Prettier 与生产构建通过。Chromium 在十个内容路由执行 43 项 Playwright 测试，覆盖七种宽度、导航、滚动叙事、工作流、比较和 axe WCAG A/AA 检查。首轮发现 768px 首屏图片撑宽页面与截图用例定位器过时，修正后全套通过。生产截图复核还发现大图继承了首屏样张的裁切规则，改为显示完整原图并增加回归断言。
+TypeScript、ESLint、Prettier 与生产构建通过。Chromium 在十个内容路由执行 44 项 Playwright 测试，覆盖七种宽度、导航、滚动叙事、工作流、比较和 axe WCAG A/AA 检查。首轮发现 768px 首屏图片撑宽页面与截图用例定位器过时，修正后全套通过。生产截图复核还发现大图继承了首屏样张的裁切规则，改为显示完整原图并增加回归断言。将山景的视差时间线绑定到展区后，新增了随页面滚动的回归验证。最终运行 44 通过、0 失败、0 跳过，耗时约 90 秒。
 
-生产子路径检查确认，1440px 预加载 900px 主图，390px 和 768px 预加载 480px 主图。各视口均复用 HTML 发起的请求。本地字体、切图说明、键盘放大和关闭、滚动章节、工作流、移动导航与比较链接刷新均通过。新增大图对话框在桌面与移动视口的 axe 检查均无违规。素材清单中的 21 个源条目和 75 个派生文件已核对，WebP 候选合计 5,794,304 字节。
+生产子路径检查确认，1440px 预加载 900px 主图，390px 和 768px 预加载 480px 主图。各视口均复用 HTML 发起的请求。本地字体、切图说明、键盘放大和关闭、滚动章节、山景视差、工作流、移动导航与比较链接刷新均通过。新增大图对话框在桌面与移动视口的 axe 检查均无违规。素材清单中的 21 个源条目和 75 个派生文件已核对，WebP 候选合计 5,794,304 字节。[子路径检查结果](exhibition-subpath.json)
 
 | 界面       | 生产预览截图                                                                                                                                                                                                                      |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 加载       | [站点启动](screenshots/exhibition-startup-390.webp) · [首图等待](screenshots/exhibition-loading-390.webp)                                                                                                                         |
 | 首页       | [桌面](screenshots/exhibition-home-1440.webp) · [手机](screenshots/exhibition-home-390.webp) · [平板](screenshots/exhibition-home-768.webp)                                                                                       |
 | iPhone     | [产品开场](screenshots/exhibition-iphone-1440.webp) · [手机滚动章节](screenshots/exhibition-narrative-390.webp) · [夜色样张](screenshots/exhibition-camera-1440.webp) · [低光大图](screenshots/exhibition-image-viewer-1440.webp) |
 | Mac        | [产品开场](screenshots/exhibition-mac-1440.webp) · [视觉设计工作流](screenshots/exhibition-workflow-1440.webp)                                                                                                                    |
 | 导航与比较 | [手机导航](screenshots/exhibition-navigation-390.webp) · [手机比较](screenshots/exhibition-compare-390.webp)                                                                                                                      |
 
-验证环境为 Chromium 模拟视口。Safari、Firefox 和实体移动设备仍待测试。
+Lighthouse 13.6 在本地生产首页测量桌面一次和移动模拟三次。移动性能为 86、92、95 分，中位数为 92。
+
+| 指标     |   桌面 |   移动模拟 |
+| -------- | -----: | ---------: |
+| 性能     |    100 |      86–95 |
+| 无障碍   |    100 |        100 |
+| 最佳实践 |    100 |        100 |
+| LCP      | 0.8 秒 | 2.9–3.3 秒 |
+| CLS      | 0.0007 |     0.0004 |
+
+检测版本与原始指标摘要见[本地执行结果](exhibition-local-results.json)。验证环境为 Chromium 模拟视口。Safari、Firefox 和实体移动设备仍待测试。
+
+提交 `360a314` 的构建与 Pages 部署成功。运行器 Chrome 157 执行 44 项测试，耗时 56.3 秒。已用 Chromium 访问线上 1440、768 和 390 像素视口。复核首图请求复用、山景视差、切图放大、移动导航、产品章节与比较刷新，记录到的同源 HTTP 错误与 JavaScript 错误均为零。[发布流水线](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/44225397101) · [线上检查结果](exhibition-live-results.json)
+
+[线上桌面首屏](screenshots/exhibition-live-home-1440.webp) · [线上手机首屏](screenshots/exhibition-live-home-390.webp)
 
 ## 动效与加载更新 · 2026-11-18
 

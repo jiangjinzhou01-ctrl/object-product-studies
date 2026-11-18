@@ -92,7 +92,7 @@ npm run build
 npm run test:e2e
 ```
 
-本环境 Chromium 路径为 /usr/bin/chromium。其他机器先执行 `npx playwright install chromium`，再使用 `CI=1 npm run test:e2e`，或通过 CHROMIUM_PATH 指定浏览器。43 项浏览器用例覆盖 10 个内容路由、核心交互、七种视口、自动无障碍规则与截图；移动比较表同时呈现两侧数值。实际通过数量、性能报告及限制均以[QA 记录](docs/qa-results.md)为准。
+本环境 Chromium 路径为 /usr/bin/chromium。其他机器先执行 `npx playwright install chromium`，再使用 `CI=1 npm run test:e2e`，或通过 CHROMIUM_PATH 指定浏览器。44 项浏览器用例覆盖 10 个内容路由、核心交互、七种视口、自动无障碍规则与截图；移动比较表同时呈现两侧数值。实际通过数量、性能报告及限制均以[QA 记录](docs/qa-results.md)为准。
 
 ## 发布与后续
 

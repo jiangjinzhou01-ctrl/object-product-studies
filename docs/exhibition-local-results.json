@@ -1,0 +1,78 @@
+{
+  "revision": "360a31430776059c3f443b9be574feb556811a6e",
+  "chromium": "156.0.8078.79",
+  "playwright": {
+    "startTime": "2026-11-18T02:43:36.518Z",
+    "duration": 89613.846,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "lighthouse": [
+    {
+      "device": "desktop",
+      "testedAt": "2026-11-18T02:45:42.009Z",
+      "lighthouseVersion": "13.6.0",
+      "requestedUrl": "http://127.0.0.1:4174/object-product-studies/",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "largestContentfulPaintMs": 762.1528,
+      "cumulativeLayoutShift": 0.0007,
+      "totalBlockingTimeMs": 0
+    },
+    {
+      "device": "mobile",
+      "testedAt": "2026-11-18T02:45:29.870Z",
+      "lighthouseVersion": "13.6.0",
+      "requestedUrl": "http://127.0.0.1:4174/object-product-studies/",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 86,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "largestContentfulPaintMs": 2963.7033,
+      "cumulativeLayoutShift": 0.0004,
+      "totalBlockingTimeMs": 376.5
+    },
+    {
+      "device": "mobile",
+      "testedAt": "2026-11-18T02:47:03.186Z",
+      "lighthouseVersion": "13.6.0",
+      "requestedUrl": "http://127.0.0.1:4174/object-product-studies/",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 92,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "largestContentfulPaintMs": 3278.2194,
+      "cumulativeLayoutShift": 0.0004,
+      "totalBlockingTimeMs": 68
+    },
+    {
+      "device": "mobile",
+      "testedAt": "2026-11-18T02:47:15.268Z",
+      "lighthouseVersion": "13.6.0",
+      "requestedUrl": "http://127.0.0.1:4174/object-product-studies/",
+      "throttlingMethod": "simulate",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "largestContentfulPaintMs": 2940.2992,
+      "cumulativeLayoutShift": 0.0004,
+      "totalBlockingTimeMs": 45
+    }
+  ]
+}
