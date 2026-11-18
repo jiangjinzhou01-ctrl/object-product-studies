@@ -161,7 +161,7 @@
     animation-delay: 150ms;
   }
   .route-frame:not(:has(.route-loading, .launch-hero)) {
-    animation: picture-dissolve var(--motion-route) ease-out;
+    animation: page-arrive var(--motion-route) var(--ease);
   }
   [data-reveal='heading'][data-revealed] :is(h1, h2),
   [data-reveal='heading'][data-revealed]:is(h1, h2) {
@@ -174,7 +174,7 @@
     animation: photograph-arrive var(--motion-intro) var(--ease) both;
   }
   [data-reveal='surface'][data-revealed] {
-    animation: photograph-arrive var(--motion-intro) var(--ease) both;
+    animation: text-arrive var(--motion-intro) var(--ease) both;
   }
   [data-reveal='stagger'][data-revealed] > *,
   .device-directory[data-revealed] nav > a {
@@ -192,7 +192,7 @@
     animation: text-arrive var(--motion-switch) var(--ease) both;
   }
   .hotspot-label {
-    animation: picture-dissolve var(--motion-route) var(--ease) both;
+    animation: text-arrive var(--motion-route) var(--ease) both;
   }
   .mobile-menu[open] {
     animation: drawer-arrive 380ms var(--ease) both;
@@ -263,23 +263,28 @@
 }
 @keyframes title-unveil {
   from {
-    opacity: 0.55;
     transform: translateY(0.34em);
     clip-path: inset(0 0 88% 0);
   }
   to {
-    opacity: 1;
     transform: none;
     clip-path: inset(0 0 -0.2em 0);
   }
 }
+/* Keep the rendered contrast of type while it moves into place. */
 @keyframes text-arrive {
   from {
-    opacity: 0.45;
     transform: translateY(16px);
   }
   to {
-    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes page-arrive {
+  from {
+    transform: translateY(8px);
+  }
+  to {
     transform: none;
   }
 }
@@ -296,11 +301,9 @@
 @keyframes drawer-arrive {
   from {
     transform: translateX(35px);
-    opacity: 0.6;
   }
   to {
     transform: none;
-    opacity: 1;
   }
 }
 @keyframes reading-progress {
