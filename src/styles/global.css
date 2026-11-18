@@ -312,26 +312,6 @@ main {
   border-radius: 25px;
   background: #f2f2f5;
 }
-.immersive-header {
-  background: #000;
-  color: #f5f5f7;
-  border-color: #202023;
-}
-.immersive-header .desktop-nav a {
-  color: #a1a1a9;
-}
-.immersive-header .desktop-nav a:hover,
-.immersive-header .desktop-nav a.active {
-  color: white;
-}
-.immersive-header .nav-compare {
-  background: #27272a;
-  color: white;
-}
-.immersive-header .icon-button {
-  background: #19191c;
-  color: white;
-}
 .menu-trigger {
   display: none;
 }
@@ -744,9 +724,6 @@ main {
 }
 .compare-image .media {
   height: 100%;
-}
-.compare-image.dark-image {
-  background: #000;
 }
 .compare-product > .overline {
   font-size: 11px;
@@ -1313,9 +1290,6 @@ main {
     display: grid;
     background: transparent;
     margin-right: -10px;
-  }
-  .immersive-header .menu-trigger {
-    background: transparent;
   }
   .mobile-menu .wordmark > span {
     display: block;

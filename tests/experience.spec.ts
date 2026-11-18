@@ -423,8 +423,12 @@ test('visual evidence captures both screen sizes and active interaction states',
   await page.goto('/#/mac/macbook-pro-m6');
   await ready(page, true);
   await page.getByRole('tab', { name: '视觉设计' }).click();
+  await expect(page.locator('.workflow-image [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /mac-pro-design/,
+  );
   await page
-    .locator('.workflow-tabs')
+    .locator('#workflow')
     .evaluate((e) => e.scrollIntoView({ block: 'start', behavior: 'instant' }));
   await page.screenshot({
     path: 'reports/screenshots/workflow-desktop.png',
@@ -469,7 +473,7 @@ test('homepage keeps the current image while a new view loads', async ({ page })
   await page.goto('/#/');
   const stage = page.locator('.launch-visual');
   const photo = stage.locator('[data-frame="current"] img');
-  await expect(photo).toHaveAttribute('src', /phone-pro-finishes/);
+  await expect(photo).toHaveAttribute('src', /phone-pro-spec/);
   const before = await stage.boundingBox();
   const views = page.getByRole('group', { name: '选择首屏产品视角' });
   const frontBack = views.getByRole('button', { name: '正面与背面' });
@@ -477,14 +481,14 @@ test('homepage keeps the current image while a new view loads', async ({ page })
   try {
     await frontBack.click();
     await expect(page.getByText('正在加载新画面')).toBeVisible();
-    await expect(photo).toHaveAttribute('src', /phone-pro-finishes/);
-    await expect(page.locator('.launch-credit')).toContainText('官方配色');
+    await expect(photo).toHaveAttribute('src', /phone-pro-spec/);
+    await expect(page.locator('.launch-credit')).toContainText('酒红色');
 
     // Reversing the selection while the request is pending must not commit the late response.
     await finishes.focus();
     await page.keyboard.press('Enter');
     await expect(page.getByText('正在加载新画面')).toHaveCount(0);
-    await expect(photo).toHaveAttribute('src', /phone-pro-finishes/);
+    await expect(photo).toHaveAttribute('src', /phone-pro-spec/);
     request.resolve();
 
     await frontBack.click();
@@ -507,7 +511,7 @@ test('homepage shows startup and image loading states until actual content is re
     await app.promise;
     await route.continue();
   });
-  await page.route('**/assets/images/phone-pro-finishes-*.webp', async (route) => {
+  await page.route('**/assets/images/phone-pro-spec-*.webp', async (route) => {
     coverRequests.push(route.request().url());
     await cover.promise;
     await route.continue();
@@ -544,7 +548,7 @@ test('homepage shows startup and image loading states until actual content is re
 });
 
 test('failed homepage media can retry without losing navigation', async ({ page }) => {
-  await page.route(/\/assets\/images\/phone-pro-finishes-.*\.webp/, async (route) => {
+  await page.route(/\/assets\/images\/phone-pro-spec-.*\.webp/, async (route) => {
     if (new URL(route.request().url()).searchParams.has('retry')) {
       await route.continue();
     } else {
@@ -588,4 +592,31 @@ test('physical port annotations select the corresponding explanation', async ({ 
   await page.setViewportSize({ width: 390, height: 844 });
   await points.getByRole('button', { name: '选择 HDMI 接口' }).click();
   await expect(page.locator('#port-panel')).toContainText('演示');
+});
+
+test('exhibition opens and closes the selected photograph with keyboard focus restored', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/');
+  const stage = page.locator('.launch-visual');
+  await page.getByRole('button', { name: '低光样张', exact: true }).click();
+  await expect(stage.locator(':scope > .scene-media [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-lowlight/,
+  );
+  await expect(page.locator('.launch-credit')).toContainText('低光样张');
+  const trigger = stage.getByRole('button', { name: '查看大图' });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: /低光样张/ });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole('img')).toHaveAttribute('src', /phone-pro-lowlight/);
+  await expect(dialog.getByRole('img')).toHaveCSS('object-fit', 'contain');
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+  await expect(page.getByRole('button', { name: '低光样张', exact: true })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
 });

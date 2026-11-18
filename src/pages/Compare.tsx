@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ArrowLeftRight, ArrowUpRight, Check, Copy, RotateCcw, X } from 'lucide-react';
 import { Media } from '../components/Media';
-import { Eyebrow } from '../components/UI';
 import { products } from '../data/products';
 import { handleTabKey } from '../lib/tabs';
 import type { Family } from '../types/product';
@@ -65,19 +64,10 @@ export default function Compare() {
   return (
     <div className="compare-page wrap">
       <div className="compare-heading" data-reveal="heading">
-        <div>
-          <Eyebrow>产品比较</Eyebrow>
-          <h1>
-            看见不同，
-            <br />
-            <span>选得更准。</span>
-          </h1>
-        </div>
-        <p>
-          没有一种标准答案。
-          <br />
-          从真正重要的细节，找到适合你的选择。
-        </p>
+        <h1>
+          产品比较<em>.</em>
+        </h1>
+        <p>选两款同系列产品，并排查看尺寸、屏幕、芯片与其他硬件规格。</p>
       </div>
       <div className="compare-toolbar">
         <div
@@ -129,12 +119,7 @@ export default function Compare() {
       <section id="comparison-panel" role="tabpanel" aria-labelledby={'compare-' + family}>
         <div className="comparison-selectors">
           <div className="selector-note">
-            <span className="overline">选择比较型号</span>
-            <p>
-              选择两个型号
-              <br />
-              看见它们的不同
-            </p>
+            <p>选择比较型号</p>
             <button
               className="text-link"
               onClick={() => update([ids[1], ids[0]])}
@@ -180,12 +165,7 @@ export default function Compare() {
               </select>
               {selected[slot] ? (
                 <>
-                  <div
-                    className={
-                      'compare-image ' +
-                      (selected[slot]!.id === 'iphone-18-pro' ? 'dark-image' : '')
-                    }
-                  >
+                  <div className="compare-image" data-device={selected[slot]!.id}>
                     <Media
                       key={selected[slot]!.id}
                       id={selected[slot]!.heroMedia}
@@ -199,12 +179,7 @@ export default function Compare() {
                 </>
               ) : (
                 <div className="compare-empty-slot">
-                  <span>0{slot + 1}</span>
-                  <p>
-                    为这个位置，
-                    <br />
-                    选一件日常。
-                  </p>
+                  <p>还未选择型号</p>
                 </div>
               )}
             </div>

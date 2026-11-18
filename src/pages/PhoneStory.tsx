@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
 import { SceneMedia } from '../components/SceneMedia';
-import { Eyebrow, ArrowLink, Metric, CompareEntry } from '../components/UI';
+import { ArrowLink, Metric, CompareEntry } from '../components/UI';
 import Specifications from '../components/Specifications';
 import CameraStudy from '../components/CameraStudy';
 import { phones } from '../data/phones';
-import { mediaUrl } from '../data/media';
+import { ImageViewer } from '../components/ImageViewer';
 import { useNarrative } from '../hooks/useNarrative';
 const chapters = [
   {
     number: '01',
-    label: 'FORM',
+    label: '机身设计',
     title: '从轮廓，到触感。',
     body: '铝金属一体式机身，将镜头区域与机身连接成一个完整的形体。轮廓的转折、光的落点，让一件熟悉的物品呈现新的表情。',
     media: 'phone-pro-hero',
@@ -20,7 +20,7 @@ const chapters = [
   },
   {
     number: '02',
-    label: 'PERSPECTIVE',
+    label: '镜头系统',
     title: '让目光，多一层自由。',
     body: '三枚 4800 万像素 Fusion 相机，从广阔风景到近处纹理，提供不同的观察方式。主摄的可变光圈，为进光与景深增加一份主动控制。',
     media: 'phone-pro-landscape',
@@ -28,7 +28,7 @@ const chapters = [
   },
   {
     number: '03',
-    label: 'FINISH',
+    label: '表面与颜色',
     title: '色彩，是另一种表达。',
     body: '黑色、银色、冰川色与酒红色。相同的轮廓，因表面与光线，形成各自的气质。选一种与你的日常相处的颜色。',
     media: 'phone-pro-finishes',
@@ -44,10 +44,11 @@ export default function PhoneStory() {
   const product = phones[0],
     { container, active } = useNarrative();
   const [slide, setSlide] = useState(0);
-  useEffect(() => {
-    const next = new Image();
-    next.src = mediaUrl(gallery[(slide + 1) % gallery.length].media);
-  }, [slide]);
+  const [narrativePhoto, setNarrativePhoto] = useState(chapters[0].media);
+  const [galleryPhoto, setGalleryPhoto] = useState(gallery[0].media);
+  const currentChapter =
+    chapters.find((chapter) => chapter.media === narrativePhoto) ?? chapters[0];
+  const currentGallery = gallery.find((item) => item.media === galleryPhoto) ?? gallery[0];
   return (
     <>
       <nav className="product-nav" aria-label="iPhone 18 Pro 章节">
@@ -65,25 +66,23 @@ export default function PhoneStory() {
           </Link>
         </div>
       </nav>
-      <section className="phone-intro">
-        <div className="wrap phone-intro-grid">
-          <div className="phone-intro-copy" data-reveal="heading">
-            <Eyebrow light>设计与影像，进一步。</Eyebrow>
-            <h1>iPhone 18 Pro.</h1>
-            <p>把光，握在手里。</p>
-            <Link className="text-link light-link" to="#design">
-              从设计开始
+      <section className="phone-cover">
+        <div className="phone-cover-layout wrap">
+          <div className="phone-cover-visual">
+            <Media id="phone-pro-hero" priority sizes="(max-width:760px) 100vw, 58vw" />
+          </div>
+          <div className="phone-cover-copy" data-reveal="heading">
+            <p className="exhibit-label">机身与影像</p>
+            <h1>
+              iPhone <em>18 Pro.</em>
+            </h1>
+            <p>铝金属从机身边缘延伸至镜头区域。主摄的四档可变光圈，让记录光线多了一层选择。</p>
+            <Link className="text-link" to="#design">
+              近看机身
               <ArrowDown size={16} />
             </Link>
           </div>
-          <Media
-            id="phone-pro-hero"
-            priority
-            className="phone-intro-photo"
-            reveal="image"
-            sizes="(max-width:760px) 100vw, 70vw"
-          />
-          <span className="media-caption">iPhone 18 Pro 与 Pro Max / 官方产品图</span>
+          <p className="media-caption">酒红色 iPhone 18 Pro 与 Pro Max 官方合照，局部构图</p>
         </div>
       </section>
       <section
@@ -91,7 +90,7 @@ export default function PhoneStory() {
         data-reveal="stagger"
         aria-label="iPhone 18 Pro 核心规格"
       >
-        <Metric value="A20 Pro" label="核心，向前一步" />
+        <Metric value="A20 Pro" label="芯片" />
         <Metric value="48MP" label="三枚 Fusion 相机" />
         <Metric value="6.3″" label="Super Retina XDR" note="按标准矩形测量，实际可视区域较小" />
         <Metric value="120Hz" label="ProMotion 最高刷新率" />
@@ -99,13 +98,9 @@ export default function PhoneStory() {
       <div ref={container} className="phone-narrative wrap" id="design">
         <div className="narrative-visual">
           <div className="narrative-stage">
-            <SceneMedia id={chapters[active].media} />
-            <span className="narrative-count">
-              0{active + 1}
-              <span> / 03</span>
-            </span>
+            <SceneMedia id={chapters[active].media} onPresent={setNarrativePhoto} />
           </div>
-          <p className="media-caption">{chapters[active].caption}</p>
+          <p className="media-caption">{currentChapter.caption}</p>
           <div
             className="narrative-progress"
             role="progressbar"
@@ -122,9 +117,7 @@ export default function PhoneStory() {
         <div className="narrative-chapters">
           {chapters.map((c, i) => (
             <article key={c.number} data-chapter={i} data-reveal="heading">
-              <span className="overline">
-                {c.number} / {c.label}
-              </span>
+              <p className="exhibit-label">{c.label}</p>
               <h2>{c.title}</h2>
               <p>{c.body}</p>
               {i === 2 && (
@@ -145,8 +138,7 @@ export default function PhoneStory() {
       <section className="gallery-section wrap" id="gallery">
         <div className="section-head" data-reveal="heading">
           <div>
-            <span className="overline">TAKE ANOTHER LOOK</span>
-            <h2>换个视角，再看一次。</h2>
+            <h2>产品与影像图集</h2>
           </div>
           <div className="gallery-controls">
             <button
@@ -169,7 +161,12 @@ export default function PhoneStory() {
           </div>
         </div>
         <div className="gallery-stage">
-          <SceneMedia id={gallery[slide].media} sizes="(max-width:760px) 100vw, 85vw" />
+          <SceneMedia
+            id={gallery[slide].media}
+            sizes="(max-width:760px) 100vw, 85vw"
+            onPresent={setGalleryPhoto}
+          />
+          <ImageViewer id={currentGallery.media} label={currentGallery.caption} />
         </div>
         <div className="gallery-foot">
           <div className="gallery-tabs" role="group" aria-label="产品图集">
@@ -179,7 +176,7 @@ export default function PhoneStory() {
               </button>
             ))}
           </div>
-          <p aria-live="polite">{gallery[slide].caption}</p>
+          <p aria-live="polite">{currentGallery.caption}</p>
         </div>
       </section>
       <section className="chip-note wrap" data-reveal="stagger">
@@ -189,16 +186,9 @@ export default function PhoneStory() {
           <em>Pro.</em>
         </div>
         <div>
-          <Eyebrow>COMPUTE / CREATE / REPEAT</Eyebrow>
-          <h2>
-            好的性能，
-            <br />
-            让创作少一分等待。
-          </h2>
-          <p>
-            6 核 CPU 与 7 核
-            GPU，为图像处理、游戏与日常任务提供计算基础。性能的意义，在于你想做的事能够顺利发生。
-          </p>
+          <p className="exhibit-label">处理器</p>
+          <h2>影像背后的计算。</h2>
+          <p>6 核 CPU 与 7 核 GPU，承担影像处理、游戏图形和其他应用的计算任务。</p>
           <ArrowLink to="#specifications">查看硬件信息</ArrowLink>
         </div>
       </section>

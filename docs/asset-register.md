@@ -1,6 +1,6 @@
-# OBJECT · Edition02 素材登记
+# apple / 独立产品研究 · 素材登记
 
-文档复核日期：**2026-11-13（UTC）**。本登记覆盖 [asset-definitions.json](asset-definitions.json) 与 [media.json](../src/data/media.json) 当前共同列出的 **20 张源图、73 个 WebP 派生文件**：9 张手机 Newsroom 图、8 张 Mac Newsroom 图、3 张 Apple Support 图。不是旧版七张 Commons 照片的登记，也不是研究缓存中全部候选的清单。
+文档更新日期 **2026-11-18（UTC）**。[asset-definitions.json](asset-definitions.json) 与 [media.json](../src/data/media.json) 共同登记 **21 张源图、75 个 WebP 派生文件**。包括 9 张手机 Newsroom 图、8 张 Mac Newsroom 图和 4 张 Apple Support 图。
 
 全部素材依用户明确指示用于非官方作品集。它们是 Apple 公开提供的产品图或样张，**不属于 CC、CC0 或公共领域，本项目未取得独立 Apple 授权**。旧版照片的作者和许可不能转移到本版素材；代码、字体与图标的许可也不覆盖这些图片。
 
@@ -14,11 +14,12 @@
 | [N17][N17]       | iPhone 17 发布稿，2025-09-09               | `.cache/rewrite-phone/17.html`              |
 | [NPro][NPro]     | MacBook Pro 14 英寸 M6 发布稿，2026-10-27  | `.cache/rewrite-mac/pro-m6-news.html`       |
 | [NAir][NAir]     | MacBook Air M5 发布稿，2026-03-03          | `.cache/rewrite-mac/air-m5-news.html`       |
+| [S18][S18]       | iPhone 18 Pro 官方技术规格页               | `.cache/rewrite-phone/18-pro-support.html`  |
 | [SPro][SPro]     | MacBook Pro 14 英寸 M6 型号规格页          | `.cache/rewrite-mac/pro-m6-support.html`    |
 | [SAir13][SAir13] | MacBook Air 13 英寸 M5 型号规格页          | `.cache/rewrite-mac/air-13-m5-support.html` |
 | [SAir15][SAir15] | MacBook Air 15 英寸 M5 型号规格页          | `.cache/rewrite-mac/air-15-m5-support.html` |
 
-20 条素材记录的 `verifiedAt` 均为 **2026-11-11**；本次于 2026-11-12 重新比对定义、媒体清单、缓存 HTML 和本地文件。Mac 的既有抓取记录与附带条款索引见 [rewrite-mac-research.json](rewrite-mac-research.json)；手机选图记录见 `.cache/rewrite-phone/selected.json`。不把本次缓存复核写成重新下载全部官方文件。
+20 条素材记录的 `verifiedAt` 均为 **2026-11-11**；本次于 2026-11-12 重新比对定义、媒体清单、缓存 HTML 和本地文件。Mac 的既有抓取记录与附带条款索引见 [rewrite-mac-research.json](rewrite-mac-research.json)；手机选图记录见 `.cache/rewrite-phone/selected.json`。2026-11-18 新核查 Apple Support 的配色图 `phone-pro-spec`，在页面确认原图 URL 并下载。
 
 登记署名全部为 **Apple Inc.**，表示官方发布方；未核定个人摄影师或图像制作者。权利归 Apple Inc. 及／或相关许可方，官方设备图的制作方式未由本次证据确立。四张手机影像样张的拍摄机型来自 Apple alt／图注，不意味着本站拍摄或独立验证了成像效果。
 
@@ -30,7 +31,7 @@
 | ---------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | 手机新闻稿 | 9 张文件均由相应 Newsroom 页面公开提供；本次没有取得对应手机 ZIP 的附带许可证据。  | 保留 Apple 版权与来源，不借用 Mac ZIP 的条件来声称手机图已获许可。                     |
 | Mac 新闻稿 | 对应的两份官方 ZIP 均含 `LEGAL_NOTICE.rtf`；当前使用的是同一图像的文章 JPEG 版本。 | ZIP 中确认的是附条件的个人／编辑、非商业使用条款；没有独立授权或更宽泛的文章图片许可。 |
-| Support    | 3 张 PNG 来自独立的 Support 规格页和 `cdsassets.apple.com`。                       | 未找到针对这些 PNG 的作品集转载许可；**不继承 Newsroom ZIP 条款**。                    |
+| Support    | 4 张 PNG 来自独立的 Support 规格页和 `cdsassets.apple.com`。                       | 未找到针对这些 PNG 的作品集转载许可；**不继承 Newsroom ZIP 条款**。                    |
 
 两份 Mac ZIP 的官方地址与缓存分别为：
 
@@ -43,9 +44,9 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 
 当前 `media.json` 对全部图像写入 `webDisplayAllowed: null`、`attributionRequired: true`。前者保留未确认状态，不代表已获准；后者是项目的署名策略，不应声称每项均有已核实的强制署名条款。已读 Mac ZIP 通知没有指定固定署名措辞。建议显示“图像：Apple / Apple Newsroom”或“图像：Apple / Apple Support”，与实际来源一致。
 
-## 20 张素材的逐项登记
+## 21 张素材的逐项登记
 
-本地下载名均位于 `.cache/press/`；表中的“文件”链接是逐条复制的 `originalUrl`，不是 ZIP 原件链接。所有行的核查日期字段均为 2026-11-11，本次复核日期为 2026-11-12。
+本地下载名均位于 `.cache/press/`；表中的“文件”链接是逐条复制的 `originalUrl`，不是 ZIP 原件链接。01–20 项核查日期为 2026-11-11，21 项核查日期为 2026-11-18。
 
 | 序号 / 素材 ID             | 本地下载名                | 具体内容及机型归属                                                               | 来源 / 文件                         | 登记署名   | 权利类别   |
 | -------------------------- | ------------------------- | -------------------------------------------------------------------------------- | ----------------------------------- | ---------- | ---------- |
@@ -69,6 +70,7 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 | 18 / `mac-pro-front`       | `mac-pro-front.png`       | Support 确认的 14 英寸 M6 MacBook Pro 正面与背板组合，透明留白图。               | [SPro][SPro] / [文件][image-18]     | Apple Inc. | Support    |
 | 19 / `mac-air-13-front`    | `mac-air-13-front.png`    | Support 确认的 13 英寸 M5 Air，黄色屏幕图案；不据此认定某一机身配色。            | [SAir13][SAir13] / [文件][image-19] | Apple Inc. | Support    |
 | 20 / `mac-air-15-front`    | `mac-air-15-front.png`    | Support 确认的 15 英寸 M5 Air，黄色屏幕图案；不与 13 英寸图互换。                | [SAir15][SAir15] / [文件][image-20] | Apple Inc. | Support    |
+| 21 / `phone-pro-spec`      | `phone-pro-spec.png`      | iPhone 18 Pro 的四款机身配色与酒红色正面，用于首页、型号索引与对比。             | [S18][S18] / [文件][image-21]       | Apple Inc. | Support    |
 
 `phone-pro-hero` 包含 Pro Max，不能将合照两侧都标成 18 Pro。`mac-air-hero` 不能凭文件名或外观确定单一尺寸；两张 Air Support 图则各有独立型号证据。手机配色合照不会因界面选择颜色而变成该颜色的独立照片；本流程不生成或重着色缺失款式。
 
@@ -98,34 +100,36 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 | `mac-pro-front`       | 透明 PNG / 1000 × 1000 → 979 × 379 | 480 / 960 / 979         |
 | `mac-air-13-front`    | 透明 PNG / 1000 × 1000 → 820 × 496 | 480 / 820               |
 | `mac-air-15-front`    | 透明 PNG / 1000 × 1000 → 847 × 514 | 480 / 847               |
+| `phone-pro-spec`      | 透明 PNG / 1000 × 1000 → 900 × 658 | 480 / 900               |
 
-当前 17 张 Newsroom 输入文件已是 Apple 的文章版本：两张手机竖图宽 1306px，其余宽 1960px。Mac 研究缓存另外保存了 ZIP 中宽 3840px 的对应原件，但当前下载／处理脚本没有从 ZIP 解包取图；不能把文章图登记成 3840px，也不能声称生成了 2000px 的输出。三张 Support 输入是 1000 × 1000 的透明 PNG，仅裁切透明留边，不重绘设备，也不放大到超过裁切后的图像宽度。原始宽高保留为 originalWidth / originalHeight。
+当前 17 张 Newsroom 输入文件已是 Apple 的文章版本：两张手机竖图宽 1306px，其余宽 1960px。Mac 研究缓存另外保存了 ZIP 中宽 3840px 的对应原件，但当前下载／处理脚本没有从 ZIP 解包取图；不能把文章图登记成 3840px，也不能声称生成了 2000px 的输出。四张 Support 输入是 1000 × 1000 的透明 PNG，仅裁切透明留边，不重绘设备，也不放大到超过裁切后的图像宽度。原始宽高保留为 originalWidth / originalHeight。
 
 ## 当前图片处理流程
 
-1. **定义输入**：[docs/asset-definitions.json](asset-definitions.json) 给出 ID、alt、`source`、`originalUrl`、`originalFile`、作者、版权文字及日期。当前 20 条记录共有 7 个来源页面。
+1. **定义输入**：[docs/asset-definitions.json](asset-definitions.json) 给出 ID、alt、`source`、`originalUrl`、`originalFile`、作者、版权文字及日期。当前 21 条记录共有 8 个来源页面。
 2. **本地缓存**：[scripts/download-assets.mjs](../scripts/download-assets.mjs) 读取定义，创建 `.cache/press/`，对缺失文件调用 `curl --fail --location --max-time 60 --output <路径> <originalUrl>`。已有文件直接跳过；脚本本身没有校验和比对或强制刷新步骤，也没有读取 ZIP 的实现。
-3. **生成响应式图片**：[scripts/process-assets.mjs](../scripts/process-assets.mjs) 用 Sharp 读取元数据，以自动方向后的宽高为基准，候选宽度为 `[480, 960, 1600, min(源宽, 2000)]`，删除超过源宽的值、去重并排序。每份输出执行 `.rotate()` 自动应用 EXIF 方向、按宽等比缩小且 `withoutEnlargement: true`，再以 `quality: 86`、`effort: 5` 转为 WebP。三张带 trimTransparent 标记的 Support PNG 先裁切透明留边，再据实际尺寸缩放，派生文件名含 -trim-。没有重着色、设备生成或背景生成；源文件不被覆盖。
-4. **写出清单**：处理脚本把文件写入 `public/assets/images/`，并覆盖生成 `src/data/media.json`，保留定义字段，补充源尺寸、各派生尺寸／文件名、处理说明和权利状态字段。当前为 20 条媒体记录、73 个被引用的 WebP 文件；磁盘中其他旧文件不因此算入本登记。
+3. **生成响应式图片**：[scripts/process-assets.mjs](../scripts/process-assets.mjs) 用 Sharp 读取元数据，以自动方向后的宽高为基准，候选宽度为 `[480, 960, 1600, min(源宽, 2000)]`，删除超过源宽的值、去重并排序。每份输出执行 `.rotate()` 自动应用 EXIF 方向、按宽等比缩小且 `withoutEnlargement: true`，再以 `quality: 86`、`effort: 5` 转为 WebP。四张带 trimTransparent 标记的 Support PNG 先裁切透明留边，再据实际尺寸缩放，派生文件名含 -trim-。没有重着色、设备生成或背景生成；源文件不被覆盖。
+4. **写出清单**：处理脚本把文件写入 `public/assets/images/`，并覆盖生成 `src/data/media.json`，保留定义字段，补充源尺寸、各派生尺寸／文件名、处理说明和权利状态字段。当前为 21 条媒体记录、75 个被引用的 WebP 文件；磁盘中其他旧文件不因此算入本登记。
 5. **页面读取**：[src/data/media.ts](../src/data/media.ts) 从本地派生文件选取满足请求宽度的第一档，默认请求 960px，不足则取最大档；[Media.tsx](../src/components/Media.tsx) 输出 `srcSet`、`sizes`、固有尺寸和 alt，常规懒加载，优先图即时加载，并异步解码。图片通过站点本地路径提供；Apple URL 用于来源与文件链接，不用作 `<img>` 热链。
 6. **显示裁切**：CSS 默认 contain，设备舞台、样张与接口图按构图使用 cover 或溢出隐藏。透明留边裁切和 CSS 显示裁切均记入处理记录；不改变产品设计或颜色。用户界面与资源已在真实 Chromium 中验证，结果见 qa-results.md。
 
-复现：node scripts/download-assets.mjs，随后 npm run assets。原始来源保持不变，变动的是衍生图像的透明画布范围。当前 73 份图片已在浏览器页面中按需加载；元数据保留每个候选的实际宽高。
+复现：node scripts/download-assets.mjs，随后 npm run assets。原始来源保持不变，变动的是衍生图像的透明画布范围。浏览器按需请求对应宽度的派生图片，元数据保留每个候选的实际宽高。
 
 ## 本次核对结果与已知偏差
 
-- 20 条定义与 20 条媒体记录按 ID 一一对应，所有共享字段一致；20 个 `originalUrl` 均能在对应 `source` 的缓存 HTML 中找到。
-- `.cache/press/` 中 20 份输入与各自手机研究缓存、Mac 文章预览缓存或 Support 缓存逐文件 SHA-256 相同；原始尺寸与未裁切媒体记录相符，裁切项另存原始与衍生尺寸，清单引用的 73 个 WebP 路径均存在。新的裁切尺寸由 Sharp 输出结果写入。
+- 01–20 项的定义、媒体记录与原图 URL 通过 11 月 12 日的缓存复核。21 项原图 URL 来自官方规格页 HTML，源文件与两个本地候选尺寸已重新处理。
+- `.cache/press/` 中 20 份输入与各自手机研究缓存、Mac 文章预览缓存或 Support 缓存逐文件 SHA-256 相同；原始尺寸与未裁切媒体记录相符，裁切项另存原始与衍生尺寸，Sharp 将裁切后的实际尺寸写入清单。
 - 没有发现把旧代 M5 MacBook Pro／M4 Air 图片当成当前 M6／M5 产品登记的情况；有多机型合照与尺寸未标明的系列图，已在逐项登记中明确边界。
 - 复核发现 Credits 曾将 Support 素材概括为 Newsroom；已修正概述，并将链接统一为“原始页面”。实际 source 字段始终指向对应来源。
 - iPhone 17 的材料字段已补充官方融色玻璃背板的配色范围，见 [产品研究记录](product-research.md)。素材 ID、文件名和来源页不能补足该规格条件。
 
-旧版 Commons 文件、未采用的缓存候选和它们的许可不列入本版 20 图。Inter Variable、Noto Sans SC（SIL OFL 1.1）及 Lucide（ISC）是另外的字体／图标依赖，参见 `public/licenses/`；其许可不适用于本登记的 Apple 图片。
+旧版 Commons 文件、未采用的缓存候选和它们的许可不列入本版 21 图。Inter Variable、Noto Sans SC、[Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif)（SIL OFL 1.1）及 Lucide（ISC）是另外的字体／图标依赖，参见 `public/licenses/`；其许可不适用于本登记的 Apple 图片。
 
 [N18]: https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/
 [N17]: https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/
 [NPro]: https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/
 [NAir]: https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/
+[S18]: https://support.apple.com/en-asia/148590
 [SPro]: https://support.apple.com/en-us/148300
 [SAir13]: https://support.apple.com/en-us/126320
 [SAir15]: https://support.apple.com/en-us/126321
@@ -149,6 +153,7 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 [image-18]: https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-pro-14-inch-m6.png
 [image-19]: https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-air-13-inch-m5.png
 [image-20]: https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/macbook-air-15-inch-m5.png
+[image-21]: https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-18-pro.png
 [pro-zip]: https://www.apple.com/newsroom/images/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/article/Media-of-Apple-MacBook-Pro-14-in-with-M6-261027.zip
 [air-zip]: https://www.apple.com/newsroom/images/2026/03/apple-introduces-the-new-macbook-air-with-m5/article/Images-of-Apple-MacBook-Air-260303.zip
 [site-terms]: https://www.apple.com/legal/internet-services/terms/site.html

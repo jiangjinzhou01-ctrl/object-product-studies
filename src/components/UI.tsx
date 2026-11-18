@@ -47,13 +47,8 @@ export function CompareEntry() {
   return (
     <section className="compare-entry wrap" data-reveal="stagger">
       <div>
-        <p className="eyebrow">找到真正适合你的那一款</p>
-        <h2>
-          放在一起。
-          <br />
-          <span>选择，更清楚。</span>
-        </h2>
-        <p>从屏幕、影像到便携性，看看你在意的不同。</p>
+        <h2>型号，并排比较。</h2>
+        <p>查看同系列设备的重量、尺寸、屏幕和其他规格。</p>
         <Link className="button" to="/compare">
           开始比较
           <ArrowRight size={17} />

@@ -1,52 +1,85 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { homeHeroSizes, homeHeroViews } from '../data/homeHero';
+import { ImageViewer } from './ImageViewer';
 import { SceneMedia } from './SceneMedia';
-import { ArrowLink } from './UI';
 
 export default function LaunchHero() {
   const [view, setView] = useState(0);
-  const [presented, setPresented] = useState<string | null>(null);
-  const caption = homeHeroViews.find((entry) => entry.id === presented)?.caption;
+  const [presented, setPresented] = useState<string>(homeHeroViews[0].id);
+  const activeView = homeHeroViews.find((entry) => entry.id === presented) ?? homeHeroViews[0];
 
   return (
-    <section className="launch-hero">
+    <section className="launch-hero wrap" aria-labelledby="launch-title">
       <div className="launch-heading">
-        <p>设计，触动每一天。</p>
-        <h1>
-          iPhone <span>18 Pro.</span>
+        <p className="exhibit-label">
+          <span aria-hidden="true" />
+          产品展览
+        </p>
+        <h1 id="launch-title">
+          iPhone <em>18 Pro.</em>
         </h1>
       </div>
-      <div className="launch-visual">
-        <SceneMedia
-          id={homeHeroViews[view].id}
-          priority
-          sizes={homeHeroSizes}
-          onPresent={setPresented}
-        />
-      </div>
-      <div className="launch-bottom">
-        <p>
-          从精密的轮廓，
-          <br />
-          到新的看世界方式。
-        </p>
-        <div className="hero-views" role="group" aria-label="选择首屏产品视角">
-          {homeHeroViews.map((entry, index) => (
-            <button key={entry.id} aria-pressed={view === index} onClick={() => setView(index)}>
-              {entry.label}
-            </button>
-          ))}
+      <div className="launch-display">
+        <div className="launch-visual" id="launch-visual">
+          <SceneMedia
+            id={homeHeroViews[view].id}
+            priority
+            sizes={homeHeroSizes}
+            onPresent={setPresented}
+          />
+          <ImageViewer id={activeView.id} label={activeView.caption} />
         </div>
-        <ArrowLink to="/iphone/iphone-18-pro" solid>
-          探索 iPhone 18 Pro
-        </ArrowLink>
+        <div className="launch-controls">
+          <div className="hero-views" role="group" aria-label="选择首屏产品视角">
+            {homeHeroViews.map((entry, index) => (
+              <button
+                key={entry.id}
+                aria-pressed={view === index}
+                aria-controls="launch-visual"
+                onClick={() => setView(index)}
+              >
+                {entry.label}
+              </button>
+            ))}
+          </div>
+          <Link className="launch-source" to={'/credits#' + activeView.id}>
+            {activeView.source}
+            <ArrowUpRight size={13} aria-hidden="true" />
+          </Link>
+        </div>
+        <p className="launch-credit" aria-live="polite">
+          {activeView.caption}
+        </p>
       </div>
-      <Link className="launch-scroll" to="#objects" aria-label="向下，发现更多">
-        <ArrowDown size={17} />
-      </Link>
-      {caption && <p className="launch-credit">{caption}</p>}
+      <div className="launch-description">
+        <p>铝金属一体式机身，三枚 48MP Fusion 镜头。近看它的边缘、光泽与取景方式。</p>
+        <div className="launch-actions">
+          <Link className="button" to="/iphone/iphone-18-pro">
+            探索 iPhone 18 Pro
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+          <Link className="launch-scroll text-link" to="#objects" aria-label="向下，发现更多">
+            产品索引
+            <ArrowDown size={17} aria-hidden="true" />
+          </Link>
+        </div>
+        <dl className="launch-specs">
+          <div>
+            <dt>主摄</dt>
+            <dd>48 MP</dd>
+          </div>
+          <div>
+            <dt>最高刷新率</dt>
+            <dd>120 Hz</dd>
+          </div>
+          <div>
+            <dt>芯片</dt>
+            <dd>A20 Pro</dd>
+          </div>
+        </dl>
+      </div>
     </section>
   );
 }

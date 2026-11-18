@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ChevronRight } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
 import { ArrowLink, CompareEntry } from '../components/UI';
 import { products, productPath } from '../data/products';
@@ -8,208 +8,148 @@ import { stories } from '../data/stories';
 import { handleTabKey } from '../lib/tabs';
 import LaunchHero from '../components/LaunchHero';
 import { SceneMedia } from '../components/SceneMedia';
-import { siteName } from '../data/site';
 import type { Family } from '../types/product';
 
 function Explorer() {
   const [family, setFamily] = useState<Family>('iphone');
   const [selected, setSelected] = useState('iphone-18-pro');
-  const items = products.filter((p) => p.family === family);
-  const product = items.find((p) => p.id === selected) ?? items[0];
+  const items = products.filter((product) => product.family === family);
+  const product = items.find((item) => item.id === selected) ?? items[0];
+
   return (
-    <section className="explore-section wrap" id="explorer">
-      <div className="section-head" data-reveal="heading">
-        <div>
-          <p className="eyebrow">找到你的下一件日常</p>
-          <h2>从喜欢，到适合。</h2>
+    <section className="inventory wrap" id="objects">
+      <div id="explorer">
+        <div className="section-head inventory-heading" data-reveal="heading">
+          <h2>型号索引</h2>
+          <div
+            className="segmented"
+            role="tablist"
+            aria-label="探索产品类型"
+            onKeyDown={handleTabKey}
+          >
+            {(['iphone', 'mac'] as const).map((category) => (
+              <button
+                key={category}
+                role="tab"
+                id={'explore-tab-' + category}
+                aria-selected={family === category}
+                aria-controls="explore-panel"
+                tabIndex={family === category ? 0 : -1}
+                onClick={() => setFamily(category)}
+              >
+                {category === 'iphone' ? 'iPhone' : 'Mac'}
+              </button>
+            ))}
+          </div>
         </div>
-        <div
-          className="segmented"
-          role="tablist"
-          aria-label="探索产品类型"
-          onKeyDown={handleTabKey}
-        >
-          {(['iphone', 'mac'] as const).map((f) => (
-            <button
-              key={f}
-              role="tab"
-              id={'explore-tab-' + f}
-              aria-selected={family === f}
-              aria-controls="explore-panel"
-              tabIndex={family === f ? 0 : -1}
-              onClick={() => setFamily(f)}
-            >
-              {f === 'iphone' ? 'iPhone' : 'Mac'}
-            </button>
-          ))}
+        <div className="inventory-layout">
+          <div className="inventory-index" role="group" aria-label="选择探索型号">
+            {items.map((item) => (
+              <button
+                key={item.id}
+                aria-pressed={product.id === item.id}
+                onClick={() => setSelected(item.id)}
+              >
+                <span>{item.name}</span>
+                <ChevronRight size={17} aria-hidden="true" />
+              </button>
+            ))}
+          </div>
+          <div
+            className="inventory-panel"
+            role="tabpanel"
+            id="explore-panel"
+            aria-labelledby={'explore-tab-' + family}
+          >
+            <div className="inventory-photo">
+              <SceneMedia id={product.heroMedia} sizes="(max-width: 760px) 90vw, 46vw" />
+            </div>
+            <div className="inventory-caption" key={product.id} data-scene-copy>
+              <div>
+                <p className="overline">{product.chip}</p>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+              </div>
+              <ArrowLink to={productPath(product)}>查看产品</ArrowLink>
+            </div>
+          </div>
         </div>
-      </div>
-      <div
-        className={'explorer-preview ' + (product.id === 'iphone-18-pro' ? 'is-dark' : '')}
-        role="tabpanel"
-        id="explore-panel"
-        aria-labelledby={'explore-tab-' + family}
-      >
-        <div className="explorer-caption" key={product.id} data-scene-copy>
-          <p className="eyebrow">{product.chip}</p>
-          <h3>{product.name}</h3>
-          <p>{product.tagline}</p>
-          <ArrowLink to={productPath(product)} solid>
-            查看产品
-          </ArrowLink>
-        </div>
-        <SceneMedia id={product.heroMedia} sizes="(max-width: 760px) 80vw, 55vw" />
-      </div>
-      <div className="model-list" aria-label="选择探索型号">
-        {items.map((p) => (
-          <button key={p.id} aria-pressed={product.id === p.id} onClick={() => setSelected(p.id)}>
-            <span className="model-dot" />
-            {p.name}
-          </button>
-        ))}
       </div>
     </section>
   );
 }
+
 export default function Home() {
   return (
-    <>
+    <div className="exhibition">
       <LaunchHero />
-      <section className="device-directory wrap" id="objects" data-reveal="stagger">
-        <div>
-          <p className="eyebrow">产品一览</p>
+      <nav className="exhibition-index wrap" aria-label="首页展览章节">
+        <span>继续探索</span>
+        <Link to="#mac-studio">
+          MacBook Pro <ArrowDown size={15} aria-hidden="true" />
+        </Link>
+        <Link to="#field-notes">
+          iPhone 影像 <ArrowDown size={15} aria-hidden="true" />
+        </Link>
+        <Link to="#objects">
+          型号索引 <ArrowDown size={15} aria-hidden="true" />
+        </Link>
+      </nav>
+
+      <section className="desk-feature wrap" id="mac-studio">
+        <div className="desk-feature-visual">
+          <Media id="mac-pro-display" sizes="(max-width: 760px) 100vw, 64vw" reveal="image" />
+        </div>
+        <div className="desk-feature-content" data-reveal="heading">
+          <p className="exhibit-label">MacBook Pro · M6</p>
           <h2>
-            好设计，
+            把工作台
             <br />
-            就在日常。
+            带在身边。
           </h2>
-        </div>
-        <nav aria-label="发现产品">
-          {[
-            { id: 'iphone-17', title: 'iPhone', detail: '随身的灵感', to: '/iphone' },
-            {
-              id: 'macbook-pro-m6',
-              title: 'MacBook Pro',
-              detail: '尽兴去创造',
-              to: '/mac/macbook-pro-m6',
-            },
-            {
-              id: 'macbook-air-13-m5',
-              title: 'MacBook Air',
-              detail: '轻装，展开',
-              to: '/mac#macbook-air-13-m5',
-            },
-          ].map((item) => (
-            <Link key={item.id} to={item.to}>
-              <Media
-                id={products.find((p) => p.id === item.id)!.heroMedia}
-                sizes="(max-width:760px) 40vw, 20vw"
-              />
-              <h3>{item.title}</h3>
-              <p>
-                {item.detail}
-                <ChevronRight size={14} />
-              </p>
-            </Link>
-          ))}
-        </nav>
-      </section>
-      <section className="pro-launch">
-        <div className="pro-launch-heading" data-reveal="heading">
-          <p className="eyebrow">MacBook Pro · M6</p>
-          <h2>
-            让想法，
-            <br />
-            <span>尽兴展开。</span>
-          </h2>
-          <div className="product-actions">
-            <ArrowLink to="/mac/macbook-pro-m6" solid>
-              探索 MacBook Pro
-            </ArrowLink>
-            <ArrowLink to="/compare?type=mac">比较 Mac 机型</ArrowLink>
-          </div>
-        </div>
-        <Media id="mac-pro-hero" sizes="100vw" reveal="image" />
-        <div className="pro-launch-notes wrap">
-          <span>14.2 英寸 Liquid Retina XDR</span>
-          <span>12 核 CPU · 12 核 GPU</span>
-          <span>专业，从容随行。</span>
+          <p>在一块 14.2 英寸 Liquid Retina XDR 显示屏上剪辑、调色，也写下下一行代码。</p>
+          <ArrowLink to="/mac/macbook-pro-m6#workflow">查看三个工作场景</ArrowLink>
         </div>
       </section>
-      <section className="air-launch">
-        <div className="air-launch-heading" data-reveal="heading">
-          <p className="eyebrow">MacBook Air · M5</p>
-          <h2>
-            轻装。<span>大展身手。</span>
-          </h2>
-          <p>13 英寸或 15 英寸。把你的世界，随身展开。</p>
-          <ArrowLink to="/mac#macbook-air-13-m5">认识 MacBook Air</ArrowLink>
-        </div>
-        <Media id="mac-air-hero" sizes="90vw" reveal="image" />
-        <div className="air-facts wrap" data-reveal="stagger">
-          <span>
-            <strong>1.23 kg</strong>13 英寸机型重量
-          </span>
-          <span>
-            <strong>11.3 mm</strong>机身厚度
-          </span>
-          <span>
-            <strong>无风扇</strong>安静，也是设计的一部分
-          </span>
-        </div>
-      </section>
-      <section className="vision-section">
-        <Media id="phone-pro-landscape" sizes="100vw" />
-        <div className="vision-copy" data-reveal="heading">
-          <p className="eyebrow">iPhone 18 Pro · Fusion 相机系统</p>
-          <h2>
-            眼前的世界，
-            <br />
-            值得认真记录。
-          </h2>
-          <ArrowLink to="/iphone/iphone-18-pro#camera" solid>
-            走近影像系统
-          </ArrowLink>
-        </div>
-        <p className="vision-caption">Apple 公布的 iPhone 18 Pro 拍摄样张</p>
-      </section>
-      <Explorer />
-      <section className="journal-section wrap">
-        <div className="section-head" data-reveal="heading">
+
+      <section className="field-feature" id="field-notes">
+        <div className="field-heading wrap" data-reveal="heading">
           <div>
-            <p className="eyebrow">深入一点</p>
-            <h2>细节，值得看见。</h2>
+            <p className="exhibit-label">iPhone 摄影</p>
+            <h2>观察光线。</h2>
           </div>
-          <ArrowLink to="/journal/the-language-of-material">阅读设计观察</ArrowLink>
+          <p>从远处的山脊到夜色中的星空。通过官方样张，观察镜头在不同光线下记录的细节。</p>
         </div>
-        <div className="journal-grid" data-reveal="stagger">
-          {stories.map((s) => (
-            <Link to={'/journal/' + s.slug} className="journal-card" key={s.slug}>
-              <div className="journal-image">
-                <Media id={s.media} />
-                <span className="image-link">
-                  <ArrowUpRight size={21} />
-                </span>
+        <div className="field-image">
+          <Media id="phone-pro-landscape" sizes="100vw" />
+        </div>
+        <div className="field-foot wrap">
+          <p>Apple 公布的 iPhone 18 Pro 主摄样张</p>
+          <ArrowLink to="/iphone/iphone-18-pro#camera">查看相机场景</ArrowLink>
+        </div>
+      </section>
+
+      <Explorer />
+
+      <section className="reading-section wrap" aria-labelledby="reading-title">
+        <div className="section-head" data-reveal="heading">
+          <h2 id="reading-title">设计观察</h2>
+        </div>
+        <div className="reading-list">
+          {stories.map((story) => (
+            <Link className="reading-link" to={'/journal/' + story.slug} key={story.slug}>
+              <Media id={story.media} sizes="(max-width: 760px) 34vw, 240px" />
+              <div>
+                <span className="overline">{story.readTime}</span>
+                <h3>{story.title}</h3>
+                <p>{story.teaser}</p>
               </div>
-              <div className="journal-meta">
-                <span>{s.category}</span>
-                <span>{s.readTime}</span>
-              </div>
-              <h3>{s.title}</h3>
-              <p>{s.teaser}</p>
+              <ArrowUpRight size={22} aria-hidden="true" />
             </Link>
           ))}
         </div>
       </section>
       <CompareEntry />
-      <div className="concept-note wrap">
-        <span>{siteName} / Product Studies</span>
-        <p>独立产品体验研究。非 Apple 官方网站。</p>
-        <Link to="/about">
-          关于本项目
-          <ChevronRight size={13} />
-        </Link>
-      </div>
-    </>
+    </div>
   );
 }

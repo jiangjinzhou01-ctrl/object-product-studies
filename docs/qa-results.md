@@ -1,5 +1,20 @@
 # QA 记录
 
+## 产品展览改版 · 2026-11-18
+
+TypeScript、ESLint、Prettier 与生产构建通过。Chromium 在十个内容路由执行 43 项 Playwright 测试，覆盖七种宽度、导航、滚动叙事、工作流、比较和 axe WCAG A/AA 检查。首轮发现 768px 首屏图片撑宽页面与截图用例定位器过时，修正后全套通过。生产截图复核还发现大图继承了首屏样张的裁切规则，改为显示完整原图并增加回归断言。
+
+生产子路径检查确认，1440px 预加载 900px 主图，390px 和 768px 预加载 480px 主图。各视口均复用 HTML 发起的请求。本地字体、切图说明、键盘放大和关闭、滚动章节、工作流、移动导航与比较链接刷新均通过。新增大图对话框在桌面与移动视口的 axe 检查均无违规。素材清单中的 21 个源条目和 75 个派生文件已核对，WebP 候选合计 5,794,304 字节。
+
+| 界面       | 生产预览截图                                                                                                                                                                                                                      |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 首页       | [桌面](screenshots/exhibition-home-1440.webp) · [手机](screenshots/exhibition-home-390.webp) · [平板](screenshots/exhibition-home-768.webp)                                                                                       |
+| iPhone     | [产品开场](screenshots/exhibition-iphone-1440.webp) · [手机滚动章节](screenshots/exhibition-narrative-390.webp) · [夜色样张](screenshots/exhibition-camera-1440.webp) · [低光大图](screenshots/exhibition-image-viewer-1440.webp) |
+| Mac        | [产品开场](screenshots/exhibition-mac-1440.webp) · [视觉设计工作流](screenshots/exhibition-workflow-1440.webp)                                                                                                                    |
+| 导航与比较 | [手机导航](screenshots/exhibition-navigation-390.webp) · [手机比较](screenshots/exhibition-compare-390.webp)                                                                                                                      |
+
+验证环境为 Chromium 模拟视口。Safari、Firefox 和实体移动设备仍待测试。
+
 ## 动效与加载更新 · 2026-11-18
 
 TypeScript、ESLint、Prettier 和生产构建通过。Chromium 中 **42 项 Playwright 测试全部通过**，涵盖十个内容页面、七种视口和原有无障碍检查。新增测试暂停 JavaScript 与首图请求，依次检查启动提示和图片等待状态，确认图像加载失败后可以重试。视角切换测试同时覆盖旧图保留与反向切换。首轮发布检查发现比较页说明文字淡入时对比度短暂下降。修正后文字和页面以位移入场，图片继续叠化。

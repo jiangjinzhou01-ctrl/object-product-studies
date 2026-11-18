@@ -10,7 +10,6 @@ export default function Footer() {
             {siteName}
             <span>独立产品研究</span>
           </Link>
-          <p>设计，触动每一天。</p>
           <button
             className="back-top"
             onClick={() =>

@@ -1,5 +1,18 @@
 [
   {
+    "id": "phone-pro-spec",
+    "alt": "iPhone 18 Pro 四款机身配色与酒红色正面，来自 Apple 技术规格页",
+    "source": "https://support.apple.com/en-asia/148590",
+    "originalUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-18-pro.png",
+    "originalFile": "phone-pro-spec.png",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / Apple Support product image",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 技术规格页公开产品图。仅裁去透明留边并生成响应式 WebP。版权归 Apple Inc.，本项目未获得独立授权。",
+    "verifiedAt": "2026-11-18",
+    "trimTransparent": true
+  },
+  {
     "id": "phone-pro-hero",
     "alt": "The front of a burgundy iPhone 18 Pro is displayed next to a rear-facing burgundy iPhone 18 Pro Max.",
     "source": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",

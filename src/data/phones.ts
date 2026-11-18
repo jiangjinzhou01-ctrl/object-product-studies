@@ -25,7 +25,7 @@ export const phones: PhoneProduct[] = [
     chip: 'A20 Pro',
     announcementDate: '2026-09-09',
     releaseDate: '2026-09-18',
-    heroMedia: 'phone-pro-hero',
+    heroMedia: 'phone-pro-spec',
     gallery: ['phone-pro-hero', 'phone-pro-finishes', 'phone-pro-lowlight'],
     tagline: '把目光，留给细节。',
     description: '从手掌中的铝金属，到镜头里的光。一次关于材质、影像与日常体验的观察。',

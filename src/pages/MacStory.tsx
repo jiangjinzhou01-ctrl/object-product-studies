@@ -1,67 +1,137 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
 import { SceneMedia } from '../components/SceneMedia';
-import { Eyebrow, ArrowLink, Metric } from '../components/UI';
+import { ImageViewer } from '../components/ImageViewer';
+import { ArrowLink, Metric } from '../components/UI';
 import Specifications from '../components/Specifications';
 import { macs } from '../data/macs';
-import { mediaUrl } from '../data/media';
 import { handleTabKey } from '../lib/tabs';
+
 const workflows = [
   {
     id: 'motion',
     label: '动态影像',
-    app: 'ADOBE AFTER EFFECTS',
-    title: '让时间线上的想法，流动起来。',
-    body: '从分层合成到动画编排，把你的工作放进更完整的画面。M6 的 12 核 CPU 与 12 核 GPU，是这张创作桌面的计算基础。',
+    app: 'Adobe After Effects',
+    title: '画面在时间线上成形。',
+    body: '在合成、时间线与预览之间查看图层和关键帧。M6 配有 12 核 CPU 和 12 核 GPU，应用的实际表现随项目而变。',
     media: 'mac-pro-motion',
   },
   {
     id: 'design',
     label: '视觉设计',
-    app: 'PIXELMATOR PRO',
-    title: '从一层像素，到完整表达。',
-    body: '组织图层，调整色彩，反复打磨细节。Liquid Retina XDR 显示屏支持 P3 广色域，为视觉工作提供清晰的观察空间。',
+    app: 'Pixelmator Pro',
+    title: '在同一块屏幕上看色彩与细节。',
+    body: '画布旁可以保留图层和调色工具。Liquid Retina XDR 支持 P3 广色域，为需要观察色彩和明暗层次的工作提供显示空间。',
     media: 'mac-pro-design',
   },
   {
     id: 'code',
     label: '开发构建',
-    app: 'XCODE',
-    title: '把下一步想法，写成现实。',
-    body: '在编辑器、模拟器与文档之间切换。16GB 起的统一内存与 1TB 起的固态硬盘，为项目提供工作空间。',
+    app: 'Xcode',
+    title: '把代码和它的结果并排放。',
+    body: '在编辑器旁预览应用。统一内存从 16GB 起，固态硬盘从 1TB 起，选型时可按项目的内存与存储需求比较。',
     media: 'mac-pro-code',
   },
-];
+] as const;
+
 const ports = [
   {
     name: 'Thunderbolt 4',
     detail: '三个端口，最高 40Gb/s。连接外置存储、显示器与兼容扩展设备。',
-    short: '03 × TB4',
+    short: '3 个端口',
   },
   {
     name: 'HDMI',
-    detail: '一个 HDMI 端口，为外接屏幕与演示提供直接连接。具体分辨率和刷新率组合请参阅官方规格。',
-    short: '01 × HDMI',
+    detail: '一个 HDMI 端口，为外接屏幕与演示提供直接连接。分辨率与刷新率组合见官方规格。',
+    short: '外接显示',
   },
-  { name: 'SDXC', detail: 'SDXC 卡插槽。让相机中的素材，进入下一段创作流程。', short: '01 × SDXC' },
+  {
+    name: 'SDXC',
+    detail: '通过 SDXC 卡插槽直接导入相机中的照片和视频。',
+    short: '卡槽',
+  },
   {
     name: 'MagSafe 3',
-    detail: '独立磁吸充电接口。另配 3.5 毫米耳机插孔，支持高阻抗耳机。',
-    short: 'POWER + AUDIO',
+    detail: '独立磁吸充电接口。机身还配有支持高阻抗耳机的 3.5 毫米插孔。',
+    short: '电源',
   },
 ];
-export default function MacStory() {
-  const product = macs[0],
-    [workflow, setWorkflow] = useState(0),
-    [port, setPort] = useState(0);
-  useEffect(() => {
-    const preload = new Image();
-    preload.src = mediaUrl(workflows[(workflow + 1) % workflows.length].media);
-  }, [workflow]);
+
+function Workbench() {
+  const [workflow, setWorkflow] = useState(0);
+  const [presented, setPresented] = useState<string>(workflows[0].media);
+  const visibleWorkflow = workflows.find((item) => item.media === presented) ?? workflows[0];
+
   return (
-    <>
+    <section className="workflow-section workbench wrap" id="workflow">
+      <div className="section-head" data-reveal="heading">
+        <div>
+          <p className="exhibit-label">专业应用</p>
+          <h2>工作台的三种打开方式。</h2>
+        </div>
+      </div>
+      <div className="workbench-layout">
+        <div
+          className="workbench-tabs"
+          role="tablist"
+          aria-label="选择专业工作流"
+          onKeyDown={handleTabKey}
+        >
+          {workflows.map((item, index) => (
+            <button
+              key={item.id}
+              id={'workflow-tab-' + item.id}
+              aria-label={item.label}
+              role="tab"
+              aria-controls="workflow-panel"
+              aria-selected={workflow === index}
+              tabIndex={workflow === index ? 0 : -1}
+              onClick={() => setWorkflow(index)}
+            >
+              <span>
+                {item.label}
+                <small>{item.app}</small>
+              </span>
+              <ChevronRight size={16} aria-hidden="true" />
+            </button>
+          ))}
+        </div>
+        <div
+          id="workflow-panel"
+          role="tabpanel"
+          aria-labelledby={'workflow-tab-' + workflows[workflow].id}
+        >
+          <div className="workflow-image">
+            <SceneMedia
+              id={workflows[workflow].media}
+              sizes="(max-width:760px) 94vw, 69vw"
+              onPresent={setPresented}
+            />
+            <ImageViewer
+              id={visibleWorkflow.media}
+              label={visibleWorkflow.app + ' · MacBook Pro'}
+            />
+          </div>
+          <div className="workbench-caption" key={presented} data-scene-copy>
+            <p className="exhibit-label">{visibleWorkflow.app}</p>
+            <h3>{visibleWorkflow.title}</h3>
+            <p>{visibleWorkflow.body}</p>
+          </div>
+        </div>
+      </div>
+      <p className="media-caption">Apple 官方应用场景图。具体应用性能与项目和配置有关。</p>
+    </section>
+  );
+}
+
+export default function MacStory() {
+  const product = macs[0];
+  const [port, setPort] = useState(0);
+
+  return (
+    <div className="mac-story">
       <nav className="product-nav" aria-label="MacBook Pro 章节">
         <Link to="/mac">
           MacBook Pro <span>/ M6</span>
@@ -77,38 +147,32 @@ export default function MacStory() {
           </Link>
         </div>
       </nav>
-      <section className="mac-intro">
-        <div className="wrap">
-          <div className="mac-intro-top">
-            <Eyebrow>MacBook Pro · M6</Eyebrow>
-            <span className="overline">14-INCH / BUILT FOR YOUR IDEAS</span>
-          </div>
-          <div className="mac-intro-heading" data-reveal="heading">
+      <section className="mac-plate wrap">
+        <div className="mac-plate-heading" data-reveal="heading">
+          <div>
+            <p className="exhibit-label">14 英寸 · M6</p>
             <h1>
-              MacBook Pro.<span>把想法，推向更远。</span>
+              MacBook Pro<em>.</em>
             </h1>
-            <div>
-              <p>
-                从第一层画面，到最后一行代码。
-                <br />
-                专注，让创作自然展开。
-              </p>
-              <Link className="text-link" to="#workflow">
-                进入工作状态
-                <ArrowDown size={16} />
-              </Link>
-            </div>
+          </div>
+          <div>
+            <p>屏幕、性能和接口，怎样在一台便携的设备里组成工作台。</p>
+            <Link className="text-link" to="#workflow">
+              进入工作流
+              <ArrowDown size={16} />
+            </Link>
           </div>
         </div>
-        <div className="mac-intro-image">
-          <Media id="mac-pro-hero" priority sizes="100vw" reveal="image" />
+        <div className="mac-plate-visual">
+          <Media id="mac-pro-front" priority sizes="(max-width:760px) 91vw, 850px" />
+          <ImageViewer id="mac-pro-front" label="MacBook Pro M6 · 官方产品图" />
         </div>
-        <div className="mac-intro-foot wrap">
+        <div className="mac-plate-caption">
           <span>14.2 英寸 Liquid Retina XDR</span>
-          <span>Apple M6 · 12 核 CPU / 12 核 GPU</span>
-          <span>1.55 kg</span>
+          <span>深空黑色与银色</span>
         </div>
       </section>
+
       <section
         className="metrics-row wrap"
         data-reveal="stagger"
@@ -120,79 +184,24 @@ export default function MacStory() {
         <Metric
           value="24 小时"
           label="最长流媒体视频播放"
-          note="Apple 实验室测试；实际续航因使用方式而异"
+          note="Apple 实验室测试，实际续航视使用情况而定"
         />
       </section>
-      <section className="workflow-section wrap" id="workflow">
-        <div className="section-head" data-reveal="heading">
-          <div>
-            <Eyebrow>01 / IN THE MAKING</Eyebrow>
-            <h2>
-              你的工作方式，
-              <br />
-              就是它的打开方式。
-            </h2>
-          </div>
-          <p>
-            三种工作场景，同一张桌面。
-            <br />
-            选择一个方向，看看创作如何展开。
-          </p>
-        </div>
-        <div
-          className="workflow-tabs"
-          role="tablist"
-          aria-label="选择专业工作流"
-          onKeyDown={handleTabKey}
-        >
-          {workflows.map((w, i) => (
-            <button
-              key={w.id}
-              id={'workflow-tab-' + w.id}
-              role="tab"
-              aria-controls="workflow-panel"
-              aria-selected={workflow === i}
-              tabIndex={workflow === i ? 0 : -1}
-              onClick={() => setWorkflow(i)}
-            >
-              <span>0{i + 1}</span>
-              {w.label}
-              <ArrowUpRight size={16} />
-            </button>
-          ))}
-        </div>
-        <div
-          id="workflow-panel"
-          role="tabpanel"
-          aria-labelledby={'workflow-tab-' + workflows[workflow].id}
-        >
-          <div className="workflow-image">
-            <SceneMedia id={workflows[workflow].media} sizes="90vw" />
-          </div>
-          <div className="workflow-description" key={workflow} data-scene-copy>
-            <span className="overline">{workflows[workflow].app}</span>
-            <h3>{workflows[workflow].title}</h3>
-            <p>{workflows[workflow].body}</p>
-          </div>
-        </div>
-        <p className="media-caption">
-          Apple 官方应用场景图。用于说明工作方式，不代表本站进行了应用性能测试。
-        </p>
-      </section>
-      <section className="display-section" id="display">
+
+      <Workbench />
+
+      <section className="display-section display-study" id="display">
         <div className="wrap">
-          <div className="display-heading" data-reveal="heading">
-            <Eyebrow light>02 / THE BIGGER PICTURE</Eyebrow>
-            <h2>
-              每一处细节，
-              <br />
-              都值得被看见。
-            </h2>
-            <p>
-              14.2 英寸 Liquid Retina XDR。
-              <br />
-              从暗部层次，到明亮高光，让画面获得完整的表达。
-            </p>
+          <div className="display-study-heading" data-reveal="heading">
+            <div>
+              <p className="exhibit-label">Liquid Retina XDR</p>
+              <h2>
+                明与暗，
+                <br />
+                都清楚可见。
+              </h2>
+            </div>
+            <p>屏幕支持 P3 广色域与最高 120Hz 的 ProMotion 自适应刷新率。</p>
           </div>
           <Media id="mac-pro-display" sizes="90vw" reveal="image" />
           <div className="display-facts" data-reveal="stagger">
@@ -201,81 +210,70 @@ export default function MacStory() {
             <Metric value="P3" label="广色域" />
           </div>
           <p className="media-caption">
-            HDR 峰值亮度不代表全屏持续亮度；屏幕尺寸按标准矩形测量。详细条件见官方技术规格。
+            亮度为 HDR 峰值。屏幕尺寸按标准矩形测量，详细条件见官方规格。
           </p>
         </div>
       </section>
       <section className="ports-section wrap" id="connect">
         <div className="section-head" data-reveal="heading">
           <div>
-            <Eyebrow>03 / STAY CONNECTED</Eyebrow>
-            <h2>连接，直接一点。</h2>
+            <p className="exhibit-label">机身两侧</p>
+            <h2>接口，逐个看。</h2>
           </div>
-          <p>
-            从素材导入，到屏幕延展。
-            <br />
-            让接口成为工作的一部分。
-          </p>
+          <p>点选机身上的位置，查看接口用途。</p>
         </div>
-        <div className="ports-image" data-reveal="surface">
+        <div className="ports-image">
           <Media id="mac-pro-ports" sizes="90vw" />
           <div className="port-hotspots" role="group" aria-label="点选图中接口">
-            {ports.map((p, i) => (
+            {ports.map((item, index) => (
               <button
-                key={p.name}
-                className={'port-hotspot port-hotspot-' + i}
-                aria-label={'选择 ' + p.name + ' 接口'}
-                aria-pressed={port === i}
-                onClick={() => setPort(i)}
+                key={item.name}
+                className={'port-hotspot port-hotspot-' + index}
+                aria-label={'选择 ' + item.name + ' 接口'}
+                aria-pressed={port === index}
+                onClick={() => setPort(index)}
               >
                 <span className="hotspot-ring" />
-                {port === i && <span className="hotspot-label">{p.name}</span>}
+                {port === index && <span className="hotspot-label">{item.name}</span>}
               </button>
             ))}
           </div>
         </div>
         <div className="ports-controls">
           <div role="tablist" aria-label="了解连接接口" onKeyDown={handleTabKey}>
-            {ports.map((p, i) => (
+            {ports.map((item, index) => (
               <button
                 role="tab"
-                id={'port-tab-' + i}
+                id={'port-tab-' + index}
                 aria-controls="port-panel"
-                aria-selected={port === i}
-                tabIndex={port === i ? 0 : -1}
-                key={p.name}
-                onClick={() => setPort(i)}
+                aria-selected={port === index}
+                tabIndex={port === index ? 0 : -1}
+                key={item.name}
+                onClick={() => setPort(index)}
               >
-                {p.name}
-                <span>0{i + 1}</span>
+                {item.name}
               </button>
             ))}
           </div>
           <div role="tabpanel" id="port-panel" aria-labelledby={'port-tab-' + port}>
-            <span className="overline">{ports[port].short}</span>
-            <h3>{ports[port].name}</h3>
-            <p>{ports[port].detail}</p>
+            <div key={port} data-scene-copy>
+              <span className="overline">{ports[port].short}</span>
+              <h3>{ports[port].name}</h3>
+              <p>{ports[port].detail}</p>
+            </div>
           </div>
         </div>
       </section>
       <Specifications product={product} />
       <section className="next-product wrap">
         <div>
-          <Eyebrow>ANOTHER WAY TO WORK</Eyebrow>
-          <h2>
-            轻一点，
-            <br />
-            去远一点。
-          </h2>
-          <p>
-            认识配备 M5 的 MacBook Air。
-            <br />
-            13 与 15 英寸，两种随行的方式。
-          </p>
+          <p className="exhibit-label">MacBook Air · M5</p>
+          <h2>更轻的选择。</h2>
+          <p>13 与 15 英寸两种尺寸，采用无风扇设计。</p>
           <ArrowLink to="/mac#macbook-air-13-m5">探索 MacBook Air</ArrowLink>
         </div>
         <Media id="mac-air-pair" reveal="image" />
       </section>
-    </>
+    </div>
   );
 }

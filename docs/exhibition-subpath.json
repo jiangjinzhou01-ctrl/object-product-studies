@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-11-18T02:38:31.580Z",
+  "base": "http://127.0.0.1:4174/object-product-studies/",
+  "browser": "156.0.8078.79",
+  "viewports": {
+    "390": {
+      "status": 200,
+      "preload": {
+        "asset": "http://127.0.0.1:4174/object-product-studies/assets/images/phone-pro-spec-trim-480.webp",
+        "requests": [
+          {
+            "name": "http://127.0.0.1:4174/object-product-studies/assets/images/phone-pro-spec-trim-480.webp",
+            "initiatorType": "link"
+          }
+        ],
+        "fits": true,
+        "latinFontReady": true,
+        "localFonts": [
+          "Inter Variable",
+          "Object Chinese",
+          "Object Chinese",
+          "Instrument Serif"
+        ]
+      },
+      "mobileNavigation": true,
+      "dialogAxeViolations": 0,
+      "viewAndZoom": true,
+      "phoneStory": true,
+      "macStory": true,
+      "compareRestores": true,
+      "sourceAndLicense": true
+    },
+    "768": {
+      "status": 200,
+      "preload": {
+        "asset": "http://127.0.0.1:4174/object-product-studies/assets/images/phone-pro-spec-trim-480.webp",
+        "requests": [
+          {
+            "name": "http://127.0.0.1:4174/object-product-studies/assets/images/phone-pro-spec-trim-480.webp",
+            "initiatorType": "link"
+          }
+        ],
+        "fits": true,
+        "latinFontReady": true,
+        "localFonts": [
+          "Inter Variable",
+          "Object Chinese",
+          "Object Chinese",
+          "Instrument Serif"
+        ]
+      }
+    },
+    "1440": {
+      "status": 200,
+      "preload": {
+        "asset": "http://127.0.0.1:4174/object-product-studies/assets/images/phone-pro-spec-trim-900.webp",
+        "requests": [
+          {
+            "name": "http://127.0.0.1:4174/object-product-studies/assets/images/phone-pro-spec-trim-900.webp",
+            "initiatorType": "link"
+          }
+        ],
+        "fits": true,
+        "latinFontReady": true,
+        "localFonts": [
+          "Inter Variable",
+          "Object Chinese",
+          "Object Chinese",
+          "Instrument Serif"
+        ]
+      },
+      "exhibitionAnchors": true,
+      "dialogAxeViolations": 0,
+      "viewAndZoom": true,
+      "phoneStory": true,
+      "macStory": true,
+      "compareRestores": true
+    }
+  },
+  "errors": [],
+  "failedRequests": [],
+  "passed": true
+}

@@ -1,0 +1,598 @@
+.product-nav {
+  background: #eeebe8;
+  border-color: var(--line);
+}
+.product-nav .mini-button {
+  border-radius: 4px;
+}
+.metrics-row .metric {
+  border-color: var(--line);
+}
+.viewer-trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ffffff30;
+  border-radius: 4px;
+  background: #271f28;
+  color: #fff;
+}
+.launch-visual > .viewer-trigger,
+.workflow-image > .viewer-trigger,
+.camera-scene-image > .viewer-trigger,
+.gallery-stage > .viewer-trigger,
+.mac-plate-visual > .viewer-trigger {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 14px;
+}
+.viewer-trigger:hover {
+  background: #5d3f51;
+}
+.viewer-trigger:focus-visible {
+  outline-color: #8cbbe6;
+  outline-offset: 2px;
+}
+.image-viewer {
+  width: min(94vw, 1470px);
+  height: min(89dvh, 1020px);
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #584b57;
+  background: #161218;
+  color: #fbf7fc;
+}
+.image-viewer::backdrop {
+  background: rgb(15 12 16 / 82%);
+}
+body:has(.image-viewer[open]) {
+  overflow: hidden;
+}
+.viewer-layout {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+}
+.viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 14px 9px 20px;
+  border-bottom: 1px solid #524752;
+}
+.viewer-toolbar p {
+  font-size: 13px;
+}
+.viewer-image {
+  min-height: 0;
+}
+.viewer-image .scene-media {
+  --scene-surface: #161218;
+}
+.viewer-image [data-media='phone-pro-spec'] {
+  background: var(--plate);
+}
+.viewer-image .media {
+  padding: 12px;
+}
+
+.phone-cover {
+  background: #000;
+  color: #f9f4f8;
+}
+.phone-cover-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7.4fr) minmax(0, 4.6fr);
+  grid-template-areas: 'visual copy' 'caption caption';
+  align-items: center;
+  gap: 0 clamp(25px, 4vw, 65px);
+}
+.phone-cover-visual {
+  grid-area: visual;
+  height: clamp(500px, 46vw, 685px);
+  overflow: hidden;
+}
+.phone-cover-visual .media {
+  height: 100%;
+}
+.phone-cover-visual img {
+  object-fit: cover;
+  object-position: 52% 23%;
+}
+.phone-cover-copy {
+  grid-area: copy;
+  padding-block: 52px;
+}
+.phone-cover-copy .exhibit-label {
+  color: #dcbacb;
+}
+.phone-cover-copy h1 {
+  margin: 27px 0 23px;
+  font-size: clamp(72px, 8vw, 128px);
+  line-height: 0.91;
+  font-weight: 570;
+  letter-spacing: -0.085em;
+}
+.phone-cover-copy h1 em {
+  display: block;
+  margin-top: 0.04em;
+  font: italic 400 1.1em / 0.86 var(--display);
+  letter-spacing: -0.04em;
+  color: #dcb1c1;
+}
+.phone-cover-copy > p:not(.exhibit-label) {
+  max-width: 22em;
+  color: #d2c3cc;
+  font-size: 16px;
+  line-height: 1.9;
+}
+.phone-cover-copy .text-link {
+  margin-top: 20px;
+}
+.phone-cover-layout > .media-caption {
+  grid-area: caption;
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid #292327;
+  color: #c0aeb8;
+}
+.narrative-stage,
+.gallery-stage {
+  border-radius: 2px;
+}
+.narrative-progress > span.active {
+  background: var(--wine);
+}
+.narrative-chapters article .exhibit-label {
+  color: var(--wine);
+  font-size: 12px;
+}
+.narrative-chapters h2 {
+  text-wrap: balance;
+}
+.gallery-stage {
+  position: relative;
+}
+
+.contact-sheet {
+  background: #211d24;
+  color: #fcf8f9;
+}
+.contact-sheet .exhibit-label {
+  color: #e2bcca;
+}
+.contact-sheet .section-head {
+  align-items: flex-end;
+}
+.contact-sheet .section-head h2 {
+  max-width: 9em;
+}
+.contact-sheet .section-head > p {
+  color: #d0c4cc;
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(132px, 13.6vw, 199px);
+  grid-template-areas: 'image tabs';
+  gap: clamp(20px, 4vw, 58px);
+  align-items: start;
+}
+.contact-panel {
+  grid-area: image;
+  min-width: 0;
+}
+.contact-sheet .camera-scene-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.61;
+  border-radius: 0;
+  background: #0e0c10;
+}
+.contact-sheet .camera-scene-image .scene-media {
+  --scene-surface: #0e0c10;
+}
+.contact-sheet .camera-scene-image img {
+  object-fit: contain;
+}
+.contact-tabs {
+  display: grid;
+  grid-area: tabs;
+  gap: 14px;
+}
+.contact-tabs button {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  border: 1px solid #5d525c;
+  padding: 6px;
+  text-align: left;
+  color: #d8ccd4;
+  font-size: 12px;
+  transition:
+    border-color var(--fast),
+    color var(--fast),
+    background var(--fast);
+}
+.contact-tabs button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.83;
+  object-fit: cover;
+  background: #0e0c10;
+}
+.contact-tabs button span {
+  padding: 3px 7px 5px;
+}
+.contact-tabs button[aria-selected='true'] {
+  border-color: #e0b5c4;
+  background: #3b2d39;
+  color: #fff;
+}
+.contact-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 25px;
+  align-items: end;
+  padding: 22px 0;
+  border-bottom: 1px solid #51444f;
+}
+.contact-caption h3 {
+  font-size: clamp(25px, 3vw, 40px);
+}
+.contact-caption p {
+  max-width: 26em;
+  margin-top: 10px;
+  color: #cec1ca;
+  font-size: 14px;
+}
+.contact-caption .aperture-note {
+  margin: 0;
+  border: 0;
+  padding: 5px 0 0;
+  align-items: flex-end;
+}
+.contact-caption .aperture-note > strong {
+  color: #f4c3d1;
+  white-space: nowrap;
+}
+.contact-caption .aperture-note > span {
+  color: #ccc0c8;
+}
+.contact-source {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 13px;
+}
+.contact-source p {
+  color: #c8bac4;
+  font-size: 11px;
+}
+
+.mac-plate {
+  padding-top: clamp(52px, 6.2vw, 100px);
+}
+.mac-plate-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(175px, 230px);
+  align-items: end;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+.mac-plate-heading h1 {
+  margin-top: 12px;
+  font-size: clamp(56px, 8.3vw, 138px);
+  font-weight: 560;
+  letter-spacing: -0.089em;
+  line-height: 0.97;
+}
+.mac-plate-heading h1 em {
+  color: var(--wine);
+}
+.mac-plate-heading > div > p:not(.exhibit-label) {
+  color: var(--muted);
+}
+.mac-plate-heading .text-link {
+  justify-content: flex-start;
+  gap: 9px;
+}
+.mac-plate-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 390px;
+  height: clamp(390px, 37vw, 580px);
+  overflow: hidden;
+  background: #e7e8ec;
+}
+.mac-plate-visual > .media {
+  width: min(86%, 900px);
+  max-height: 88%;
+}
+.mac-plate-visual > .media img {
+  filter: drop-shadow(0 14px 16px #342f3940);
+}
+.mac-plate-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 51px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+.workbench-layout {
+  display: grid;
+  grid-template-columns: minmax(180px, 2.55fr) minmax(0, 9.45fr);
+  align-items: start;
+  gap: clamp(24px, 4vw, 64px);
+}
+.workbench-tabs {
+  display: grid;
+  gap: 0;
+}
+.workbench-tabs button {
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+  min-height: 78px;
+  padding: 9px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 16px;
+  text-align: left;
+}
+.workbench-tabs button:first-child {
+  border-top: 1px solid var(--line);
+}
+.workbench-tabs small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.workbench-tabs button[aria-selected='true'] {
+  color: var(--wine);
+  border-bottom-color: var(--wine);
+  font-weight: 600;
+}
+.workbench-tabs button:not([aria-selected='true']) > svg {
+  visibility: hidden;
+}
+.workbench .workflow-image {
+  position: relative;
+  border-radius: 2px;
+  aspect-ratio: 1.76;
+}
+.workbench .workflow-image > .scene-media {
+  aspect-ratio: auto;
+}
+.workbench-caption {
+  padding: 24px 0 6px;
+}
+.workbench-caption h3 {
+  margin-top: 8px;
+  font-size: clamp(24px, 3vw, 42px);
+}
+.workbench-caption > p:not(.exhibit-label) {
+  max-width: 48em;
+  margin-top: 10px;
+  color: var(--muted);
+}
+.display-study {
+  background: #201d24;
+}
+.display-study .exhibit-label {
+  color: #c3d9f4;
+}
+.display-study-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: end;
+  gap: 24px;
+  padding-bottom: 35px;
+}
+.display-study-heading h2 {
+  margin-top: 15px;
+  font-size: clamp(40px, 6vw, 91px);
+}
+.display-study-heading > p {
+  max-width: 20em;
+  margin: 0 0 2px auto;
+  color: #ded7df;
+}
+.ports-image {
+  border-radius: 2px;
+}
+.ports-controls button[aria-selected='true'] {
+  background: var(--wine);
+}
+.next-product > .media {
+  border-radius: 0;
+}
+.specifications .spec-expand {
+  background: #ece7e8;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mac-plate-visual > .media {
+    animation: exhibit-image var(--motion-intro) var(--ease) both;
+  }
+  .image-viewer[open] {
+    animation: picture-dissolve var(--motion-route) var(--ease) both;
+  }
+}
+@media (max-width: 760px) {
+  .phone-cover-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'copy' 'visual' 'caption';
+  }
+  .phone-cover-copy {
+    padding-block: 32px 9px;
+  }
+  .phone-cover-copy h1 {
+    margin: 18px 0 17px;
+    font-size: clamp(46px, 13vw, 70px);
+    letter-spacing: -0.085em;
+  }
+  .phone-cover-copy h1 em {
+    display: inline;
+    font-size: 1.13em;
+  }
+  .phone-cover-copy > p:not(.exhibit-label) {
+    max-width: 25em;
+    font-size: 14px;
+  }
+  .phone-cover-copy .text-link {
+    margin-top: 12px;
+  }
+  .phone-cover-visual {
+    height: min(92vw, 415px);
+  }
+  .phone-cover-visual img {
+    object-position: 50% 24%;
+  }
+  .phone-cover-layout > .media-caption {
+    font-size: 9px;
+  }
+  .narrative-chapters article .exhibit-label {
+    font-size: 11px;
+  }
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'tabs' 'image';
+    gap: 16px;
+  }
+  .contact-sheet .section-head {
+    margin-bottom: 23px;
+  }
+  .contact-sheet .section-head h2 {
+    font-size: 39px;
+  }
+  .contact-sheet .section-head > p {
+    margin-top: 14px;
+  }
+  .contact-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+  .contact-tabs button {
+    min-height: 44px;
+    padding: 4px;
+    font-size: 11px;
+  }
+  .contact-tabs button span {
+    padding: 2px 4px;
+  }
+  .contact-sheet .camera-scene-image {
+    aspect-ratio: 1.37;
+  }
+  .contact-caption {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 15px 0;
+  }
+  .contact-caption h3 {
+    font-size: 28px;
+  }
+  .contact-caption p {
+    font-size: 13px;
+  }
+  .contact-caption .aperture-note {
+    flex-direction: row;
+    align-items: center;
+  }
+  .contact-source {
+    flex-wrap: wrap;
+    gap: 0 10px;
+  }
+  .contact-source .text-link {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .mac-plate {
+    padding-top: 32px;
+  }
+  .mac-plate-heading {
+    display: block;
+    padding-bottom: 19px;
+  }
+  .mac-plate-heading h1 {
+    font-size: clamp(48px, 12vw, 76px);
+  }
+  .mac-plate-heading > div > p:not(.exhibit-label) {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .mac-plate-visual {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1.36;
+  }
+  .mac-plate-visual > .media {
+    width: 92%;
+    max-height: none;
+  }
+  .mac-plate-caption {
+    min-height: 47px;
+    font-size: 10px;
+  }
+  .workbench-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .workbench-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+  .workbench-tabs button {
+    min-height: 60px;
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  .workbench-tabs button:first-child {
+    border-top: 0;
+  }
+  .workbench-tabs button > svg {
+    display: none;
+  }
+  .workbench-tabs small {
+    font-size: 9px;
+  }
+  .workbench .workflow-image {
+    aspect-ratio: 1.52;
+  }
+  .workbench-caption > p:not(.exhibit-label) {
+    font-size: 13px;
+  }
+  .display-study-heading {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .display-study-heading > p {
+    margin-left: 0;
+    font-size: 14px;
+  }
+  .launch-visual > .viewer-trigger,
+  .workflow-image > .viewer-trigger,
+  .camera-scene-image > .viewer-trigger,
+  .gallery-stage > .viewer-trigger,
+  .mac-plate-visual > .viewer-trigger {
+    top: 8px;
+    right: 8px;
+  }
+  .viewer-toolbar p {
+    font-size: 12px;
+  }
+}

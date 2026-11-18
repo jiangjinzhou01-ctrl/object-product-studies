@@ -40,14 +40,7 @@ export default function Navigation() {
       >
         跳至主要内容
       </a>
-      <header
-        className={
-          'site-header' +
-          (['/', '/iphone/iphone-18-pro', '/mac/macbook-pro-m6'].includes(location.pathname)
-            ? ' immersive-header'
-            : '')
-        }
-      >
+      <header className="site-header">
         <div className="header-inner">
           <Link to="/" className="wordmark" aria-label={siteName + ' 首页 · 独立产品研究'}>
             {siteName}

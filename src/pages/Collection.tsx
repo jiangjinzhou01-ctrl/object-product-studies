@@ -1,164 +1,88 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { Media } from '../components/Media';
-import { Eyebrow, ArrowLink, CompareEntry } from '../components/UI';
+import { ArrowLink, CompareEntry } from '../components/UI';
 import { products, productPath } from '../data/products';
 import type { Family } from '../types/product';
+
 export default function Collection({ family }: { family: Family }) {
-  const items = products.filter((p) => p.family === family),
-    phone = family === 'iphone';
+  const items = products.filter((product) => product.family === family);
+  const phone = family === 'iphone';
+
   return (
-    <>
-      <section
-        className={'collection-intro wrap ' + (phone ? 'phone-collection' : 'mac-collection')}
-      >
-        <div className="collection-intro-heading" data-reveal="heading">
-          <h1>{phone ? 'iPhone.' : 'Mac.'}</h1>
-          <p>
-            {phone ? (
-              <>
-                把生活，
-                <br />
-                装进口袋。
-              </>
-            ) : (
-              <>
-                灵感在哪，
-                <br />
-                就在哪展开。
-              </>
-            )}
-          </p>
+    <div className="model-collection wrap">
+      <section className="model-collection-head" data-reveal="heading">
+        <div>
+          <p className="exhibit-label">产品系列</p>
+          <h1>
+            {phone ? 'iPhone' : 'Mac'}
+            <em>.</em>
+          </h1>
         </div>
-        <div className="collection-hero-photo">
-          <Media
-            id={phone ? 'phone-17-detail' : 'mac-air-pair'}
-            priority
-            sizes="90vw"
-            reveal="image"
-          />
-          <span className="overline">
-            {phone ? 'iPhone 17 官方配色' : 'MacBook Air · 13 与 15 英寸'}
-          </span>
-        </div>
+        <p>
+          {phone
+            ? '从双摄到三枚 Fusion 镜头，选择适合自己记录方式的 iPhone。'
+            : '从无风扇的 MacBook Air 到带 XDR 显示屏的 MacBook Pro，找到与你的工作方式相配的设备。'}
+        </p>
       </section>
-      <div className="collection-model-nav wrap" id="models">
-        <span className="overline">EXPLORE THE LINEUP</span>
-        <nav aria-label="系列型号">
-          {items.map((p) => (
-            <Link key={p.id} to={'#' + p.id}>
-              {p.name}
-              <ArrowDown size={12} />
-            </Link>
-          ))}
-        </nav>
-      </div>
-      <div
-        className={
-          'collection-studies ' + (phone ? 'phone-collection-studies' : 'mac-collection-studies')
-        }
-      >
-        {items.map((p, i) => (
-          <section
-            id={p.id}
-            key={p.id}
-            className={'collection-study ' + (p.id === 'iphone-18-pro' ? 'dark-study' : '')}
-          >
-            <div className="wrap collection-study-grid">
-              <div className="collection-study-photo">
-                <Media
-                  id={p.id === 'macbook-pro-m6' ? 'mac-pro-hero' : p.heroMedia}
-                  reveal="image"
-                  sizes="(max-width:760px) 100vw, 55vw"
-                />
+      <nav className="model-collection-nav" id="models" aria-label="系列型号">
+        {items.map((product) => (
+          <Link key={product.id} to={'#' + product.id}>
+            {product.name}
+            <ArrowDown size={15} aria-hidden="true" />
+          </Link>
+        ))}
+      </nav>
+      <div className="model-rows">
+        {items.map((product) => {
+          const path = productPath(product);
+          const hasStory = !path.includes('#');
+          const other = items.find((item) => item.id !== product.id);
+          const compare =
+            '/compare?type=' + family + '&models=' + [product.id, other?.id].join(',');
+          return (
+            <section className="model-row" id={product.id} key={product.id}>
+              <div className="model-row-visual" data-device={product.id}>
+                <Media id={product.heroMedia} sizes="(max-width:760px) 94vw, 54vw" reveal="image" />
               </div>
-              <div className="collection-study-copy" data-reveal="heading">
-                <span className="overline">
-                  0{i + 1} / {p.chip.toUpperCase()}
-                </span>
-                <h2>{p.name}</h2>
-                <h3>{p.tagline}</h3>
-                <p>{p.description}</p>
+              <div className="model-row-copy" data-reveal="heading">
+                <p className="exhibit-label">{product.chip}</p>
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
                 <dl>
-                  {p.specifications
-                    .filter((s) => ['display', 'chip', 'weight'].includes(s.key))
-                    .map((s) => (
-                      <div key={s.key}>
-                        <dt>{s.label}</dt>
-                        <dd>{s.value}</dd>
+                  {product.specifications
+                    .filter((spec) => ['display', 'chip', 'weight'].includes(spec.key))
+                    .map((spec) => (
+                      <div key={spec.key}>
+                        <dt>{spec.label}</dt>
+                        <dd>{spec.value}</dd>
                       </div>
                     ))}
                 </dl>
-                <div className="collection-links">
-                  {['iphone-18-pro', 'macbook-pro-m6'].includes(p.id) ? (
-                    <ArrowLink to={productPath(p)} solid>
+                <div className="model-row-actions">
+                  {hasStory ? (
+                    <ArrowLink to={path} solid className="study-cta">
                       阅读产品故事
                     </ArrowLink>
                   ) : (
                     <a
-                      className="button"
-                      href={p.referenceSources[0].url}
+                      className="text-link"
+                      href={product.referenceSources[0].url}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      了解官方规格
-                      <ArrowUpRight size={16} />
+                      官方技术规格
+                      <ArrowUpRight size={17} aria-hidden="true" />
                     </a>
                   )}
-                  <ArrowLink
-                    to={
-                      '/compare?type=' +
-                      family +
-                      '&models=' +
-                      p.id +
-                      ',' +
-                      items.find((a) => a.id !== p.id)!.id
-                    }
-                  >
-                    加入比较
-                  </ArrowLink>
+                  <ArrowLink to={compare}>加入比较</ArrowLink>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          );
+        })}
       </div>
-      <section className="selection-guide wrap">
-        <Eyebrow>CHOOSE WITH INTENTION</Eyebrow>
-        <div>
-          <h2>{phone ? '你想怎样，记录生活？' : '你习惯在哪里，开始工作？'}</h2>
-          <div className="selection-columns">
-            {(phone
-              ? [
-                  [
-                    '更主动的创作',
-                    'iPhone 18 Pro 的可变光圈与三枚 Fusion 相机，为重视影像控制的人提供更多选择。',
-                  ],
-                  [
-                    '更轻盈的日常',
-                    'iPhone 17 以 177g 机身、双 Fusion 相机和 ProMotion，在便携与日常体验间找到平衡。',
-                  ],
-                ]
-              : [
-                  [
-                    '移动，是日常的一部分',
-                    'MacBook Air 的无风扇设计、13 与 15 英寸两种尺寸，适合在不同地点展开工作。',
-                  ],
-                  [
-                    '专注，需要完整的工作台',
-                    'MacBook Pro 配备 Liquid Retina XDR 显示屏、HDMI 与 SDXC，适合依赖专业屏幕与连接的工作流。',
-                  ],
-                ]
-            ).map(([title, body]) => (
-              <article key={title}>
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
       <CompareEntry />
-    </>
+    </div>
   );
 }

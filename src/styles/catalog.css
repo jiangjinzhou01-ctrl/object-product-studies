@@ -1,0 +1,224 @@
+.model-collection-head {
+  display: grid;
+  grid-template-columns: 1fr minmax(245px, 0.48fr);
+  gap: 32px;
+  align-items: end;
+  padding-block: clamp(54px, 8vw, 110px) 38px;
+}
+.model-collection-head h1 {
+  margin-top: 14px;
+  font-size: clamp(72px, 11vw, 158px);
+  line-height: 0.91;
+  letter-spacing: -0.091em;
+  font-weight: 550;
+}
+.model-collection-head h1 em,
+.compare-heading h1 em {
+  color: var(--wine);
+}
+.model-collection-head > p {
+  max-width: 25em;
+  color: var(--muted);
+  font-size: 17px;
+}
+.model-collection-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 4vw, 58px);
+  min-height: 72px;
+  overflow-x: auto;
+  border-block: 1px solid var(--line);
+}
+.model-collection-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 13px;
+  min-height: 44px;
+}
+.model-collection-nav a:hover {
+  color: var(--wine);
+}
+.model-row {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: center;
+  gap: clamp(35px, 7.3vw, 118px);
+  padding-block: clamp(44px, 6.5vw, 100px);
+  border-bottom: 1px solid var(--line);
+}
+.model-row:nth-child(even) {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+.model-row:nth-child(even) .model-row-visual {
+  order: 2;
+}
+.model-row-visual {
+  display: grid;
+  place-items: center;
+  height: clamp(350px, 39vw, 605px);
+  overflow: hidden;
+  background: #e9e5e8;
+}
+.model-row-visual .media {
+  height: 81%;
+  width: 87%;
+}
+.model-row-visual[data-device='iphone-17'] {
+  background: #fff;
+}
+.model-row-visual[data-device^='macbook'] {
+  height: clamp(300px, 31vw, 460px);
+  background: #e9ebee;
+}
+.model-row-copy h2 {
+  margin: 12px 0 15px;
+  font-size: clamp(34px, 4.5vw, 72px);
+}
+.model-row-copy > p:not(.exhibit-label) {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.model-row-copy dl {
+  margin: 27px 0 22px;
+}
+.model-row-copy dl > div {
+  display: grid;
+  grid-template-columns: minmax(75px, 0.34fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 13px;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.model-row-copy dt {
+  color: var(--muted);
+}
+.model-row-copy dd {
+  margin: 0;
+}
+.model-row-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+.model-row-actions .button {
+  white-space: nowrap;
+}
+.model-collection .compare-entry {
+  width: 100%;
+  margin-top: 70px;
+}
+.compare-page .compare-heading h1 {
+  margin-top: 0;
+  font-size: clamp(43px, 6.4vw, 98px);
+}
+.compare-heading > p {
+  max-width: 23em;
+}
+.compare-image {
+  border-radius: 2px;
+  background: #eae7ed;
+}
+.compare-image .media {
+  padding: 13px;
+}
+.compare-image[data-device='iphone-17'] {
+  background: #fff;
+}
+.compare-image[data-device^='macbook'] {
+  background: #e7e9ec;
+}
+.compare-product select {
+  border-radius: 3px;
+}
+.comparison-scroll .is-different {
+  background: #eee3e8;
+}
+.difference-bar input:checked {
+  background: var(--wine);
+}
+.selector-note > p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.compare-empty-slot {
+  border: 1px dashed #d5ccd3;
+  margin: 18px 0;
+}
+.footer .wordmark > span {
+  color: #524754;
+}
+.type-credits a {
+  margin-right: 18px;
+}
+
+@media (max-width: 760px) {
+  .site-header .nav-compare {
+    margin-left: auto;
+  }
+  .model-collection-head {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-block: 31px 22px;
+  }
+  .model-collection-head h1 {
+    font-size: 70px;
+  }
+  .model-collection-head > p {
+    font-size: 14px;
+  }
+  .model-collection-nav {
+    gap: 22px;
+    min-height: 51px;
+  }
+  .model-collection-nav a {
+    font-size: 12px;
+  }
+  .model-row,
+  .model-row:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 19px;
+    padding-block: 28px 38px;
+  }
+  .model-row:nth-child(even) .model-row-visual {
+    order: 0;
+  }
+  .model-row-visual {
+    height: clamp(275px, 76vw, 385px);
+  }
+  .model-row-visual[data-device^='macbook'] {
+    height: clamp(226px, 63vw, 345px);
+  }
+  .model-row-copy h2 {
+    margin-block: 7px 12px;
+  }
+  .model-row-copy > p:not(.exhibit-label) {
+    font-size: 14px;
+  }
+  .model-row-copy dl {
+    margin-block: 17px;
+  }
+  .model-row-copy dl > div {
+    font-size: 12px;
+  }
+  .model-row-actions .study-cta {
+    min-height: 46px;
+  }
+  .compare-heading > p {
+    margin-top: 16px;
+  }
+  .compare-image .media {
+    padding: 6px;
+  }
+  .selector-note > p {
+    font-size: 12px;
+    margin-block: 0;
+  }
+  .comparison-scroll .is-different {
+    border-radius: 0;
+  }
+}
