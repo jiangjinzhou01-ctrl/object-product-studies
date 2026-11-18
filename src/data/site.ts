@@ -1,3 +1,4 @@
+export const siteName = 'apple';
 export const disclaimerEn =
   'Independent product experience concept. Unofficial design and engineering portfolio project. Not affiliated with or endorsed by Apple Inc.';
 export const disclaimerZh =

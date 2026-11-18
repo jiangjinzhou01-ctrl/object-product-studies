@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { Media } from './Media';
+import { SceneMedia } from './SceneMedia';
 import { mediaUrl } from '../data/media';
 import { handleTabKey } from '../lib/tabs';
 const scenes = [
@@ -35,7 +35,7 @@ export default function CameraStudy({ source }: { source: string }) {
   return (
     <section className="camera-section" id="camera">
       <div className="wrap">
-        <div className="section-head">
+        <div className="section-head" data-reveal="heading">
           <div>
             <p className="eyebrow light">Fusion 相机系统</p>
             <h2>
@@ -72,9 +72,9 @@ export default function CameraStudy({ source }: { source: string }) {
           aria-labelledby={'scene-tab-' + scene}
         >
           <div className="camera-scene-image">
-            <Media id={scenes[scene].media} key={scene} sizes="(max-width:760px) 100vw, 65vw" />
+            <SceneMedia id={scenes[scene].media} sizes="(max-width:760px) 100vw, 65vw" />
           </div>
-          <div className="camera-scene-copy">
+          <div className="camera-scene-copy" key={scene} data-scene-copy>
             <span className="overline">48MP FUSION</span>
             <h3>{scenes[scene].title}</h3>
             <p>{scenes[scene].body}</p>

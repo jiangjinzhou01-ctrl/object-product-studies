@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
+import { SceneMedia } from '../components/SceneMedia';
 import { Eyebrow, ArrowLink, Metric, CompareEntry } from '../components/UI';
 import Specifications from '../components/Specifications';
 import CameraStudy from '../components/CameraStudy';
@@ -66,7 +67,7 @@ export default function PhoneStory() {
       </nav>
       <section className="phone-intro">
         <div className="wrap phone-intro-grid">
-          <div className="phone-intro-copy">
+          <div className="phone-intro-copy" data-reveal="heading">
             <Eyebrow light>设计与影像，进一步。</Eyebrow>
             <h1>iPhone 18 Pro.</h1>
             <p>把光，握在手里。</p>
@@ -79,12 +80,17 @@ export default function PhoneStory() {
             id="phone-pro-hero"
             priority
             className="phone-intro-photo"
+            reveal="image"
             sizes="(max-width:760px) 100vw, 70vw"
           />
           <span className="media-caption">iPhone 18 Pro 与 Pro Max / 官方产品图</span>
         </div>
       </section>
-      <section className="metrics-row wrap" aria-label="iPhone 18 Pro 核心规格">
+      <section
+        className="metrics-row wrap"
+        data-reveal="stagger"
+        aria-label="iPhone 18 Pro 核心规格"
+      >
         <Metric value="A20 Pro" label="核心，向前一步" />
         <Metric value="48MP" label="三枚 Fusion 相机" />
         <Metric value="6.3″" label="Super Retina XDR" note="按标准矩形测量，实际可视区域较小" />
@@ -92,8 +98,8 @@ export default function PhoneStory() {
       </section>
       <div ref={container} className="phone-narrative wrap" id="design">
         <div className="narrative-visual">
-          <div className={'narrative-stage ' + (active === 1 ? 'landscape-stage' : '')}>
-            <Media id={chapters[active].media} key={active} />
+          <div className="narrative-stage">
+            <SceneMedia id={chapters[active].media} />
             <span className="narrative-count">
               0{active + 1}
               <span> / 03</span>
@@ -115,7 +121,7 @@ export default function PhoneStory() {
         </div>
         <div className="narrative-chapters">
           {chapters.map((c, i) => (
-            <article key={c.number} data-chapter={i}>
+            <article key={c.number} data-chapter={i} data-reveal="heading">
               <span className="overline">
                 {c.number} / {c.label}
               </span>
@@ -137,7 +143,7 @@ export default function PhoneStory() {
       </div>
       <CameraStudy source={product.referenceSources[1].url} />
       <section className="gallery-section wrap" id="gallery">
-        <div className="section-head">
+        <div className="section-head" data-reveal="heading">
           <div>
             <span className="overline">TAKE ANOTHER LOOK</span>
             <h2>换个视角，再看一次。</h2>
@@ -163,7 +169,7 @@ export default function PhoneStory() {
           </div>
         </div>
         <div className="gallery-stage">
-          <Media key={slide} id={gallery[slide].media} sizes="(max-width:760px) 100vw, 85vw" />
+          <SceneMedia id={gallery[slide].media} sizes="(max-width:760px) 100vw, 85vw" />
         </div>
         <div className="gallery-foot">
           <div className="gallery-tabs" role="group" aria-label="产品图集">
@@ -176,7 +182,7 @@ export default function PhoneStory() {
           <p aria-live="polite">{gallery[slide].caption}</p>
         </div>
       </section>
-      <section className="chip-note wrap">
+      <section className="chip-note wrap" data-reveal="stagger">
         <div className="chip-type" aria-label="A20 Pro">
           A20
           <br />

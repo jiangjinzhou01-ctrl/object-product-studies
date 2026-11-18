@@ -6,13 +6,94 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="OBJECT / Product Studies — 独立消费科技产品体验研究。真实产品图、可核查的规格，以及设计与工程的细节。非 Apple 官方网站。"
+      content="apple / 独立产品研究。探索 iPhone 与 Mac 的设计、影像和产品规格。独立设计与工程作品集，与 Apple Inc. 无隶属关系。"
     />
-    <title>OBJECT — Product Studies</title>
+    <meta property="og:site_name" content="apple" />
+    <title>apple — 独立产品研究</title>
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <style>
+      body {
+        margin: 0;
+      }
+      .boot-screen {
+        display: grid;
+        min-height: 100vh;
+        min-height: 100svh;
+        place-content: center;
+        justify-items: center;
+        gap: 20px;
+        padding-inline: 24px;
+        background: #000;
+        color: #f5f5f7;
+        text-align: center;
+        font:
+          13px / 1.5 system-ui,
+          sans-serif;
+      }
+      .boot-wordmark {
+        font-size: clamp(54px, 13vw, 76px);
+        font-weight: 640;
+        letter-spacing: -0.08em;
+        line-height: 1;
+      }
+      .boot-label,
+      .boot-message {
+        color: #b8b8c2;
+      }
+      .boot-message {
+        font-size: 12px;
+      }
+      .load-track {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        inline-size: min(138px, 43vw);
+        block-size: 2px;
+        border-radius: 2px;
+        background: #ffffff38;
+      }
+      .load-track::after {
+        position: absolute;
+        inset: 0;
+        inline-size: 42%;
+        border-radius: inherit;
+        background: #d6bac1;
+        content: '';
+        animation: loading-trace 1.25s cubic-bezier(0.45, 0, 0.3, 1) infinite;
+      }
+      @keyframes loading-trace {
+        from {
+          transform: translateX(-105%);
+        }
+        to {
+          transform: translateX(245%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .load-track::after {
+          animation: none;
+          transform: translateX(70%);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-screen" role="status">
+        <strong class="boot-wordmark">apple</strong>
+        <span class="boot-label">独立产品研究</span>
+        <span class="load-track" aria-hidden="true"></span>
+        <span class="boot-message">正在打开网站</span>
+      </div>
+    </div>
+    <noscript>
+      <style>
+        #root {
+          display: none;
+        }
+      </style>
+      <div class="boot-screen">请开启 JavaScript，以查看产品研究。</div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

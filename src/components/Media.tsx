@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import type { Ref } from 'react';
 import { getMedia, mediaUrl } from '../data/media';
+import { imageSrcSet } from '../lib/mediaSources';
 export function Media({
   id,
   priority = false,
@@ -7,6 +9,9 @@ export function Media({
   sizes = '(max-width: 760px) 100vw, 60vw',
   credit = false,
   alt,
+  imageRef,
+  attempt = 0,
+  reveal,
 }: {
   id: string;
   priority?: boolean;
@@ -14,15 +19,18 @@ export function Media({
   sizes?: string;
   credit?: boolean;
   alt?: string;
+  imageRef?: Ref<HTMLImageElement>;
+  attempt?: number;
+  reveal?: 'image';
 }) {
   const asset = getMedia(id);
+  const base = import.meta.env.BASE_URL;
   return (
-    <figure className={'media ' + className}>
+    <figure className={'media ' + className} data-reveal={reveal}>
       <img
-        src={mediaUrl(id)}
-        srcSet={asset.variants
-          .map((v) => import.meta.env.BASE_URL + 'assets/images/' + v.file + ' ' + v.width + 'w')
-          .join(', ')}
+        ref={imageRef}
+        src={mediaUrl(id, 960, attempt)}
+        srcSet={imageSrcSet(asset.variants, base, attempt)}
         sizes={sizes}
         width={asset.width}
         height={asset.height}

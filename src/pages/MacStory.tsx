@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { Media } from '../components/Media';
+import { SceneMedia } from '../components/SceneMedia';
 import { Eyebrow, ArrowLink, Metric } from '../components/UI';
 import Specifications from '../components/Specifications';
 import { macs } from '../data/macs';
@@ -82,7 +83,7 @@ export default function MacStory() {
             <Eyebrow>MacBook Pro · M6</Eyebrow>
             <span className="overline">14-INCH / BUILT FOR YOUR IDEAS</span>
           </div>
-          <div className="mac-intro-heading">
+          <div className="mac-intro-heading" data-reveal="heading">
             <h1>
               MacBook Pro.<span>把想法，推向更远。</span>
             </h1>
@@ -100,7 +101,7 @@ export default function MacStory() {
           </div>
         </div>
         <div className="mac-intro-image">
-          <Media id="mac-pro-hero" priority sizes="100vw" />
+          <Media id="mac-pro-hero" priority sizes="100vw" reveal="image" />
         </div>
         <div className="mac-intro-foot wrap">
           <span>14.2 英寸 Liquid Retina XDR</span>
@@ -108,7 +109,11 @@ export default function MacStory() {
           <span>1.55 kg</span>
         </div>
       </section>
-      <section className="metrics-row wrap" aria-label="MacBook Pro M6 核心规格">
+      <section
+        className="metrics-row wrap"
+        data-reveal="stagger"
+        aria-label="MacBook Pro M6 核心规格"
+      >
         <Metric value="12 核" label="CPU / Apple M6" />
         <Metric value="12 核" label="GPU / Apple M6" />
         <Metric value="1.55 kg" label="整机重量" />
@@ -119,7 +124,7 @@ export default function MacStory() {
         />
       </section>
       <section className="workflow-section wrap" id="workflow">
-        <div className="section-head">
+        <div className="section-head" data-reveal="heading">
           <div>
             <Eyebrow>01 / IN THE MAKING</Eyebrow>
             <h2>
@@ -162,9 +167,9 @@ export default function MacStory() {
           aria-labelledby={'workflow-tab-' + workflows[workflow].id}
         >
           <div className="workflow-image">
-            <Media key={workflow} id={workflows[workflow].media} sizes="90vw" />
+            <SceneMedia id={workflows[workflow].media} sizes="90vw" />
           </div>
-          <div className="workflow-description">
+          <div className="workflow-description" key={workflow} data-scene-copy>
             <span className="overline">{workflows[workflow].app}</span>
             <h3>{workflows[workflow].title}</h3>
             <p>{workflows[workflow].body}</p>
@@ -176,7 +181,7 @@ export default function MacStory() {
       </section>
       <section className="display-section" id="display">
         <div className="wrap">
-          <div className="display-heading">
+          <div className="display-heading" data-reveal="heading">
             <Eyebrow light>02 / THE BIGGER PICTURE</Eyebrow>
             <h2>
               每一处细节，
@@ -189,8 +194,8 @@ export default function MacStory() {
               从暗部层次，到明亮高光，让画面获得完整的表达。
             </p>
           </div>
-          <Media id="mac-pro-display" sizes="90vw" />
-          <div className="display-facts">
+          <Media id="mac-pro-display" sizes="90vw" reveal="image" />
+          <div className="display-facts" data-reveal="stagger">
             <Metric value="1,600 尼特" label="HDR 峰值亮度" />
             <Metric value="120Hz" label="ProMotion 最高刷新率" />
             <Metric value="P3" label="广色域" />
@@ -201,7 +206,7 @@ export default function MacStory() {
         </div>
       </section>
       <section className="ports-section wrap" id="connect">
-        <div className="section-head">
+        <div className="section-head" data-reveal="heading">
           <div>
             <Eyebrow>03 / STAY CONNECTED</Eyebrow>
             <h2>连接，直接一点。</h2>
@@ -212,7 +217,7 @@ export default function MacStory() {
             让接口成为工作的一部分。
           </p>
         </div>
-        <div className="ports-image">
+        <div className="ports-image" data-reveal="surface">
           <Media id="mac-pro-ports" sizes="90vw" />
           <div className="port-hotspots" role="group" aria-label="点选图中接口">
             {ports.map((p, i) => (
@@ -269,7 +274,7 @@ export default function MacStory() {
           </p>
           <ArrowLink to="/mac#macbook-air-13-m5">探索 MacBook Air</ArrowLink>
         </div>
-        <Media id="mac-air-pair" />
+        <Media id="mac-air-pair" reveal="image" />
       </section>
     </>
   );

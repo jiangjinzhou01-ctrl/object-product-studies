@@ -34,7 +34,7 @@ export function SectionHead({
   link?: { to: string; label: string };
 }) {
   return (
-    <div className="section-head" data-reveal>
+    <div className="section-head" data-reveal="heading">
       <div>
         <p className="eyebrow">{caption}</p>
         <h2>{title}</h2>
@@ -45,7 +45,7 @@ export function SectionHead({
 }
 export function CompareEntry() {
   return (
-    <section className="compare-entry wrap">
+    <section className="compare-entry wrap" data-reveal="stagger">
       <div>
         <p className="eyebrow">找到真正适合你的那一款</p>
         <h2>

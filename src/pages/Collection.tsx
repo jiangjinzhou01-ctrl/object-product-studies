@@ -12,7 +12,7 @@ export default function Collection({ family }: { family: Family }) {
       <section
         className={'collection-intro wrap ' + (phone ? 'phone-collection' : 'mac-collection')}
       >
-        <div className="collection-intro-heading">
+        <div className="collection-intro-heading" data-reveal="heading">
           <h1>{phone ? 'iPhone.' : 'Mac.'}</h1>
           <p>
             {phone ? (
@@ -31,7 +31,12 @@ export default function Collection({ family }: { family: Family }) {
           </p>
         </div>
         <div className="collection-hero-photo">
-          <Media id={phone ? 'phone-17-detail' : 'mac-air-pair'} priority sizes="90vw" />
+          <Media
+            id={phone ? 'phone-17-detail' : 'mac-air-pair'}
+            priority
+            sizes="90vw"
+            reveal="image"
+          />
           <span className="overline">
             {phone ? 'iPhone 17 官方配色' : 'MacBook Air · 13 与 15 英寸'}
           </span>
@@ -63,10 +68,11 @@ export default function Collection({ family }: { family: Family }) {
               <div className="collection-study-photo">
                 <Media
                   id={p.id === 'macbook-pro-m6' ? 'mac-pro-hero' : p.heroMedia}
+                  reveal="image"
                   sizes="(max-width:760px) 100vw, 55vw"
                 />
               </div>
-              <div className="collection-study-copy">
+              <div className="collection-study-copy" data-reveal="heading">
                 <span className="overline">
                   0{i + 1} / {p.chip.toUpperCase()}
                 </span>

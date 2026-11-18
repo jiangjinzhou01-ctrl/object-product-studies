@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { useReveal } from '../hooks/useReveal';
 import Home from '../pages/Home';
+import { siteName } from '../data/site';
 const PhoneStory = lazy(() => import('../pages/PhoneStory'));
 const MacStory = lazy(() => import('../pages/MacStory'));
 const Collection = lazy(() => import('../pages/Collection'));
@@ -13,7 +14,7 @@ const Credits = lazy(() => import('../pages/Credits'));
 const Article = lazy(() => import('../pages/Article'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const titles: Record<string, string> = {
-  '/': 'Product Studies',
+  '/': '独立产品研究',
   '/iphone': 'iPhone Collection',
   '/mac': 'Mac Collection',
   '/iphone/iphone-18-pro': 'iPhone 18 Pro',
@@ -28,7 +29,7 @@ function AppContent() {
   const initial = useRef(true);
   useReveal();
   useEffect(() => {
-    document.title = `${titles[location.pathname] ?? '设计观察'} — OBJECT`;
+    document.title = `${siteName} — ${titles[location.pathname] ?? '设计观察'}`;
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       if (!initial.current) main.current?.focus({ preventScroll: true });
@@ -51,27 +52,30 @@ function AppContent() {
     <>
       <Navigation />
       <main ref={main} id="main" tabIndex={-1}>
-        <Suspense
-          fallback={
-            <div className="route-loading" role="status">
-              正在展开研究…
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/iphone" element={<Collection family="iphone" />} />
-            <Route path="/mac" element={<Collection family="mac" />} />
-            <Route path="/iphone/iphone-18-pro" element={<PhoneStory />} />
-            <Route path="/mac/macbook-pro-m6" element={<MacStory />} />
-            <Route path="/mac/macbook-pro-m5" element={<Navigate to="/mac" replace />} />
-            <Route path="/compare" element={<Compare />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/credits" element={<Credits />} />
-            <Route path="/journal/:slug" element={<Article />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <div key={location.pathname} className="route-frame">
+          <Suspense
+            fallback={
+              <div className="route-loading" role="status">
+                <span className="load-track" aria-hidden="true" />
+                <span>正在打开页面</span>
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/iphone" element={<Collection family="iphone" />} />
+              <Route path="/mac" element={<Collection family="mac" />} />
+              <Route path="/iphone/iphone-18-pro" element={<PhoneStory />} />
+              <Route path="/mac/macbook-pro-m6" element={<MacStory />} />
+              <Route path="/mac/macbook-pro-m5" element={<Navigate to="/mac" replace />} />
+              <Route path="/compare" element={<Compare />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/credits" element={<Credits />} />
+              <Route path="/journal/:slug" element={<Article />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </div>
       </main>
       <Footer />
     </>

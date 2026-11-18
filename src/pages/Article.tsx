@@ -11,10 +11,10 @@ export default function Article() {
   const next = stories.find((s) => s.slug !== slug)!;
   return (
     <article className="article-page">
-      <header className="article-heading wrap">
+      <header className="article-heading wrap" data-reveal="heading">
         <Link className="text-link" to="/">
           <ArrowLeft size={16} />
-          回到 OBJECT
+          回到首页
         </Link>
         <Eyebrow>
           {story.category} / {story.readTime}
@@ -22,7 +22,7 @@ export default function Article() {
         <h1>{story.title}</h1>
         <p>{story.teaser}</p>
         <div className="article-byline">
-          <span>OBJECT EDITORIAL</span>
+          <span>独立设计观察</span>
           <span>独立设计观察 · 2026</span>
         </div>
       </header>

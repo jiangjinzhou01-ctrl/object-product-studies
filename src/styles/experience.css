@@ -40,17 +40,6 @@
   aspect-ratio: 1.4;
   z-index: 0;
 }
-.launch-visual .media {
-  height: 100%;
-  animation: photo-in var(--slow) var(--ease);
-}
-.launch-visual.view-1 {
-  top: 215px;
-  aspect-ratio: 1.4;
-}
-.launch-visual.view-1 .media img {
-  object-fit: contain;
-}
 .launch-bottom {
   position: absolute;
   z-index: 3;
@@ -351,10 +340,9 @@
   color: var(--muted);
   margin-bottom: 28px;
 }
-.explorer-preview > .media {
+.explorer-preview > .scene-media {
   height: 540px;
   width: 100%;
-  animation: photo-in var(--slow) var(--ease);
 }
 .is-dark {
   background: #000;
@@ -570,9 +558,8 @@ a:hover .image-link {
 }
 .narrative-stage .media {
   height: 100%;
-  animation: photo-in var(--slow) var(--ease);
 }
-.narrative-stage.landscape-stage img {
+.narrative-stage [data-media='phone-pro-landscape'] img {
   object-fit: cover;
 }
 .narrative-count {
@@ -718,7 +705,6 @@ a:hover .image-link {
 }
 .gallery-stage .media {
   height: 100%;
-  animation: photo-in var(--slow) var(--ease);
 }
 .gallery-foot {
   display: flex;
@@ -887,9 +873,8 @@ a:hover .image-link {
   background: #000;
   overflow: hidden;
 }
-.workflow-image > .media {
+.workflow-image > .scene-media {
   aspect-ratio: 16/9;
-  animation: photo-in var(--slow) var(--ease);
 }
 .workflow-description {
   display: grid;
@@ -1295,7 +1280,7 @@ a:hover .image-link {
   .explorer-preview {
     grid-template-columns: 1fr 1.2fr;
   }
-  .explorer-preview > .media {
+  .explorer-preview > .scene-media {
     height: 500px;
   }
   .camera-layout {
@@ -1351,11 +1336,6 @@ a:hover .image-link {
     max-width: 760px;
     aspect-ratio: 1.4;
   }
-  .launch-visual.view-1 {
-    width: 148vw;
-    top: 230px;
-    aspect-ratio: 1.4;
-  }
   .launch-bottom {
     display: flex;
     flex-direction: column;
@@ -1383,8 +1363,7 @@ a:hover .image-link {
     min-height: 36px;
     padding: 8px 18px;
   }
-  .launch-scroll,
-  .launch-credit {
+  .launch-scroll {
     display: none;
   }
   .device-directory {
@@ -1577,7 +1556,7 @@ a:hover .image-link {
     font-size: 12px;
     min-height: 44px;
   }
-  .explorer-preview > .media {
+  .explorer-preview > .scene-media {
     height: 330px;
     width: 100%;
     max-height: 85vw;
@@ -1948,7 +1927,7 @@ a:hover .image-link {
   .workflow-image {
     border-radius: 20px;
   }
-  .workflow-image > .media {
+  .workflow-image > .scene-media {
     aspect-ratio: 1.25;
   }
   .workflow-description {
@@ -2180,9 +2159,6 @@ a:hover .image-link {
     top: 222px;
     width: 148vw;
   }
-  .launch-visual.view-1 {
-    top: 215px;
-  }
   .launch-bottom {
     bottom: 23px;
   }
@@ -2262,7 +2238,6 @@ a:hover .image-link {
 }
 .camera-scene-image .media {
   height: 100%;
-  animation: photo-in var(--slow) var(--ease);
 }
 .camera-scene-image img {
   object-fit: cover;

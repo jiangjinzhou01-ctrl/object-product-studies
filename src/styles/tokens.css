@@ -26,4 +26,7 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --fast: 200ms;
   --slow: 750ms;
+  --motion-route: 250ms;
+  --motion-switch: 440ms;
+  --motion-intro: 860ms;
 }

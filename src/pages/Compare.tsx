@@ -64,7 +64,7 @@ export default function Compare() {
   }
   return (
     <div className="compare-page wrap">
-      <div className="compare-heading">
+      <div className="compare-heading" data-reveal="heading">
         <div>
           <Eyebrow>产品比较</Eyebrow>
           <h1>
@@ -186,7 +186,12 @@ export default function Compare() {
                       (selected[slot]!.id === 'iphone-18-pro' ? 'dark-image' : '')
                     }
                   >
-                    <Media id={selected[slot]!.heroMedia} sizes="(max-width:760px) 40vw, 30vw" />
+                    <Media
+                      key={selected[slot]!.id}
+                      id={selected[slot]!.heroMedia}
+                      reveal="image"
+                      sizes="(max-width:760px) 40vw, 30vw"
+                    />
                   </div>
                   <span className="overline">
                     {selected[slot]!.chip} / {selected[slot]!.releaseDate.slice(0, 4)}

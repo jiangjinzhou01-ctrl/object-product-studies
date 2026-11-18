@@ -6,7 +6,7 @@ export default function Specifications({ product }: { product: Product }) {
   const specs = expanded ? product.specifications : product.specifications.slice(0, 6);
   return (
     <section className="specifications wrap" id="specifications">
-      <div className="spec-heading">
+      <div className="spec-heading" data-reveal="heading">
         <span className="overline">THE DETAILS / TECHNICAL INDEX</span>
         <h2>细节，都有依据。</h2>
         <p>

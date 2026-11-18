@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 export default function NotFound() {
   return (
     <section className="not-found wrap">
-      <span className="overline">OBJECT / 404</span>
+      <span className="overline">404</span>
       <h1>
         这一页，
         <br />

@@ -1,6 +1,18 @@
-# QA 记录 — Product Experience 3.0
+# QA 记录
 
-核验日期：2026-11-13。以下记录针对当前视觉与交互版本，先前版本的成绩不作为当前结果。
+## 动效与加载更新 · 2026-11-18
+
+TypeScript、ESLint、Prettier 和生产构建通过。Chromium 中 **42 项 Playwright 测试全部通过**，涵盖十个内容页面、七种视口和原有无障碍检查。新增测试暂停 JavaScript 与首图请求，依次检查启动提示和图片等待状态，确认图像加载失败后可以重试。视角切换测试同时覆盖旧图保留与反向切换。
+
+在生产预览及 GitHub Pages 子路径复核首页。浏览器在 React 渲染前请求对应宽度的主图，随后复用该请求。在 1440 和 390 像素视口检查了首屏，另外确认了滚动进度、首屏视差、移动导航、相机与工作流切换。没有同源 HTTP 错误或 JavaScript 错误。
+
+本地 Lighthouse 13.6 移动模拟实测性能 90、无障碍 100、最佳实践 100，LCP 为 3.6 秒，CLS 为 0.001。该次测量是本地模拟，未将其作为线上或真机测速。
+
+[启动画面](screenshots/apple-startup.webp) · [产品图加载中](screenshots/apple-hero-loading.webp) · [移动首屏](screenshots/apple-hero-mobile.webp)
+
+## Product Experience 3.0 的历史验证 · 2026-11-13
+
+核验日期：2026-11-13。以下记录对应 2026-11-13 发布的视觉与交互版本。
 
 ## 实际执行结果
 

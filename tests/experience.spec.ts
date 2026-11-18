@@ -160,16 +160,25 @@ test('gallery switches genuine views with keyboard and stable image bounds', asy
   await stage.scrollIntoViewIfNeeded();
   const before = await stage.boundingBox();
   await page.getByRole('button', { name: '下一张产品图' }).click();
-  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-finishes/);
+  await expect(stage.locator('[data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-finishes/,
+  );
   await expect(page.getByRole('button', { name: '四款配色', exact: true })).toHaveAttribute(
     'aria-pressed',
     'true',
   );
   await page.getByRole('button', { name: '影像样张', exact: true }).focus();
   await page.keyboard.press('Enter');
-  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-lowlight/);
+  await expect(stage.locator('[data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-lowlight/,
+  );
   await page.getByRole('button', { name: '上一张产品图' }).click();
-  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-finishes/);
+  await expect(stage.locator('[data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-finishes/,
+  );
   expect((await stage.boundingBox())!.height).toBe(before!.height);
 });
 
@@ -188,7 +197,7 @@ test('scroll narratives follow the reading position on desktop and mobile', asyn
           behavior: 'instant',
         });
       });
-      await expect(page.locator('.narrative-stage img')).toHaveAttribute(
+      await expect(page.locator('.narrative-stage [data-frame="current"] img')).toHaveAttribute(
         'src',
         new RegExp(['phone-pro-hero', 'phone-pro-landscape', 'phone-pro-finishes'][i]),
       );
@@ -202,11 +211,17 @@ test('workflow and connection tabs change useful content and support keyboard', 
   await page.goto('/#/mac/macbook-pro-m6');
   await page.getByRole('tab', { name: '视觉设计' }).click();
   await expect(page.locator('#workflow-panel')).toContainText('P3');
-  await expect(page.locator('.workflow-image img')).toHaveAttribute('src', /mac-pro-design/);
+  await expect(page.locator('.workflow-image [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /mac-pro-design/,
+  );
   await page.getByRole('tab', { name: '视觉设计' }).focus();
   await page.keyboard.press('End');
   await expect(page.getByRole('tab', { name: '开发构建' })).toBeFocused();
-  await expect(page.locator('.workflow-image img')).toHaveAttribute('src', /mac-pro-code/);
+  await expect(page.locator('.workflow-image [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /mac-pro-code/,
+  );
   await page.getByRole('tab', { name: 'SDXC' }).click();
   await expect(page.locator('#port-panel')).toContainText('相机');
   await page.keyboard.press('Home');
@@ -224,10 +239,9 @@ test('explorer is keyboard operable and leads to the selected model', async ({ p
     'true',
   );
   await explorer.getByRole('button', { name: /MacBook Air 15/ }).click();
-  await expect(explorer.getByRole('tabpanel').locator('img')).toHaveAttribute(
-    'src',
-    /mac-air-15-front/,
-  );
+  await expect(
+    explorer.getByRole('tabpanel').locator('[data-frame="current"] img'),
+  ).toHaveAttribute('src', /mac-air-15-front/);
   await explorer.getByRole('link', { name: '查看产品' }).click();
   await expect(page).toHaveURL(/#\/mac#macbook-air-15-m5$/);
   await expect(page.locator('#macbook-air-15-m5')).toBeInViewport();
@@ -333,9 +347,10 @@ test('reduced motion and mobile comparison show both values without sideways scr
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('/#/iphone/iphone-18-pro');
   await ready(page);
+  await page.locator('.narrative-stage').scrollIntoViewIfNeeded();
   expect(
     await page
-      .locator('.narrative-stage .media')
+      .locator('.narrative-stage [data-frame="current"]')
       .evaluate((e) => getComputedStyle(e).animationName),
   ).toBe('none');
   await page.goto('/#/compare');
@@ -386,7 +401,10 @@ test('visual evidence captures both screen sizes and active interaction states',
       behavior: 'instant',
     }),
   );
-  await expect(page.locator('.narrative-stage img')).toHaveAttribute('src', /phone-pro-landscape/);
+  await expect(page.locator('.narrative-stage [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-landscape/,
+  );
   await page.screenshot({
     path: 'reports/screenshots/narrative-mobile.png',
     animations: 'disabled',
@@ -442,35 +460,121 @@ test('cold homepage load reserves media space', async ({ page }) => {
   ).toBeLessThan(0.05);
 });
 
-test('homepage views switch real hardware imagery inside a stable stage', async ({ page }) => {
+test('homepage keeps the current image while a new view loads', async ({ page }) => {
+  const request = Promise.withResolvers<void>();
+  await page.route('**/assets/images/phone-pro-hero-*.webp', async (route) => {
+    await request.promise;
+    await route.continue();
+  });
   await page.goto('/#/');
-  const stage = page.locator('.launch-visual'),
-    before = await stage.boundingBox();
-  await page
-    .getByRole('group', { name: '选择首屏产品视角' })
-    .getByRole('button', { name: '正面与背面', exact: true })
-    .click();
-  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-hero/);
-  await expect(page.locator('.launch-credit')).toContainText('Pro Max');
-  await page
-    .getByRole('group', { name: '选择首屏产品视角' })
-    .getByRole('button', { name: '四款配色', exact: true })
-    .focus();
-  await page.keyboard.press('Enter');
-  await expect(stage.locator('img')).toHaveAttribute('src', /phone-pro-finishes/);
-  const after = await stage.boundingBox();
-  expect(after!.height).toBe(before!.height);
+  const stage = page.locator('.launch-visual');
+  const photo = stage.locator('[data-frame="current"] img');
+  await expect(photo).toHaveAttribute('src', /phone-pro-finishes/);
+  const before = await stage.boundingBox();
+  const views = page.getByRole('group', { name: '选择首屏产品视角' });
+  const frontBack = views.getByRole('button', { name: '正面与背面' });
+  const finishes = views.getByRole('button', { name: '四款配色' });
+  try {
+    await frontBack.click();
+    await expect(page.getByText('正在加载新画面')).toBeVisible();
+    await expect(photo).toHaveAttribute('src', /phone-pro-finishes/);
+    await expect(page.locator('.launch-credit')).toContainText('官方配色');
+
+    // Reversing the selection while the request is pending must not commit the late response.
+    await finishes.focus();
+    await page.keyboard.press('Enter');
+    await expect(page.getByText('正在加载新画面')).toHaveCount(0);
+    await expect(photo).toHaveAttribute('src', /phone-pro-finishes/);
+    request.resolve();
+
+    await frontBack.click();
+    await expect(photo).toHaveAttribute('src', /phone-pro-hero/);
+    await expect(page.locator('.launch-credit')).toContainText('Pro Max');
+    const after = await stage.boundingBox();
+    expect(after!.height).toBe(before!.height);
+  } finally {
+    request.resolve();
+  }
+});
+
+test('homepage shows startup and image loading states until actual content is ready', async ({
+  page,
+}) => {
+  const app = Promise.withResolvers<void>();
+  const cover = Promise.withResolvers<void>();
+  const coverRequests: string[] = [];
+  await page.route(/\/assets\/index-[^/]+\.js$/, async (route) => {
+    await app.promise;
+    await route.continue();
+  });
+  await page.route('**/assets/images/phone-pro-finishes-*.webp', async (route) => {
+    coverRequests.push(route.request().url());
+    await cover.promise;
+    await route.continue();
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+
+  try {
+    await page.goto('/#/', { waitUntil: 'commit' });
+    await expect(page.getByRole('status').filter({ hasText: '正在打开网站' })).toBeVisible();
+    await expect(page).toHaveTitle('apple — 独立产品研究');
+    await expect.poll(() => coverRequests.length).toBe(1);
+
+    app.resolve();
+    const stage = page.locator('.launch-visual');
+    await expect(stage.getByRole('status')).toHaveText('正在加载产品图');
+    await expect(page.getByRole('link', { name: '产品比较', exact: true }).first()).toBeEnabled();
+    expect(
+      await stage
+        .locator('.load-track')
+        .evaluate((node) => getComputedStyle(node, '::after').animationName),
+    ).toBe('none');
+
+    cover.resolve();
+    await expect(stage.getByRole('status')).toHaveCount(0);
+    const photo = stage.locator('[data-frame="current"] img');
+    await expect(photo).toBeVisible();
+    expect(await photo.evaluate((node: HTMLImageElement) => node.naturalWidth)).toBeGreaterThan(0);
+    expect(coverRequests).toHaveLength(1);
+  } finally {
+    app.resolve();
+    cover.resolve();
+  }
+});
+
+test('failed homepage media can retry without losing navigation', async ({ page }) => {
+  await page.route(/\/assets\/images\/phone-pro-finishes-.*\.webp/, async (route) => {
+    if (new URL(route.request().url()).searchParams.has('retry')) {
+      await route.continue();
+    } else {
+      await route.abort('failed');
+    }
+  });
+  await page.goto('/#/');
+  const stage = page.locator('.launch-visual');
+  await expect(stage.getByRole('status')).toHaveText('图像暂时无法加载');
+  await expect(page.getByRole('link', { name: '探索 iPhone 18 Pro' })).toBeEnabled();
+  await stage.getByRole('button', { name: '重新加载图像' }).click();
+  await expect(stage.locator('[data-frame="current"] img')).toHaveAttribute('src', /retry=1/);
+  await expect(stage.getByRole('status')).toHaveCount(0);
 });
 
 test('camera scenes show matching official samples and support arrow keys', async ({ page }) => {
   await page.goto('/#/iphone/iphone-18-pro');
   const tabs = page.getByRole('tablist', { name: '选择影像场景' });
   await tabs.getByRole('tab', { name: '夜色', exact: true }).click();
-  await expect(page.locator('#camera-panel img')).toHaveAttribute('src', /phone-pro-night/);
+  await expect(page.locator('#camera-panel [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-night/,
+  );
   await expect(page.locator('#camera-panel')).toContainText('夜间模式');
   await page.keyboard.press('ArrowRight');
   await expect(tabs.getByRole('tab', { name: '低光', exact: true })).toBeFocused();
-  await expect(page.locator('#camera-panel img')).toHaveAttribute('src', /phone-pro-lowlight/);
+  await expect(page.locator('#camera-panel [data-frame="current"] img')).toHaveAttribute(
+    'src',
+    /phone-pro-lowlight/,
+  );
 });
 test('physical port annotations select the corresponding explanation', async ({ page }) => {
   await page.goto('/#/mac/macbook-pro-m6');

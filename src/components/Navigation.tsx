@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { siteName } from '../data/site';
 const links = [
   ['/iphone', 'iPhone'],
   ['/mac', 'Mac'],
   ['/journal/the-language-of-material', '设计观察'],
-  ['/about', '关于 OBJECT'],
+  ['/about', '关于项目'],
 ] as const;
 export default function Navigation() {
   const dialog = useRef<HTMLDialogElement>(null),
@@ -48,9 +49,9 @@ export default function Navigation() {
         }
       >
         <div className="header-inner">
-          <Link to="/" className="wordmark" aria-label="OBJECT 首页">
-            OBJECT
-            <span>PRODUCT STUDIES</span>
+          <Link to="/" className="wordmark" aria-label={siteName + ' 首页 · 独立产品研究'}>
+            {siteName}
+            <span>独立产品研究</span>
           </Link>
           <nav className="desktop-nav" aria-label="主导航">
             {links.map(([to, label]) => (
@@ -100,8 +101,8 @@ export default function Navigation() {
       >
         <div className="menu-head">
           <span id="menu-title" className="wordmark">
-            OBJECT
-            <span>PRODUCT STUDIES</span>
+            {siteName}
+            <span>独立产品研究</span>
           </span>
           <button
             className="icon-button"
@@ -112,7 +113,6 @@ export default function Navigation() {
             <X />
           </button>
         </div>
-        <p className="overline">探索 OBJECT</p>
         <nav aria-label="移动导航">
           {[['/', '首页'], ...links, ['/compare', '产品比较']].map(([to, label]) => (
             <NavLink key={to} to={to} onClick={() => dialog.current?.close()}>

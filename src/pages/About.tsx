@@ -1,12 +1,12 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Media } from '../components/Media';
 import { Eyebrow, ArrowLink } from '../components/UI';
-import { disclaimerEn, disclaimerZh } from '../data/site';
+import { disclaimerEn, disclaimerZh, siteName } from '../data/site';
 export default function About() {
   return (
     <>
-      <section className="about-intro wrap">
-        <Eyebrow>ABOUT OBJECT / EDITION 02</Eyebrow>
+      <section className="about-intro wrap" data-reveal="heading">
+        <Eyebrow>关于独立产品研究</Eyebrow>
         <h1>
           一件日常。
           <br />
@@ -15,7 +15,7 @@ export default function About() {
         <div className="about-opening">
           <span className="overline">DESIGN + ENGINEERING</span>
           <p>
-            OBJECT
+            {siteName}
             是一本可以交互的产品观察手册。以真实产品为起点，用编辑设计、摄影与前端工程，重新组织我们看待科技的方式。
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function About() {
         <Media id="phone-17-detail" priority sizes="100vw" />
         <p className="media-caption">观察从细节开始 / iPhone 17 官方产品图</p>
       </section>
-      <section className="about-principles wrap">
+      <section className="about-principles wrap" data-reveal="stagger">
         <div>
           <Eyebrow>THE POINT OF VIEW</Eyebrow>
           <h2>
@@ -55,7 +55,7 @@ export default function About() {
       </section>
       <section className="case-section" id="engineering">
         <div className="wrap">
-          <div className="case-heading">
+          <div className="case-heading" data-reveal="heading">
             <Eyebrow light>BEHIND THE EXPERIENCE</Eyebrow>
             <h2>
               从观察，

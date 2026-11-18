@@ -1,4 +1,4 @@
-# OBJECT / Product Studies — Product Experience
+# apple / 独立产品研究
 
 一个完整的独立消费科技产品体验作品集。以真实型号、可追溯的官方产品图、编辑式设计与可验证的前端交互，组织产品与日常使用之间的关系。
 
@@ -26,18 +26,18 @@ npm run preview -- --port 4173
 
 ## 页面与交互
 
-| 页面              | Hash 路由                           | 已实现                                                         |
-| ----------------- | ----------------------------------- | -------------------------------------------------------------- |
-| 首页              | /#/                                 | 可切换视角的设备首屏、产品目录、交互探索器、设计观察、比较入口 |
-| iPhone 系列       | /#/iphone                           | iPhone 18 Pro 与 iPhone 17、型号锚点、选择建议                 |
-| iPhone 18 Pro     | /#/iphone/iphone-18-pro             | 三章滚动叙事、相机场景切换、图集、展开规格                     |
-| Mac 系列          | /#/mac                              | M6 MacBook Pro、13/15 英寸 M5 Air、用途与尺寸区别              |
-| MacBook Pro M6    | /#/mac/macbook-pro-m6               | 工作流标签、XDR、真实接口点选、规格                            |
-| 比较              | /#/compare                          | 同类双型号选择、交换、清空、重置、差异筛选、分享与 URL 恢复    |
-| 项目 / Case Study | /#/about                            | 原创视觉、信息结构、交互与工程策略                             |
-| 来源索引          | /#/credits                          | 产品事实、20 项图像、作者、版权与来源链接                      |
-| 设计观察          | /#/journal/the-language-of-material | 材料观察                                                       |
-| 设计观察          | /#/journal/a-display-in-context     | 显示指标与使用情境                                             |
+| 页面              | Hash 路由                           | 已实现                                                                   |
+| ----------------- | ----------------------------------- | ------------------------------------------------------------------------ |
+| 首页              | /#/                                 | 首图预加载、加载揭幕、视角切换、产品目录、交互探索器、设计观察、比较入口 |
+| iPhone 系列       | /#/iphone                           | iPhone 18 Pro 与 iPhone 17、型号锚点、选择建议                           |
+| iPhone 18 Pro     | /#/iphone/iphone-18-pro             | 三章滚动叙事、相机场景切换、图集、展开规格                               |
+| Mac 系列          | /#/mac                              | M6 MacBook Pro、13/15 英寸 M5 Air、用途与尺寸区别                        |
+| MacBook Pro M6    | /#/mac/macbook-pro-m6               | 工作流标签、XDR、真实接口点选、规格                                      |
+| 比较              | /#/compare                          | 同类双型号选择、交换、清空、重置、差异筛选、分享与 URL 恢复              |
+| 项目 / Case Study | /#/about                            | 原创视觉、信息结构、交互与工程策略                                       |
+| 来源索引          | /#/credits                          | 产品事实、20 项图像、作者、版权与来源链接                                |
+| 设计观察          | /#/journal/the-language-of-material | 材料观察                                                                 |
+| 设计观察          | /#/journal/a-display-in-context     | 显示指标与使用情境                                                       |
 
 未知路径提供 404。旧版 Mac M5 故事地址转向新版 Mac 系列。移动导航具有焦点循环、Escape 关闭与滚动锁定；标签组支持方向键、Home、End。比较 URL 示例：
 
@@ -66,7 +66,7 @@ npm run assets
 
 ## 架构
 
-React 19、严格 TypeScript、Vite、React Router、Lucide、原生 CSS Tokens。首页直接加载，其余页面按路由拆分。动画使用 CSS、IntersectionObserver 与 Web Animations API，尊重 prefers-reduced-motion。
+React 19、严格 TypeScript、Vite、React Router、Lucide、原生 CSS Tokens。首页直接加载，其余页面按路由拆分。动画使用 CSS、IntersectionObserver 和浏览器支持时的滚动时间线。首页从 HTML 发起响应式主图预加载，解码后开始揭幕。切换场景时保留上一张图，加载失败可重试。动效尊重 prefers-reduced-motion。
 
 ```text
 src/
@@ -92,7 +92,7 @@ npm run build
 npm run test:e2e
 ```
 
-本环境 Chromium 路径为 /usr/bin/chromium。其他机器先执行 `npx playwright install chromium`，再使用 `CI=1 npm run test:e2e`，或通过 CHROMIUM_PATH 指定浏览器。40 项浏览器用例覆盖 10 个内容路由、核心交互、七种视口、自动无障碍规则与截图；移动比较表同时呈现两侧数值。实际通过数量、性能报告及限制均以[QA 记录](docs/qa-results.md)为准。
+本环境 Chromium 路径为 /usr/bin/chromium。其他机器先执行 `npx playwright install chromium`，再使用 `CI=1 npm run test:e2e`，或通过 CHROMIUM_PATH 指定浏览器。42 项浏览器用例覆盖 10 个内容路由、核心交互、七种视口、自动无障碍规则与截图；移动比较表同时呈现两侧数值。实际通过数量、性能报告及限制均以[QA 记录](docs/qa-results.md)为准。
 
 ## 发布与后续
 

@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowUp } from 'lucide-react';
-import { disclaimerEn, disclaimerZh } from '../data/site';
+import { disclaimerEn, disclaimerZh, siteName } from '../data/site';
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="wrap">
         <div className="footer-top">
           <Link className="wordmark" to="/">
-            OBJECT<span>PRODUCT STUDIES</span>
+            {siteName}
+            <span>独立产品研究</span>
           </Link>
           <p>设计，触动每一天。</p>
           <button
@@ -54,7 +55,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 OBJECT. Independent product studies.</span>
+          <span>© 2026 {siteName}. Independent product studies.</span>
           <Link to="/credits">第三方商标与图像归各自权利人所有。</Link>
         </div>
       </div>
