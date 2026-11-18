@@ -8,7 +8,7 @@
 
 ## 发布流程
 
-推送 main，或在 Actions 中手动运行 Validate and deploy OBJECT。工作流依次执行 npm ci、严格类型检查、ESLint、Prettier、生产构建、Chromium 安装与 Playwright，随后重新以仓库子路径构建并部署。测试失败会阻止发布。
+推送 main，或在 Actions 中手动运行 Validate and deploy OBJECT。工作流依次执行 npm ci、严格类型检查、ESLint、Prettier、生产构建和 Playwright。浏览器优先复用运行器自带的 Chrome 或 Chromium，缺少时由 Playwright 安装，随后重新以仓库子路径构建并部署。测试失败会阻止发布。
 
 Settings → Pages → Source 使用 GitHub Actions。工作流仅给予 contents: read、pages: write、id-token: write，使用 GitHub 官方 Pages artifact / deploy Actions。
 
