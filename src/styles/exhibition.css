@@ -458,9 +458,12 @@
     animation: text-arrive var(--slow) var(--ease) both;
   }
   @supports (animation-timeline: view()) {
+    .field-image {
+      view-timeline: --field-photo block;
+    }
     .field-image img {
       animation: landscape-drift linear both;
-      animation-timeline: view();
+      animation-timeline: --field-photo;
       animation-range: entry 0% exit 100%;
     }
   }

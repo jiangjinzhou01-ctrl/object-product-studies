@@ -205,6 +205,27 @@ test('scroll narratives follow the reading position on desktop and mobile', asyn
   }
 });
 
+test('homepage photography moves as its section scrolls through the viewport', async ({ page }) => {
+  await page.goto('/#/');
+  const frame = page.locator('.field-image');
+  const photograph = frame.locator('img');
+  await frame.evaluate((element) =>
+    element.scrollIntoView({ block: 'center', behavior: 'instant' }),
+  );
+  await photograph.evaluate((image) => image.decode());
+  await expect(photograph).toHaveCSS('animation-name', 'landscape-drift');
+  const before = await photograph.evaluate(
+    (image) =>
+      new Promise<string>((resolve) =>
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => resolve(getComputedStyle(image).transform)),
+        ),
+      ),
+  );
+  await page.evaluate(() => window.scrollBy({ top: 300, behavior: 'instant' }));
+  await expect(photograph).not.toHaveCSS('transform', before);
+});
+
 test('workflow and connection tabs change useful content and support keyboard', async ({
   page,
 }) => {
