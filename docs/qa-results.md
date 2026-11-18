@@ -6,7 +6,9 @@ TypeScript、ESLint、Prettier 和生产构建通过。Chromium 中 **42 项 Pla
 
 在生产预览及 GitHub Pages 子路径复核首页。浏览器在 React 渲染前请求对应宽度的主图，随后复用该请求。在 1440 和 390 像素视口检查了首屏，另外确认了滚动进度、首屏视差、移动导航、相机与工作流切换。没有同源 HTTP 错误或 JavaScript 错误。
 
-本地 Lighthouse 13.6 移动模拟实测性能 90、无障碍 100、最佳实践 100，LCP 为 3.6 秒，CLS 为 0.001。该次测量是本地模拟，未将其作为线上或真机测速。
+修正文字入场后，本地 Lighthouse 13.6 移动模拟实测性能 95、无障碍 100、最佳实践 100，LCP 为 2.8 秒，CLS 为 0.001。结果来自一次本地模拟。
+
+[GitHub Actions 44208928689](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/44208928689) 使用运行器的 Chrome 157 完成 42 项测试和 Pages 部署。[线上新版](https://jiangjinzhou01-ctrl.github.io/object-product-studies/?v=65fa32a) 返回 HTTP 200。桌面和手机视口复核了启动提示、首图解码、滚动动效、移动导航、视角切换和产品章节，无同源 HTTP 或 JavaScript 错误。
 
 [启动画面](screenshots/apple-startup.webp) · [产品图加载中](screenshots/apple-hero-loading.webp) · [移动首屏](screenshots/apple-hero-mobile.webp)
 
