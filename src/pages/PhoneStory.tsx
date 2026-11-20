@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Media } from '../components/Media';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import FinishViewer from '../components/FinishViewer';
 import { SceneMedia } from '../components/SceneMedia';
 import { ArrowLink, Metric, CompareEntry } from '../components/UI';
 import Specifications from '../components/Specifications';
@@ -13,7 +13,7 @@ const chapters = [
   {
     number: '01',
     label: '机身设计',
-    title: '从轮廓，到触感。',
+    title: '铝金属一体成型。',
     body: '铝金属一体式机身，将镜头区域与机身连接成一个完整的形体。轮廓的转折、光的落点，让一件熟悉的物品呈现新的表情。',
     media: 'phone-pro-hero',
     caption: '酒红色 iPhone 18 Pro 与 Pro Max 官方合照',
@@ -21,7 +21,7 @@ const chapters = [
   {
     number: '02',
     label: '镜头系统',
-    title: '让目光，多一层自由。',
+    title: '四档可变光圈。',
     body: '三枚 4800 万像素 Fusion 相机，从广阔风景到近处纹理，提供不同的观察方式。主摄的可变光圈，为进光与景深增加一份主动控制。',
     media: 'phone-pro-landscape',
     caption: 'Apple 发布的 iPhone 18 Pro 拍摄样张；画面效果受拍摄条件影响',
@@ -29,8 +29,8 @@ const chapters = [
   {
     number: '03',
     label: '表面与颜色',
-    title: '色彩，是另一种表达。',
-    body: '黑色、银色、冰川色与酒红色。相同的轮廓，因表面与光线，形成各自的气质。选一种与你的日常相处的颜色。',
+    title: '四款机身配色。',
+    body: '黑色与银色沿用中性色调，冰川蓝色与勃艮第酒红色则延伸到镜头平台与边框。',
     media: 'phone-pro-finishes',
     caption: '四款官方配色合照：Black / Silver / Glacier / Burgundy',
   },
@@ -52,9 +52,7 @@ export default function PhoneStory() {
   return (
     <>
       <nav className="product-nav" aria-label="iPhone 18 Pro 章节">
-        <Link to="/iphone">
-          iPhone <span>/ 18 Pro</span>
-        </Link>
+        <Link to="/iphone">iPhone 18 Pro</Link>
         <div>
           <Link to="#design">设计</Link>
           <Link to="#camera">影像</Link>
@@ -66,25 +64,7 @@ export default function PhoneStory() {
           </Link>
         </div>
       </nav>
-      <section className="phone-cover">
-        <div className="phone-cover-layout wrap">
-          <div className="phone-cover-visual">
-            <Media id="phone-pro-hero" priority sizes="(max-width:760px) 100vw, 58vw" />
-          </div>
-          <div className="phone-cover-copy" data-reveal="heading">
-            <p className="exhibit-label">机身与影像</p>
-            <h1>
-              iPhone <em>18 Pro.</em>
-            </h1>
-            <p>铝金属从机身边缘延伸至镜头区域。主摄的四档可变光圈，让记录光线多了一层选择。</p>
-            <Link className="text-link" to="#design">
-              近看机身
-              <ArrowDown size={16} />
-            </Link>
-          </div>
-          <p className="media-caption">酒红色 iPhone 18 Pro 与 Pro Max 官方合照，局部构图</p>
-        </div>
-      </section>
+      <FinishViewer />
       <section
         className="metrics-row wrap"
         data-reveal="stagger"
@@ -125,7 +105,7 @@ export default function PhoneStory() {
                   {product.availableFinishes.map((f) => (
                     <span key={f.name}>
                       <i style={{ background: f.hex }} />
-                      {f.name}
+                      {f.label ?? f.name}
                     </span>
                   ))}
                 </div>
@@ -179,7 +159,7 @@ export default function PhoneStory() {
           <p aria-live="polite">{currentGallery.caption}</p>
         </div>
       </section>
-      <section className="chip-note wrap" data-reveal="stagger">
+      <section className="chip-note wrap" id="performance" data-reveal="stagger">
         <div className="chip-type" aria-label="A20 Pro">
           A20
           <br />

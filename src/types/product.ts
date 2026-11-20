@@ -15,7 +15,12 @@ export interface Specification {
 export interface Finish {
   name: string;
   hex: string;
+  label?: string;
   mediaId?: string;
+}
+export interface ImageSource {
+  media: string;
+  id: string;
 }
 interface ProductBase {
   id: string;

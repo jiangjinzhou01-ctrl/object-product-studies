@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '../components/UI';
 import { Media } from '../components/Media';
 import { mediaAssets } from '../data/media';
+import { productFilm } from '../data/homeHero';
 import { products } from '../data/products';
 export default function Credits() {
   return (
@@ -15,15 +16,15 @@ export default function Credits() {
         </h1>
         <p>
           产品信息来自 Apple
-          官方技术资料与新闻稿。图像来自对应产品的官方新闻稿与技术支持资料，已本地处理为响应式
+          官方技术资料与新闻稿。图像来自对应产品的官方产品概览、新闻稿与技术支持资料，已本地处理为响应式
           WebP。
         </p>
       </div>
       <section className="source-disclosure">
         <h2>关于图像的使用</h2>
         <p>
-          本版依用户要求采用 Apple 新闻稿与技术支持公开媒体素材。版权归 Apple Inc.，并非 Creative
-          Commons
+          本版依用户要求采用 Apple 产品概览、新闻稿及技术支持公开媒体素材。版权归 Apple Inc.，并非
+          Creative Commons
           或公共领域；本站未获得单独授权，不将个人、非商用用途视为自动授权。每张图像保留公开来源与版权说明。页面中的裁切不改变设备设计或颜色。
         </p>
         <p>官方产品图与拍摄样张均明确区分。主观设计观察是本站原创文字，技术参数以来源为准。</p>
@@ -49,6 +50,30 @@ export default function Credits() {
             </div>
           </article>
         ))}
+      </section>
+      <section className="reference-section" id="film-source">
+        <h2>首页产品短片</h2>
+        <article className="reference-row">
+          <div>
+            <h3>iPhone 18 Pro</h3>
+            <p>
+              © {productFilm.author} · {productFilm.durationSeconds} 秒 · 核查日期{' '}
+              {productFilm.verifiedAt}
+            </p>
+          </div>
+          <div>
+            <a href={productFilm.source} target="_blank" rel="noreferrer">
+              产品概览与短片来源
+              <ArrowUpRight size={16} />
+            </a>
+            {productFilm.versions.map((v) => (
+              <a key={v.file} href={productFilm.baseUrl + v.file} target="_blank" rel="noreferrer">
+                MP4 · {v.width} × {v.height}
+                <ArrowUpRight size={16} />
+              </a>
+            ))}
+          </div>
+        </article>
       </section>
       <section className="asset-section">
         <div className="section-head">
@@ -81,14 +106,11 @@ export default function Credits() {
       <section className="type-credits">
         <h2>字体与图标</h2>
         <p>
-          Inter Variable、Instrument Serif 与 Noto Sans SC · SIL Open Font License
+          Inter Variable 与 Noto Sans SC · SIL Open Font License
           1.1。中文使用本地子集与系统字体回退。Lucide 图标 · ISC License。原创代码 ·
           MIT。第三方图像不适用代码许可。
         </p>
         <a href={import.meta.env.BASE_URL + 'licenses/Inter-OFL.txt'}>Inter 字体许可</a>
-        <a href={import.meta.env.BASE_URL + 'licenses/Instrument-Serif-OFL.txt'}>
-          Instrument Serif 字体许可
-        </a>
         <a href={import.meta.env.BASE_URL + 'licenses/Noto-Sans-SC-OFL.txt'}>
           Noto Sans SC 字体许可
         </a>

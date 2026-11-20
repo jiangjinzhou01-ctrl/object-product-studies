@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Smartphone, Laptop, Columns2 } from 'lucide-react';
 import { Media } from '../components/Media';
 import { ArrowLink, CompareEntry } from '../components/UI';
 import { products, productPath } from '../data/products';
@@ -11,28 +11,22 @@ export default function Collection({ family }: { family: Family }) {
 
   return (
     <div className="model-collection wrap">
-      <section className="model-collection-head" data-reveal="heading">
-        <div>
-          <p className="exhibit-label">产品系列</p>
-          <h1>
-            {phone ? 'iPhone' : 'Mac'}
-            <em>.</em>
-          </h1>
-        </div>
-        <p>
-          {phone
-            ? '从双摄到三枚 Fusion 镜头，选择适合自己记录方式的 iPhone。'
-            : '从无风扇的 MacBook Air 到带 XDR 显示屏的 MacBook Pro，找到与你的工作方式相配的设备。'}
-        </p>
-      </section>
-      <nav className="model-collection-nav" id="models" aria-label="系列型号">
+      <nav className="family-jump" id="models" aria-label="系列型号">
         {items.map((product) => (
           <Link key={product.id} to={'#' + product.id}>
-            {product.name}
-            <ArrowDown size={15} aria-hidden="true" />
+            {phone ? <Smartphone aria-hidden="true" /> : <Laptop aria-hidden="true" />}
+            {product.name.replace(' with M6', '').replace(' with M5', '')}
           </Link>
         ))}
+        <Link to={'/compare?type=' + family}>
+          <Columns2 aria-hidden="true" />
+          比较机型
+        </Link>
       </nav>
+      <header className="family-heading">
+        <h1>{phone ? 'iPhone' : 'Mac'}</h1>
+        <p>{phone ? '探索各款 iPhone。' : '找到适合你的 Mac。'}</p>
+      </header>
       <div className="model-rows">
         {items.map((product) => {
           const path = productPath(product);

@@ -64,9 +64,7 @@ export default function Compare() {
   return (
     <div className="compare-page wrap">
       <div className="compare-heading" data-reveal="heading">
-        <h1>
-          产品比较<em>.</em>
-        </h1>
+        <h1>比较 {family === 'iphone' ? 'iPhone' : 'Mac'} 机型</h1>
         <p>选两款同系列产品，并排查看尺寸、屏幕、芯片与其他硬件规格。</p>
       </div>
       <div className="compare-toolbar">

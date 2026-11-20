@@ -30,10 +30,10 @@ export const phones: PhoneProduct[] = [
     tagline: '把目光，留给细节。',
     description: '从手掌中的铝金属，到镜头里的光。一次关于材质、影像与日常体验的观察。',
     availableFinishes: [
-      { name: 'Black', hex: '#353934' },
-      { name: 'Silver', hex: '#d3d4d1' },
-      { name: 'Glacier', hex: '#b1bfd5' },
-      { name: 'Burgundy', hex: '#65343d' },
+      { name: 'Burgundy', label: '勃艮第酒红色', hex: '#65343d', mediaId: 'phone-finish-burgundy' },
+      { name: 'Glacier', label: '冰川蓝色', hex: '#b1bfd5', mediaId: 'phone-finish-glacier' },
+      { name: 'Silver', label: '银色', hex: '#d3d4d1', mediaId: 'phone-finish-silver' },
+      { name: 'Black', label: '黑色', hex: '#353934', mediaId: 'phone-finish-black' },
     ],
     referenceSources: [
       source('specs', 'iPhone 18 Pro · Apple 技术规格', 'https://support.apple.com/en-asia/148590'),
@@ -42,6 +42,12 @@ export const phones: PhoneProduct[] = [
         'iPhone 18 Pro · 发布新闻稿',
         'https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/',
       ),
+      {
+        id: 'overview',
+        title: 'iPhone 18 Pro · Apple 中国产品概览与外观',
+        url: 'https://www.apple.com.cn/iphone-18-pro/',
+        verifiedAt: '2026-11-20',
+      },
     ],
     specifications: specs([
       ['display', '显示屏', '6.3 英寸 OLED', '以标准矩形测量为 6.27 英寸，实际可视区域较小。'],

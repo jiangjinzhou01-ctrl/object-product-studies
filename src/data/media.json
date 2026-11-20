@@ -805,5 +805,630 @@
     "modifications": "Transparent padding trimmed; device pixels are not redrawn. EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
     "webDisplayAllowed": null,
     "attributionRequired": true
+  },
+  {
+    "id": "phone-pro-poster-wide",
+    "alt": "勃艮第酒红色 iPhone 18 Pro 与金属 PRO 字样",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/media-hero/hero_endframe__fbxsnz8txcia_large_2x.jpg",
+    "originalFile": "phone-pro-poster-wide.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-pro-poster-wide.jpg",
+    "width": 2880,
+    "height": 2160,
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "file": "phone-pro-poster-wide-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "file": "phone-pro-poster-wide-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1200,
+        "file": "phone-pro-poster-wide-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 1500,
+        "file": "phone-pro-poster-wide-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-pro-poster-medium",
+    "alt": "勃艮第酒红色 iPhone 18 Pro 与金属 PRO 字样",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/media-hero/hero_endframe__fbxsnz8txcia_medium_2x.jpg",
+    "originalFile": "phone-pro-poster-medium.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-pro-poster-medium.jpg",
+    "width": 2136,
+    "height": 1800,
+    "variants": [
+      {
+        "width": 480,
+        "height": 404,
+        "file": "phone-pro-poster-medium-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 809,
+        "file": "phone-pro-poster-medium-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 1348,
+        "file": "phone-pro-poster-medium-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 1685,
+        "file": "phone-pro-poster-medium-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-pro-poster-portrait",
+    "alt": "勃艮第酒红色 iPhone 18 Pro 与金属 PRO 字样",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/media-hero/hero_endframe__fbxsnz8txcia_small_2x.jpg",
+    "originalFile": "phone-pro-poster-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-pro-poster-portrait.jpg",
+    "width": 1468,
+    "height": 1408,
+    "variants": [
+      {
+        "width": 480,
+        "height": 460,
+        "file": "phone-pro-poster-portrait-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 921,
+        "file": "phone-pro-poster-portrait-960.webp"
+      },
+      {
+        "width": 1468,
+        "height": 1408,
+        "file": "phone-pro-poster-portrait-1468.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-burgundy",
+    "alt": "勃艮第酒红色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_burgundy__f95it7a6dnyq_large_2x.jpg",
+    "originalFile": "phone-finish-burgundy.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-burgundy.jpg",
+    "width": 2880,
+    "height": 1520,
+    "variants": [
+      {
+        "width": 480,
+        "height": 253,
+        "file": "phone-finish-burgundy-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 507,
+        "file": "phone-finish-burgundy-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 844,
+        "file": "phone-finish-burgundy-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 1056,
+        "file": "phone-finish-burgundy-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-burgundy-portrait",
+    "alt": "勃艮第酒红色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_burgundy__f95it7a6dnyq_small_2x.jpg",
+    "originalFile": "phone-finish-burgundy-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-burgundy-portrait.jpg",
+    "width": 1468,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "height": 419,
+        "file": "phone-finish-burgundy-portrait-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 837,
+        "file": "phone-finish-burgundy-portrait-960.webp"
+      },
+      {
+        "width": 1468,
+        "height": 1280,
+        "file": "phone-finish-burgundy-portrait-1468.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-glacier",
+    "alt": "冰川蓝色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_glacier__fkxlpbz0ruy6_large_2x.jpg",
+    "originalFile": "phone-finish-glacier.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-glacier.jpg",
+    "width": 2880,
+    "height": 1520,
+    "variants": [
+      {
+        "width": 480,
+        "height": 253,
+        "file": "phone-finish-glacier-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 507,
+        "file": "phone-finish-glacier-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 844,
+        "file": "phone-finish-glacier-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 1056,
+        "file": "phone-finish-glacier-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-glacier-portrait",
+    "alt": "冰川蓝色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_glacier__fkxlpbz0ruy6_small_2x.jpg",
+    "originalFile": "phone-finish-glacier-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-glacier-portrait.jpg",
+    "width": 1468,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "height": 419,
+        "file": "phone-finish-glacier-portrait-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 837,
+        "file": "phone-finish-glacier-portrait-960.webp"
+      },
+      {
+        "width": 1468,
+        "height": 1280,
+        "file": "phone-finish-glacier-portrait-1468.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-silver",
+    "alt": "银色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_silver__c0oudn0fzw4m_large_2x.jpg",
+    "originalFile": "phone-finish-silver.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-silver.jpg",
+    "width": 2880,
+    "height": 1520,
+    "variants": [
+      {
+        "width": 480,
+        "height": 253,
+        "file": "phone-finish-silver-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 507,
+        "file": "phone-finish-silver-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 844,
+        "file": "phone-finish-silver-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 1056,
+        "file": "phone-finish-silver-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-silver-portrait",
+    "alt": "银色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_silver__c0oudn0fzw4m_small_2x.jpg",
+    "originalFile": "phone-finish-silver-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-silver-portrait.jpg",
+    "width": 1468,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "height": 419,
+        "file": "phone-finish-silver-portrait-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 837,
+        "file": "phone-finish-silver-portrait-960.webp"
+      },
+      {
+        "width": 1468,
+        "height": 1280,
+        "file": "phone-finish-silver-portrait-1468.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-black",
+    "alt": "黑色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_black__dseo2tvypuc2_large_2x.jpg",
+    "originalFile": "phone-finish-black.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-black.jpg",
+    "width": 2880,
+    "height": 1520,
+    "variants": [
+      {
+        "width": 480,
+        "height": 253,
+        "file": "phone-finish-black-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 507,
+        "file": "phone-finish-black-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 844,
+        "file": "phone-finish-black-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 1056,
+        "file": "phone-finish-black-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-finish-black-portrait",
+    "alt": "黑色 iPhone 18 Pro 系列外观，Apple 配色视图",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_black__dseo2tvypuc2_small_2x.jpg",
+    "originalFile": "phone-finish-black-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-finish-black-portrait.jpg",
+    "width": 1468,
+    "height": 1280,
+    "variants": [
+      {
+        "width": 480,
+        "height": 419,
+        "file": "phone-finish-black-portrait-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 837,
+        "file": "phone-finish-black-portrait-960.webp"
+      },
+      {
+        "width": 1468,
+        "height": 1280,
+        "file": "phone-finish-black-portrait-1468.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-highlight-camera",
+    "alt": "iPhone 18 Pro 的融合式主摄与可变光圈特写",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_large_2x.jpg",
+    "originalFile": "phone-highlight-camera.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-highlight-camera.jpg",
+    "width": 2520,
+    "height": 1224,
+    "variants": [
+      {
+        "width": 480,
+        "height": 233,
+        "file": "phone-highlight-camera-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 466,
+        "file": "phone-highlight-camera-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 777,
+        "file": "phone-highlight-camera-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 971,
+        "file": "phone-highlight-camera-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-highlight-camera-portrait",
+    "alt": "iPhone 18 Pro 的融合式主摄与可变光圈特写",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_small_2x.jpg",
+    "originalFile": "phone-highlight-camera-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-highlight-camera-portrait.jpg",
+    "width": 840,
+    "height": 960,
+    "variants": [
+      {
+        "width": 480,
+        "height": 549,
+        "file": "phone-highlight-camera-portrait-480.webp"
+      },
+      {
+        "width": 840,
+        "height": 960,
+        "file": "phone-highlight-camera-portrait-840.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-highlight-chip",
+    "alt": "搭载 A20 Pro 的 iPhone 18 Pro 横屏运行游戏",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/chip_endframe__lhkymtfv1uie_large_2x.jpg",
+    "originalFile": "phone-highlight-chip.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-highlight-chip.jpg",
+    "width": 2520,
+    "height": 1224,
+    "variants": [
+      {
+        "width": 480,
+        "height": 233,
+        "file": "phone-highlight-chip-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 466,
+        "file": "phone-highlight-chip-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 777,
+        "file": "phone-highlight-chip-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 971,
+        "file": "phone-highlight-chip-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-highlight-chip-portrait",
+    "alt": "搭载 A20 Pro 的 iPhone 18 Pro 横屏运行游戏",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/chip_endframe__lhkymtfv1uie_small_2x.jpg",
+    "originalFile": "phone-highlight-chip-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-highlight-chip-portrait.jpg",
+    "width": 840,
+    "height": 960,
+    "variants": [
+      {
+        "width": 480,
+        "height": 549,
+        "file": "phone-highlight-chip-portrait-480.webp"
+      },
+      {
+        "width": 840,
+        "height": 960,
+        "file": "phone-highlight-chip-portrait-840.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-highlight-colors",
+    "alt": "iPhone 18 Pro 的四款机身配色",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/colors_endframe__czfie0zmty4i_large_2x.jpg",
+    "originalFile": "phone-highlight-colors.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-highlight-colors.jpg",
+    "width": 2520,
+    "height": 1224,
+    "variants": [
+      {
+        "width": 480,
+        "height": 233,
+        "file": "phone-highlight-colors-480.webp"
+      },
+      {
+        "width": 960,
+        "height": 466,
+        "file": "phone-highlight-colors-960.webp"
+      },
+      {
+        "width": 1600,
+        "height": 777,
+        "file": "phone-highlight-colors-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 971,
+        "file": "phone-highlight-colors-2000.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
+  },
+  {
+    "id": "phone-highlight-colors-portrait",
+    "alt": "iPhone 18 Pro 的四款机身配色",
+    "source": "https://www.apple.com.cn/iphone-18-pro/",
+    "originalUrl": "https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/colors_endframe__czfie0zmty4i_small_2x.jpg",
+    "originalFile": "phone-highlight-colors-portrait.jpg",
+    "author": "Apple Inc.",
+    "license": "© Apple Inc. / iPhone 18 Pro product overview",
+    "licenseUrl": "https://www.apple.com/legal/intellectual-property/",
+    "usageNote": "Apple 产品概览公开图像，用于独立作品集。版权归 Apple 及其许可方。",
+    "verifiedAt": "2026-11-20",
+    "filename": "phone-highlight-colors-portrait.jpg",
+    "width": 840,
+    "height": 960,
+    "variants": [
+      {
+        "width": 480,
+        "height": 549,
+        "file": "phone-highlight-colors-portrait-480.webp"
+      },
+      {
+        "width": 840,
+        "height": 960,
+        "file": "phone-highlight-colors-portrait-840.webp"
+      }
+    ],
+    "modifications": "EXIF orientation, responsive resize and WebP compression. CSS crops may be used in editorial frames; no recoloring or hardware alteration.",
+    "webDisplayAllowed": null,
+    "attributionRequired": true
   }
 ]

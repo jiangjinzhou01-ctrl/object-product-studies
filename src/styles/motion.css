@@ -83,7 +83,7 @@
   background: #dedde3;
 }
 .route-loading .load-track::after {
-  background: #6d6676;
+  background: #6e6e73;
 }
 .narrative-progress > span,
 .hotspot-ring,
@@ -160,7 +160,7 @@
       inset: auto 0 -1px;
       height: 2px;
       pointer-events: none;
-      background: #9b7382;
+      background: #86868b;
       transform-origin: left;
       content: '';
       animation: reading-progress linear both;

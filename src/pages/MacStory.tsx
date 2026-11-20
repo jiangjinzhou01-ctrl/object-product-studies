@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
 import { SceneMedia } from '../components/SceneMedia';
 import { ImageViewer } from '../components/ImageViewer';
@@ -133,9 +133,7 @@ export default function MacStory() {
   return (
     <div className="mac-story">
       <nav className="product-nav" aria-label="MacBook Pro 章节">
-        <Link to="/mac">
-          MacBook Pro <span>/ M6</span>
-        </Link>
+        <Link to="/mac">MacBook Pro</Link>
         <div>
           <Link to="#workflow">工作流</Link>
           <Link to="#display">显示屏</Link>
@@ -147,32 +145,19 @@ export default function MacStory() {
           </Link>
         </div>
       </nav>
-      <section className="mac-plate wrap">
-        <div className="mac-plate-heading" data-reveal="heading">
-          <div>
-            <p className="exhibit-label">14 英寸 · M6</p>
-            <h1>
-              MacBook Pro<em>.</em>
-            </h1>
-          </div>
-          <div>
-            <p>屏幕、性能和接口，怎样在一台便携的设备里组成工作台。</p>
-            <Link className="text-link" to="#workflow">
-              进入工作流
-              <ArrowDown size={16} />
-            </Link>
-          </div>
+      <section className="pro-intro" aria-labelledby="mac-title">
+        <div className="pro-intro-copy">
+          <h1 id="mac-title">MacBook Pro</h1>
+          <p>14 英寸，搭载 M6。</p>
+          <Link className="primary-action" to="#workflow">
+            探索专业工作流
+          </Link>
         </div>
-        <div className="mac-plate-visual">
-          <Media id="mac-pro-front" priority sizes="(max-width:760px) 91vw, 850px" />
-          <ImageViewer id="mac-pro-front" label="MacBook Pro M6 · 官方产品图" />
-        </div>
-        <div className="mac-plate-caption">
-          <span>14.2 英寸 Liquid Retina XDR</span>
-          <span>深空黑色与银色</span>
+        <div className="pro-intro-art">
+          <Media id="mac-pro-hero" priority sizes="(max-width:734px) 100vw, min(1100px, 87vw)" />
+          <ImageViewer id="mac-pro-hero" label="14 英寸 MacBook Pro 与 M6 芯片" />
         </div>
       </section>
-
       <section
         className="metrics-row wrap"
         data-reveal="stagger"

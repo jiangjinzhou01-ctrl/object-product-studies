@@ -4,6 +4,10 @@
 
 本版按用户明确指示使用 Apple 公开媒体，用于非官方作品集。用户的使用指示不等于 Apple 授权，也不改变素材版权。旧版 MacBook Pro 14 英寸基础 M5、MacBook Air 15 英寸 M4 已不是当前研究对象；磁盘或历史文档中留存的旧素材不能用来证明当前机型的外观、规格或许可。
 
+## 2026-11-20 产品概览复核
+
+本次从 Apple 中国 iPhone 18 Pro 概览核对 A20 Pro、4800 万像素融合式主摄、四档可变光圈，以及勃艮第酒红色、冰川蓝色、银色和黑色的外观名称。浏览器分别取得桌面和平板构图、手机竖向构图、四款对应的外观照片以及 5 秒产品短片。Mac 首屏沿用 14 英寸基础 M6 机型的官方新闻稿图。[iPhone 18 Pro 产品概览](https://www.apple.com.cn/iphone-18-pro/) · [M6 机型新闻稿](https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/) · [逐项素材记录](asset-register.md)
+
 ## 官方来源与日期
 
 型号专属 Apple Support 规格页用于核对配置；对应 Newsroom 发布稿用于核对发布日期、首批上市时间、官方配色及图片归属。日期是官方发布记录，不表示所有市场同日上市或当前有货。

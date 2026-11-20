@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Media } from './Media';
+import type { ImageSource } from '../types/product';
 
 interface Frame {
   id: string;
   key: string;
   attempt: number;
+  sources?: readonly ImageSource[];
 }
 
 interface PresentedFrames {
@@ -19,11 +21,13 @@ export function SceneMedia({
   sizes,
   priority = false,
   onPresent,
+  sources,
 }: {
   id: string;
   sizes?: string;
   priority?: boolean;
   onPresent?: (id: string) => void;
+  sources?: readonly ImageSource[];
 }) {
   const [frames, setFrames] = useState<PresentedFrames | null>(null);
   const [failure, setFailure] = useState<string | null>(null);
@@ -37,7 +41,7 @@ export function SceneMedia({
   const waiting = !ready && !failed;
   const layers = ready
     ? [frames?.outgoing ?? null, current]
-    : [current, { id, key: requestKey, attempt }];
+    : [current, { id, key: requestKey, attempt, sources }];
 
   useEffect(() => {
     const image = pendingImage.current;
@@ -53,7 +57,7 @@ export function SceneMedia({
         return;
       }
       setFrames((previous) => ({
-        current: { id, key: requestKey, attempt },
+        current: { id, key: requestKey, attempt, sources },
         outgoing: previous?.current ?? null,
       }));
       onPresent?.(id);
@@ -86,7 +90,7 @@ export function SceneMedia({
       image.removeEventListener('load', loaded);
       image.removeEventListener('error', failedToLoad);
     };
-  }, [attempt, id, onPresent, priority, requestKey, waiting]);
+  }, [attempt, id, onPresent, priority, requestKey, sources, waiting]);
 
   return (
     <div className="scene-media" data-presented={Boolean(current)}>
@@ -108,6 +112,7 @@ export function SceneMedia({
               priority={priority}
               attempt={layer.attempt}
               imageRef={pending && waiting ? pendingImage : undefined}
+              sources={layer.sources}
             />
           </div>
         );

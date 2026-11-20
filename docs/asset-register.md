@@ -1,8 +1,40 @@
 # apple / 独立产品研究 · 素材登记
 
-文档更新日期 **2026-11-18（UTC）**。[asset-definitions.json](asset-definitions.json) 与 [media.json](../src/data/media.json) 共同登记 **21 张源图、75 个 WebP 派生文件**。包括 9 张手机 Newsroom 图、8 张 Mac Newsroom 图和 4 张 Apple Support 图。
+文档更新于 2026-11-20。共 38 张源图、132 个本地 WebP，另有一段 5 秒产品短片的三个编码。每张图的下载名、署名、来源 URL、版权与核查日期都在 [素材定义](asset-definitions.json) 中，输出宽高与文件名见 [媒体清单](../src/data/media.json)。
 
-全部素材依用户明确指示用于非官方作品集。它们是 Apple 公开提供的产品图或样张，**不属于 CC、CC0 或公共领域，本项目未取得独立 Apple 授权**。旧版照片的作者和许可不能转移到本版素材；代码、字体与图标的许可也不覆盖这些图片。
+图像和视频版权归 Apple Inc. 及其许可方。本项目按作品集用途标注来源，未取得 Apple 的单独使用授权。代码的 MIT 许可仅覆盖独立开发的代码。
+
+## iPhone 18 Pro 产品概览素材
+
+2026-11-20 逐项核对官方页面中的图片与浏览器实际加载的短片。共 17 张新照片，分为 3 张首屏画面、8 张外观图和 6 张产品亮点图。[Apple 中国产品概览](https://www.apple.com.cn/iphone-18-pro/)
+
+| 本地源文件                          | 原始画面尺寸 | 官方文件                                                                                                                      |
+| ----------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| phone-pro-poster-wide.jpg           | 2880 × 2160  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/media-hero/hero_endframe__fbxsnz8txcia_large_2x.jpg)        |
+| phone-pro-poster-medium.jpg         | 2136 × 1800  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/media-hero/hero_endframe__fbxsnz8txcia_medium_2x.jpg)       |
+| phone-pro-poster-portrait.jpg       | 1468 × 1408  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/media-hero/hero_endframe__fbxsnz8txcia_small_2x.jpg)        |
+| phone-finish-burgundy.jpg           | 2880 × 1520  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_burgundy__f95it7a6dnyq_large_2x.jpg)   |
+| phone-finish-burgundy-portrait.jpg  | 1468 × 1280  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_burgundy__f95it7a6dnyq_small_2x.jpg)   |
+| phone-finish-glacier.jpg            | 2880 × 1520  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_glacier__fkxlpbz0ruy6_large_2x.jpg)    |
+| phone-finish-glacier-portrait.jpg   | 1468 × 1280  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_glacier__fkxlpbz0ruy6_small_2x.jpg)    |
+| phone-finish-silver.jpg             | 2880 × 1520  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_silver__c0oudn0fzw4m_large_2x.jpg)     |
+| phone-finish-silver-portrait.jpg    | 1468 × 1280  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_silver__c0oudn0fzw4m_small_2x.jpg)     |
+| phone-finish-black.jpg              | 2880 × 1520  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_black__dseo2tvypuc2_large_2x.jpg)      |
+| phone-finish-black-portrait.jpg     | 1468 × 1280  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/product-viewer/color_black__dseo2tvypuc2_small_2x.jpg)      |
+| phone-highlight-camera.jpg          | 2520 × 1224  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_large_2x.jpg) |
+| phone-highlight-camera-portrait.jpg | 840 × 960    | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_small_2x.jpg) |
+| phone-highlight-chip.jpg            | 2520 × 1224  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/chip_endframe__lhkymtfv1uie_large_2x.jpg)        |
+| phone-highlight-chip-portrait.jpg   | 840 × 960    | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/chip_endframe__lhkymtfv1uie_small_2x.jpg)        |
+| phone-highlight-colors.jpg          | 2520 × 1224  | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/colors_endframe__czfie0zmty4i_large_2x.jpg)      |
+| phone-highlight-colors-portrait.jpg | 840 × 960    | [原图](https://www.apple.com.cn/v/iphone-18-pro/e/images/overview/highlights/colors_endframe__czfie0zmty4i_small_2x.jpg)      |
+
+三个 MP4 保留官方 H.264 编码，文件位于 `public/assets/film/`。尺寸与来源也可从网站的影像索引查看。
+
+| 文件       | 像素        |    字节 | 来源                                                                                                                         |
+| ---------- | ----------- | ------: | ---------------------------------------------------------------------------------------------------------------------------- |
+| large.mp4  | 1440 × 1080 | 1948463 | [原文件](https://www.apple.com.cn/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/anim/hero/large.mp4)  |
+| medium.mp4 | 1068 × 900  | 1322795 | [原文件](https://www.apple.com.cn/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/anim/hero/medium.mp4) |
+| small.mp4  | 736 × 704   |  512929 | [原文件](https://www.apple.com.cn/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/anim/hero/small.mp4)  |
 
 ## 来源、署名与日期
 
@@ -44,7 +76,7 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 
 当前 `media.json` 对全部图像写入 `webDisplayAllowed: null`、`attributionRequired: true`。前者保留未确认状态，不代表已获准；后者是项目的署名策略，不应声称每项均有已核实的强制署名条款。已读 Mac ZIP 通知没有指定固定署名措辞。建议显示“图像：Apple / Apple Newsroom”或“图像：Apple / Apple Support”，与实际来源一致。
 
-## 21 张素材的逐项登记
+## 新闻稿与技术支持的 21 张素材
 
 本地下载名均位于 `.cache/press/`；表中的“文件”链接是逐条复制的 `originalUrl`，不是 ZIP 原件链接。01–20 项核查日期为 2026-11-11，21 项核查日期为 2026-11-18。
 
@@ -74,7 +106,7 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 
 `phone-pro-hero` 包含 Pro Max，不能将合照两侧都标成 18 Pro。`mac-air-hero` 不能凭文件名或外观确定单一尺寸；两张 Air Support 图则各有独立型号证据。手机配色合照不会因界面选择颜色而变成该颜色的独立照片；本流程不生成或重着色缺失款式。
 
-## 实际尺寸与派生文件
+## 新闻稿与技术支持图的实际尺寸与派生文件
 
 输入尺寸来自 `.cache/press/` 文件元数据，并与 `media.json` 对照；下表尺寸不是 Mac ZIP 的高分辨率原件尺寸。输出路径统一为 `public/assets/images/<素材 ID>-<宽度>.webp`，宽高按原比例缩放。
 
@@ -106,10 +138,10 @@ Support 的参考规则为 [Apple 网站使用条款][site-terms] 与 [商标和
 
 ## 当前图片处理流程
 
-1. **定义输入**：[docs/asset-definitions.json](asset-definitions.json) 给出 ID、alt、`source`、`originalUrl`、`originalFile`、作者、版权文字及日期。当前 21 条记录共有 8 个来源页面。
+1. **定义输入**：[docs/asset-definitions.json](asset-definitions.json) 给出 ID、alt、`source`、`originalUrl`、`originalFile`、作者、版权文字及日期。当前 38 条记录共有 9 个来源页面。
 2. **本地缓存**：[scripts/download-assets.mjs](../scripts/download-assets.mjs) 读取定义，创建 `.cache/press/`，对缺失文件调用 `curl --fail --location --max-time 60 --output <路径> <originalUrl>`。已有文件直接跳过；脚本本身没有校验和比对或强制刷新步骤，也没有读取 ZIP 的实现。
 3. **生成响应式图片**：[scripts/process-assets.mjs](../scripts/process-assets.mjs) 用 Sharp 读取元数据，以自动方向后的宽高为基准，候选宽度为 `[480, 960, 1600, min(源宽, 2000)]`，删除超过源宽的值、去重并排序。每份输出执行 `.rotate()` 自动应用 EXIF 方向、按宽等比缩小且 `withoutEnlargement: true`，再以 `quality: 86`、`effort: 5` 转为 WebP。四张带 trimTransparent 标记的 Support PNG 先裁切透明留边，再据实际尺寸缩放，派生文件名含 -trim-。没有重着色、设备生成或背景生成；源文件不被覆盖。
-4. **写出清单**：处理脚本把文件写入 `public/assets/images/`，并覆盖生成 `src/data/media.json`，保留定义字段，补充源尺寸、各派生尺寸／文件名、处理说明和权利状态字段。当前为 21 条媒体记录、75 个被引用的 WebP 文件；磁盘中其他旧文件不因此算入本登记。
+4. **写出清单**：处理脚本把文件写入 `public/assets/images/`，并覆盖生成 `src/data/media.json`，保留定义字段，补充源尺寸、各派生尺寸／文件名、处理说明和权利状态字段。当前为 38 条媒体记录、132 个被引用的 WebP 文件；磁盘中其他旧文件不因此算入本登记。
 5. **页面读取**：[src/data/media.ts](../src/data/media.ts) 从本地派生文件选取满足请求宽度的第一档，默认请求 960px，不足则取最大档；[Media.tsx](../src/components/Media.tsx) 输出 `srcSet`、`sizes`、固有尺寸和 alt，常规懒加载，优先图即时加载，并异步解码。图片通过站点本地路径提供；Apple URL 用于来源与文件链接，不用作 `<img>` 热链。
 6. **显示裁切**：CSS 默认 contain，设备舞台、样张与接口图按构图使用 cover 或溢出隐藏。透明留边裁切和 CSS 显示裁切均记入处理记录；不改变产品设计或颜色。用户界面与资源已在真实 Chromium 中验证，结果见 qa-results.md。
 

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronRight } from 'lucide-react';
 import { Media } from '../components/Media';
 import { ArrowLink, CompareEntry } from '../components/UI';
 import { products, productPath } from '../data/products';
 import { stories } from '../data/stories';
 import { handleTabKey } from '../lib/tabs';
 import LaunchHero from '../components/LaunchHero';
+import Highlights from '../components/Highlights';
 import { SceneMedia } from '../components/SceneMedia';
 import type { Family } from '../types/product';
 
@@ -20,7 +21,7 @@ function Explorer() {
     <section className="inventory wrap" id="objects">
       <div id="explorer">
         <div className="section-head inventory-heading" data-reveal="heading">
-          <h2>型号索引</h2>
+          <h2>探索各款机型。</h2>
           <div
             className="segmented"
             role="tablist"
@@ -81,42 +82,29 @@ function Explorer() {
 
 export default function Home() {
   return (
-    <div className="exhibition">
+    <div className="product-overview">
       <LaunchHero />
-      <nav className="exhibition-index wrap" aria-label="首页展览章节">
-        <span>继续探索</span>
-        <Link to="#mac-studio">
-          MacBook Pro <ArrowDown size={15} aria-hidden="true" />
-        </Link>
-        <Link to="#field-notes">
-          iPhone 影像 <ArrowDown size={15} aria-hidden="true" />
-        </Link>
-        <Link to="#objects">
-          型号索引 <ArrowDown size={15} aria-hidden="true" />
-        </Link>
-      </nav>
-
-      <section className="desk-feature wrap" id="mac-studio">
-        <div className="desk-feature-visual">
-          <Media id="mac-pro-display" sizes="(max-width: 760px) 100vw, 64vw" reveal="image" />
-        </div>
+      <Highlights />
+      <section className="desk-feature" id="mac-studio">
         <div className="desk-feature-content" data-reveal="heading">
-          <p className="exhibit-label">MacBook Pro · M6</p>
-          <h2>
-            把工作台
-            <br />
-            带在身边。
-          </h2>
-          <p>在一块 14.2 英寸 Liquid Retina XDR 显示屏上剪辑、调色，也写下下一行代码。</p>
-          <ArrowLink to="/mac/macbook-pro-m6#workflow">查看三个工作场景</ArrowLink>
+          <h2>MacBook Pro</h2>
+          <p>14 英寸，搭载 M6 芯片。</p>
+          <Link className="primary-action" to="/mac/macbook-pro-m6">
+            探索 MacBook Pro
+          </Link>
+          <Link className="blue-link" to="/mac/macbook-pro-m6#workflow">
+            查看工作流
+            <ChevronRight size={16} />
+          </Link>
         </div>
+        <Media id="mac-pro-hero" sizes="(max-width:734px) 100vw, min(1040px, 85vw)" />
       </section>
 
       <section className="field-feature" id="field-notes">
         <div className="field-heading wrap" data-reveal="heading">
           <div>
-            <p className="exhibit-label">iPhone 摄影</p>
-            <h2>观察光线。</h2>
+            <p className="exhibit-label">iPhone 18 Pro 摄影</p>
+            <h2>镜头里的光。</h2>
           </div>
           <p>从远处的山脊到夜色中的星空。通过官方样张，观察镜头在不同光线下记录的细节。</p>
         </div>
@@ -138,7 +126,7 @@ export default function Home() {
         <div className="reading-list">
           {stories.map((story) => (
             <Link className="reading-link" to={'/journal/' + story.slug} key={story.slug}>
-              <Media id={story.media} sizes="(max-width: 760px) 34vw, 240px" />
+              <Media id={story.media} sizes="(max-width: 760px) 90vw, 42vw" />
               <div>
                 <span className="overline">{story.readTime}</span>
                 <h3>{story.title}</h3>

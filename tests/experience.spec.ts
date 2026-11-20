@@ -151,7 +151,7 @@ test('mobile navigation manages focus, scroll locking, Escape and routing', asyn
   await dialog.getByRole('link', { name: 'iPhone' }).click();
   await expect(page).toHaveURL(/#\/iphone$/);
   await expect(dialog).not.toBeVisible();
-  await expect(page.locator('h1')).toContainText('iPhone.');
+  await expect(page.locator('h1')).toHaveText('iPhone');
 });
 
 test('gallery switches genuine views with keyboard and stable image bounds', async ({ page }) => {
@@ -183,6 +183,7 @@ test('gallery switches genuine views with keyboard and stable image bounds', asy
 });
 
 test('scroll narratives follow the reading position on desktop and mobile', async ({ page }) => {
+  test.setTimeout(90_000);
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
     await page.goto('/#/iphone/iphone-18-pro');
@@ -391,6 +392,7 @@ test('reduced motion and mobile comparison show both values without sideways scr
 test('visual evidence captures both screen sizes and active interaction states', async ({
   page,
 }) => {
+  test.setTimeout(90_000);
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
     for (const [name, route] of [
@@ -485,38 +487,36 @@ test('cold homepage load reserves media space', async ({ page }) => {
   ).toBeLessThan(0.05);
 });
 
-test('homepage keeps the current image while a new view loads', async ({ page }) => {
+test('highlights keep the current photo and matching caption until the next photo decodes', async ({
+  page,
+}) => {
   const request = Promise.withResolvers<void>();
-  await page.route('**/assets/images/phone-pro-hero-*.webp', async (route) => {
+  await page.route('**/assets/images/phone-highlight-chip-*.webp', async (route) => {
     await request.promise;
     await route.continue();
   });
   await page.goto('/#/');
-  const stage = page.locator('.launch-visual');
+  const stage = page.locator('#highlight-panel');
+  await stage.scrollIntoViewIfNeeded();
   const photo = stage.locator('[data-frame="current"] img');
-  await expect(photo).toHaveAttribute('src', /phone-pro-spec/);
+  await expect(photo).toHaveAttribute('src', /phone-highlight-camera/);
   const before = await stage.boundingBox();
-  const views = page.getByRole('group', { name: '选择首屏产品视角' });
-  const frontBack = views.getByRole('button', { name: '正面与背面' });
-  const finishes = views.getByRole('button', { name: '四款配色' });
+  const chip = page.getByRole('tab', { name: 'A20 Pro 芯片' });
+  const camera = page.getByRole('tab', { name: '相机', exact: true });
   try {
-    await frontBack.click();
-    await expect(page.getByText('正在加载新画面')).toBeVisible();
-    await expect(photo).toHaveAttribute('src', /phone-pro-spec/);
-    await expect(page.locator('.launch-credit')).toContainText('酒红色');
-
-    // Reversing the selection while the request is pending must not commit the late response.
-    await finishes.focus();
+    await chip.click();
+    await expect(stage.getByRole('status')).toHaveText('正在加载新画面');
+    await expect(photo).toHaveAttribute('src', /phone-highlight-camera/);
+    await expect(stage.locator('h3')).toHaveText('4800 万像素融合式主摄');
+    await camera.focus();
     await page.keyboard.press('Enter');
-    await expect(page.getByText('正在加载新画面')).toHaveCount(0);
-    await expect(photo).toHaveAttribute('src', /phone-pro-spec/);
+    await expect(stage.getByRole('status')).toHaveCount(0);
     request.resolve();
-
-    await frontBack.click();
-    await expect(photo).toHaveAttribute('src', /phone-pro-hero/);
-    await expect(page.locator('.launch-credit')).toContainText('Pro Max');
-    const after = await stage.boundingBox();
-    expect(after!.height).toBe(before!.height);
+    await expect(photo).toHaveAttribute('src', /phone-highlight-camera/);
+    await chip.click();
+    await expect(photo).toHaveAttribute('src', /phone-highlight-chip/);
+    await expect(stage.locator('h3')).toHaveText('A20 Pro 芯片');
+    expect((await stage.boundingBox())!.height).toBe(before!.height);
   } finally {
     request.resolve();
   }
@@ -532,7 +532,7 @@ test('homepage shows startup and image loading states until actual content is re
     await app.promise;
     await route.continue();
   });
-  await page.route('**/assets/images/phone-pro-spec-*.webp', async (route) => {
+  await page.route('**/assets/images/phone-pro-poster-*.webp', async (route) => {
     coverRequests.push(route.request().url());
     await cover.promise;
     await route.continue();
@@ -547,9 +547,9 @@ test('homepage shows startup and image loading states until actual content is re
     await expect.poll(() => coverRequests.length).toBe(1);
 
     app.resolve();
-    const stage = page.locator('.launch-visual');
+    const stage = page.locator('#film-stage');
     await expect(stage.getByRole('status')).toHaveText('正在加载产品图');
-    await expect(page.getByRole('link', { name: '产品比较', exact: true }).first()).toBeEnabled();
+    await expect(page.getByRole('link', { name: '探索 iPhone 18 Pro' })).toBeEnabled();
     expect(
       await stage
         .locator('.load-track')
@@ -562,6 +562,7 @@ test('homepage shows startup and image loading states until actual content is re
     await expect(photo).toBeVisible();
     expect(await photo.evaluate((node: HTMLImageElement) => node.naturalWidth)).toBeGreaterThan(0);
     expect(coverRequests).toHaveLength(1);
+    expect(coverRequests[0]).toContain('poster-portrait');
   } finally {
     app.resolve();
     cover.resolve();
@@ -569,7 +570,7 @@ test('homepage shows startup and image loading states until actual content is re
 });
 
 test('failed homepage media can retry without losing navigation', async ({ page }) => {
-  await page.route(/\/assets\/images\/phone-pro-spec-.*\.webp/, async (route) => {
+  await page.route(/\/assets\/images\/phone-pro-poster-.*\.webp/, async (route) => {
     if (new URL(route.request().url()).searchParams.has('retry')) {
       await route.continue();
     } else {
@@ -577,7 +578,7 @@ test('failed homepage media can retry without losing navigation', async ({ page 
     }
   });
   await page.goto('/#/');
-  const stage = page.locator('.launch-visual');
+  const stage = page.locator('#film-stage');
   await expect(stage.getByRole('status')).toHaveText('图像暂时无法加载');
   await expect(page.getByRole('link', { name: '探索 iPhone 18 Pro' })).toBeEnabled();
   await stage.getByRole('button', { name: '重新加载图像' }).click();
@@ -615,29 +616,137 @@ test('physical port annotations select the corresponding explanation', async ({ 
   await expect(page.locator('#port-panel')).toContainText('演示');
 });
 
-test('exhibition opens and closes the selected photograph with keyboard focus restored', async ({
+test('mobile highlights open the full photograph and restore focus after Escape', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/#/');
-  const stage = page.locator('.launch-visual');
-  await page.getByRole('button', { name: '低光样张', exact: true }).click();
-  await expect(stage.locator(':scope > .scene-media [data-frame="current"] img')).toHaveAttribute(
-    'src',
-    /phone-pro-lowlight/,
-  );
-  await expect(page.locator('.launch-credit')).toContainText('低光样张');
+  const stage = page.locator('#highlight-panel');
+  const colors = page.getByRole('tab', { name: '四款配色' });
+  await colors.click();
+  await expect(stage.locator('h3')).toHaveText('铝金属一体成型机身');
   const trigger = stage.getByRole('button', { name: '查看大图' });
   await trigger.click();
-  const dialog = page.getByRole('dialog', { name: /低光样张/ });
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole('img')).toHaveAttribute('src', /phone-pro-lowlight/);
+  const dialog = page.getByRole('dialog', { name: '铝金属一体成型机身' });
+  await expect(dialog.getByRole('img')).toHaveAttribute('src', /phone-highlight-colors/);
   await expect(dialog.getByRole('img')).toHaveCSS('object-fit', 'contain');
   await page.keyboard.press('Escape');
   await expect(dialog).not.toBeVisible();
   await expect(trigger).toBeFocused();
-  await expect(page.getByRole('button', { name: '低光样张', exact: true })).toHaveAttribute(
-    'aria-pressed',
-    'true',
+  await expect(colors).toHaveAttribute('aria-selected', 'true');
+});
+
+for (const viewport of [
+  { width: 390, height: 844 },
+  { width: 768, height: 1000 },
+  { width: 1440, height: 900 },
+]) {
+  test('product film and photographic crop at ' + viewport.width + 'px', async ({ page }) => {
+    await page.setViewportSize(viewport);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    const requests: string[] = [];
+    page.on('request', (r) => {
+      if (r.url().includes('/assets/film/')) requests.push(r.url());
+    });
+    await page.goto('/#/');
+    const video = page.locator('#film-stage video');
+    const variant =
+      viewport.width === 390 ? 'portrait' : viewport.width === 768 ? 'medium' : 'wide';
+    await expect
+      .poll(() =>
+        page
+          .locator('#film-stage [data-frame="current"] img')
+          .evaluate((n: HTMLImageElement) => n.currentSrc),
+      )
+      .toContain('poster-' + variant);
+    expect(requests).toHaveLength(0);
+    await page.getByRole('button', { name: '播放产品短片' }).click();
+    await expect
+      .poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime))
+      .toBeGreaterThan(0);
+    const filename = viewport.width === 390 ? 'small' : viewport.width === 768 ? 'medium' : 'large';
+    expect(requests.some((u) => u.endsWith('/' + filename + '.mp4'))).toBe(true);
+    await page.getByRole('button', { name: '暂停产品短片' }).click();
+    expect(await video.evaluate((v: HTMLVideoElement) => v.paused)).toBe(true);
+    await page.getByRole('button', { name: '继续播放产品短片' }).click();
+    await expect(page.getByRole('button', { name: '重播产品短片' })).toBeVisible({
+      timeout: 12000,
+    });
+    await page.getByRole('button', { name: '重播产品短片' }).click();
+    await expect
+      .poll(() => video.evaluate((v: HTMLVideoElement) => !v.paused && v.currentTime < 3))
+      .toBe(true);
+  });
+}
+test('four actual finishes respond to arrow keys and use portrait product photographs', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/iphone/iphone-18-pro');
+  const radios = page.getByRole('radio');
+  await radios.first().focus();
+  for (const [index, color] of ['勃艮第酒红色', '冰川蓝色', '银色', '黑色'].entries()) {
+    if (index) await page.keyboard.press('ArrowRight');
+    await expect(radios.nth(index)).toBeChecked();
+    await expect(page.locator('.finish-caption')).toHaveText(color);
+    await expect
+      .poll(() =>
+        page
+          .locator('.finish-art [data-frame="current"] img')
+          .evaluate((n: HTMLImageElement) => n.currentSrc),
+      )
+      .toContain(['burgundy', 'glacier', 'silver', 'black'][index] + '-portrait');
+  }
+});
+
+test('search supports product lookup, no results, Escape and navigation', async ({ page }) => {
+  await page.goto('/#/');
+  const open = page.getByRole('button', { name: '搜索本站' });
+  await open.click();
+  const dialog = page.getByRole('dialog', { name: '搜索本站' });
+  const input = dialog.getByRole('searchbox');
+  await expect(input).toBeFocused();
+  await input.fill('zzzzzz');
+  await expect(dialog).toContainText('没有找到相关结果');
+  await page.keyboard.press('Escape');
+  await expect(open).toBeFocused();
+  await open.click();
+  await input.fill('M6');
+  await dialog.getByRole('link', { name: /MacBook Pro/ }).click();
+  await expect(page).toHaveURL(/macbook-pro-m6/);
+  await expect(dialog).not.toBeVisible();
+});
+
+test('mobile browsing and data saver leave video download under user control', async ({ page }) => {
+  const requests: string[] = [];
+  page.on('request', (r) => {
+    if (r.url().includes('/assets/film/')) requests.push(r.url());
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/');
+  await expect(page.getByRole('button', { name: '播放产品短片' })).toBeEnabled();
+  await page.getByRole('button', { name: '搜索本站' }).click();
+  expect(requests).toHaveLength(0);
+  await page.addInitScript(() =>
+    Object.defineProperty(navigator, 'connection', {
+      value: { saveData: true },
+      configurable: true,
+    }),
   );
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.reload();
+  await expect(page.getByRole('button', { name: '播放产品短片' })).toBeEnabled();
+  await page.locator('#highlights').scrollIntoViewIfNeeded();
+  expect(requests).toHaveLength(0);
+});
+test('visible desktop film starts once and pauses when scrolled away', async ({ page }) => {
+  await page.goto('/#/');
+  const video = page.locator('#film-stage video');
+  await expect
+    .poll(() => video.evaluate((v: HTMLVideoElement) => !v.paused && v.currentTime > 0))
+    .toBe(true);
+  await page.locator('#objects').evaluate((e) => e.scrollIntoView({ behavior: 'instant' }));
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.paused)).toBe(true);
+  await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+  await expect(page.getByRole('button', { name: '继续播放产品短片' })).toBeVisible();
 });

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { ChevronRight, Menu, X } from 'lucide-react';
+import SiteSearch from './SiteSearch';
 import { siteName } from '../data/site';
 const links = [
   ['/iphone', 'iPhone'],
@@ -40,11 +41,17 @@ export default function Navigation() {
       >
         跳至主要内容
       </a>
-      <header className="site-header">
+      <header
+        className="site-header"
+        data-dark={
+          location.pathname === '/' ||
+          location.pathname === '/iphone/iphone-18-pro' ||
+          location.pathname === '/mac/macbook-pro-m6'
+        }
+      >
         <div className="header-inner">
           <Link to="/" className="wordmark" aria-label={siteName + ' 首页 · 独立产品研究'}>
             {siteName}
-            <span>独立产品研究</span>
           </Link>
           <nav className="desktop-nav" aria-label="主导航">
             {links.map(([to, label]) => (
@@ -52,11 +59,9 @@ export default function Navigation() {
                 {label}
               </NavLink>
             ))}
+            <NavLink to="/compare">产品比较</NavLink>
           </nav>
-          <Link className="nav-compare" to="/compare">
-            产品比较
-            <ArrowUpRight size={15} />
-          </Link>
+          <SiteSearch />
           <button
             ref={trigger}
             className="icon-button menu-trigger"
@@ -110,12 +115,12 @@ export default function Navigation() {
           {[['/', '首页'], ...links, ['/compare', '产品比较']].map(([to, label]) => (
             <NavLink key={to} to={to} onClick={() => dialog.current?.close()}>
               {label}
-              <ArrowUpRight />
+              <ChevronRight size={20} />
             </NavLink>
           ))}
         </nav>
         <p className="menu-note">
-          对产品的观察，对日常的好奇。
+          独立产品体验概念作品。
           <br />
           Independent design & engineering study.
         </p>
