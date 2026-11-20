@@ -6,6 +6,27 @@
 
 首轮测试发现了信息栏链接形态、深色区链接对比度和搜索对话框的键盘焦点问题。调整后重新运行全套测试。首次打开首页会在 React 启动前请求对应视口的海报，播放器与预加载共用同一套尺寸条件。38 张源图的 132 个 WebP 共 7,225,108 字节，已逐文件核对格式和宽高。三个短片编码独立按需加载。
 
+Linux WebKit 27.2 在 390px（三倍像素密度）与 1440px 上验证短片播放和暂停、换色、工作流、比较和刷新。另用 Chromium 模拟 6 倍 CPU 降速、150ms 延迟与 1.6Mbps 下行，确认触控导航、亮点、配色与比较可用，浏览这些页面期间视频请求数为 0。
+
+| 本地生产首页 · Lighthouse 13.6.0 | 性能 | 无障碍 | 最佳实践 |    LCP |     CLS |
+| -------------------------------- | ---: | -----: | -------: | -----: | ------: |
+| 桌面预设                         |   99 |    100 |      100 | 0.7 秒 | 0.00035 |
+| 移动预设                         |   87 |    100 |      100 | 2.6 秒 | 0.00022 |
+
+以上为本地 Chromium 单次合成测量，iOS / Android 真机与 VoiceOver 尚待验证。[结构化验证记录](overview-verification.json) · [桌面完整报告](lighthouse/overview-desktop.json.gz) · [移动完整报告](lighthouse/overview-mobile.json.gz)
+
+GitHub Actions 用 58.4 秒完成 51 项浏览器测试，两个发布作业均成功。公网 Chromium 在桌面和手机视口打开最新产物、实际播放本地短片，并复核四款外观、亮点、滚动章节、搜索、移动导航和比较刷新。两个视口的同源 HTTP 错误和页面脚本错误均为零。[部署流水线](https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/44697551950) · [在线版本](https://jiangjinzhou01-ctrl.github.io/object-product-studies/?v=16be730)
+
+| 已发布页面      | 桌面 1440 × 900                                       | 手机 390 × 844                                       |
+| --------------- | ----------------------------------------------------- | ---------------------------------------------------- |
+| 首页首屏        | [桌面首屏](screenshots/overview-home-1440.webp)       | [手机首屏](screenshots/overview-home-390.webp)       |
+| 影像亮点        | [桌面亮点](screenshots/overview-highlights-1440.webp) | [手机亮点](screenshots/overview-highlights-390.webp) |
+| 机身外观        | [桌面换色](screenshots/overview-finish-1440.webp)     | [手机换色](screenshots/overview-finish-390.webp)     |
+| iPhone 滚动章节 | [桌面滚动](screenshots/overview-scroll-1440.webp)     | [手机滚动](screenshots/overview-scroll-390.webp)     |
+| MacBook Pro     | [桌面 Mac](screenshots/overview-mac-1440.webp)        | [手机 Mac](screenshots/overview-mac-390.webp)        |
+| 产品比较        | [桌面比较](screenshots/overview-compare-1440.webp)    | [手机比较](screenshots/overview-compare-390.webp)    |
+| 导航抽屉        | —                                                     | [手机导航](screenshots/overview-menu-390.webp)       |
+
 ## 产品展览改版 · 2026-11-18
 
 TypeScript、ESLint、Prettier 与生产构建通过。Chromium 在十个内容路由执行 44 项 Playwright 测试，覆盖七种宽度、导航、滚动叙事、工作流、比较和 axe WCAG A/AA 检查。首轮发现 768px 首屏图片撑宽页面与截图用例定位器过时，修正后全套通过。生产截图复核还发现大图继承了首屏样张的裁切规则，改为显示完整原图并增加回归断言。将山景的视差时间线绑定到展区后，新增了随页面滚动的回归验证。最终运行 44 通过、0 失败、0 跳过，耗时约 90 秒。

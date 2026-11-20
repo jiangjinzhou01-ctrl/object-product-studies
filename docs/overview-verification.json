@@ -1,0 +1,412 @@
+{
+  "revision": "16be730a307e46e7a8ac68e969a7b0d36c26503e",
+  "verified": "2026-11-20",
+  "reference": "https://www.apple.com.cn/iphone-18-pro/",
+  "referenceBounds": {
+    "1440": {
+      "stage": [
+        0,
+        97,
+        1440,
+        803
+      ],
+      "content": [
+        90,
+        97,
+        1260,
+        803
+      ],
+      "model": [
+        90,
+        702,
+        355,
+        39
+      ],
+      "headline": [
+        90,
+        741,
+        355,
+        95
+      ],
+      "action": [
+        1051,
+        772,
+        299,
+        64
+      ]
+    },
+    "390": {
+      "stage": [
+        0,
+        143,
+        390,
+        701
+      ],
+      "content": [
+        24,
+        143,
+        341,
+        701
+      ],
+      "model": [
+        106,
+        175,
+        178,
+        31
+      ],
+      "headline": [
+        106,
+        206,
+        178,
+        50
+      ],
+      "action": [
+        24,
+        770,
+        341,
+        74
+      ]
+    }
+  },
+  "localVisual": {
+    "base": "http://127.0.0.1:4173/",
+    "results": [
+      {
+        "width": 1440,
+        "geometry": {
+          ".site-header": [
+            0,
+            0,
+            1440,
+            44
+          ],
+          ".portfolio-ribbon": [
+            0,
+            44,
+            1440,
+            53
+          ],
+          ".film-hero": [
+            0,
+            97,
+            1440,
+            803
+          ],
+          ".film-title h1": [
+            90,
+            702,
+            371,
+            39
+          ],
+          ".film-title p": [
+            90,
+            741,
+            371,
+            95
+          ],
+          ".film-actions": [
+            1048,
+            772,
+            302,
+            64
+          ]
+        },
+        "bundle": "/assets/index-BYKCbIef.js",
+        "poster": "phone-pro-poster-wide-1600.webp",
+        "film": [
+          "large.mp4"
+        ],
+        "errors": []
+      },
+      {
+        "width": 390,
+        "geometry": {
+          ".site-header": [
+            0,
+            0,
+            390,
+            48
+          ],
+          ".portfolio-ribbon": [
+            0,
+            48,
+            390,
+            95
+          ],
+          ".film-hero": [
+            0,
+            143,
+            390,
+            701
+          ],
+          ".film-title h1": [
+            102,
+            175,
+            185,
+            31
+          ],
+          ".film-title p": [
+            102,
+            206,
+            185,
+            50
+          ],
+          ".film-actions": [
+            0,
+            770,
+            390,
+            74
+          ]
+        },
+        "bundle": "/assets/index-BYKCbIef.js",
+        "poster": "phone-pro-poster-portrait-960.webp",
+        "film": [
+          "small.mp4"
+        ],
+        "errors": []
+      }
+    ]
+  },
+  "chromiumPlaywright": {
+    "startTime": "2026-11-20T07:44:54.810Z",
+    "duration": 105131.46299999999,
+    "expected": 51,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "chromiumWidths": [
+    360,
+    390,
+    430,
+    768,
+    1024,
+    1440,
+    1920
+  ],
+  "webkitSmoke": [
+    {
+      "width": 390,
+      "engine": "27.2",
+      "deviceScaleFactor": 3,
+      "poster": "phone-pro-poster-portrait-1468.webp",
+      "mp4": "probably",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "engine": "27.2",
+      "deviceScaleFactor": 1,
+      "poster": "phone-pro-poster-wide-1600.webp",
+      "mp4": "probably",
+      "errors": []
+    }
+  ],
+  "throttledChromium": {
+    "engine": "156.0.8078.79",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "cpuSlowdown": 6,
+    "downBytesPerSecond": 200000,
+    "latencyMs": 150,
+    "poster": "phone-pro-poster-portrait-1468.webp",
+    "videosRequested": 0,
+    "errors": []
+  },
+  "lighthouseLocalHomepage": {
+    "desktop": {
+      "fetchTime": "2026-11-20T07:47:37.410Z",
+      "version": "13.6.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 92
+      },
+      "metrics": {
+        "first-contentful-paint": 204.44760000000002,
+        "largest-contentful-paint": 741.5595,
+        "cumulative-layout-shift": 0.0003530931781125852,
+        "total-blocking-time": 54.5
+      }
+    },
+    "mobile": {
+      "fetchTime": "2026-11-20T07:47:50.475Z",
+      "version": "13.6.0",
+      "scores": {
+        "performance": 87,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 92
+      },
+      "metrics": {
+        "first-contentful-paint": 763.4522,
+        "largest-contentful-paint": 2643.81525,
+        "cumulative-layout-shift": 0.0002223181412162253,
+        "total-blocking-time": 384.7738999999999
+      }
+    }
+  },
+  "actions": {
+    "headSha": "16be730a307e46e7a8ac68e969a7b0d36c26503e",
+    "conclusion": "success",
+    "url": "https://github.com/jiangjinzhou01-ctrl/object-product-studies/actions/runs/44697551950",
+    "chromeTestsPassed": 51
+  },
+  "publicVisual": {
+    "base": "https://jiangjinzhou01-ctrl.github.io/object-product-studies/?v=16be730",
+    "results": [
+      {
+        "width": 1440,
+        "geometry": {
+          ".site-header": [
+            0,
+            0,
+            1440,
+            44
+          ],
+          ".portfolio-ribbon": [
+            0,
+            44,
+            1440,
+            53
+          ],
+          ".film-hero": [
+            0,
+            97,
+            1440,
+            803
+          ],
+          ".film-title h1": [
+            90,
+            702,
+            371,
+            39
+          ],
+          ".film-title p": [
+            90,
+            741,
+            371,
+            95
+          ],
+          ".film-actions": [
+            1048,
+            772,
+            302,
+            64
+          ]
+        },
+        "bundle": "/object-product-studies/assets/index-CmknQuzj.js",
+        "poster": "phone-pro-poster-wide-1600.webp",
+        "film": [
+          "large.mp4"
+        ],
+        "errors": []
+      },
+      {
+        "width": 390,
+        "geometry": {
+          ".site-header": [
+            0,
+            0,
+            390,
+            48
+          ],
+          ".portfolio-ribbon": [
+            0,
+            48,
+            390,
+            95
+          ],
+          ".film-hero": [
+            0,
+            143,
+            390,
+            701
+          ],
+          ".film-title h1": [
+            102,
+            175,
+            185,
+            31
+          ],
+          ".film-title p": [
+            102,
+            206,
+            185,
+            50
+          ],
+          ".film-actions": [
+            0,
+            770,
+            390,
+            74
+          ]
+        },
+        "bundle": "/object-product-studies/assets/index-CmknQuzj.js",
+        "poster": "phone-pro-poster-portrait-960.webp",
+        "film": [
+          "small.mp4"
+        ],
+        "errors": []
+      }
+    ]
+  },
+  "publicPlayback": [
+    {
+      "width": 390,
+      "entryHTTP": 200,
+      "mode": "manual",
+      "poster": "phone-pro-poster-portrait-1468.webp",
+      "video": {
+        "width": 736,
+        "height": 704,
+        "duration": 5
+      },
+      "responses": [
+        {
+          "file": "small.mp4",
+          "status": 206,
+          "type": "video/mp4"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "entryHTTP": 200,
+      "mode": "autoplay",
+      "poster": "phone-pro-poster-medium-1600.webp",
+      "video": {
+        "width": 1068,
+        "height": 900,
+        "duration": 5
+      },
+      "responses": [
+        {
+          "file": "medium.mp4",
+          "status": 206,
+          "type": "video/mp4"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "entryHTTP": 200,
+      "mode": "autoplay",
+      "poster": "phone-pro-poster-wide-1600.webp",
+      "video": {
+        "width": 1440,
+        "height": 1080,
+        "duration": 5
+      },
+      "responses": [
+        {
+          "file": "large.mp4",
+          "status": 206,
+          "type": "video/mp4"
+        }
+      ]
+    }
+  ]
+}
